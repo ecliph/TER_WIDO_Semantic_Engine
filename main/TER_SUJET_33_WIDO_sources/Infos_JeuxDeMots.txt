@@ -1,0 +1,1351 @@
+infosJeuxDeMots
+
+[
+
+Pour quoi faire ?
+
+](http://www.jeuxdemots.org/jdm-accueil.php)
+
+JeuxDeMots : un outil pour construire un réseau lexical
+
+https://imaginat.name/infosJDM.html#outil
+
+D'autres jeux pour consolider/enrichir le réseau
+
+https://imaginat.name/infosJDM.html#autrejeux
+
+Résultats qualitatifs et quantitatifs
+
+https://imaginat.name/infosJDM.html#resultats
+
+Les applications du réseau JeuxDeMots
+
+https://imaginat.name/infosJDM.html#appli
+
+Références
+
+https://imaginat.name/infosJDM.html#ref
+
+JeuxDeMots: un outil pour construire un réseau lexical
+
+Un programme de recherche universitaire
+
+JeuxDeMots
+
+http://www.jeuxdemots.org/jdm-accueil.php
+
+ est l'outil d'un programme de recherche en Traitement Automatique du Langage Naturel (TALN), développé au sein de l'équipe TEXTE du 
+
+LIRMM
+
+https://www.lirmm.fr/
+
+ (Laboratoire d'Informatique, de Robotique et de Microélectronique de Montpellier, UMR CNRS/Université Montpellier 2) par Mathieu Lafourcade (lafourcade@lirmm.fr) et lancé en juillet 2007, en vue de construire un 
+
+réseau lexical
+
+.
+
+Un réseau lexical qu'est ce que c'est ?
+
+Un réseau lexical est une structure qui met en évidence la manière dont les mots sont reliés les uns avec les autres par toutes sortes de relations, dont la figure ci-dessous donne un aperçu:
+
+ 
+
+Schéma d'une portion de réseau lexical mettant en évidence quelques relations.
+
+Les associations d'idées que l'on peut faire avec un terme donné s'apparentent au champ lexical de ce terme (exemple pour 
+
+chat
+
+ : 
+
+miauler, félin, griffe, litière, ronronner, minou, souris, croquettes, animal de compagnie
+
+, etc.) et constituent la plus élémentaire des relations du réseau. C'est également la plus riche quantitativement, c'est pourquoi nous ne l'avons pas représentée dans le schéma. Le schéma ci-dessus met en évidence des relations beaucoup plus précises :
+
+action >objet : on peut 
+
+lire
+
+ un 
+
+bouquin
+
+ ou 
+
+caresser
+
+ un 
+
+chat
+
+.
+
+terme > caractéristique : un 
+
+chat
+
+ peut être 
+
+apprivoisé, doux
+
+...
+
+sujet > action : un 
+
+garçon
+
+ peut 
+
+marcher, manger, lire
+
+.
+
+terme > lieu : un 
+
+bouquin
+
+ peut se trouver sur une 
+
+table
+
+, un 
+
+chat
+
+ sur un 
+
+canapé
+
+.
+
+terme > générique : un 
+
+chat
+
+ est un 
+
+félin
+
+, le 
+
+chat
+
+ et le 
+
+félin
+
+ sont des 
+
+êtres vivants
+
+.
+
+terme > partie : un 
+
+garçon
+
+ a comme parties 
+
+jambe, oeil
+
+..
+
+terme > couleur : un 
+
+chat
+
+ peut être 
+
+noir
+
+On dit que les relations au sein du réseau sont 
+
+typées
+
+ (de natures diverses), 
+
+orientées
+
+ (les flèches symbolisent le sens de la relation) et 
+
+pondérées
+
+ (l'épaisseur du trait symbolisant une relation indique la fréquence avec laquelle cette relation associe les deux termes). Le schéma ci-dessus ne montre que quelques-unes des nombreuses relations qui constituent un réseau lexical, et JeuxDeMots permet d'en découvrir beaucoup d'autres, dont la 
+
+polysémie
+
+, qui mérite qu'on s'y attarde.
+
+Un terme polysémique est un terme ambigü
+
+Un terme 
+
+polysémique
+
+ est un mot qui a plusieurs sens, que l'on discrimine sans même y penser à cause du contexte dans lequel on emploie le mot : ainsi quand on dit 
+
+j'ai mangé un avocat à midi
+
+, il est clair qu'on parle du fruit et non de l'homme de loi. Pour un cerveau humain c'est évident, mais pour un système automatisé, qui va s'appuyer sur un réseau lexical pour faire de l'analyse de texte, ça ne l'est pas du tout, d'où l'importance de préciser, au sein du réseau, les différents sens que peut avoir un terme.
+
+Ainsi dans le 
+
+schéma ci-dessus
+
+https://imaginat.name/infosJDM.html#schemarezo
+
+, on peut lire que 
+
+garçon
+
+ et 
+
+table
+
+ ont pour partie 
+
+pied
+
+. le terme 
+
+pied
+
+ à plusieurs sens, parmi lesquels 
+
+pied (anatomie)
+
+ et 
+
+pied (pied d'objet)
+
+. 
+
+Pied (anatomie)
+
+ et 
+
+pied (pied d'objet)
+
+ sont des 
+
+raffinements
+
+ du terme 
+
+pied
+
+, tout comme 
+
+pied (poésie)
+
+, 
+
+pied (base)
+
+, ou 
+
+pied (unité de mesure)
+
+.
+
+Pourquoi un jeu ?
+
+De nombreuses applications de 
+
+TALN
+
+ nécessitent la connaissance la plus précise et exhaustive possible des relations entre les mots d'une langue. Les relations sont des 
+
+données lexicales
+
+ qu'il est très long (et coûteux en termes de moyens humains et matériels) d'établir manuellement, en faisant appel à des linguistes, par exemple, et dont l'extraction automatique nécessite une compréhension fine du texte, qui reste hors de portée des machines à l'heure actuelle.
+
+D'où le recours au concept du jeu : 
+
+JeuxDeMots
+
+http://www.jeuxdemots.org/jdm-accueil.php
+
+ est un 
+
+GWAP
+
+ (Game With A Purpose), c'est à dire une 
+
+interface ludique
+
+ conçue pour amener le public à générer des relations entre les mots 
+
+[1]
+
+https://imaginat.name/infosJDM.html#references
+
+. Comment ?
+
+Comment les joueurs alimentent-ils le réseau lexical ?
+
+Le réseau est alimenté par les propositions des joueurs en réponse à une 
+
+consigne
+
+ donnée relativement à un 
+
+terme-source
+
+. Ce système de collecte de données repose sur le principe selon lequel 
+
+les données recueillies sont supposées valides dès lors qu'elles sont issues de la concordance répétées des propositions des deux joueurs
+
+. Ainsi émergent des 
+
+relations
+
+ entre le 
+
+terme-source
+
+ et les 
+
+intersections
+
+, c'est-à-dire les termes qui s'avèrent être 
+
+communs
+
+ quand on confronte les réponses des deux joueurs. La 
+
+consigne
+
+ traduit le 
+
+type de relation
+
+ visé par la partie. La consigne la plus générale (consigne par défaut pour les joueurs non inscrits) est 
+
+idées associées
+
+, mais de nombreuses autres consignes sont proposées ( 
+
+générique, spécifique, synonyme, cause, conséquence, sentiment, contraire,
+
+ etc.).
+
+L'accumulation de 
+
+relations
+
+ ainsi validées par les propositions communes de paires de joueurs construit progressivement un 
+
+réseau lexical
+
+ au sein duquel les liens entre termes sont 
+
+typés
+
+ et 
+
+orientés
+
+ par la nature de la consigne qui les a générés et 
+
+pondérés
+
+ par le nombre de paires de joueurs qui les ont suggérés.
+
+Parmi les termes fournis par un joueur en réponse à une consigne, ceux pour lesquels il n'y a pas eu intersection avec un autre joueur ne sont pas validés, mais ne sont pas éliminés pour autant : ils sont mis en réserve, en tant que 
+
+contributions
+
+ susceptibles d'être validées soit par l'un des 
+
+jeux annexes
+
+https://imaginat.name/Page_Liens_JDMv3.html
+
+ du projet JeuxDeMots, soit par un administrateur du jeu.
+
+D'autres jeux pour consolider/enrichir le réseau JeuxDeMots 
+
+(retour sommaire)
+
+https://imaginat.name/infosJDM.html#entete
+
+Le projet JeuxDeMots, c'est donc aussi 
+
+un ensemble de jeux annexes
+
+https://imaginat.name/Page_Liens_JDMv2.html
+
+ 
+
+[1][2]
+
+https://imaginat.name/infosJDM.html#references
+
+ qui consolident, précisent, évaluent, ou valident certaines relations du réseau lexical, voire en créent d'autres. Ci-après une brève présentation de chacun d'eux :
+
+Tierxical
+
+Tierxical est un 
+
+tiercé lexical
+
+ : pour un 
+
+terme
+
+ et une 
+
+consigne
+
+ donnés, le joueur doit choisir et ordonner, parmi 9 propositions, les 3 qui lui paraissent répondre le mieux à la consigne. Son 
+
+tiercé
+
+ est comparé au choix d'un autre joueur sur le même terme et la même relation et le gain est proportionnel au degré de ressemblance entre les deux tiercés, maximal en cas de tiercé dans l'ordre (mêmes réponses dans le même ordre). En choisissant et en ordonnant des termes, les joueurs se prononcent sur la pertinence de relations déjà présentes dans le réseau, et la concordance des tiercés permet d'accroître le poids des relations les plus choisies.
+
+Essayez !
+
+http://www.jeuxdemots.org/tierce/index.php
+
+Totaki
+
+Demandez-lui !
+
+http://www.jeuxdemots.org/AKI2.php
+
+Pensez à quelque chose et Totaki va tenter de le deviner !
+
+ Totaki est un petit génie qui lit dans votre tête: il se concentre très fort, et à l'aide des indices que vous lui avez soumis, il devine le mot auquel vous avez pensé ! Si, si, ça marche, essayez ! ;-)
+
+Plus sérieusement, 
+
+Totaki
+
+ est un 
+
+outil d'évaluation
+
+ de la 
+
+qualité des données [3]
+
+: dès le premier indice fourni par le joueur, un algorithme recherche dans le réseau lexical le terme le plus fortement lié à l'indice et le propose comme solution. En cas d'échec, l'algorithme recalcule en tenant compte du premier résultat et propose un autre mot, et ainsi de suite. Totaki évalue donc la pertinence des relations présentes dans le réseau, et permet également de l'enrichir, puisque la procédure crée des relations entre des termes qui n'étaient pas initialement liés, y compris en cas d'échec, (rare ! 
+
+Totaki
+
+ est très très fort ;-) ) lorsque le joueur est invité à fournir la solution.
+
+Askit
+
+Askit
+
+ est un jeu de questions fermées, où l'on répond 
+
+oui, non
+
+ ou 
+
+bof
+
+. Le gain en termes de points est proportionnel au pourcentage de joueurs qui ont répondu de la même manière. 
+
+Askit
+
+ est un outil de 
+
+validation
+
+ de données 
+
+[2]
+
+https://imaginat.name/infosJDM.html#references
+
+: la question posée au joueur concerne une relation et un terme précis, par exemple 
+
+Est-ce-que satiété est une conséquence de manger ?
+
+. Si la relation 
+
+manger>conséquence>satiété
+
+ existe déjà dans le réseau, la réponse 
+
+oui
+
+ va la renforcer, la réponse 
+
+non
+
+ va diminuer son poids, la réponse 
+
+bof
+
+ va la caractériser comme 
+
+non pertinente
+
+ et lui affecter un poids minimal. Si la relation n'existe pas, le terme 
+
+satiété
+
+ est alors une 
+
+contribution en attente
+
+ pour la relation 
+
+conséquence
+
+ qui sera créée avec un poids positif si on répond 
+
+oui
+
+, avec un poids négatif si on répond 
+
+non
+
+, et avec un poids minimum et l'annotation 
+
+non pertinente
+
+ si on répond 
+
+bof
+
+. 
+
+Askit
+
+ est également très performant pour détecter les relations erronées du fait de la 
+
+polysémie
+
+ : répondre 
+
+non
+
+ à la question 
+
+Est-ce que page (jeune noble) est une partie de livre ?
+
+ permet de donner un poids négatif à une relation erronée qui a pu être inférée par un robot.
+
+Aidez-le... Il essaie d'apprendre.
+
+http://www.jeuxdemots.org/askit.php
+
+Asku
+
+Votre avis m'intéresse !
+
+http://www.jeuxdemots.org/askyou.php
+
+Plutôt qu'un jeu proprement dit, 
+
+Asku
+
+ est un outil de 
+
+validation
+
+ et de 
+
+contribution
+
+ couplé à un 
+
+moteur d'inférences
+
+. Pour un terme donné, une liste de questions correspondant à différentes relations apparait. On répond en cochant des cases libellées 
+
+vrai
+
+, 
+
+faux
+
+ et 
+
+faux mais méritant d'être mémorisé
+
+. Non seulement les réponses valident et pondèrent les relations existantes ou potentielles, un peu comme pour 
+
+Askit
+
+, mais chaque réponse déclenche un robot qui va faire des 
+
+inférences
+
+ (déductions) qui se matérialisent dans le réseau par des 
+
+contributions en attente
+
+. De plus, un champ de texte libre permet au joueur de contribuer, pour le terme en question, sur la relation de son choix.
+
+LikeIt
+
+LikeIt
+
+ est une application destinée à affecter une relation de 
+
+polarité
+
+ aux termes du réseau. Pour un terme donné, le joueur clique sur 
+
+oui, j'aime l'idée
+
+, 
+
+ça ne me fait ni chaud ni froid
+
+, ou 
+
+non, je n'aime pas l'idée
+
+. L'aspect ludique est lié à la possibilité de se situer par rapport aux autres puisque à chaque vote, le système renvoie le pourcentage de personnes qui partagent cette opinion. La 
+
+distribution des votes
+
+ entre les 3 opinions permet d'affecter au terme une 
+
+polarité
+
+ 
+
+neutre
+
+, 
+
+positive
+
+, ou 
+
+négative
+
+ si l'une des 3 perceptions a un score supérieur à 50%, ou de le caractériser comme sans polarité particulière si aucune ne prédomine. L'information de polarité est souvent utile dans le cadre de la 
+
+désambiguisation lexicale
+
+ (choisir parmi les différents sens d'un terme polysémique). Exemple: 
+
+affection (maladie)
+
+ est connoté négativement, alors que 
+
+affection (sentiment)
+
+ est connoté positivement. Pour un système automatisé d'analyse de texte, la connaissance de la 
+
+polarité
+
+ va permettre de choisir entre les sens 
+
+sentiment
+
+ et 
+
+maladie
+
+ du terme 
+
+affection
+
+. De même, les informations de polarité des termes d'un texte sont de nature à aider un système à définir sa connotation positive ou négative. Les informations de polarité peuvent également être exploitées dans un contexte de sondage, de statistiques, d'analyse d'opinion.
+
+Vous aimez... ou pas ?
+
+http://www.jeuxdemots.org/likeit.php
+
+SexIt
+
+Sex or no sex ?
+
+http://www.jeuxdemots.org/sexit.php
+
+SexIt
+
+ est comparable à 
+
+LikeIt
+
+ dans son fonctionnement et dans son but : pour un terme donné, il s'agit de répondre par 
+
+sex
+
+ (=oui) ou 
+
+no sex
+
+ (=non) à la question 
+
+Est-ce-que ça a un rapport avec le sexe ?
+
+ Et comme pour 
+
+LikeIt
+
+, le retour ludique est l'affichage du pourcentage de personnes du même avis. L'intérêt est d'enrichir le réseau d'une information supplémentaire. Au sein du réseau, la distribution des votes aboutit à caractériser les termes comme en rapport avec le sexe ou pas. Dans un contexte d'analyse de texte automatisée, l'information de connotation sexuelle peut servir à détecter et filtrer des contenus pornographiques 
+
+[4]
+
+https://imaginat.name/infosJDM.html#references
+
+.
+
+Politit
+
+Dans la même lignée que les deux précédents, 
+
+Politit
+
+ tente, via la question 
+
+A quelle tendance politique associez-vous ce terme ?
+
+, et aux choix proposés : 
+
+extrême-gauche, écologistes, gauche, centre-gauche, droite modérée, droite, extrême-droite,
+
+ d'affecter, quand c'est possible, une 
+
+coloration politique
+
+ aux termes du réseau. Le joueur a la possibilité de passer si il estime que le terme est inéligible pour une information de cette nature. L'information relative à la coloration politique de termes usuels et d'expressions courantes, peut donner des indices pour détecter l'orientation politique sous-jacente d'un texte ou d'un discours qui se veut neutre.
+
+Quelle tendance ?
+
+http://www.jeuxdemots.org/politit.php
+
+ColorIt
+
+Annoncez la couleur !
+
+http://www.jeuxdemots.org/colorit.php
+
+Dans 
+
+ColorIt
+
+, un terme est proposé au joueur avec une 
+
+palette de couleurs
+
+. Il doit cliquer sur la 
+
+couleur
+
+ qu'il associe au mot, et peut également saisir une ou plusieurs couleurs dans un 
+
+champ de texte
+
+. Après validation, s'affichent les réponses données par les autres, et le score, qui dépend de l'adéquation entre la réponse du joueur et la distribution des couleurs déjà affectées au mot par les autres joueurs. 
+
+ColorIt
+
+ est un 
+
+outil de validation et de contribution
+
+, qui non seulement génère de nouvelles associations de couleur, mais fait également rentrer dans le réseau de nouveaux termes relatifs à la couleur et à l'apparence. Les informations relatives à la couleur sont souvent d'un intérêt majeur dans le contexte de la 
+
+désambiguisation lexicale [5]
+
+. Exemple : l'information de couleur 
+
+blanche
+
+ ou 
+
+blanchâtre
+
+ associée au terme 
+
+langue
+
+ permet de faire la distinction entre 
+
+langue (organe)
+
+ et 
+
+langue (langage)
+
+.
+
+Emot
+
+Emot
+
+ est bâti sur le même modèle que 
+
+ColorIt
+
+ : un terme est proposé au joueur, qui va lui associer un des 
+
+sentiments
+
+ ou 
+
+émotions
+
+ symbolisés par les smileys de l'interface, ou proposer d'autres termes via le 
+
+champ de texte
+
+ proposé. Un score et des niveaux sont attribués selon les mêmes modalités que 
+
+ColorIt
+
+, et la progression conditionne le nombre de lettres autorisées dans le champ de texte. Emot est donc également un 
+
+outil de contribution et de validation
+
+, qui génère des associations entre les mots et les 
+
+sentiments/émotions
+
+ qu'ils véhiculent, objectivement ou subjectivement. Une des perspectives d'exploitation de cette information est d'évaluer la corrélation entre couleurs et sentiments associés à certains termes, en particulier les noms abstraits. Exemple : au mot 
+
+colère
+
+ peuvent être associées les couleurs 
+
+noir
+
+ et 
+
+rouge
+
+, et aux mots 
+
+noir
+
+ ou 
+
+rouge
+
+ peut être associé le sentiment de 
+
+colère
+
+.
+
+Exprimez vos EMOT ions...
+
+http://www.jeuxdemots.org/emot.php
+
+Résultats qualitatifs et quantitatifs 
+
+(retour sommaire)
+
+https://imaginat.name/infosJDM.html#entete
+
+Des données de bonne qualité
+
+Le projet JeuxDeMots exploite avec succès le fait bien établi que les données produites par un très grand nombre de non-experts qui ne se concertent pas sont de meilleure qualité que celles émanant des travaux d'un petit groupe d'experts 
+
+[1][2]
+
+https://imaginat.name/infosJDM.html#references
+
+. Ainsi, et c'est d'autant plus vrai que le réseau lexical JeuxDeMots est à vocation généraliste, le fait qu'un consensus se dégage des réponses non concertées d'un grand nombre d'individus est une garantie de qualité. Et malgré le caractère généraliste du réseau, l'accessibilité du jeu, la variété du vocabulaire, des relations lexicales, la diversité des joueurs, et l'expertise acquise par certains d'entre eux via une pratique assidue n'excluent pas l'émergence de relations et de termes qui relèvent de domaines spécialisés.
+
+Les erreurs sont inévitables, mais le fait que le 
+
+jeu principal
+
+ soit couplé à un ensemble de 
+
+jeux annexes
+
+ permet au système de les détecter et de s'autocorriger ; les validations/invalidations, émanant des joueurs eux-mêmes pour une grande part, compensent et résorbent progressivement les relations erronées.
+
+Un réseau qui s'enrichit...
+
+JeuxDeMots
+
+http://www.jeuxdemots.org/jdm-accueil.php
+
+ a été lancé en 2007 avec 
+
+150 000 termes
+
+ et 
+
+aucune relation
+
+ entre eux.
+
+Le 24 juin 2014, 
+
+1 386 540 parties
+
+ ont été jouées, ce qui représente 963 jours de jeu en durée cumulée. La base compte 
+
+321 452 termes
+
+ dont 
+
+246 217
+
+ ont au moins une relation de type 
+
+idée associée
+
+.
+
+9 609 606 relations lexicales
+
+ sont présentes dans la base.
+
+Parmi les 
+
+6815 termes
+
+ étiquetés comme 
+
+polysémiques
+
+, 
+
+6620
+
+ (soit 97%) ont été raffinés, ce qui représente 
+
+21 662 sens.
+
+Le 5 février 2015, le réseau compte 
+
+18 371 254
+
+ relations pour 
+
+487 428
+
+ termes. 
+
+7938 termes
+
+ sont raffinés en 
+
+25001 usages
+
+. Au total, 
+
+8446 termes
+
+ sont étiquetés comme 
+
+polysémiques
+
+.
+
+Des ressources lexicales accessibles, gratuites et libres de droits
+
+Le 
+
+Diko
+
+ de jeuxDeMots est en quelque sorte la vitrine du 
+
+réseau lexical
+
+ ( 
+
+Rezo JeuxDeMots
+
+http://www.jeuxdemots.org/rezo.php
+
+), c'est-à-dire une présentation de type dictionnaire, où pour chaque 
+
+entrée
+
+ (terme du réseau), on trouve l'ensemble des relations établies et des relations potentielles, qui correspondent aux 
+
+contributions
+
+ non encore validées. Le 
+
+Diko
+
+ est également un 
+
+outil de contribution
+
+ ouvert aux joueurs, qui peuvent proposer des relations pour tous les types, y compris ceux qui ne sont pas disponibles dans le jeu. Par exemple, pour un terme signifiant une 
+
+maladie
+
+, on peut proposer des 
+
+symptômes
+
+. Le 
+
+Diko
+
+ est également une interface de 
+
+validation
+
+ pour les administrateurs du jeu. 
+
+http://www.jeuxdemots.org/rezo.php
+
+Les données du rezo, sous licence CC (Creative Commons) sont gratuitement accessibles 
+
+ici
+
+http://www.jeuxdemots.org/JDM-LEXICALNET-FR/?C=M;O=D
+
+.
+
+Les ressources lexicales générées par les 
+
+jeux annexes
+
+http://imaginat.name/Page_Liens_JDMv4.html
+
+ sont également libres de droits et gratuitement accessibles : 
+
+SexIt
+
+http://www.jeuxdemots.org/sexit.php?action=list
+
+, 
+
+Politit
+
+http://www.jeuxdemots.org/politit.php?action=list
+
+, 
+
+LikeIt
+
+http://www.jeuxdemots.org/likeit.php?action=list
+
+, 
+
+Emot
+
+http://www.jeuxdemots.org/emot.php?action=list
+
+, 
+
+ColorIt
+
+http://www.jeuxdemots.org/colorit.php?action=list
+
+, 
+
+Asku
+
+http://www.jeuxdemots.org/JDM-LEXICALNET-FR/?C=M;O=D
+
+, 
+
+AskIt
+
+http://www.jeuxdemots.org/JDM-LEXICALNET-FR/?C=M;O=D
+
+. 
+
+[6]
+
+https://imaginat.name/infosJDM.html#references
+
+Les applications du réseau JeuxDeMots 
+
+(retour sommaire)
+
+https://imaginat.name/infosJDM.html#entete
+
+JeuxDeMots : des données disponibles pour diverses applications
+
+JeuxDeMots
+
+http://www.jeuxdemots.org/jdm-accueil.php
+
+ est donc un instrument d'acquisition de 
+
+données lexico-sémantiques
+
+ générales, incluant des ressources plus spécialisées et accessibles séparément, comme les 
+
+relations de couleurs
+
+http://www.jeuxdemots.org/colorit.php?action=list
+
+, ou les connotations 
+
+politiques
+
+http://www.jeuxdemots.org/politit.php?action=list
+
+ ou 
+
+sexuelles
+
+http://www.jeuxdemots.org/sexit.php?action=list
+
+ des mots d'usage courant, ou encore les 
+
+relations termes-sentiments
+
+http://www.jeuxdemots.org/emot.php?action=list
+
+. Le fait
+
+que le réseau lexical ainsi construit n'ait pas d'équivalent en langue française, que ce soit au niveau de son 
+
+ampleur
+
+, de sa 
+
+diversité
+
+ et de sa 
+
+structure
+
+ (pondération, orientation),
+
+que toutes les données soient 
+
+libres de droit
+
+ et 
+
+gratuitement accessibles
+
+en fait une ressource de choix utilisable (et utilisée !) par toutes sortes d' 
+
+applications commerciales
+
+ (dictionnaires, dictionnaires des synonymes, correcteurs orthographiques, moteurs de recherche) ou dans le cadre de 
+
+travaux expérimentaux
+
+ : des équipes de recherche en Traitement Automatique du Langage (TAL) utilisent le réseau JDM comme étalon pour évaluer leur propre production de ressources (en général des extractions automatiques depuis des collections de textes).
+
+JeuxDeMots : le support de divers programmes de recherche au LIRMM
+
+Le 
+
+réseau lexical JeuxDeMots
+
+http://www.jeuxdemots.org/rezo.php
+
+ est l' 
+
+objet
+
+, le 
+
+terrain
+
+ et la 
+
+matière première
+
+ de divers 
+
+projets de recherche
+
+ 
+
+fondamentaux
+
+ et 
+
+appliqués
+
+, impliquant une équipe et ses doctorants, avec comme objectifs généraux la conception, le développement et l'évaluation d' 
+
+outils
+
+ pour le 
+
+traitement de la langue
+
+.
+
+Parmi les projets de recherche en cours, une thèse de doctorat en convention CIFRE avec la société 
+
+IMAIOS
+
+http://www.imaios.com/fr
+
+ 
+
+[7]
+
+https://imaginat.name/infosJDM.html#references
+
+ est particulièrement représentative de la diversité des applications possibles. Elle concerne l'analyse et l'indexation de compte-rendus d'imagerie médicale, et le réseau JDM est utilisé comme base de connaissances générales pour analyser la sémantique des compte-rendus médicaux, afin de pouvoir les retrouver facilement via des termes en rapport avec leur contenu, au sein d'une large base documentaire.
+
+Exemple : soit un compte-rendu radiologique évoquant une 
+
+fracture du fémur
+
+ ; grâce au 
+
+réseau JeuxDeMots
+
+http://www.jeuxdemots.org/rezo.php
+
+ on a énormément d'informations sur les termes 
+
+fracture
+
+ et 
+
+fémur
+
+. On trouve notamment que 
+
+fracture
+
+ est associé à 
+
+blessure
+
+ par une relation de 
+
+synonymie
+
+, à 
+
+lésion
+
+ par relation 
+
+générique
+
+, que 
+
+fémur
+
+ est un 
+
+os
+
+ (relation 
+
+générique
+
+) et qu'il fait partie de la jambe (relation 
+
+est une partie de
+
+). On pourra donc retrouver le compte-rendu évoquant une 
+
+fracture du fémur
+
+ en tapant 
+
+lésion d'un os de la jambe
+
+, ou même 
+
+lésion à la jambe
+
+ tout court, ou encore 
+
+blessure à la jambe
+
+.
+
+Un autre projet étudie via l'interface du jeu la manière de mettre en correspondance offre et demande en matière de logement dans le cadre du tourisme. La structure interne du réseau est également l'objet de recherches visant à améliorer techniquement la génération automatique de relations, et l' 
+
+interface jeu
+
+ proprement dite est améliorée en permanence dans le double but d'accroître son efficacité et la 
+
+diversité
+
+ des 
+
+relations
+
+ générées, et de développer le 
+
+côté ludique
+
+ pour attirer et fidéliser plus de joueurs.
+
+En bref, le 
+
+réseau JeuxDeMots
+
+http://www.jeuxdemots.org/rezo.php
+
+, grâce à son 
+
+ampleur
+
+, sa 
+
+richesse
+
+ et sa 
+
+diversité
+
+ est particulièrement adapté et performant dès qu'il s'agit de 
+
+traiter du texte
+
+ dans l'optique d'une analyse fine du contenu.
+
+Références 
+
+(retour sommaire)
+
+https://imaginat.name/infosJDM.html#entete
+
+[1]
+
+http://iste-editions.fr/collections/science-cognitive-et-management-des-connaissances/products/jeux-et-intelligence-collective
+
+ M. Lafourcade, N. Le Brun, A. Joubert (2015) Jeux et intelligence collective - résolution de problèmes et acquisition de données sur le Web. Collection Science cognitive et management des connaissances (sous la direction de Joseph Mariani et Patrick Paroubek), ISTE éditions, 2015, 156 p. (ISBN: 978-1-78405-052-8 (print) ISBN: 978-1-78406-052-7 (e-book)).
+
+[2]
+
+http://www.lirmm.fr/~lafourcade/ML-biblio/06lafourcade.pdf
+
+ M. Lafourcade, A. Joubert (2013) Bénéfices et limites de l'acquisition lexicale dans l'expérience JeuxDeMots. In: Gala, Núria et Michael Zock (dir.), Ressources Lexicales: Contenu, construction, utilisation, évaluation. 2013. Linguisticae Investigationes, Supplementa 30, John Benjamins, 364 pp. (pp. 187–216)
+
+[3]
+
+http://www.lrec-conf.org/proceedings/lrec2012/pdf/167_Paper.pdf
+
+ A. Joubert, M. Lafourcade (2012)A new dynamic approach for lexical networks evaluation. In proc of the Eight International Conference on Language Resources and Evaluation (LREC'12), Istanbul, Turkey, 23-25h May 2012.
+
+[4]
+
+http://hal.archives-ouvertes.fr/docs/00/96/91/61/PDF/Sexit.pdf
+
+ M. Lafourcade, K. Fort (2014) Propa-L: a semantic filtering service from a lexical network created using Games With A Purpose. In proc of the Ninth International Conference on Language Resources and Evaluation (LREC), Reykjavik, Islande, 26-31 May 2014.
+
+[5]
+
+http://www.lirmm.fr/~lafourcade/ML-biblio/NLDB2014/NLDB-couleurs-v26MLNLBVZ-NLDB-vf2-long.pdf
+
+ M. Lafourcade, N. Le Brun and V. Zampa (2014) Crowdsourcing word-color associations. 19th International Conference on Application of Natural Language to Information Systems (NLDB 2014), 18-20 June 2014 - Montpellier, France, 6 p.
+
+[6]
+
+http://www.lirmm.fr/~lafourcade/ML-biblio/DIVERGENCE/dn103_110331_divergencenumerique_jeuxdemots.mp3
+
+ émission radio M. Lafourcade, Gilles Gouget, Pascal Rullier (2011) Revue de presse et jeux de mots libres. Emission de radio - Divergence Numérique (sur Divergence FM) - à propos de JeuxDeMots et des données libres, jeudi 31 mars 2011, 61 min. (site / mp3)
+
+[7]
+
+http://www2.lirmm.fr/~mzarrouk/publications/cicling14.pdf
+
+ L. Ramadier, M. Zarouk, M. Lafourcade, A. Micheau (2014) Spreading Relation Annotations in a Lexical Semantic Network Applied to Radiology. In proc of 15th International Conference on Intelligent Text Processing and Computational Linguistics (CICLING 2014), Kathmandu, Nepal, April 6–12, 2014.

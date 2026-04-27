@@ -1,0 +1,1465 @@
+A propos de JeuxDeMots
+
+Javascript doit fonctionner ! Activez-le et rechargez cette page.
+
+ 
+
+le jeu des mots à collectionner
+
+https://www.jeuxdemots.org/jdm-accueil.php
+
+⌂
+
+https://www.jeuxdemots.org/jdm-accueil.php
+
+Classement
+
+https://www.jeuxdemots.org/generateRanking-4.php
+
+Evénements
+
+https://www.jeuxdemots.org/generateEvents.php
+
+Souk
+
+https://www.jeuxdemots.org/souk.php
+
+BàM
+
+https://www.jeuxdemots.org/jdm-mylittlemuseum.php?owner=0
+
+Portail
+
+http://imaginat.name/JDM/Page_Liens_JDMv2.html
+
+Diko
+
+https://www.jeuxdemots.org/diko.php
+
+Discord
+
+https://discord.gg/Z8TFs3qKE8
+
+Options
+
+https://www.jeuxdemots.org/jdm-options.php
+
+ 
+
+ 
+
+A propos de JeuxDeMots 
+
+Quoi ?
+
+JeuxDeMots est un jeu dont le but est de collectionner des termes. Ceux-ci peuvent être gagnés en réalisant des scores importants, ou par d'autres moyens laissés à la découverte du joueur. Ce jeu s'adresse aux amoureux de la langue et du vocabulaire, qu'il soit général ou de spécialité. Avant de jouer, il est nécessaire de lire 
+
+la charte de JeuxDeMots
+
+https://www.jeuxdemots.org/CHARTE-FR.php
+
+.
+
+JeuxDeMots (c) - version 4.9.7
+
+dernière modification le 05/01/2026 à 10:05:12.
+
+Mathieu Lafourcade - LIRMM, juillet 2007- 2050
+
+mathieu.lafourcade@lirmm.fr - mathieu.lafourcade@gmail.com
+
+http://www.lirmm.fr/~lafourcade 
+
+ 
+
+Pourquoi le projet JeuxDeMots ?
+
+http://imaginat.name/infosJDM.html
+
+• 
+
+Publications scientifiques de l'auteur
+
+http://www.lirmm.fr/~lafourcade/ML-biblio/lafourcade-publications.html
+
+Aide du jeu
+
+https://www.jeuxdemots.org/HELP-FR.php
+
+• 
+
+Pour bien jouer à JDM
+
+http://imaginat.name/JDM/AideJDMv1web.pdf
+
+• 
+
+Le Portail de JeuxDeMots
+
+http://imaginat.name/JDM/Page_Liens_JDMv3.html
+
+Comment bien contribuer à JeuxDeMots ?
+
+http://imaginat.name/JDM/Guide_contributionV1.0.pdf
+
+Discord
+
+https://discord.gg/Z8TFs3qKE8
+
+• 
+
+Forum
+
+http://jeuxdemots.forumactif.com/
+
+ 
+
+ 
+
+Contenu et abonnement
+
+[Signaler](mailto:mathieu.lafourcade@gmail.com?subject=JeuxDeMots inappropriate contents) contenu inapproprié ou un bug.
+
+Vous pouvez à tout moment vous désabonner de la liste de diffusion de JeuxDeMots via le menu "Options". Pour supprimer votre compte, envoyez un mail [à mathieu.lafourcade 'at' lirmm.fr/gmail.com](mailto:mathieu.lafourcade@gmail.com?subject=JeuxDeMots demande de désabonnement) en précisant votre identifiant (utilisez de préférence votre adresse d'enregistrement à JeuxDeMots).
+
+Données du Réseau lexical
+
+Le projet JeuxDeMots (JDM) vise à construire un réseau lexical et sémantique du Français (rezoJDM). Une telle base de connaissances est utile pour de nombreuses applications, dont l'analyse sémantique de textes, la recherche d'informations, la traduction automatique, ...
+
+Les données collectées par JeuxDeMots sont librement accessibles sous la licence C0 Domaine Public (attention les fichiers sont gros !).
+
+Remarque : le code source du projet n'est pas disponible. Sa divulgation pourrait avoir pour conséquence la corruption des données par les joueurs et favoriser la tricherie.
+
+Derniers fichiers disponibles
+
+•
+
+Fichier README : 
+
+JEUXDEMOTS-README.txt
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/JEUXDEMOTS-README.txt
+
+ (31.42 ko)
+
+•
+
+Dernier dump complet : 
+
+20260103-LEXICALNET-JEUXDEMOTS-FR.txt.zip
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20260103-LEXICALNET-JEUXDEMOTS-FR.txt.zip
+
+ (7.32 Go) - utiliser powershell 'Expand-Archive 
+
+monzip.zip
+
+' pour dézipper sous windows
+
+•
+
+Fichier de définitions : 
+
+20260307-JEUXDEMOTS-DEFS.txt
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20260307-JEUXDEMOTS-DEFS.txt
+
+ (596 o)
+
+•
+
+Fichier de tous les termes : 
+
+20260307-LEXICALNET-JEUXDEMOTS-ENTRIES.txt
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20260307-LEXICALNET-JEUXDEMOTS-ENTRIES.txt
+
+ (4.58 Mo)
+
+•
+
+Fichier de tous les termes (anglais compris): 
+
+20231111-LEXICALNET-JEUXDEMOTS-ENTRIES+ENG.txt
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20231111-LEXICALNET-JEUXDEMOTS-ENTRIES+ENG.txt
+
+ (268.23 Mo)
+
+•
+
+Fichier des termes multi-mots (MWE) : 
+
+20240924-LEXICALNET-JEUXDEMOTS-ENTRIES-MWE.txt
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20240924-LEXICALNET-JEUXDEMOTS-ENTRIES-MWE.txt
+
+ (416.19 Mo)
+
+•
+
+Fichier des termes multi-mots (MWE) (anglais compris) : 
+
+20231111-LEXICALNET-JEUXDEMOTS-ENTRIES-MWE+ENG.txt
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20231111-LEXICALNET-JEUXDEMOTS-ENTRIES-MWE+ENG.txt
+
+ (219.24 Mo)
+
+Derniers fichiers disponibles par type de relation (63 fichiers)
+
+• r_associated (0) - no file
+
+• 
+
+r_raff_sem
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20260104-LEXICALNET-JEUXDEMOTS-R1.txt.zip
+
+ (1) - 04 Jan 2026 - 1.93 Mo
+
+• 
+
+r_raff_morpho
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20241012-LEXICALNET-JEUXDEMOTS-R2.txt.zip
+
+ (2) - 12 Oct 2024 - 847.1 ko
+
+• 
+
+r_domain
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20260104-LEXICALNET-JEUXDEMOTS-R3.txt.zip
+
+ (3) - 04 Jan 2026 - 27.02 Mo
+
+• r_pos (4) - no file
+
+• 
+
+r_syn
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20260310-LEXICALNET-JEUXDEMOTS-R5.txt.zip
+
+ (5) - 11 Mar 2026 - 36.45 Mo
+
+• 
+
+r_isa
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20260311-LEXICALNET-JEUXDEMOTS-R6.txt.zip
+
+ (6) - 12 Mar 2026 - 382.19 Mo
+
+• 
+
+r_anto
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20260105-LEXICALNET-JEUXDEMOTS-R7.txt.zip
+
+ (7) - 05 Jan 2026 - 1.22 Mo
+
+• 
+
+r_hypo
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20241215-LEXICALNET-JEUXDEMOTS-R8.txt.zip
+
+ (8) - 15 Dec 2024 - 146.9 Mo
+
+• 
+
+r_holo
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20241011-LEXICALNET-JEUXDEMOTS-R10.txt.zip
+
+ (10) - 12 Oct 2024 - 116.3 Mo
+
+• 
+
+r_locution
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20241215-LEXICALNET-JEUXDEMOTS-R11.txt.zip
+
+ (11) - 15 Dec 2024 - 62.92 Mo
+
+• 
+
+r_agent
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20260105-LEXICALNET-JEUXDEMOTS-R13.txt.zip
+
+ (13) - 05 Jan 2026 - 44.42 Mo
+
+• 
+
+r_patient
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20260105-LEXICALNET-JEUXDEMOTS-R14.txt.zip
+
+ (14) - 05 Jan 2026 - 2.91 Mo
+
+• 
+
+r_lieu
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20260105-LEXICALNET-JEUXDEMOTS-R15.txt.zip
+
+ (15) - 05 Jan 2026 - 14.72 Mo
+
+• 
+
+r_carac
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20241010-LEXICALNET-JEUXDEMOTS-R17.txt.zip
+
+ (17) - 10 Oct 2024 - 13.64 Mo
+
+• 
+
+r_lemma
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20240624-LEXICALNET-JEUXDEMOTS-R19.txt.zip
+
+ (19) - 24 Jun 2024 - 16.59 Mo
+
+• 
+
+r_carac-1
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20241215-LEXICALNET-JEUXDEMOTS-R23.txt.zip
+
+ (23) - 15 Dec 2024 - 17.23 Mo
+
+• 
+
+r_agent-1
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20260104-LEXICALNET-JEUXDEMOTS-R24.txt.zip
+
+ (24) - 04 Jan 2026 - 42.15 Mo
+
+• 
+
+r_instr-1
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20241215-LEXICALNET-JEUXDEMOTS-R25.txt.zip
+
+ (25) - 15 Dec 2024 - 722.78 ko
+
+• 
+
+r_lieu-1
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20241012-LEXICALNET-JEUXDEMOTS-R28.txt.zip
+
+ (28) - 12 Oct 2024 - 12.28 Mo
+
+• 
+
+r_sentiment
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20240624-LEXICALNET-JEUXDEMOTS-R32.txt.zip
+
+ (32) - 24 Jun 2024 - 6.32 Mo
+
+• r_infopot (36) - no file
+
+• 
+
+r_telic_role
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20260104-LEXICALNET-JEUXDEMOTS-R37.txt.zip
+
+ (37) - 04 Jan 2026- 627 o
+
+• 
+
+r_has_conseq
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20260104-LEXICALNET-JEUXDEMOTS-R41.txt.zip
+
+ (41) - 04 Jan 2026 - 3.29 Mo
+
+• 
+
+r_has_causatif
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20241010-LEXICALNET-JEUXDEMOTS-R42.txt.zip
+
+ (42) - 10 Oct 2024 - 2.28 Mo
+
+• 
+
+r_time
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20260106-LEXICALNET-JEUXDEMOTS-R49.txt.zip
+
+ (49) - 06 Jan 2026 - 1.24 Mo
+
+• 
+
+r_object>mater
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20241104-LEXICALNET-JEUXDEMOTS-R50.txt.zip
+
+ (50) - 04 Nov 2024 - 329.61 ko
+
+• 
+
+r_against
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20240205-LEXICALNET-JEUXDEMOTS-R55.txt.zip
+
+ (55) - 05 Feb 2024 - 291.58 ko
+
+• 
+
+r_implication
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20241104-LEXICALNET-JEUXDEMOTS-R57.txt.zip
+
+ (57) - 04 Nov 2024 - 22.47 ko
+
+• 
+
+r_quantificateur
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20240822-LEXICALNET-JEUXDEMOTS-R58.txt.zip
+
+ (58) - 22 Aug 2024 - 14.26 ko
+
+• 
+
+r_fem
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20241012-LEXICALNET-JEUXDEMOTS-R60.txt.zip
+
+ (60) - 12 Oct 2024 - 132.76 ko
+
+• 
+
+r_equiv
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20260104-LEXICALNET-JEUXDEMOTS-R61.txt.zip
+
+ (61) - 04 Jan 2026 - 120.75 ko
+
+• 
+
+r_similar
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20260105-LEXICALNET-JEUXDEMOTS-R67.txt.zip
+
+ (67) - 05 Jan 2026 - 26.46 ko
+
+• 
+
+r_item>set
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20260104-LEXICALNET-JEUXDEMOTS-R69.txt.zip
+
+ (69) - 04 Jan 2026 - 6.67 ko
+
+• 
+
+r_processus>agent
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20241013-LEXICALNET-JEUXDEMOTS-R70.txt.zip
+
+ (70) - 13 Oct 2024 - 32.66 ko
+
+• 
+
+r_variante
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20241012-LEXICALNET-JEUXDEMOTS-R71.txt.zip
+
+ (71) - 12 Oct 2024 - 5.38 Mo
+
+• 
+
+r_syn_strict
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20250626-LEXICALNET-JEUXDEMOTS-R72.txt.zip
+
+ (72) - 26 Jun 2025 - 600.04 ko
+
+• 
+
+r_is_smaller_than
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20240205-LEXICALNET-JEUXDEMOTS-R73.txt.zip
+
+ (73) - 05 Feb 2024 - 22.45 ko
+
+• 
+
+r_processus>instr
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20241215-LEXICALNET-JEUXDEMOTS-R80.txt.zip
+
+ (80) - 15 Dec 2024 - 648.94 ko
+
+• 
+
+r_has_euphemisme
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20241013-LEXICALNET-JEUXDEMOTS-R84.txt.zip
+
+ (84) - 13 Oct 2024 - 54.27 ko
+
+• 
+
+r_der_morpho
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20240211-LEXICALNET-JEUXDEMOTS-R99.txt.zip
+
+ (99) - 11 Feb 2024 - 1.41 Mo
+
+• 
+
+r_can_eat
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20260310-LEXICALNET-JEUXDEMOTS-R102.txt.zip
+
+ (102) - 10 Mar 2026 - 184.09 ko
+
+• 
+
+r_has_color
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20241104-LEXICALNET-JEUXDEMOTS-R106.txt.zip
+
+ (106) - 04 Nov 2024 - 292.35 ko
+
+• 
+
+r_has_cible
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20260310-LEXICALNET-JEUXDEMOTS-R107.txt.zip
+
+ (107) - 10 Mar 2026 - 688.56 ko
+
+• 
+
+r_has_symptomes
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20241013-LEXICALNET-JEUXDEMOTS-R108.txt.zip
+
+ (108) - 13 Oct 2024 - 199.23 ko
+
+• 
+
+r_has_diagnostic
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20260104-LEXICALNET-JEUXDEMOTS-R110.txt.zip
+
+ (110) - 04 Jan 2026 - 72.98 ko
+
+• 
+
+r_has_predecesseur-space
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20241012-LEXICALNET-JEUXDEMOTS-R111.txt.zip
+
+ (111) - 12 Oct 2024 - 6.05 ko
+
+• 
+
+r_has_successeur-space
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20260106-LEXICALNET-JEUXDEMOTS-R112.txt.zip
+
+ (112) - 06 Jan 2026 - 6.44 ko
+
+• 
+
+r_but
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20241012-LEXICALNET-JEUXDEMOTS-R119.txt.zip
+
+ (119) - 12 Oct 2024 - 59.64 ko
+
+• 
+
+r_own
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20241012-LEXICALNET-JEUXDEMOTS-R121.txt.zip
+
+ (121) - 12 Oct 2024 - 42.88 ko
+
+• 
+
+r_own-1
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20241012-LEXICALNET-JEUXDEMOTS-R122.txt.zip
+
+ (122) - 12 Oct 2024 - 33.5 ko
+
+• 
+
+r_incompatible
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20241012-LEXICALNET-JEUXDEMOTS-R127.txt.zip
+
+ (127) - 12 Oct 2024 - 18.45 ko
+
+• r_node2relnode-in (128) - no file
+
+• 
+
+r_require
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20241014-LEXICALNET-JEUXDEMOTS-R129.txt.zip
+
+ (129) - 14 Oct 2024 - 21.21 ko
+
+• 
+
+r_promote
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20260105-LEXICALNET-JEUXDEMOTS-R134.txt.zip
+
+ (134) - 05 Jan 2026 - 165.06 ko
+
+• 
+
+r_can_become
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20251231-LEXICALNET-JEUXDEMOTS-R147.txt.zip
+
+ (147) - 31 Dec 2025 - 20.03 ko
+
+• 
+
+r_pourvoyeur
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20260105-LEXICALNET-JEUXDEMOTS-R148.txt.zip
+
+ (148) - 05 Jan 2026 - 2.3 ko
+
+• 
+
+r_has_beneficiaire
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20241012-LEXICALNET-JEUXDEMOTS-R150.txt.zip
+
+ (150) - 12 Oct 2024 - 21.93 ko
+
+• 
+
+r_descend_de
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20241215-LEXICALNET-JEUXDEMOTS-R151.txt.zip
+
+ (151) - 15 Dec 2024- 949 o
+
+• 
+
+r_nom>adj
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20241012-LEXICALNET-JEUXDEMOTS-R165.txt.zip
+
+ (165) - 12 Oct 2024 - 8.09 ko
+
+• 
+
+r_sing_form
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20241012-LEXICALNET-JEUXDEMOTS-R170.txt.zip
+
+ (170) - 12 Oct 2024 - 384.45 ko
+
+• 
+
+r_pos_seq
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20260105-LEXICALNET-JEUXDEMOTS-R222.txt.zip
+
+ (222) - 05 Jan 2026 - 2.47 ko
+
+• 
+
+r_translation
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/20241012-LEXICALNET-JEUXDEMOTS-R333.txt.zip
+
+ (333) - 12 Oct 2024 - 8.21 Mo
+
+Vous ne trouvez pas le fichier de relations de vos rêves ? Je peux le produire pour vous, envoyez un mail [à mathieu.lafourcade 'at' lirmm.fr/gmail.com](mailto:mathieu.lafourcade@gmail.com?subject=JeuxDeMots demande de fichier de sortir avec une relation spécifique) en indiquant la relation que vous souhaitez.
+
+Autres fichiers disponibles
+
+•
+
+Fichier de Polarités (LikeIt) : 
+
+20231229-POLARITY-JEUXDEMOTS-FR.txt
+
+https://www.jeuxdemots.org/JDM-POLA-FR/20231229-POLARITY-JEUXDEMOTS-FR.txt
+
+ (44.06 Mo)
+
+Les répertoires complets
+
+•
+
+nouveau 
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/
+
+https://www.jeuxdemots.org/JDM-LEXICALNET-FR/?C=M;O=D
+
+•
+
+ancien - contient des états anciens du réseau lexical 
+
+https://www.lirmm.fr/~lafourcade/JDM-LEXICALNET-FR/
+
+https://www.lirmm.fr/~lafourcade/JDM-LEXICALNET-FR/?C=M;O=D
+
+Accès interactifs au réseau lexical de JeuxDeMots
+
+•
+
+REZO-DUMP
+
+https://www.jeuxdemots.org/rezo-dump.php
+
+ (bas niveau - rapide et compact - 
+
+à privilégier
+
+) • 
+
+DIKO
+
+https://www.jeuxdemots.org/diko.php
+
+ (haut niveau - non décodable) • 
+
+REZO
+
+https://www.jeuxdemots.org/rezo.php
+
+ (niveau intermédiaire - peu décodable) • 
+
+REZO-XML
+
+https://www.jeuxdemots.org/rezo-xml.php
+
+ (format xml - lent et volumineux - à éviter) • 
+
+REZO-square
+
+https://www.jeuxdemots.org/rezo-sq.php
+
+ (comparaison matricielle - peu décodable).
+
+•
+
+REZO-ASK
+
+https://www.jeuxdemots.org/rezo-ask.php
+
+ (bas niveau - avec inférence - 
+
+pour test uniquement
+
+)
+
+•
+
+API jeuxDeMots
+
+ ici : 
+
+https://jdm-api.demo.lirmm.fr/schema
+
+https://jdm-api.demo.lirmm.fr/schema
+
+•
+
+RequeterRezo (JAVA) : 
+
+https://gite.lirmm.fr/benoits/requeterrezo
+
+https://gite.lirmm.fr/benoits/requeterrezo
+
+ pour récupérer dynamiquement les entrées une par une si vous n'aimez pas le dump (contient : le jar, la documentation, un fichier exemple ainsi que les sources du projet) - dernière version : octobre 2019.
+
+•
+
+autres liens 
+
+https://gite.lirmm.fr/texte/jdm/JDMImport
+
+https://gite.lirmm.fr/texte/jdm/JDMImport
+
+ 
+
+-
+
+https://www.jeuxdemots.org/jdm-about.php
+
+ 
+
+https://gite.lirmm.fr/texte/jdm/dump_utils
+
+https://gite.lirmm.fr/texte/jdm/dump_utils
+
+Statistiques
+
+Informations sur l'état du jeu
+
+Il y a 277995 parties en attente. 1627649 parties ont été jouées depuis le début. Environ 27127h 29min 00s (1130 jours) de temps cumulé de jeu. 472910 jetons en jeu.
+
+Informations sur l'état du réseau lexical (pour les initiés)
+
+16160044 termes et 328139 formes fléchies sont présents dans le réseau. Distributions des 43778092 noeuds du réseau :
+
+| 1 n_default (0) - 0 % | 14 925 357 n_term (1) - 34.093 % | 328 139 n_form (2) - 0.75 % |
+
+ 
+
+| --- | --- | --- | --- |
+
+ 
+
+| 243 n_pos (4) - 0.001 % | 1 001 n_concept (5) - 0.002 % | 128 n_flpot (6) - 0 % |
+
+ 
+
+| 145 751 n_chunk (8) - 0.333 % | 4 720 n_question (9) - 0.011 % | 23 566 601 n_relation (10) - 53.832 % |
+
+ 
+
+| 2 754 n_rule (11) - 0.006 % | 28 203 n_analogy (12) - 0.064 % | 1 n_commands (13) - 0 % | 10 n_synt_function (14) - 0 % |
+
+ 
+
+| 314 n_relation_name (15) - 0.001 % | 80 n_data (18) - 0 % | 115 n_data_pot (36) - 0 % | 1 n_various (100) - 0 % |
+
+ 
+
+| 1 097 781 n_context (200) - 2.508 % | 43 n_pos_seq (222) - 0 % | 2 570 492 n_link (444) - 5.872 % | 1 886 n_AKI (666) - 0.004 % |
+
+ 
+
+| 1 104 470 n_wikipedia (777) - 2.523 % | 2 n_group (1002) - 0 % |
+
+94 770 termes sont raffinés en 195 526 usages. Au total, 208 918 termes sont étiquetés comme polysémiques (couverture de raffinement de 45%).
+
+111 269 628 relations inhibitrices (négatives ou nulles).
+
+Distributions des 1 089 466 271 relations du réseau :
+
+363 604 743 r_associated (0) - 33.375 %
+
+195 526 r_raff_sem (1) - 0.018 %
+
+139 102 r_raff_morpho (2) - 0.013 %
+
+5 989 054 r_domain (3) - 0.55 %
+
+62 584 865 r_pos (4) - 5.745 %
+
+12 658 570 r_syn (5) - 1.162 %
+
+57 285 308 r_isa (6) - 5.258 %
+
+257 284 r_anto (7) - 0.024 %
+
+40 155 986 r_hypo (8) - 3.686 %
+
+24 918 802 r_has_part (9) - 2.287 %
+
+27 970 421 r_holo (10) - 2.567 %
+
+7 488 686 r_locution (11) - 0.687 %
+
+553 116 r_flpot (12) - 0.051 %
+
+7 636 074 r_agent (13) - 0.701 %
+
+654 411 r_patient (14) - 0.06 %
+
+2 631 556 r_lieu (15) - 0.242 %
+
+172 948 r_instr (16) - 0.016 %
+
+6 265 046 r_carac (17) - 0.575 %
+
+11 548 036 r_data (18) - 1.06 %
+
+4 972 327 r_lemma (19) - 0.456 %
+
+90 985 r_has_magn (20) - 0.008 %
+
+93 154 r_has_antimagn (21) - 0.009 %
+
+19 688 r_family (22) - 0.002 %
+
+5 462 578 r_carac-1 (23) - 0.501 %
+
+7 277 468 r_agent-1 (24) - 0.668 %
+
+187 565 r_instr-1 (25) - 0.017 %
+
+691 302 r_patient-1 (26) - 0.063 %
+
+6 431 433 r_domain-1 (27) - 0.59 %
+
+2 878 273 r_lieu-1 (28) - 0.264 %
+
+72 874 r_chunk_pred (29) - 0.007 %
+
+295 836 r_lieu_action (30) - 0.027 %
+
+293 400 r_action_lieu (31) - 0.027 %
+
+2 369 759 r_sentiment (32) - 0.218 %
+
+1 280 r_error (33) - 0 %
+
+154 110 r_manner (34) - 0.014 %
+
+430 053 r_meaning/glose (35) - 0.039 %
+
+28 086 793 r_infopot (36) - 2.578 %
+
+31 784 r_telic_role (37) - 0.003 %
+
+23 671 r_agentif_role (38) - 0.002 %
+
+10 635 r_verbe-action (39) - 0.001 %
+
+10 466 r_action-verbe (40) - 0.001 %
+
+1 008 766 r_has_conseq (41) - 0.093 %
+
+984 244 r_has_causatif (42) - 0.09 %
+
+1 386 r_adj-verbe (43) - 0 %
+
+1 466 r_verbe-adj (44) - 0 %
+
+6 370 r_chunk_sujet (45) - 0.001 %
+
+6 839 r_chunk_objet (46) - 0.001 %
+
+0 r_chunk_loc (47) - 0 %
+
+1 725 r_chunk_instr (48) - 0 %
+
+171 899 r_time (49) - 0.016 %
+
+99 624 r_object>mater (50) - 0.009 %
+
+81 105 r_mater>object (51) - 0.007 %
+
+64 753 r_has_successeur-time (52) - 0.006 %
+
+173 309 r_make (53) - 0.016 %
+
+144 467 r_product_of (54) - 0.013 %
+
+169 080 r_against (55) - 0.016 %
+
+153 134 r_against-1 (56) - 0.014 %
+
+151 490 r_implication (57) - 0.014 %
+
+2 960 r_quantificateur (58) - 0 %
+
+17 968 r_masc (59) - 0.002 %
+
+18 143 r_fem (60) - 0.002 %
+
+13 691 r_equiv (61) - 0.001 %
+
+232 245 r_manner-1 (62) - 0.021 %
+
+1 920 r_agentive_implication (63) - 0 %
+
+23 927 181 r_has_instance (64) - 2.196 %
+
+211 r_verb_real (65) - 0 %
+
+101 969 r_chunk_head (66) - 0.009 %
+
+4 116 r_similar (67) - 0 %
+
+2 064 r_set>item (68) - 0 %
+
+1 257 r_item>set (69) - 0 %
+
+12 127 r_processus>agent (70) - 0.001 %
+
+1 151 927 r_variante (71) - 0.106 %
+
+173 203 r_syn_strict (72) - 0.016 %
+
+10 874 r_is_smaller_than (73) - 0.001 %
+
+11 182 r_is_bigger_than (74) - 0.001 %
+
+36 159 r_accomp (75) - 0.003 %
+
+1 504 r_processus>patient (76) - 0 %
+
+28 720 r_verb_ppas (77) - 0.003 %
+
+1 830 r_cohypo (78) - 0 %
+
+19 743 r_verb_ppre (79) - 0.002 %
+
+95 524 r_processus>instr (80) - 0.009 %
+
+70 r_pref_form (81) - 0 %
+
+31 410 r_interact_with (82) - 0.003 %
+
+29 r_alias (83) - 0 %
+
+22 228 r_has_euphemisme (84) - 0.002 %
+
+252 202 r_der_morpho (99) - 0.023 %
+
+32 957 r_has_auteur (100) - 0.003 %
+
+1 323 r_has_personnage (101) - 0 %
+
+22 007 r_can_eat (102) - 0.002 %
+
+121 897 r_has_actors (103) - 0.011 %
+
+235 r_deplac_mode (104) - 0 %
+
+95 r_has_interpret (105) - 0 %
+
+71 750 r_has_color (106) - 0.007 %
+
+69 393 r_has_cible (107) - 0.006 %
+
+80 136 r_has_symptomes (108) - 0.007 %
+
+80 258 r_has_predecesseur-time (109) - 0.007 %
+
+13 958 r_has_diagnostic (110) - 0.001 %
+
+1 883 r_has_predecesseur-space (111) - 0 %
+
+2 151 r_has_successeur-space (112) - 0 %
+
+157 r_has_social_tie_with (113) - 0 %
+
+188 r_tributary (114) - 0 %
+
+1 793 852 r_sentiment-1 (115) - 0.165 %
+
+132 r_linked-with (116) - 0 %
+
+331 r_foncteur (117) - 0 %
+
+2 r_comparison (118) - 0 %
+
+59 602 r_but (119) - 0.005 %
+
+39 138 r_but-1 (120) - 0.004 %
+
+13 327 r_own (121) - 0.001 %
+
+33 348 r_own-1 (122) - 0.003 %
+
+39 r_verb_aux (123) - 0 %
+
+96 r_has_predecesseur-logic (124) - 0 %
+
+853 r_has_successeur-logic (125) - 0 %
+
+747 r_isa-incompatible (126) - 0 %
+
+15 698 r_incompatible (127) - 0.001 %
+
+23 566 166 r_node2relnode-in (128) - 2.163 %
+
+35 012 r_require (129) - 0.003 %
+
+6 994 644 r_is_instance_of (130) - 0.642 %
+
+2 657 r_is_concerned_by (131) - 0 %
+
+69 883 r_symptomes-1 (132) - 0.006 %
+
+70 449 r_units (133) - 0.006 %
+
+34 008 r_promote (134) - 0.003 %
+
+3 404 r_has_circumstances (135) - 0 %
+
+30 862 r_has_auteur-1 (136) - 0.003 %
+
+30 400 r_processus>agent-1 (137) - 0.003 %
+
+20 527 r_processus>patient-1 (138) - 0.002 %
+
+142 956 r_processus>instr-1 (139) - 0.013 %
+
+23 627 650 r_node2relnode-out (140) - 2.169 %
+
+357 r_carac_nominale (141) - 0 %
+
+172 r_has_topic (142) - 0 %
+
+281 r_can_measure (143) - 0 %
+
+5 275 r_can_eat-1 (145) - 0 %
+
+2 349 r_can_become (147) - 0 %
+
+205 r_pourvoyeur (148) - 0 %
+
+164 r_compl_agent (149) - 0 %
+
+4 988 r_has_beneficiaire (150) - 0 %
+
+259 r_descend_de (151) - 0 %
+
+1 066 r_domain_subst (152) - 0 %
+
+16 970 r_has_prop (153) - 0.002 %
+
+10 r_activ_voice (154) - 0 %
+
+62 309 r_make_use_of (155) - 0.006 %
+
+46 268 r_is_used_by (156) - 0.004 %
+
+68 r_adj-nomprop (157) - 0 %
+
+57 r_nomprop-adj (158) - 0 %
+
+144 r_adj-adv (159) - 0 %
+
+134 r_adv-adj (160) - 0 %
+
+8 576 r_homophone (161) - 0.001 %
+
+8 r_potential_confusion_with (162) - 0 %
+
+27 202 r_concerning (163) - 0.002 %
+
+1 131 r_adj>nom (164) - 0 %
+
+1 453 r_nom>adj (165) - 0 %
+
+0 r_opinion_of (166) - 0 %
+
+1 r_has_value (167) - 0 %
+
+3 r_has_value> (168) - 0 %
+
+2 r_has_value< (169) - 0 %
+
+63 149 r_sing_form (170) - 0.006 %
+
+1 043 r_lieu>origine (171) - 0 %
+
+2 287 r_depict (172) - 0 %
+
+13 217 r_has_prop-1 (173) - 0.001 %
+
+2 394 r_quantificateur-1 (174) - 0 %
+
+7 835 r_promote-1 (175) - 0.001 %
+
+152 602 233 r_context (200) - 14.007 %
+
+261 r_pos_seq (222) - 0 %
+
+1 661 474 r_translation (333) - 0.153 %
+
+4 749 728 r_link (444) - 0.436 %
+
+0 r_cooccurrence (555) - 0 %
+
+27 709 099 r_aki (666) - 2.543 %
+
+86 615 513 r_wiki (777) - 7.95 %
+
+0 r_annotation_context (996) - 0 %
+
+8 r_annotation_exception (997) - 0 %
+
+34 512 864 r_annotation (998) - 3.168 %
+
+2 103 702 r_inhib (999) - 0.193 %
+
+0 r_prev (1000) - 0 %
+
+0 r_succ (1001) - 0 %
+
+1 802 r_termgroup (1002) - 0 %
+
+172 100 r_raff_sem-1 (2000) - 0.016 %
+
+11 r_learning_model (2001) - 0 %
+
+Détail des relations
+
+https://www.jeuxdemots.org/jdm-about-detail-relations.php
+
+Dernière mise à jour : March 9, 2026, 10:43 am
+
+Définitions des relations en markdown (sous-ensemble sémantique)
+
+https://www.jeuxdemots.org/relation_definitions.md
+
+Portail
+
+•
+
+Totaki
+
+https://www.jeuxdemots.org/AKI2.php?thema=-1
+
+• 
+
+TierXical
+
+https://www.jeuxdemots.org/tierce/index.php
+
+• 
+
+SexIt
+
+https://www.jeuxdemots.org/sexit.php
+
+• 
+
+PolitIt
+
+https://www.jeuxdemots.org/politit.php?node1=77853&pass=1
+
+• 
+
+LikeIt
+
+https://www.jeuxdemots.org/likeit.php?c=-1
+
+• 
+
+Emot
+
+https://www.jeuxdemots.org/emot.php
+
+• 
+
+ColorIt
+
+https://www.jeuxdemots.org/colorit.php?thema=-1
+
+• 
+
+AskIt
+
+https://www.jeuxdemots.org/askit.php
+
+• 
+
+Selemot
+
+https://www.jeuxdemots.org/permot.php
+
+• 
+
+Top10
+
+https://www.jeuxdemots.org/top10.php
+
+• 
+
+YaKaDiRou
+
+https://www.jeuxdemots.org/yakadirou.php
+
+• 
+
+Semintox
+
+https://www.jeuxdemots.org/intern_interpretor.php?semintox=1
+
+• 
+
+Quicky Goose
+
+https://www.jeuxdemots.org/quicky.php
+
+•
+
+•
+
+AskYou
+
+https://www.jeuxdemots.org/askyou.php?thema=-1
+
+• 
+
+Dicasso
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=JeuxDeMots&maj=1&raf=1&eng=1&LongTr=1
+
+• 
+
+Diko
+
+https://www.jeuxdemots.org/diko.php
+
+• 
+
+Hélix
+
+https://www.jeuxdemots.org/rezo-ask.php?text=1
+
+• 
+
+Rezo
+
+https://www.jeuxdemots.org/rezo.php
+
+• 
+
+GouD
+
+https://www.jeuxdemots.org/intern_interpretor.php?goud=1
+
+•
+
+•
+
+Une liste de listes
+
+https://www.jeuxdemots.org/lists/
+
+•
+
+•
+
+rezo-sq
+
+https://www.jeuxdemots.org/rezo-sq.php
+
+• 
+
+rezo-sq-ext
+
+https://www.jeuxdemots.org/rezo-sq-ext.php
+
+• 
+
+rezo-triangle
+
+https://www.jeuxdemots.org/rezo-triangle.php
+
+• 
+
+rezo-inter
+
+https://www.jeuxdemots.org/rezo-inter.php
+
+• 
+
+rezo-piste
+
+https://www.jeuxdemots.org/rezo-piste.php
+
+•
+
+Remerciement
+
+Tous les potes qui ont participé de près ou de loin : 
+
+n@t
+
+http://imaginat.name/
+
+, Gilles Krado, Didier Mok, Alain aj, Mehdi ... sriou, Ninie, Caillouteux, Aiko, ... et évidement tous les joueurs, sans oublier les fondus du forum :) (à completer)
+
+Merci Lyn pour le logo. Pour le design et les conseils photoshop une mention spéciale à 
+
+n@t
+
+http://imaginat.name/
+
+ et Syl.
+
+Maintenance
+
+Entretient : 
+
+Vidage des vieux cadeaux
+
+https://www.jeuxdemots.org/intern_delete_gifts.php?TB_iframe=true&height=350&width=700
+
+ - Réfléchir 
+
+any
+
+https://www.jeuxdemots.org/jdm_brain.php?action=think
+
+ / 
+
+fr
+
+https://www.jeuxdemots.org/jdm_brain.php?action=think&filter=fr
+
+ / 
+
+aggr
+
+https://www.jeuxdemots.org/jdm_brain.php?action=think&filter=%3A%3A>66%3A%
+
+ (bloquant) - 
+
+Vectoriser
+
+https://www.jeuxdemots.org/deeplearning-word2vec.php?learn=1
+
+ (bloquant) - 
+
+Rêver
+
+https://www.jeuxdemots.org/jdm_brain.php?action=dream
+
+ (bloquant) - 
+
+TermDefWiki
+
+https://www.jeuxdemots.org/intern_interpretor.php?termdefwiki=1&loop=1
+
+ (bloquant) - 
+
+What?
+
+https://www.jeuxdemots.org/aki_fech_wiki.php?links=1&loop=1&what=WikipÃ©dia:Accueil_principal
+
+ (bloquant)
+
+**invité
+
+Connectez-vous pour plus de détails
+
+https://www.jeuxdemots.org/jdm-signin.php
+
+**
+
+connectez-vous !
+
+ 
+
+ 
+
+0.084 s

@@ -1,0 +1,6111 @@
+Dicasso : Dictionnaire associatif du français - projet JeuxDeMots - terme 'JeuxDeMots'
+
+ 
+
+dictionnaire associatif du français
+
+Les associations de ce dictionnaire sont issues du projet 
+
+JeuxDeMots
+
+http://www.jeuxdemots.org/
+
+. Un filtrage sémantique et statistique a été effectué sur les données issues du projet. Ne pas préciser de terme permet de choisir un terme au 
+
+hasard
+
+http://www.jeuxdemots.org/intern_interpretor.php?assocfr=1
+
+.
+
+ 
+
+Chercher
+
+le terme
+
+ 
+
+JeuxDeMots
+
+ 
+
+Options
+
+ 
+
+[x] 1
+
+ 
+
+Maj
+
+ 
+
+[x] 1
+
+ 
+
+Raff
+
+ 
+
+[x] 1
+
+ 
+
+Anglais
+
+ 
+
+[x] 1
+
+ 
+
+LT
+
+ 
+
+[-] 1
+
+ 
+
+Polarité
+
+JeuxDeMots
+
+785 : réseau lexical
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=r%E9seau+lexical&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+745 : jeu sérieux
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=jeu+s%E9rieux&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+660 : base de connaissance
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=base+de+connaissance&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+650 : GWAP
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=GWAP&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+643 : Game with a purpose
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Game+with+a+purpose&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+625 : LIRMM
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=LIRMM&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+620 : construction
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=construction&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+251 : jeux
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=jeux&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+224 : animal
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=animal&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+220 : mammifère
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=mammif%E8re&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+129 : jeu
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=jeu&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+78 : Portail
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Portail&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+77 : joueurs
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=joueurs&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+68 : termes
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=termes&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+67 : intelligence artificielle
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=intelligence+artificielle&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+serious game
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=serious+game&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+66 : TAL
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=TAL&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+58 : liés
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=li%E9s&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+réseau
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=r%E9seau&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+57 : lexique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=lexique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+54 : relations
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=relations&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+52 : Articles
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Articles&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+relation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=relation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+50 : interaction
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=interaction&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+49 : analyse de données
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=analyse+de+donn%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+collecte de données
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=collecte+de+donn%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+originalité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=originalit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+48 : graphe
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=graphe&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+47 : communication
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=communication&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+données lexicales
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=donn%E9es+lexicales&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+recherche
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=recherche&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+terme
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=terme&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+46 : informatique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=informatique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+types de relations
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=types+de+relations&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+45 : apprentissage automatique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=apprentissage+automatique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+couples de joueurs
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=couples+de+joueurs&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+44 : Jeu vidéo
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Jeu+vid%E9o&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+associations d'idées
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=associations+d%27id%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+43 : Réseau lexical
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=R%E9seau+lexical&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+arcs
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=arcs&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+dérivés étymologiques
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=d%E9riv%E9s+%E9tymologiques&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+noeuds
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=noeuds&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+relations lexicales
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=relations+lexicales&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+terme cible
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=terme+cible&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+42 : Intelligence artificielle
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Intelligence+artificielle&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+associations de termes
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=associations+de+termes&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+modélisation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=mod%E9lisation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+non-experts
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=non-experts&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+points
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=points&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+relations sémantiques
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=relations+s%E9mantiques&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+réponses communes
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=r%E9ponses+communes&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+temps limité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=temps+limit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+41 : algorithmes de propagation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=algorithmes+de+propagation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+approche ludique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=approche+ludique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+contribution au réseau lexical
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=contribution+au+r%E9seau+lexical&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+joueur expérimenté
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=joueur+exp%E9riment%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+propositions communes
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=propositions+communes&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+ressources lexicales
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=ressources+lexicales&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+résolution de métaphores
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=r%E9solution+de+m%E9taphores&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+structure de réseau
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=structure+de+r%E9seau&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+40 : chat > communication textuelle
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=chat%3Ecommunication+textuelle&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+compréhension du jeu
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=compr%E9hension+du+jeu&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+concepts pertinents
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=concepts+pertinents&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+explications sous forme de chemins
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=explications+sous+forme+de+chemins&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+holonymes
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=holonymes&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+hyperonymes
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=hyperonymes&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+nature de la consigne
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=nature+de+la+consigne&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+synonymie
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=synonymie&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+39 : Bande passante
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Bande+passante&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Big data
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Big+data&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Communauté
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Communaut%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Domaine Public
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Domaine+Public&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Indexation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Indexation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+acquisition de données lexicales
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=acquisition+de+donn%E9es+lexicales&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+diversité des données lexicales
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=diversit%E9+des+donn%E9es+lexicales&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+dérivé morphologique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=d%E9riv%E9+morphologique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+jeu en ligne
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=jeu+en+ligne&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+richesse des données lexicales
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=richesse+des+donn%E9es+lexicales&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+sentiments associés
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=sentiments+associ%E9s&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+stratégie
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=strat%E9gie&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+technologie
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=technologie&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+terme > mot
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=terme%3Emot&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+traitement du langage naturel
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=traitement+du+langage+naturel&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+éducation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%E9ducation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+38 : Amorcé
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Amorc%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Collaborations
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Collaborations&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+acquisition de ressources lexicales
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=acquisition+de+ressources+lexicales&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+amélioration
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=am%E9lioration&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+cognition
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=cognition&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+infinitif
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=infinitif&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+modèle JeuxDeMots
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=mod%E8le+JeuxDeMots&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+réponse
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=r%E9ponse&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+verbes
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=verbes&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+éthique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%E9thique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+37: 150 000 termes
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=150+000+termes&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Alain Joubert
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Alain+Joubert&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Apprentissage
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Apprentissage&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Connexion
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Connexion&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Innovation technologique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Innovation+technologique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Mathieu Lafourcade
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Mathieu+Lafourcade&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Notation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Notation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+accessibilité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=accessibilit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+aucune relation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=aucune+relation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+classement
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=classement&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+coopération
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=coop%E9ration&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+divertissements
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=divertissements&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+explications
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=explications&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+librement accessibles
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=librement+accessibles&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+liste
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=liste&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+mot
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=mot&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+noeud
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=noeud&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+orientation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=orientation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+orientation des relations
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=orientation+des+relations&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+planche
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=planche&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+principe
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=principe&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+36 : Application mobile
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Application+mobile&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Intelligence artificielle conversationnelle
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Intelligence+artificielle+conversationnelle&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Technologies
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Technologies&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+accumulation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=accumulation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+asynchrone
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=asynchrone&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+comportement social
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=comportement+social&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+diversité des relations
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=diversit%E9+des+relations&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+enrichissement du réseau
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=enrichissement+du+r%E9seau&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+expressions
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=expressions&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+jeu > divertissement
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=jeu%3Edivertissement&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+langage
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=langage&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+licence Domaine Public
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=licence+Domaine+Public&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+liens
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=liens&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+n@t
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=n%40t&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+nombre de couples
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=nombre+de+couples&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+oreilles pointues
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=oreilles+pointues&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+parties
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=parties&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+souk
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=souk&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+stratégie d'acquisition
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=strat%E9gie+d%27acquisition&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+système taxonomique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=syst%E8me+taxonomique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+termes composés
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=termes+compos%E9s&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+35 : cinq millions de termes
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=cinq+millions+de+termes&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+collaboration
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=collaboration&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+concepts
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=concepts&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+consigne
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=consigne&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+créativité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=cr%E9ativit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+expression
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=expression&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+expérience
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=exp%E9rience&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+langues peu dotées en ressources d'informatique linguistique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=langues+peu+dot%E9es+en+ressources+d%27informatique+linguistique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+loisirs
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=loisirs&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+modélisation d'analogies
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=mod%E9lisation+d%27analogies&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+mots-clés
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=mots-cl%E9s&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+perte de points
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=perte+de+points&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+poids
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=poids&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+pondération
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=pond%E9ration&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+pondérés
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=pond%E9r%E9s&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+termes/consignes difficiles
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=termes%2Fconsignes+difficiles&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+34 : Interface
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Interface&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+accueil
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=accueil&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+création de relations inédites
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=cr%E9ation+de+relations+in%E9dites&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+diversité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=diversit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+joueur
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=joueur&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+mots
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=mots&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+relations validées
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=relations+valid%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+ressources
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=ressources&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+scrabble
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=scrabble&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+sensibilisation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=sensibilisation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+système
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=syst%E8me&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+typés
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=typ%E9s&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+téléchargeables
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=t%E9l%E9chargeables&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+un poids positif représente une relation possible
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=un+poids+positif+repr%E9sente+une+relation+possible&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Évaluation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%C9valuation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+établissement du réseau
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%E9tablissement+du+r%E9seau&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+évaluation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%E9valuation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+33 : Base de connaissance
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Base+de+connaissance&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Inclusion
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Inclusion&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Interactivité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Interactivit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Plateforme en ligne
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Plateforme+en+ligne&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+analyse
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=analyse&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+causes/conséquences
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=causes%2Fcons%E9quences&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+développement
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=d%E9veloppement&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+générique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=g%E9n%E9rique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+hiérarchie
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=hi%E9rarchie&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+idées associées
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=id%E9es+associ%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+innovation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=innovation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+jeux gratuits
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=jeux+gratuits&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+langues peu dotées en ressources linguistiques
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=langues+peu+dot%E9es+en+ressources+linguistiques&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+meilleure qualité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=meilleure+qualit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+morphologie
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=morphologie&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+mémoire
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=m%E9moire&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+patients/agents typiques
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=patients%2Fagents+typiques&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+réponses
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=r%E9ponses&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+réseau JeuxDeMots
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=r%E9seau+JeuxDeMots&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+travailleurs anonymes
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=travailleurs+anonymes&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+typage des liens
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=typage+des+liens&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+32 : JDM
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=JDM&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Langues peu dotées
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Langues+peu+dot%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Partage de connaissances
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Partage+de+connaissances&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+analyse de discours
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=analyse+de+discours&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+association
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=association&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+bot
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=bot&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+culture
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=culture&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+données
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=donn%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+données organisées
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=donn%E9es+organis%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+jouer comme un pied
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=jouer+comme+un+pied&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+liste plate
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=liste+plate&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+millions
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=millions&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+mots clés
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=mots+cl%E9s&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+pertes de points
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=pertes+de+points&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+poids négatif
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=poids+n%E9gatif&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+prime
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=prime&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+termes moins souvent proposés
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=termes+moins+souvent+propos%E9s&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+31 : Co-création
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Co-cr%E9ation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Environnement
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Environnement&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Impact
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Impact&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Intelligence collective
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Intelligence+collective&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Modèle JeuxDeMots
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Mod%E8le+JeuxDeMots&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Page d'accueil
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Page+d%27accueil&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Promotion
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Promotion&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Récompenses
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=R%E9compenses&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Site officiel
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Site+officiel&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+TALN
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=TALN&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+analyse d'opinions
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=analyse+d%27opinions&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+applications pédagogiques
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=applications+p%E9dagogiques&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+association d'idées
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=association+d%27id%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+classe
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=classe&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+confrontation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=confrontation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+couples
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=couples&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+détection de métaphores
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=d%E9tection+de+m%E9taphores&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+enseignement
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=enseignement&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+formes verbales
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=formes+verbales&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+forum
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=forum&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+game with a purpose
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=game+with+a+purpose&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+licence CCO
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=licence+CCO&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+licence propriétaire
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=licence+propri%E9taire&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+pondération des relations
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=pond%E9ration+des+relations&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+programme
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=programme&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+projet
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=projet&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+recherche en TAL
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=recherche+en+TAL&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+recherche scientifique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=recherche+scientifique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+sémantique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=s%E9mantique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+termes difficiles
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=termes+difficiles&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+30 : Accessibilité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Accessibilit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Assemblée générale
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Assembl%E9e+g%E9n%E9rale&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Authenticité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Authenticit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Données personnelles
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Donn%E9es+personnelles&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Développement
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=D%E9veloppement&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Européen
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Europ%E9en&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Flexibilité au travail
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Flexibilit%E9+au+travail&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Manel
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Manel&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Paiement en ligne
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Paiement+en+ligne&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Politique de cookies
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Politique+de+cookies&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Portugais
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Portugais&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Processus
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Processus&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Recherche
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Recherche&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Support
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Support&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Télétravail
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=T%E9l%E9travail&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+URL
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=URL&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Vision
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Vision&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+amélioration du classement
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=am%E9lioration+du+classement&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+analyser
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=analyser&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+apprentissage
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=apprentissage&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+bot > informatique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=bot%3Einformatique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+classement des joueurs
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=classement+des+joueurs&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+dictionnaires
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=dictionnaires&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+existence de relation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=existence+de+relation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+jouer à JDM
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=jouer+%E0+JDM&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+jouer à JeuxDeMots
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=jouer+%E0+JeuxDeMots&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+mathieu lafourcade
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=mathieu+lafourcade&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+ordre
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=ordre&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+parc naturel
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=parc+naturel&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+patients/agents
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=patients%2Fagents&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+petits groupes d'experts
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=petits+groupes+d%27experts&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+poids positif
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=poids+positif&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+portugais
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=portugais&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+pâte
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=p%E2te&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+recherche > science
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=recherche%3Escience&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+rugissement
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=rugissement&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+symbiose
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=symbiose&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+système de points
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=syst%E8me+de+points&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+termes / consignes
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=termes+%2F+consignes&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+termes liés
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=termes+li%E9s&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+territorial
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=territorial&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+texte
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=texte&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+traduction automatique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=traduction+automatique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+traitement automatique du langage naturel
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=traitement+automatique+du+langage+naturel&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+vietnamien
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=vietnamien&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+wanted
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=wanted&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Évaluations
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%C9valuations&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+études de terrain
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%E9tudes+de+terrain&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+29 : Collaboration
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Collaboration&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Compétences
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Comp%E9tences&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Confidentialité des données
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Confidentialit%E9+des+donn%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Internet
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Internet&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Investissements
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Investissements&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Laboratoire d'Informatique de Grenoble
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Laboratoire+d%27Informatique+de+Grenoble&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Open source
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Open+source&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Publics
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Publics&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Responsabilité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Responsabilit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Réseaux
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=R%E9seaux&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Social
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Social&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Stratégie
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Strat%E9gie&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Utilisabilité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Utilisabilit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+application
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=application&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+classification
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=classification&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+communauté
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=communaut%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+communs
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=communs&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+contribution
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=contribution&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+formation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=formation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+information
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=information&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+interopérabilité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=interop%E9rabilit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+langue
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=langue&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+majuscules
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=majuscules&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+maximum 50 réponses
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=maximum+50+r%E9ponses&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+minuscules
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=minuscules&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+mutualisme
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=mutualisme&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+même consigne
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=m%EAme+consigne&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+même terme
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=m%EAme+terme&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+optimisation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=optimisation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+plateforme
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=plateforme&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+qualité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=qualit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+recherche de synonymes
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=recherche+de+synonymes&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+réponse commune
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=r%E9ponse+commune&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+réponse non filtrée
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=r%E9ponse+non+filtr%E9e&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+réserve naturelle
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=r%E9serve+naturelle&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+simulation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=simulation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+structure
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=structure&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+vocabulaire
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=vocabulaire&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Économie
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%C9conomie&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Éducation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%C9ducation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Équité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%C9quit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+28 : Articles liés
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Articles+li%E9s&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Backlinks
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Backlinks&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Collaborateurs
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Collaborateurs&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Communication interne
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Communication+interne&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Crowdsourcing
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Crowdsourcing&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Crédibilité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Cr%E9dibilit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+FAQ
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=FAQ&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Images
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Images&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Management de projet
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Management+de+projet&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Marque déposée
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Marque+d%E9pos%E9e&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Modularité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Modularit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Médias en ligne
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=M%E9dias+en+ligne&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Nouveautés
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Nouveaut%E9s&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Numérisation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Num%E9risation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Ontologie
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Ontologie&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Outils
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Outils&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Paiement sécurisé
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Paiement+s%E9curis%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Responsabilité sociétale
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Responsabilit%E9+soci%E9tale&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Ressources lexicales
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Ressources+lexicales&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Réseaux de distribution
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=R%E9seaux+de+distribution&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+SAV
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=SAV&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Service après-vente
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Service+apr%E8s-vente&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Stratégie de communication
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Strat%E9gie+de+communication&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Talents
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Talents&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Textes
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Textes&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+accessibles
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=accessibles&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+adaptation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=adaptation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+communiquer
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=communiquer&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+constituant
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=constituant&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+création
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=cr%E9ation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+deux joueurs
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=deux+joueurs&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+dérivés morphologiques
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=d%E9riv%E9s+morphologiques&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+engagement
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=engagement&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+expérience utilisateur
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=exp%E9rience+utilisateur&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+fréquence
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=fr%E9quence&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+gratuits
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=gratuits&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+impossibilité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=impossibilit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+inférences
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=inf%E9rences&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+interface utilisateur
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=interface+utilisateur&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+jeu de mots
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=jeu+de+mots&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+jouées
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=jou%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+machine learning
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=machine+learning&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+maternité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=maternit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+n@tsof
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=n%40tsof&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+noms
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=noms&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+partage
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=partage&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+pertinents
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=pertinents&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+propres
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=propres&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+recherche d'informations
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=recherche+d%27informations&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+ressources linguistiques
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=ressources+linguistiques&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+retourner
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=retourner&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+réflexion
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=r%E9flexion&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+séquence
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=s%E9quence&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+taxonomie
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=taxonomie&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+telles que la recherche de synonymes
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=telles+que+la+recherche+de+synonymes&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+valides
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=valides&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+27 : Article
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Article&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Communication
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Communication&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Contenus
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Contenus&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Culture d'entreprise
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Culture+d%27entreprise&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Cyber-sécurité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Cyber-s%E9curit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Espace
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Espace&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Fidélisation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Fid%E9lisation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Flexibilité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Flexibilit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Gouvernance
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Gouvernance&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Graphe orienté
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Graphe+orient%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Infobox
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Infobox&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Information
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Information&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Jeu sérieux
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Jeu+s%E9rieux&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Marketing numérique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Marketing+num%E9rique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Moteur de recherche
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Moteur+de+recherche&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Méthodes
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=M%E9thodes&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Partage
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Partage&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Produit
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Produit&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Programme de fidélité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Programme+de+fid%E9lit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Réputation en ligne
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=R%E9putation+en+ligne&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Support technique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Support+technique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Transformation digitale
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Transformation+digitale&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+commentaire
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=commentaire&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+compétition
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=comp%E9tition&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+conséquences
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=cons%E9quences&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+contexte
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=contexte&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+demande
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=demande&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+ensemble de données
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=ensemble+de+donn%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+exister
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=exister&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+formes
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=formes&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+immersion
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=immersion&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+maximum
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=maximum&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+métadonnées
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=m%E9tadonn%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+partage de connaissances
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=partage+de+connaissances&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+pénalisées
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=p%E9nalis%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+réalité virtuelle
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=r%E9alit%E9+virtuelle&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+répondre
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=r%E9pondre&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+simple
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=simple&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+système expert
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=syst%E8me+expert&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+utiliser
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=utiliser&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Écosystème
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%C9cosyst%E8me&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+États-Unis
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%C9tats-Unis&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+évidentes
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%E9videntes&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+26 : Compétition
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Comp%E9tition&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Feedback
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Feedback&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+France
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=France&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Interaction
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Interaction&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Langues
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Langues&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Linguistique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Linguistique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Motivation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Motivation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Narration
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Narration&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Navigation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Navigation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Rapport annuel
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Rapport+annuel&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Réseaux sociaux
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=R%E9seaux+sociaux&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Satisfaction
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Satisfaction&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Sécurité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=S%E9curit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Technologie
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Technologie&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+UX/UI
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=UX%2FUI&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Vidéos
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Vid%E9os&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Web sémantique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Web+s%E9mantique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+automatisation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=automatisation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+commune
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=commune&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+composés
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=compos%E9s&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+compréhension
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=compr%E9hension&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+compétences numériques
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=comp%E9tences+num%E9riques&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+compétences transversales
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=comp%E9tences+transversales&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+concept
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=concept&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+connaissance
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=connaissance&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+domaine
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=domaine&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+donner
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=donner&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+données fournies
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=donn%E9es+fournies&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+données massives
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=donn%E9es+massives&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+données non structurées
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=donn%E9es+non+structur%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+données ouvertes
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=donn%E9es+ouvertes&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+données structurées
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=donn%E9es+structur%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+feedback
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=feedback&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+français
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=fran%E7ais&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+interaction sociale
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=interaction+sociale&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+licence
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=licence&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+mars 2021
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=mars+2021&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+narration
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=narration&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+performance
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=performance&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+personnalisation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=personnalisation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+plate
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=plate&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+projet de recherche
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=projet+de+recherche&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+pénalisation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=p%E9nalisation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+relations inédites
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=relations+in%E9dites&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+représentation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=repr%E9sentation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+standard
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=standard&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+terminologie
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=terminologie&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+travaux d'experts
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=travaux+d%27experts&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+verbales
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=verbales&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Évaluation des performances
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%C9valuation+des+performances&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Événements
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%C9v%E9nements&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+éducation à distance
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%E9ducation+%E0+distance&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+25 : Actualités
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Actualit%E9s&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Adaptation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Adaptation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Analyse
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Analyse&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Conditions d'utilisation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Conditions+d%27utilisation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Contenu
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Contenu&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Coopération
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Coop%E9ration&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Croissance
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Croissance&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Créativité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Cr%E9ativit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Culture
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Culture&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Design
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Design&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Digitalisation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Digitalisation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Diversité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Diversit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Emplois
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Emplois&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Engagement
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Engagement&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Expérience utilisateur
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Exp%E9rience+utilisateur&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Formation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Formation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Forum
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Forum&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Gestion de la marque
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Gestion+de+la+marque&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Informations
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Informations&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Innovation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Innovation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Interopérabilité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Interop%E9rabilit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Investisseurs
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Investisseurs&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Lexique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Lexique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Législation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=L%E9gislation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Mission
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Mission&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Moteurs de recherche
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Moteurs+de+recherche&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+RGPD
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=RGPD&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Responsive design
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Responsive+design&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Ressources
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Ressources&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Statistiques
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Statistiques&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Tendances
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Tendances&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Traitement automatique des langues
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Traitement+automatique+des+langues&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Traitement automatique du langage naturel
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Traitement+automatique+du+langage+naturel&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+UX
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=UX&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Vidéo
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Vid%E9o&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+adoption de chat
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=adoption+de+chat&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+architecture
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=architecture&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+big data
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=big+data&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+caractères
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=caract%E8res&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+causes
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=causes&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+code source
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=code+source&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+collaboration en ligne
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=collaboration+en+ligne&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+contribution collaborative
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=contribution+collaborative&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+corruption des données
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=corruption+des+donn%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+divertissement
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=divertissement&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+divulgation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=divulgation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+domaines
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=domaines&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+données collectées
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=donn%E9es+collect%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+données recueillies
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=donn%E9es+recueillies&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+début
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=d%E9but&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+développement communautaire
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=d%E9veloppement+communautaire&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+efficacité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=efficacit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+engagement citoyen
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=engagement+citoyen&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+enrichissement
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=enrichissement&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+façon asynchrone
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=fa%E7on+asynchrone&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+fréquence d'association
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=fr%E9quence+d%27association&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+habitat
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=habitat&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+inclusion
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=inclusion&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+innovation pédagogique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=innovation+p%E9dagogique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+innovation sociale
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=innovation+sociale&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+innovation technologique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=innovation+technologique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+intelligence
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=intelligence&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+interaction homme-machine
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=interaction+homme-machine&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+interface
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=interface&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+interprétation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=interpr%E9tation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+jeu avec un but
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=jeu+avec+un+but&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+jeux de rôle
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=jeux+de+r%F4le&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+linguistique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=linguistique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+maison pour chat
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=maison+pour+chat&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+mise à jour
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=mise+%E0+jour&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+modèle
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=mod%E8le&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+modéliser des analogies
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=mod%E9liser+des+analogies&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+moins souvent proposées
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=moins+souvent+propos%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+outils numériques
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=outils+num%E9riques&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+partenariat
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=partenariat&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+partenariats
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=partenariats&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+race de chat
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=race+de+chat&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+reproduction
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=reproduction&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+responsabilité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=responsabilit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+responsabilité sociale
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=responsabilit%E9+sociale&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+ressources d'informatique linguistique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=ressources+d%27informatique+linguistique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+robotique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=robotique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+réalité augmentée
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=r%E9alit%E9+augment%E9e&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+santé du chat
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=sant%E9+du+chat&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+savoir
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=savoir&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+sciences citoyennes
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=sciences+citoyennes&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+signification
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=signification&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+solidement établies
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=solidement+%E9tablies&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+système d'information
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=syst%E8me+d%27information&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+système de collecte
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=syst%E8me+de+collecte&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+séparateur
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=s%E9parateur&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+thèmes
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=th%E8mes&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+transformation numérique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=transformation+num%E9rique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+tricherie
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=tricherie&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+verbe
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=verbe&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Éditeur
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%C9diteur&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+échange
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%E9change&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+24 : Assistance
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Assistance&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Boutons
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Boutons&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Cible
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Cible&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Contact
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Contact&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Critique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Critique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Différenciation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Diff%E9renciation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Développé
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=D%E9velopp%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Fiabilité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Fiabilit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Gameplay
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Gameplay&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Gestion de projet
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Gestion+de+projet&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Informatique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Informatique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Inscription
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Inscription&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Japonais
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Japonais&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Je suis désolé
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Je+suis+d%E9sol%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Jeu par navigateur
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Jeu+par+navigateur&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Jeu vidéo éducatif
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Jeu+vid%E9o+%E9ducatif&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Liens utiles
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Liens+utiles&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Mentions légales
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Mentions+l%E9gales&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Personnage
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Personnage&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Plateforme
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Plateforme&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Responsive
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Responsive&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Retours
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Retours&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Sciences participatives
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Sciences+participatives&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Scénario
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Sc%E9nario&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Services
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Services&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Simulation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Simulation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Transparence
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Transparence&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Université de Montpellier
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Universit%E9+de+Montpellier&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+accumulation de relations
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=accumulation+de+relations&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+accès
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=acc%E8s&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+acquisition
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=acquisition&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+agents typiques
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=agents+typiques&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+aide
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=aide&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+analyse des données
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=analyse+des+donn%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+analyse prédictive
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=analyse+pr%E9dictive&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+article
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=article&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+cadre
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=cadre&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+campus
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=campus&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+chats errants
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=chats+errants&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+chemins dans le réseau
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=chemins+dans+le+r%E9seau&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+cinq millions
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=cinq+millions&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+comportement du chat
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=comportement+du+chat&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+compétences
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=comp%E9tences&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+contenu
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=contenu&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+critique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=critique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+créer
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=cr%E9er&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+culture numérique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=culture+num%E9rique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+données liées
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=donn%E9es+li%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+découverte
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=d%E9couverte&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+exploration
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=exploration&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+feedback instantané
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=feedback+instantan%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+grammaire
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=grammaire&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+impact
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=impact&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+institution universitaire
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=institution+universitaire&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+interdisciplinarité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=interdisciplinarit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+international
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=international&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+intégration
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=int%E9gration&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+intéressant
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=int%E9ressant&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+intéressants
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=int%E9ressants&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+jeux sérieux
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=jeux+s%E9rieux&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+jeuxdemots
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=jeuxdemots&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+liens entre termes
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=liens+entre+termes&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+ludification
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=ludification&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+mais je ne peux pas répondre à cette demande
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=mais+je+ne+peux+pas+r%E9pondre+%E0+cette+demande&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+mentorat
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=mentorat&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+méthodologie
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=m%E9thodologie&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+navigateur
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=navigateur&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+noms communs
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=noms+communs&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+noms propres
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=noms+propres&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+observation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=observation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+ontologie
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=ontologie&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+outils
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=outils&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+patients
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=patients&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+pensée critique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=pens%E9e+critique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+perspective
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=perspective&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+phonétique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=phon%E9tique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+plus
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=plus&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+présents
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=pr%E9sents&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+pédagogie
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=p%E9dagogie&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+ressources pédagogiques
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=ressources+p%E9dagogiques&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+scénario
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=sc%E9nario&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+scénarios d'apprentissage
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=sc%E9narios+d%27apprentissage&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+soins pour chat
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=soins+pour+chat&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+spécification
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=sp%E9cification&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+système de classification
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=syst%E8me+de+classification&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+système de gestion
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=syst%E8me+de+gestion&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+territoire du chat
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=territoire+du+chat&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+validité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=validit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+validées
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=valid%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+vision par ordinateur
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=vision+par+ordinateur&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+visualisation de données
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=visualisation+de+donn%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Émotion
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%C9motion&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+écologie
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%E9cologie&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+écriture
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%E9criture&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+éducation du chat
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%E9ducation+du+chat&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+éthique de l'IA
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%E9thique+de+l%27IA&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+évaluation formative
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%E9valuation+formative&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+évoqués
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%E9voqu%E9s&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+23: 360 millions
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=360+millions&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Abonnement
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Abonnement&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Aide
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Aide&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Amorcé en 2007
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Amorc%E9+en+2007&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Analyse de données
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Analyse+de+donn%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Avantages
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Avantages&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Aventure
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Aventure&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Cibles
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Cibles&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Cloud computing
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Cloud+computing&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Communauté en ligne
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Communaut%E9+en+ligne&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Conception
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Conception&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Confidentialité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Confidentialit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Contribution
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Contribution&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Copyright
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Copyright&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Création
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Cr%E9ation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Domaine
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Domaine&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Engagement sociétal
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Engagement+soci%E9tal&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Formation continue
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Formation+continue&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Franchise
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Franchise&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Hébergement
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=H%E9bergement&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Immersion
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Immersion&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Institution
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Institution&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Interface utilisateur
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Interface+utilisateur&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Intégration
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Int%E9gration&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Jeu
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Jeu&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Marché
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=March%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Mise à jour
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Mise+%E0+jour&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Multijoueur
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Multijoueur&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Newsletter
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Newsletter&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Objectifs
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Objectifs&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Organisation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Organisation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Page web
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Page+web&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Partenariats
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Partenariats&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Performance
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Performance&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Politique de confidentialité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Politique+de+confidentialit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Programmation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Programmation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Progression
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Progression&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Protection des données
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Protection+des+donn%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Qualité de service
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Qualit%E9+de+service&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Reconnaissance
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Reconnaissance&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Reputation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Reputation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Ressources linguistiques
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Ressources+linguistiques&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Réglementation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=R%E9glementation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+SEO
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=SEO&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Sciences
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Sciences&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Segmentation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Segmentation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Serveur
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Serveur&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Site web
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Site+web&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Streaming
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Streaming&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Suggestions
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Suggestions&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Téléchargement
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=T%E9l%E9chargement&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Valeurs
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Valeurs&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Version
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Version&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Vietnamien
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Vietnamien&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+acquérir
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=acqu%E9rir&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+activités pédagogiques
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=activit%E9s+p%E9dagogiques&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+algorithme
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=algorithme&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+alimentation du chat
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=alimentation+du+chat&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+apprentissage autonome
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=apprentissage+autonome&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+apprentissage interactif
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=apprentissage+interactif&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+approche
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=approche&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+autonomie d'apprentissage
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=autonomie+d%27apprentissage&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+axiome
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=axiome&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+biais algorithmique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=biais+algorithmique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+changement
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=changement&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+chats et enfants
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=chats+et+enfants&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+comique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=comique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+comportement
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=comportement&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+conférence
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=conf%E9rence&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+conséquence
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=cons%E9quence&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+didactique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=didactique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+diplôme
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=dipl%F4me&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+discours
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=discours&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+décembre 2023
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=d%E9cembre+2023&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+développement cognitif
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=d%E9veloppement+cognitif&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+engagement des élèves
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=engagement+des+%E9l%E8ves&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+ensemble
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=ensemble&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+entité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=entit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+environ
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=environ&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+européen
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=europ%E9en&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+expertise
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=expertise&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+faculté
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=facult%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+format
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=format&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+formation continue
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=formation+continue&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+fournir
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=fournir&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+humaines
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=humaines&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+imagination
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=imagination&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+implication des citoyens
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=implication+des+citoyens&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+inférence
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=inf%E9rence&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+inscription
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=inscription&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+intelligence computationnelle
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=intelligence+computationnelle&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+interactivité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=interactivit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+interconnexion
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=interconnexion&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+intégration technologique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=int%E9gration+technologique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+jouet pour chat
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=jouet+pour+chat&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+laboratoire
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=laboratoire&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+langues
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=langues&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+librement
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=librement&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+litière pour chat
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=liti%E8re+pour+chat&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+mission
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=mission&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+motivation des apprenants
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=motivation+des+apprenants&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+numérique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=num%E9rique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+objectif
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=objectif&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+participation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=participation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+participation active
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=participation+active&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+pertinence
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=pertinence&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+plateformes en ligne
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=plateformes+en+ligne&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+pragmatique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=pragmatique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+projets collaboratifs
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=projets+collaboratifs&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+protection des chats
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=protection+des+chats&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+raisonnement
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=raisonnement&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+recherche d'information
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=recherche+d%27information&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+refuge pour chat
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=refuge+pour+chat&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+relations orientées
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=relations+orient%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+relations pondérées
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=relations+pond%E9r%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+retour d'expérience
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=retour+d%27exp%E9rience&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+réseaux de neurones
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=r%E9seaux+de+neurones&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+réseaux sociaux
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=r%E9seaux+sociaux&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+résolution de problèmes
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=r%E9solution+de+probl%E8mes&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+réussite
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=r%E9ussite&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+sciences
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=sciences&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+service
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=service&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+sociabilité du chat
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=sociabilit%E9+du+chat&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+sociales
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=sociales&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+sociolinguistique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=sociolinguistique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+sortir
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=sortir&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+stage
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=stage&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+syntaxique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=syntaxique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+système de représentation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=syst%E8me+de+repr%E9sentation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+sémantique web
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=s%E9mantique+web&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+séminaire
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=s%E9minaire&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+technologies émergentes
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=technologies+%E9mergentes&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+telles que la recherche d'informations
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=telles+que+la+recherche+d%27informations&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+tendances
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=tendances&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+termes communs
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=termes+communs&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+thèmes/domaines
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=th%E8mes%2Fdomaines&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+thèse
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=th%E8se&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+toilettage de chat
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=toilettage+de+chat&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+transformation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=transformation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+tutoriel
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=tutoriel&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+valeur
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=valeur&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+vidéo
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=vid%E9o&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+visualisation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=visualisation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+vétérinaire pour chat
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=v%E9t%E9rinaire+pour+chat&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+web
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=web&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+économie numérique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%E9conomie+num%E9rique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+éducation environnementale
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%E9ducation+environnementale&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+éducation inclusive
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%E9ducation+inclusive&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+étude
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%E9tude&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+étudiants
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%E9tudiants&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+évaluation participative
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=%E9valuation+participative&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+22: 15 ans
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=15+ans&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+200 millions
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=200+millions&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+360 millions de relations
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=360+millions+de+relations&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+5 million
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=5+million&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+API
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=API&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Accessoires
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Accessoires&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Ambassadeurs
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Ambassadeurs&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Amélioration
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Am%E9lioration&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Analytics
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Analytics&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Audiovisuel
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Audiovisuel&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Benchmarking
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Benchmarking&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Blogueurs
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Blogueurs&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Certificat SSL
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Certificat+SSL&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Chasser
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Chasser&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Commentaires
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Commentaires&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Community management
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Community+management&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Concurrence
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Concurrence&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Contrôle
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Contr%F4le&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Divertissement
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Divertissement&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Données
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Donn%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Défi
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=D%E9fi&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Défis
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=D%E9fis&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Développement personnel
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=D%E9veloppement+personnel&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Développement web
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=D%E9veloppement+web&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Engagement communautaire
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Engagement+communautaire&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Ergonomie
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Ergonomie&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Esport
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Esport&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Esthétique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Esth%E9tique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Exploration
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Exploration&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Expression
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Expression&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Genre
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Genre&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Graphisme
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Graphisme&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Historique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Historique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Identité visuelle
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Identit%E9+visuelle&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Illustrer
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Illustrer&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Impact social
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Impact+social&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Influenceurs
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Influenceurs&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Innovation ouverte
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Innovation+ouverte&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Jouabilité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Jouabilit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Joueur
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Joueur&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Liens
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Liens&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Localisation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Localisation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Maintenance
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Maintenance&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Menu
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Menu&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Monétisation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Mon%E9tisation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Multimédia
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Multim%E9dia&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Média
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=M%E9dia&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Narration interactive
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Narration+interactive&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Nom de domaine
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Nom+de+domaine&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Noms propres
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Noms+propres&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Normes
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Normes&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Objectif
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Objectif&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Optimisation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Optimisation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Partenaires
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Partenaires&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Partenariat
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Partenariat&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Positionnement de la marque
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Positionnement+de+la+marque&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Propriété intellectuelle
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Propri%E9t%E9+intellectuelle&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Quête
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Qu%EAte&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Récit
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=R%E9cit&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Récompense
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=R%E9compense&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Standards
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Standards&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Structure
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Structure&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Système de jeu
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Syst%E8me+de+jeu&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Tournoi
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Tournoi&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+UI
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=UI&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Univers
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Univers&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Utilisateurs
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Utilisateurs&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+VIP
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=VIP&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+Visibilité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=Visibilit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+accessoire pour chat
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=accessoire+pour+chat&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+accessoires pour chat
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=accessoires+pour+chat&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+alumni
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=alumni&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+analyse sémantique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=analyse+s%E9mantique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+apprentissage par le jeu
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=apprentissage+par+le+jeu&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+articles
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=articles&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+associations de termes moins souvent proposées
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=associations+de+termes+moins+souvent+propos%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+bibliothèque
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=biblioth%E8que&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+bilinguisme
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=bilinguisme&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+chats de race
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=chats+de+race&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+chats et autres animaux
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=chats+et+autres+animaux&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+chatterie
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=chatterie&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+classification animale
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=classification+animale&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+clustering
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=clustering&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+clés
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=cl%E9s&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+co-construction
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=co-construction&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+co-création
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=co-cr%E9ation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+collaboration interdisciplinaire
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=collaboration+interdisciplinaire&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+communication du chat
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=communication+du+chat&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+compatibilité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=compatibilit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+compétence
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=comp%E9tence&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+compétences linguistiques
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=comp%E9tences+linguistiques&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+compétences sociales
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=comp%E9tences+sociales&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+confrontation avec des termes
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=confrontation+avec+des+termes&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+connexion
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=connexion&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+consignes
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=consignes&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+consignes plus difficiles
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=consignes+plus+difficiles&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+constituants
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=constituants&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+cybersécurité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=cybers%E9curit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+design
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=design&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+diversité des apprenants
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=diversit%E9+des+apprenants&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+domaine public
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=domaine+public&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+défi
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=d%E9fi&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+défis
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=d%E9fis&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+dérivé étymologique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=d%E9riv%E9+%E9tymologique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+développement personnel
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=d%E9veloppement+personnel&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+efficace
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=efficace&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+engagement communautaire
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=engagement+communautaire&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+et
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=et&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+exploitation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=exploitation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+expériences d'apprentissage
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=exp%E9riences+d%27apprentissage&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+favoriser
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=favoriser&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+formalisation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=formalisation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+forum > internet
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=forum%3Einternet&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+framework
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=framework&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+griffe de chat
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=griffe+de+chat&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+historique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=historique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+impact social
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=impact+social&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+implication
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=implication&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+indexation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=indexation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+initiatives locales
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=initiatives+locales&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+instance
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=instance&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+intelligence augmentée
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=intelligence+augment%E9e&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+intelligence collective
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=intelligence+collective&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+interopérabilité sémantique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=interop%E9rabilit%E9+s%E9mantique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+jeu vidéo
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=jeu+vid%E9o&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+jeux de mots
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=jeux+de+mots&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+limite
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=limite&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+marquage
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=marquage&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+mobilisation citoyenne
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=mobilisation+citoyenne&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+mobilité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=mobilit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+moins
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=moins&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+motivation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=motivation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+multijoueur
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=multijoueur&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+multilinguisme
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=multilinguisme&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+multimédia éducatif
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=multim%E9dia+%E9ducatif&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+méthodes participatives
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=m%E9thodes+participatives&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+navigation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=navigation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+nombre de couples de joueurs
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=nombre+de+couples+de+joueurs&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+normalisation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=normalisation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+norme
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=norme&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+option
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=option&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+oral
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=oral&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+organisation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=organisation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+outil
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=outil&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+outils collaboratifs
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=outils+collaboratifs&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+outils d'apprentissage
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=outils+d%27apprentissage&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+outils d'évaluation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=outils+d%27%E9valuation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+parcours personnalisé
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=parcours+personnalis%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+parties jouées
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=parties+jou%E9es&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+personnage
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=personnage&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+pertinent
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=pertinent&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+plateforme d'apprentissage
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=plateforme+d%27apprentissage&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+pratique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=pratique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+programmation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=programmation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+progrès
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=progr%E8s&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+projets de recherche
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=projets+de+recherche&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+protocole
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=protocole&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+présent
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=pr%E9sent&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+public
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=public&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+pédagogie active
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=p%E9dagogie+active&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+race de chat populaire
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=race+de+chat+populaire&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+recherche collaborative
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=recherche+collaborative&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+recherche-action
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=recherche-action&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+reconnaissance vocale
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=reconnaissance+vocale&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+représentation des connaissances
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=repr%E9sentation+des+connaissances&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+représentation graphique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=repr%E9sentation+graphique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+réaliser des inférences
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=r%E9aliser+des+inf%E9rences&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+récompense
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=r%E9compense&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+savoir-faire
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=savoir-faire&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+services en ligne
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=services+en+ligne&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+solidité
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=solidit%E9&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+solution
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=solution&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+son
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=son&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+spécialisation
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=sp%E9cialisation&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+stress chez le chat
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=stress+chez+le+chat&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+support technique
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=support+technique&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+système de raisonnement
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=syst%E8me+de+raisonnement&maj=1&raf=1&eng=1&LongTr=1
+
+ ; 
+
+systèmes d'information
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=syst%E8mes+d%27information&maj=1&raf=1&eng=1&LongTr=1
+
+ ;
+
+1001 associations(s)
+
+14/03/2026 18:42:05
+
+Dicasso v0.83 (M. Lafourcade, N. Le Brun) - 2020 - projet 
+
+JeuxDeMots
+
+http://www.jeuxdemots.org/
+
+ - donnée libres de droit (CC0) - contact : mathieu.lafourcade@lirmm.fr - LIRMM, Université de Montpellier
+
+Url de cette page : 
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=JeuxDeMots&maj=1&raf=1&eng=1&LongTr=1
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=JeuxDeMots&maj=1&raf=1&eng=1&LongTr=1
+
+ Affichage par poids décroissant - trier par 
+
+poids
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=JeuxDeMots&maj=1&raf=1&eng=1&LongTr=1
+
+ / 
+
+date
+
+https://www.jeuxdemots.org/intern_interpretor.php?dicasso=1&t=JeuxDeMots&maj=1&raf=1&eng=1&LongTr=1&chron=1

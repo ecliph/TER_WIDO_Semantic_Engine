@@ -1,0 +1,1877 @@
+https://lh3.googleusercontent.com/notebooklm/ANHLwAx7hDgVK6oaMjupaDE6I_hGMuhztuPqgs3m94nt4HhuerhHOB-KwhJLHW1rQE3ye_YpnedADHrzgcj1PYS4pO5E2e5E_Ic9a_44PTplAIWxn8NJhXiN-gZEQPl2t0qrFjg-vZXVVA=w441-h441-v0
+
+f04aee26-fa9e-4e82-aa68-b2f2591de547
+
+Comment (bien) contribuer à JeuxDeMots 
+
+(Le Diko pour les nuls) 
+
+Guide détaillé de contribution au réseau lexical JeuxDeMots (Rezo) –contact- Version 1.0 Nills (15.11.2015) 
+
+ 
+
+ 
+
+Sommaire 
+
+Sommaire .......................................................................................................................... 2 
+
+1 Introduction ............................................................................................................. 4 
+
+2 l'interface de contribution ........................................................................................ 4 
+
+2.1 La page d'accueil de Diko .............................................................................................................. 4 
+
+2.2 Le terme et ses différents filtrages ................................................................................................ 5 
+
+2.3 Les différentes actions possibles à partir d'une entrée (hors contribution) .................................... 6 
+
+2.3.1 Paramétrer l'affichage ...................................................................................................................................................................... 6 2.3.2 L'engrenage ...................................................................................................................................................................................... 7 2.3.3 Accéder au Rezo ............................................................................................................................................................................... 8 2.3.4 Voter pour les contributions ............................................................................................................................................................. 8 2.3.5 Jouer aux autres jeux sur ce terme ................................................................................................................................................... 8 2.3.6 Aller combler les manques ............................................................................................................................................................... 8 2.3.7 Offrez le terme ! ............................................................................................................................................................................... 8 
+
+2.4 Tout sur la zone de gauche ! ......................................................................................................... 8 
+
+2.4.1 Hall of fame ...................................................................................................................................................................................... 9 2.4.2 Derniers contributeurs ..................................................................................................................................................................... 9 2.4.3 A propos .......................................................................................................................................................................................... 10 2.4.4 Champs masqués ............................................................................................................................................................................. 10 
+
+3 Contribuer : sur quoi, comment ? ........................................................................... 10 
+
+3.1 Diverses méthodes, des astuces techniques, mais quelques priorités… ....................................... 10 
+
+3.1.1 Exhaustivité ou butinage ? Les relations les plus importantes… ....................................................................................................... 10 3.1.2 Attention à la polysémie ! Donnez des gloses…................................................................................................................................ 10 3.1.3 Les autres relations ......................................................................................................................................................................... 10 3.1.4 Les informations lexicales et sémantiques ....................................................................................................................................... 11 3.1.5 Ergonomie de la contribution : comment faire quoi ? ...................................................................................................................... 12 3.1.5.1 Entrer des propositions ............................................................................................................................................................... 12 3.1.5.2 Entrer une succession de propositions ........................................................................................................................................ 12 3.1.5.3 Invoquer un mot ......................................................................................................................................................................... 13 3.1.5.4 Corriger les erreurs ..................................................................................................................................................................... 13 3.1.5.5 Ouvrir un fil de discussion ........................................................................................................................................................... 13 3.1.5.6 Raffinez vos propositions ............................................................................................................................................................ 14 3.1.5.7 Annotez les relations .................................................................................................................................................................. 14 3.1.5.8 Fabriquez des agrégés ! ............................................................................................................................................................... 14 3.1.5.9 Les signes cabalistiques du Diko .................................................................................................................................................. 15 
+
+3.2 Les types de relations "contribuables", et comment bien les comprendre ................................... 16 
+
+3.2.1 Le POS (r_pos) ................................................................................................................................................................................. 16 3.2.2 Le lemme (r_lemma)........................................................................................................................................................................ 17 3.2.3 Générique (r_isa) ............................................................................................................................................................................. 17 3.2.4 Lieu (chose>lieu) (r_lieu) ................................................................................................................................................................. 17 3.2.5 Lieu-1 (lieu>chose)(r_lieu 
+
+-1 ) ............................................................................................................................................................. 17 
+
+3.2.6 Caractéristique (r_carac) .................................................................................................................................................................. 17 3.2.7 Patient pour un nom (r_patient 
+
+-1 ) .................................................................................................................................................... 18 
+
+3.2.8 Agent pour un nom (r_agent -1 
+
+) ........................................................................................................................................................ 18 3.2.9 Parties (r_has_part) ......................................................................................................................................................................... 18 3.2.10 Thèmes/domaines (r_domain) ........................................................................................................................................................ 19 3.2.11 Agent pour un verbe (r_agent) ........................................................................................................................................................ 19 3.2.12 Complément d'agent pour un verbe à la voix passive (r_compl_agent) ............................................................................................ 19 3.2.13 Patient pour un verbe (r_patient) .................................................................................................................................................... 19 3.2.14 Causes (r_causatif) .......................................................................................................................................................................... 20 3.2.15 Conséquences (r_conseq) ................................................................................................................................................................ 20 3.2.16 Lieu d'action (r_action_lieu) ............................................................................................................................................................ 20 3.2.17 Instrument (r_instr) ......................................................................................................................................................................... 20 
+
+ 
+
+3.2.18 Manière (r_manner) ........................................................................................................................................................................ 21 3.2.19 Être caractéristique de (r_carac 
+
+-1 ) .................................................................................................................................................... 21 
+
+3.2.20 Synonyme (r_syn) ou quasi-synonymes (L'admin est très tolérant) ............................................................................................... 21 3.2.21 Qu'est ce qui peut être fait de cette manière ? (r_manner 
+
+-1 ) ............................................................................................................ 22 
+
+3.2.22 Gloses (r_meaning) .......................................................................................................................................................................... 22 3.2.23 Sentiments (r_sentiment) ................................................................................................................................................................ 22 3.2.24 Rôle agentif (r_agentif_role) ............................................................................................................................................................ 23 3.2.25 Bénéficiaire (r_beneficiaire)............................................................................................................................................................. 23 
+
+à suivre… (plus que 90…) 
+
+  
+
+ 
+
+1 Introduction 
+
+Le Diko est l'expression, sous la forme d'un dictionnaire un peu spécial, d'une bonne partie du réseau lexical 
+
+construit à l'aide du jeu principal JeuxDeMots, ainsi que des jeux annexes, notamment ceux qui permettent de 
+
+répondre de façon ouverte via un champ de texte, comme Emot, Colorit, Askyou…  
+
+Le Diko est également un outil de contribution et ce sont vos contributions humaines et sensées (ou déjantées, il 
+
+n'est pas interdit de se lâcher un peu…) qui vont fournir aux créatures fantasques du Maître des lieux, et de ses 
+
+disciples, la "substantifique moelle", la matière première et indispensable pour déduire tout et n'importe quoi un tas 
+
+de choses intéressantes et pertinentes, et inonder alimenter le Rezo de avec des propositions plus ou moins sottes, 
+
+grenues, ou poétiques, et pour le moins, souvent capillitractées qu'il ne restera plus qu'à valider. Ou pas… 
+
+Plus sérieusement, il paraît que pour bien contribuer, le contributeur doit savoir, piger, intégrer, assimiler que le 
+
+Rezo lexical JDM a une structure de graphe. Alors en (aussi) clair (que possible), je vais expliquer le graphe pour les 
+
+nuls (je m'inclus, hein ?) : un graphe est constitué de nœuds interconnectés par une forêt dense de relations. Les 
+
+nœuds, ce sont les mots et les groupes de mots (plus d'autres machins que je n'ai pas bien compris). Les relations entre ces 
+
+nœuds ont des caractéristiques très importantes : 
+
+ Elles sont typées, c'est-à-dire qu'elles sont de différents types, elles ne sont pas identiques, et vous allez 
+
+découvrir à quel point… dans la suite de ce guide. 
+
+ Elles sont orientées, c'est-à-dire que chaque nœud a des relations entrantes et sortantes. Pour simplifier, 
+
+dans un réseau ABCDEF, on a des relations sortantes de A vers d'autres nœuds : AB, AC, AF, et des 
+
+relations entrantes entre certains des autres nœuds et A : AC, AD, AE. Chaque nœud du réseau est 
+
+ainsi le point de départ d'un certain nombre de relations sortantes en direction d'autres nœuds et le point 
+
+d'arrivée d'un certains nombre de relations entrantes en provenance d'autres nœuds. 
+
+ Elles sont pondérées c'est-à-dire que le poids de la relation entre A et B reflète son intensité. Plus un terme 
+
+est associé à un autre, plus forte est la liaison entre eux. Par exemple, pour le type de relation Que peut faire 
+
+? la relation entre chat et ronronner a un poids beaucoup plus élevé (515)1 que celle entre chat et se lécher 
+
+(83)1. 
+
+Ajoutons que le Rezo JDM, constitué de plus de 560 0001 nœuds, 1151 types de relations et 23 942 9051 relations 
+
+orientées et pondérées, est un graphe de type petit monde (deux nœuds quelconques ne sont pas éloignés de plus 
+
+de 5 intermédiaires, soit 6 relations) et vous saurez tout ce qu'il faut savoir pour devenir un contributeur prolixe et 
+
+efficace. 
+
+Pour pouvoir contribuer au Diko , et accéder à toutes les merveilleuses fonctionnalités décrites en long et en large 
+
+ci-après, il faut être connecté, et en mode édition (voir mode édition). 
+
+2 l'interface de contribution 
+
+2.1 La page d'accueil de Diko Outre les zones spécifiques qui font l'objet des paragraphes suivants, la page d'accueil de Diko, à laquelle on revient 
+
+à tout moment en cliquant sur le logo Diko en haut à droite, comporte 4 zones : 
+
+ Urgent ! Termes à compléter rapidement : comme indiqué, cette liste est faite à l'intention des gens que le 
+
+désir de contribuer taraude, mais qui sont indécis quant au mot sur lequel se jeter… Elle regroupe des 
+
+                                                          1  Chiffres relevés relevés ce jour, soit le 10 novembre 2015, à 18h50. 
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwVdopaG5eh1BtoJZZtrjS9sx97UmZyJuBYD5-jo8R9hOegXlgDi0RpN96BMG1td-dNINeiyV0Q08OkfC2zv7HY09YeVRi0ufvY-rffRc3CGXSaFCkF00CEgq9zMktcbPaZeFCMWg=w639-h516-v0
+
+2b8d83c6-38d6-482f-80f6-030484d5a079
+
+ 
+
+entrées qui soit sont un peu… nues, soit qu'il serait bien vu de compléter, étant donné les besoins et 
+
+tendances du moment (médecine, cuisine…). Bref, notez bien que tout contributeur a l'immense pouvoir de 
+
+faire apparaître un terme dans cette liste d'urgences : il suffit de l'offrir, voir Un mot sur lequel contribuer . 
+
+ Termes récemment introduits : ou comment le réseau se construit sous vos yeux… Apparaissent ici en 
+
+temps réel tous les mots qui font leur entrée dans le réseau, soit parce qu'ils ont été invoqués puis validés 
+
+(voir Invoquer un mot) , soit parce deux joueurs de JDM ont eu l'idée lumineuse de proposer conjointement 
+
+lors d'une partie un mot qui n'existait pas encore dans le réseau. 
+
+ Termes récemment modifiés : dès qu'un terme est modifié, que ce soit par contribution (validée !) ou parce 
+
+qu'il a fait l'objet d'une partie de JDM (avec des intersections), ou d'un des jeux annexes, il apparaît là. 
+
+ Termes avec fils de discussion récents : Voir Ouvrir un fil de discussion pour tout savoir sur les fils de 
+
+discussion et bien les utiliser. En résumé, un terme apparaît ici quand on lui a ajouté une image, ou une 
+
+définition, ou quand deux ou plusieurs contributeurs débattent de la pertinence de leur(s) proposition(s) ou 
+
+souhaitent justifier un vote négatif. 
+
+ Termes en rapport avec la mystérieuse mission lexicale : c'est si mystérieux que je vous invite à cliquer… 
+
+ Évènements : ici sont couronnés en temps réel tous vos efforts de contribution : au fur et à mesure que vos 
+
+contributions sont validées, vous gagnez des points, et les comptes d'apothicaire s'affichent ici, et également 
+
+sous forme de pop-up dès que vous vous connectez au Diko. Attention, il peut arriver aussi que vos 
+
+contributions soient jugées erronées : dans ce cas, elles sont impitoyablement invalidées et vous perdez des 
+
+points ; ça s'affiche aussi, nimbé d'un délicat halo rose (histoire d'adoucir la déconvenue, j'imagine…) 
+
+2.2 Le terme et ses différents filtrages Par défaut, l'interface montre toutes les types de relations contribuables d'une entrée, mais on peut filtrer le terme 
+
+via ces différents types. Cette assertion étant plutôt fumeuse, mieux vaut considérer un exemple : 
+
+Figure 1 : Le menu de filtrage du terme. 
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyhm_FYVK7_igXwCn1vcEFns54q5u1fx6c1nt64zvA4xShRXecPDB75qFgCXrhr4JOpCtCFyl5zO-td7E9YiKexa_nSj05XghWchymnEsYN_Jhh8VeieXr171tM5A_6bHjbX817Aw=w542-h437-v0
+
+bf79b3bb-1ce9-42d5-885e-a43997055355
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzmjJXZ7tJdTBTBqn1QUusLNd0iT6rKDJFMpQQdn-4FnfpsK3wrLJ4nZCTv0VzYiLJx8500X4vXCQ3q0SgxHTqVcYfaVsk-_R_wgqHF0G8ir53psUHMU1e7DZPZvcG657DodJjlkg=w34-h34-v0
+
+1eca2707-9ca7-4a20-963f-6257ce2b915f
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxLJiZp3HvmPjRG86x3AJYUvRA5T4SBHYTJ-GXvwViUucbEp-Dqt3rgjxpA4hUaL-uZao9Gtk9QblGBzg6TG174jqicQIg03WEk7z8HMfaIlhDR_tqHwqo01i6gpPBJ-RVjII773A=w34-h34-v0
+
+f509fdc1-dd15-4283-bc36-10564294479b
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwA4v9hJRUJ7A5Z38S6DkcozKORC4Q128ONorbD2TuulZGKspDFi13FOn4jZa6_2k0pOwKJGTNnw00zl7bHi0L4uZMPJIqAwGRqKzPXZHpZgyo0GHNYJ1P1BzGRCkROeuafcEZ4=w34-h34-v0
+
+70936bf5-0933-4aff-9f4e-f41fb1ed8162
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwaQSdNQSsgZaBoo_NUDPwt-UpKt15PHpLtaLriI-DG-qYUJLKpTPlYzES-W5V0T-U0-CFRMDiKJdJR5Si8mv9yTJYdAfz2OYQ5JYHY14BAwb9WLhKSkh8_sSJ9RDtf2c8y6OBF4A=w34-h34-v0
+
+112882c4-0da6-4d10-a94d-de7a7b6f52e6
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAykd7phXIFWGijVtj4PK2l_ErPrOX-WtY8eep5_xq3YUMIbHHjzy8yC89kXRiIB73JLhxIKrZNmAdiob9V55uO9K-XXWROIHcfaTSJUnLyrJfdEMpVDv3-0juXXpCLvC8uWhfpNhA=w34-h34-v0
+
+84356e4a-7dc2-4c8c-ab6f-c773a39410c2
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzt2V5oLbYEID-byWr5SdcNlVueJhRzlgDvEl-A5HpFs2ss1HThYjZRwmA1VEVaftKrSFcSwGeLcHUowNenkK0zOJIL4z-pdgBYLmB-hsSsfdvsruws7_ex50530e5uAIU1rXFf=w34-h34-v0
+
+b13a7629-cc41-4450-b164-a54cd69e5141
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzz6CMbt0n1rNRQdsFoScQUyLZEkA1KqTV4iJGTIGoFgld-f7DYMiHexWMI5lvdFoXBZyuFJZT2UZi2AsOjb1lXfhxaf1A42X5fYMooUPlCEvcHxzaz-kh27ufRILGJuexAA7STiw=w34-h34-v0
+
+6804900b-bca3-42c0-9de0-2da2b14a67f6
+
+ 
+
+En utilisant le menu du champ de texte la forme, on peut filtrer le terme choisi par n'importe quel type de relation 
+
+de la liste. Par exemple, si on choisit de filtrer le terme entrée par générique, comme indiqué ci-contre, on obtient la 
+
+liste de tous les termes du réseau qui ont le terme entrée comme générique. 
+
+Attention aux types de relations symétriques2: filtrer entrée par r_lieu donne la liste des choses que l'on peut 
+
+trouver dans entrée, alors que filtrer par r_lieu-1 donne la liste des lieux dans lesquels on peut trouver entrée. 
+
+Naturellement, tous les types de relations possibles sont présents dans ce menu, mais on ne peut filtrer un terme 
+
+que par un  type de relation pertinent pour ce terme. Ainsi, tenter de filtrer entrée par caractéristique (r_carac) n'a 
+
+pas de sens : entrée n'est pas un adjectif, et ne peut donc être la caractéristique d'un autre terme. 
+
+NB : id n'est pas un type de relation lexicale ou sémantique, mais désigne le numéro d'identification du terme. Ce 
+
+filtrage sert donc à rechercher un terme par son numéro. Par exemple, si on affiche id et que l'on tape 142384 dans 
+
+le champ entrez un terme, on obtient rhinocéros. 
+
+2.3 Les différentes actions possibles à partir d'une entrée (hors contribution) L'interface de Diko est munie d'une foultitude de petites icones qui permettent de faire plein de choses plus ou 
+
+moins plaisantes, sympathiques et /ou intéressantes, mais toujours fort utiles pour optimiser et rentabiliser au 
+
+maximum ce pourquoi vous êtes là… Car on n'insistera pas lourdement, mais tout est étudié pour que votre passage 
+
+se traduise par un accroissement qualitatif et quantitatif du plus grand, du plus beau, du plus riche réseau lexico-
+
+sémantique du français… Et l'on a fort bien compris, en coulisse, qu'une interface bien étudiée, où tout est à portée 
+
+de clic, était la condition sine qua non pour une contribution efficace. 
+
+Seulement le résultat est un peu…touffu, donc voici un décryptage de ce que l'on peut faire, et comment : 
+
+2.3.1 Paramétrer l'affichage 
+
+ 
+
+ En cliquant sur le petit crayon, vous passez du mode contemplatif (où vous ne pouvez rien faire, c'est con) au mode actif (mode édition), où vous pouvez enfin contribuer… 
+
+  
+
+ 
+
+Poids normalisés/non normalisés : quand les poids sont normalisés, le poids maximal d'une relation est égal à 1000, les autres sont calculés en proportion. 
+
+  
+
+ 
+
+Seuls les types de relations pertinents en fonction de la nature grammaticale (POS) du terme sont apparents / tous les types de relations sont visibles (plus lent). 
+
+  
+
+ Toutes les relations sont visibles / seules les relations ayant un poids positif sont affichées. 
+
+  
+
+ 
+
+Affichage complet / affichage réduit (si vraiment vous voyez une différence, soyez sympa, envoyez-moi un mail, ça fait 15 jours que je cherche). 
+
+  
+
+ 
+
+Les données pour chaque type de relation sont classées de la plus activée (poids le plus élevé) à la moins activée / les données sont classées par ordre alphabétique. 
+
+  
+
+ L'affichage est compact / les types de relations sont affichés sous forme de liste.  
+
+  
+
+ 
+
+Quand le cœur sur fond vert est affiché, les polarités de tous les termes sont visibles sous forme d'un petit ♥ (polarité +)♥ (polarité -) ♥ (polarité neutre)♥ (pas de polarité majoritaire). 
+
+                                                          2  souvent (mais pas toujours) notées : nom de la relation 
+
+-1  
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwHW0RuRqeyTT_NG82Tqhhp5eMZvLHYiwd_RSWNRQcKF6EW2XxrJooBqYOWTSAMglXTtCZiech4RYXy8oiukeCH1DBt4JNsOH2UeDAEoiiFgOp9vQG6Ad2MzYo79JF6Tx9UMaSs=w1015-h350-v0
+
+b0f45c1d-8077-46da-b37d-aec2a28d8d5c
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwySajIX4dTD5VHuLbtlh-h8wSpV5y4zsQWw_oUN9A5SGBr8RMEB_PVJlp0Q-_-YpHGW-4kDLPEv2TWqAwxP66Tk_Iw9Ga7DXlk-w8u-pKWItTFznyCvbBPBQTLfZox0CjMvXbV=w42-h42-v0
+
+71e3722d-b872-4607-a499-4bd33ffb80f4
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzsqeDBFpsBoLEuZeId-4TYfR01lQu6gY1Vy8-kOlINXp2VLThcQ74g-cQQobLH-1AKxcH1eaFWZmbent-9aOZVJ22KE_SnqXlJlcJImtlfWnfxotsLI6PRIm7j6CSo4PhKEV4n=w42-h42-v0
+
+9f613569-77b4-40b1-b74b-b52005f3a491
+
+ 
+
+Une autre sorte de paramétrage : si comme moi vous trouvez que l'affichage des types de relations, toutes 
+
+identiques dans leur petit cadre à fond dégradé jaune c'est monotone, insipide, et pas pratique pour repérer illico 
+
+celle que vous cherchez, sachez que vous pouvez assigner une couleur différente, non seulement à chaque petit 
+
+cadre dégradé jaune, mais aussi à la police d'écriture. Mode d'emploi : 
+
+Pour changer le look relation par relation : 
+
+Cliquer sur le  et taper color:couleur ( blue, green, yellow, etc....)  ou color:#code hexadecimal 
+
+Pour changer la couleur de police, taper font-color:couleur 
+
+(on peut enlever le dégradé en tapant nograd:, et le remettre en tapant grad:) 
+
+Dans tous les cas et à chaque étape, pour voir vos magnifiques changements, vous devez actualiser la page...(flush en 
+
+bas en tout petit à droite ou F5). Voir ci-après ce qu'on peut obtenir : 
+
+ 
+
+Figure 2 : Toutes ces relations, avec des couleurs, c'est plus pratique ! 
+
+2.3.2 L'engrenage 
+
+L'engrenage… C'est l'image d'un vaisseau qui parcourt inlassablement, en boucle, les quelque 560 000 termes du 
+
+Rezo. Il est rempli de petites créatures fantasques dont j'ai déjà parlé plus haut, dotées chacune de pouvoirs bien 
+
+précis (des règles d'inférences), qui vont tenter, au niveau de chaque terme, de déduire des trucs à partir de toutes 
+
+sortes de paramètres, et faire les propositions qui en découlent. Ces propositions s'affichent en vert dans l'entrée, et 
+
+devront donc être validées pour faire partie du Rezo. Dans une entrée, on peut voir l'engrenage sous deux états : 
+
+    
+
+Engrenage translucide, inactif Engrenage opaque, actif  Cet état signifie qu'il n'y a rien à faire, car il n'y a pas eu de nouvelles contributions validées, ou de nouvelles relations entrées par le jeu depuis le dernier passage. Mais comme en principe vous êtes sur l'entrée pour contribuer…  
+
+ Cela signifie que le vaisseau n'est pas passé récemment et qu'il y a eu des changements dans cette entrée depuis son dernier passage. Il est donc urgent de l'appeler (en cliquant sur l'icone) afin que les nouveautés soient passées à la moulinette soumises à la sagacité relative de la horde des robots d'inférence. 
+
+  
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAypllXgMcYIKVXcH4DTuzveV3bTgm5g5q4-MSuoFPZ-7JqSb8kH-CXJwYFR8afAl18s0ie-paLRMKUczMgCEq0ngOAvXyqECL0y9gtWZwPL83q_81_DgToIfSbBAmzdwapNItxG8Q=w514-h45-v0
+
+261eb8ef-ea9e-4831-b013-4621ccacd085
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxFo305MuQiO3inC-VRce1uckf49_O6MvStzIIegFOq_DIY5qFZRxM8KOetqRTr1GjK35V_5St14K-A5GNseIR0Zlfr_Ymx1yutn704LqMnqWb_OtcSXRzjDkNhsv88qGCh59qv=w249-h208-v0
+
+d753aa07-2789-4296-b03d-4d6450804b98
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyNTYCwBy219fcOAVFMI9BNzfnFctB6BtWwz97ZnLnvtinb9TZInlc58InwdLZTngCtJwIQSy8683HWamtQlMyofkXVZjj6lJugId2kQf-nH0jCOp8DawKZ9-QzW9RDPmIEOwUhNQ=w249-h208-v0
+
+04d0dda3-3e57-4429-b476-51a005845ab9
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwKDilwxGQS2ZHuNek0dq7Ei-mDTVy1V42a5F2MrIFrV1L5xbP0u63vPLCgOm4LsHjbvKkQT7nCFMUsIE-rPWJsOwaCzU_j1pZ2v35uDslt__nVLkN31z-NpUH1MF4O8owW98HtbQ=w839-h147-v0
+
+3a92dc0b-2f2a-48db-a78b-88c67bcceb49
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAz8mQEGne2PT4BBRa7_NJrnst1PbYyFdIDTG8q7HD374uuiklk8Pf-ATw7HKtBfFvVlxY1K7qrKSB3sw2_t5I2gvGFX2oshQ2ls0jq0omBEZ1K6b4mO_2bw3ZGE7bvioHsZbUfhNA=w839-h275-v0
+
+92bdbd6d-89a3-487c-8b66-3df203bcfaa9
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAw1OjLycvF-c7yhoDubdg4sr4qU1AwsNOWlGf1cMzZYyhYXVgcxMsfWyeiIzVrMsZoSEddykcVmywtDKNXyv6HO1Mf9Aj2ZI0q1ar-mFFg5hQEpjov9SIFrIqdlkPqYsYyXgKEoRQ=w35-h35-v0
+
+d0e60ef0-72a9-4785-a37e-ae6447beb4e9
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwlwXdHSqGncPjuWY-xFdGJS6z16zmCYkd7LKTuJ5qYuWWY1oLz0jFH3j0y4SyF-7MVh7Qnr-fpaNh7fR4K9AXAePCdJkMZ3xcrfPbIwT7O08nI5IPd8Ex9x3u7rd6QPSW7vlS2=w36-h36-v0
+
+4541eb2d-a439-4ba4-92ed-47b453c67754
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzJjcLKDYalyHlqa5oo7XGqT3SEQXI2cIm094vgr1pQ54lcj3QbER13fwpeCQZUPISv0DTPGq-7O0KNLNosU_QpbbDU7cdhvLx8n06vqeNL9bbMn0hYDnBbr5ekoi5C14vWpk3V=w36-h36-v0
+
+99d1b45d-d441-4b62-afdf-37715ac803b4
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxFuhn_cpuAtZvPOMpm93HnB0P99-kKIQAY3ebItk6hz88KRs1IGBsGunbsQAVnLRrLpmoxg9FM8aUtJZaKL5tUChQV8HA7-CHzmXz-ceYkjWH1bM4sROey28l45TAck7n64VrRAg=w36-h36-v0
+
+bb2abe25-91cf-4b56-9318-cbf9f4fbebef
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwk25zo4G0pwFi4SNHuDTwiv7uAcDIxlkiwvQlMwqKuNReEKLjG0Qqj7-vW9-gUcKG0VZvv3cASZ85ExjU6qt6pm1Jf5Oe4l-gRQbl5NSNhmiljD26uP8hbBsoFQNoqyPNHZJDVrA=w36-h36-v0
+
+089ff22b-b30f-4b68-91ee-4d17bcdfcf24
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzmMo68wA5LzdFW7tnGLcs88KT2VsQmOYd7C4W5cbJ2OmFpqAxuMAUanB82CaaO0x76goV2kOXHImWugNqeEdjfSNPB9V7fIkVBQlw-Smz8kn7N1s5X7XSLWN1CRxEotNo8rJZLPQ=w36-h36-v0
+
+39c8149a-d34c-4451-9649-292b12bb60cc
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwlaTSOEQYPbnurUOzZPvo2NO5rWdgdfzIEiN321M5zyszy7sXgWGcs2_5WeS4BK11_UV2AkHK5GlXTaagsEDXh4GahMdTNDA04jTFjcaKcNpZa1N39RU6q2MnrDbUfQWL1LSeSBQ=w36-h36-v0
+
+3133ebb4-a6c4-4785-993e-0c6bd3138bb8
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAx0Z23hPzwYVsFDK7WXo_wkKZEf0-1qKh1-xpJzfoqotoOfOJkdZwpZ29EHVq05BdsMrlAvbJnSDbj7lVfFmc4vwrq0ykWMMuGHY3CLOlsrJt7u0bHJywEmCI6PYJ1F4umhI-l0WQ=w36-h36-v0
+
+fc8a9902-e17a-4469-bc49-123a0faed605
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyMLIBv-SFzHfhqvETwu8vOgILKegtjptjjLP6hNvi9x-5COLDDe3PLBXJk_9OMLQ9BqeEvN4o00JqzttF8GSJACjzlF8SaL5or9RTz8Cu1IljzC2zw0FFPDf3IivUvink3thDPpg=w36-h36-v0
+
+571ffa1b-3e1d-42d2-91a8-dac5aefcde8c
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxXoZ2jbrgnP8o-E1KUByWeAGNHW6Hq-SZ5awm7LKMiV7cG1vejlWx_5qIC8Ik47OKfKqUvyNcOSZETgxoIkTSARNbcXnCuJE-c-B_avm86CwXAkIHvKMRP0pLKebCiHfJVE_2i5g=w36-h36-v0
+
+168386ff-2cf9-45f8-b3ab-42baad477637
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxwPLHQRxGj80ELKFyAZ2OpLc1tn5Lp1weyFrC7WwnX27Ms5Yff7qQWaMprYDbbdFGYs4Gwrc-wYyC6kyvXkOfU3zsqgh7ZYyON_rh4px8LV8N4Ij3JJN2C7nBt4XUO4j-sep-6=w36-h36-v0
+
+1247e357-0edc-4110-9a69-8b59bf0ad034
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwR3MfKz3A4FmwEp8gXFY2qbcxZzrCtR6FumH6Cd7Aihm0zWWUXdpna6gnRumHZoXqH51Y5sJSyyPvuCuEJ1bbUrdzZxJDMHqQ_HRo_pAc1czjlLa5JpyBYuAP_wDt1byNh9eLOLQ=w36-h36-v0
+
+177957f8-b692-476a-a0df-e1be70396ed6
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxhnJiXUuhwAI9CTG1ImQU_V29ViNBnEBCSv0f5OCCAjNuHvxBeQc4ZTxEiVRS2T6RXkE5seVzWwTAZ0PthuxsHJCBMtDzrUSjBN1CYEKAiWDiNnVRPFv1thKj3G_2jB0htK_nWhA=w36-h36-v0
+
+47774f12-5050-4201-87a6-4ed60f64c08a
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxdrxNk0oKjDZPj4FW8B884IcVIqg22Cet2MDG8hMeCEaGT4r-STm4qOQTOxRUCrOdmYIKC3rDoEv2NaEYcOtRd7HrzkYRc3QCccF7fTjr_Yr0AaI00a9kVZqSDXxWljUhX8MCE3Q=w36-h36-v0
+
+dd5a7b93-af12-40de-adeb-08916a324543
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwLW0G2v4hH2lJtA-D9Rpk6Ed2aZE2xrgIonlPH8RCbsktjLzgOYakgAXCX-GIDSjvb3i8MNdsfCDysSy4lZkUjJ7QG3-Wz8b36-kaayx2iSl_rqhrVKjpkCZjnASzdV_RzVr2L=w37-h37-v0
+
+aece7cce-bdc7-4953-9afb-a0ca8dc0396b
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyVT6mf8SAd09AYK4sD0olzzTxcLH-oeA4s7mahYrCzmGaaPU8a2LStNtfCZyLu14LDE8u0bJNW_Ks7L0mXDMb7zVnChs5Z6MXjrZQ6jafP-U0wv8IsD4DzcKr6Bx0rBSB0VoRl=w37-h37-v0
+
+014ec3bc-2b20-453a-ac3e-153698c9b0ed
+
+ 
+
+2.3.3 Accéder au Rezo 
+
+ 
+
+En cliquant sur cette icône, la page correspondante du Rezo s'ouvre dans un nouvel onglet. Le Rezo étant un monde en soi (qui fera peut-être l'objet d'explications détaillées un jour…), sachez juste qu'il existe aussi un système de filtrage pour fouiller dans les quelque 110 000 relations que comptent certains termes. (au hasard >>>> organisme vivant : 109627 relations…) 
+
+2.3.4 Voter pour les contributions 
+
+ 
+
+Cette procédure de vote est actuellement désactivée pour des raisons techniques. Pas de problème, il y a d'autres manières de voter, voir voter. 
+
+2.3.5 Jouer aux autres jeux sur ce terme  
+
+       sont des liens ouvrant des parties dans PolitIt, Sexit, ColorIt, 
+
+Tierxical, LikeIt, Askyou, Sélémo, sur le terme de l'entrée (pour quand vous en avez marre de contribuer…). 
+
+2.3.6 Aller combler les manques 
+
+Comme on ne veut surtout pas que le contributeur s'ennuie et aille jouer à 2048 ou Candy Crush (ou autre jeu inepte 
+
+qui ne sert à rien), on s'ingénie à le distraire, en lui suggérant des choses et en lui simplifiant la vie pour les tester. En 
+
+même temps c'est joindre l'utile au…nécessaire, car les 5 icones ci-dessous sont des liens vers des termes choisis au 
+
+hasard parmi ceux manquant cruellement de relations de tel ou tel type : 
+
+ Ouvre une entrée où aucune relation de cause et/ou conséquence n'est mentionnée. Trouvez-en ! 
+
+ 
+
+Envoie vers un terme dont la nature grammaticale (le POS, en jargon d'initiés) n'est pas indiquée (ce qui est très très très grave, alors faites un effort)… 
+
+ 
+
+Ici on tombe sur un adjectif et il faut indiquer ce qu'il peut caractériser. Par exemple, pour lourd, on peut mettre rhinocéros. 
+
+ 
+
+Cliquer sur AGT conduit à des verbes pour lesquels aucun agent n'est indiqué. Par exemple pour courir, on pourra mettre rhinocéros. (non, c'est une blague, courir a déjà pleiiiiiiiiiiiiiin d'agents…) 
+
+ 
+
+Enfin, via ISA on accède à des termes porteurs d'un handicap gravissime auquel il est urgentissime de remédier: ils n'ont pas de générique (oui oui, c'est limite insoutenable, je sais... Faites quelque chose !) 
+
+2.3.7 Offrez le terme !  
+
+Ben oui, ne soyez pas égoïstes, faites plaisir autour de vous… En fonction des centres d'intérêts de votre victime 
+
+ami(e), vous avez le choix entre plus de 550 000 termes. Et en fonction de sa personnalité et de ses compétences, 
+
+vous pouvez offrir le mot de l'entrée sur laquelle vous êtes, et ceci sous deux formes : 
+
+Un mot avec lequel jouer à JDM, sous forme d'un cadeau sur mesure : on offre une partie avec le terme de l'entrée, mais on peut choisir le type de relation, le ou les destinataires, et même ajouter un petit message…  
+
+Un mot sur lequel contribuer, parce qu'après tout, si par hasard vous n'êtes pas là QUE pour le plaisir et avez quelque intérêt à ce que certains termes soient rapidement et pertinemment renseignés, c'est quand même un bon plan (si vous choisissez bien vos victimes ami(e)s) et une manière élégante de déléguer un peu de taf… 
+
+ 
+
+ 
+
+2.4 Tout sur la zone de gauche ! La colonne de gauche, juste sous l'icone Diko est la zone dévolue à l'estimation quantitative et qualitative de l'action 
+
+des contributeurs : quantitative parce que votre participation est mesurée par le nombre de vos contributions 
+
+validées, et qualitative parce que cette zone est une alternative à l'icone , pour aller voter pour (ou contre !) les 
+
+contributions des autres.   
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAy0OMUSA1R73iXbiv-UUpAjb_zwuG2CgxfdFxHLu_SqHArd8MhiSsN9SxVbhAJLEgHXiMVReRWVvnLzP6M0JXgIgjBUQTxDnyPxwu6djaf9XtFVlXodjXKOA3xZsg0kS9_1bxORtA=w755-h76-v0
+
+f18bde12-f7ce-4b85-9078-cd232ab9ddba
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAysm4Ld6wMEtT4hltxwpkrzPkrzHwztp3_52FDIr-_gXBA9vCo2fdgpPtzbCo3X9KNcIncbA2UX9iSrZaaFrSxBBOS3dojQ2MzzyhhcXjsZk-MSHs0jwmQ6CS1xLI5OVmRRt8i7YQ=w755-h38-v0
+
+9fb9cfdb-beb9-4143-b55e-aaab6d7b10ba
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAymsFqP30bfELqe7Np18gYcXNPzXNSsQxEw_V701__QrJCaHgtikDWmo6guKLr8kPGJs9lMb7arJ_vyR1A0KcdcRAqfbQ5fzkqrpJUnUej52xDA7Q1ffcOTG1LfXe_pKQbCLc6QNw=w755-h38-v0
+
+5a7bec5e-cf3c-4498-9fbc-5db43054e28c
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwKpS6GWjxXtHm7QvNQ3h1NXKQrgj9K44VTT-8IEE3gDB_xpJS-rKs86ZN8g75qkFb7IR0-XNf2xw1g8BWZCxY4vVsurZ9cyIt2zv89QGlN4H-YprjFGrksfo5LbSQYns6WeEM-nA=w755-h38-v0
+
+db680aa8-2d97-4aa6-838a-e61157e6d5ea
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxATQwu_AcVzk0C26Fr_Y7-7cIvZ9SiQsVCd6rtIbzRDJQvR0VyBubjuEk60LwOsTOVZlpEv6o3dVUqMjiXCcE29KFPeYQh9BAsVwSDgSHTZgLYNxGr1aPo3d4YnkfO3x378jFJzA=w755-h39-v0
+
+f960bd0c-3994-4d43-8164-00b1c347b79b
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyidWQkxfjPv27YV2GW0quMpobNjihqqOpuKj9kURxVE9Ez8ncIuXDzlQfpSC8oTZnq54F8lVKiZXPOh1Oozyi9otAEYpgCR_nQt2kOQ1fAjdndLfKz5s1rH7PapHuuaVc5bhOTFA=w755-h38-v0
+
+44a494ce-033c-4250-9b42-efbafac02518
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAx7FbTt4zTjtcdefrp4UE_MKgs6sWowS2QSiUZucMzOWgoPJSkQKccn8oI3Vknk8-3qPAcbNvDo4p3n9T-8NvOWo9CCJxe9WEHKZ6AOHv5OPzmZgoL5RNsb_0UphpG_E8sN4a07=w755-h39-v0
+
+a8c7f1f2-c38f-4555-831a-136a0c0591f9
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxneurqgicWTaRkV1gB56xSGiOtuPpo0FyRpQS3yZMySzfLvZ9yi8B1-phqhIvr7CGF-X8a-Lk9w23fTYxE_VFsLK8HCyW6rMJ3NbGHktgqoyIxPjmMXtWYFIATmGzAtHcJWuL95Q=w755-h57-v0
+
+e8181f00-d98a-44ea-be09-849e42ea2e54
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwvFXDVpsz-nxfqwtWQIBZlHjtvdhz5Kj8Kcd_lXnVrXezbpU9krRsUWXhHwjJsqc1eefUzqjdwdaABL4FHW8ZIAD46BcDQ5p8fgu_BUSIpGPjanaLi-kM6U8VJXNa97DC4gZE4bA=w755-h76-v0
+
+cc81dee4-99fd-4fa5-82e2-cd1ffc5170b2
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwybFp8PkBYgRyD6o-ycKOAkdMaDcAABEWUm1zc8oAhbttCisbbwGAfvS-aYNlR7ep9LjogiLsdBpECXR6-gQ8xFX7F9m50pnLQZDFmn3-ugZST_6icayZasg9_NBjvek40vibb=w839-h81-v0
+
+118f0b34-ac7d-428e-9f1e-86a839ec6258
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyLMbx00t5NQeJE_OSBIdfOZyrYI6sOGMD3q4EcLtcHjDEAKEp6DghEFGzIqy0zGI7Dfje_1UL88JulCQUpVNNcBzZD3rbDxrQk2LfOLItyG--d-npW0RgfXpQ0QFKjeNXsbYhSfA=w839-h106-v0
+
+b309c309-f5b3-4509-ae86-6822a42698c9
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAx-ezPTGq0bN5PSe5s3DeFhzWnuKsiUCCgKYREZWNeHCg3zDQjbo5eKutMDI53ILi6OCaeHSMVAm9U73jCiEkIG7MR_UdrPHGsyCnRfE4p23d_kKyrIAeafmm3BVRCMOLk_EC-W0w=w928-h191-v0
+
+0ccce488-2455-4780-9eb9-6cb62fd94b00
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAy31ycIhV7NmuVJ4F1DimjQr08NUVxVXLvGbb5jZo6m2qJMM4XS_84KHmUjlEP_KCA2VPAqTs8NUxUR5FPeG5NtRo1OuuMOAlOrzRwYgETnQz6mhR_QITdNAYspRJ0lMihYY02yNw=w250-h341-v0
+
+f58605ee-895f-4f9f-9de8-fd6e09631d12
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxJWSNEI9TMiMjtwX4abXcfOVTclN5Sg_bVN7F2HWjMBEWkipyouuzD7ibUpjmKWy7Xv3Sh9ZFxD0lHVQDVmUg7mGl8VtuJhdKZG8ayjm9y-iUdLi_aS_uDRCyeV8i6G-xUimZYfQ=w942-h222-v0
+
+713cac74-590e-4d83-baae-ec4e2e838583
+
+ 
+
+2.4.1 Hall of fame 
+
+Ici sont listés les contributeurs, par ordre de prolixité décroissante. Si vous ne vous trouvez pas, ne désespérez pas : 
+
+c'est juste que vous n'êtes pas (encore) dans le top 4 et qu'il faut cliquer sur [plus] pour voir la totalité des GC3, avec 
+
+entre parenthèses leur nombre de contributions validées. Un clic sur le pseudo d'un GC affiche la liste des entrées 
+
+dans lesquelles il a des contributions en attente de validation (c'est-à-dire, pour la clarté de la suite, des termes qui 
+
+apparaissent en vert dans une entrée, alors que les propositions validées sont plutôt dans des dégradés de bleu, 
+
+violet, rose.) . Disons que c'est par là qu'il faut passer pour accéder aux contributions de quelqu'un qui ne figure pas 
+
+dans les derniers contributeurs. (A la relecture, ça parait compliqué… Mais faites-le en même temps, ça s'éclaire…) 
+
+2.4.2 Derniers contributeurs 
+
+Comme son nom l'indique, dans cette rubrique sont classés les contributeurs en fonction de la chronologie de leurs 
+
+interventions (ceux qui ont le plus récemment contribué apparaissent en premier). A part l'ordre, cette liste est en 
+
+tous points identique à celle du Hall of fame, elle permet juste de trouver plus vite les contributeurs du moment. De 
+
+la même manière que dans le Hall of fame, on accède en cliquant sur un nom, à la liste des entrées dans lesquelles la 
+
+personne a contribué. Il est vivement recommandé d' On peut donc aller voter sur les contributions de cette 
+
+personne : quand on clique sur une entrée de la liste, un tour de passe-passe du Maître des lieux fait qu'on ne voit 
+
+QUE les contributions de cette personne (c'est donc plus simple de les repérer pour aller voter, vu que ce sont les 
+
+mots en vert, et uniquement ceux-là). Quelques copies d'écran pour bien préciser les choses : 
+
+On clique sur le pseudo d'un contributeur, ici guiness.  
+
+On obtient la liste des entrées sur lesquelles guiness a des contributions en 
+
+attente. On choisit intelligent. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+L'entrée intelligent s'ouvre et les seuls mots qui sont en vert sont les 5 
+
+contributions de guiness : 
+
+ 
+
+A droite de chaque contribution, des petits carrés cliquables rouge et vert permettent de voter respectivement 
+
+contre ou pour. Notez que quand il s'agit de ses propres contributions, le contributeur voit en plus un petit carré 
+
+jaune, qui lui permet de supprimer sa contribution (Errare humanum est). 
+
+                                                          3  Gentils Contributeurs, bien sûr !... Qu'alliez-vous imaginer ??? 
+
+ 
+
+NB : On peut évidemment voter pour les contributions de tout le monde en vrac, comme elles se présentent dans 
+
+n'importe quelle entrée. La procédure décrite ci-dessus n'est à appliquer que lorsqu'on veut se prononcer sur les 
+
+contributions d'une personne précise. 
+
+2.4.3 A propos  
+
+Tout ce que vous voulez savoir sur Diko qui ne se trouve pas dans ces pages… 
+
+2.4.4 Champs masqués 
+
+Alors voilà, quand on s'ennuie, on peut s'amuser à masquer et démasquer des champs… Pour ce faire, on clique sur 
+
+un type de relation, par exemple synonymes, et hop, il disparaît de sa place et vient se coller sous la mention 
+
+champs masqués. Et on peut le démasquer, en recliquant dessus, et hop, il revient à sa place ! Trop cool, non ?  
+
+Plus sérieusement et après consultation, ça sert, mais je répugne à vous le dire, à VIRER purement et simplement les types de relations dont vous n'avez rien à 
+
+faire, celle au sujet desquelles vous n'avez aucunement l'intention de vous creuser la cervelle. Allez, hop, du balai ! Bref ça m'a tout l'air d'être là pour 
+
+convenance personnelle, je dis ça je dis rien… (Motif officiel : alléger l'affichage, pffff…) 
+
+3 Contribuer : sur quoi, comment ? 
+
+3.1 Diverses méthodes, des astuces techniques, mais quelques priorités… 
+
+3.1.1 Exhaustivité ou butinage ? Les relations les plus importantes… 
+
+L'idéal est de jeter son dévolu sur une entrée et de contribuer non seulement sur absolument tous les types de 
+
+relations pertinentes en fonction de la nature du terme (pour ne voir que ceux-ci, penser à paramétrer l'affichage sur 
+
+F-, voir relations pertinents), mais aussi de faire un maximum de propositions pour chaque type de relation. Voilà, 
+
+c'est dit ! Mais si on est pressé, alors il faut absolument s'astreindre au minimum syndical, c'est-à-dire contribuer 
+
+prioritairement sur les types de relations les plus importants compte-tenu de la nature du terme. Ces types 
+
+prioritaires, listés dans le tableau ci-dessous, sont des liens d'accès rapide vers leur explication détaillée. 
+
+Si le terme est: Traitez prioritairement les types de relations suivantes : 
+
+Un nom POS (r_pos) - Lemme (r_lemma) – Générique (r_isa) – Lieu (r_lieu et r_lieu-1) – Caractéristiques (r_carac) - Patient-1 (r_patient-1) - Agent-1 (r_agent-1) - Parties (r_has_part) – Causes (r_causatif) - Conséquences (r_conseq) - Thèmes/Domaines (r_domain) 
+
+Un verbe POS (r_pos) – Agent (r-agent) – Patient (r_patient)- Complément d'agent (r_compl_agent)– Causes (r_causatif) – Conséquences (r_conseq)– Lieu d'action typique (r_action_lieu)– Instrument (r_instr) - Manière (r_manner) 
+
+Un adjectif POS (r_pos) – Lemme (r_lemma) – Caractéristiques-1 (r_carac-1) – Synonymes (r_syn)  
+
+Un adverbe POS(r_pos) – Manière-1 (r_manner-1) - Synonymes (r_syn) 
+
+polysémique POS(r_pos) - Gloses (r_meaning)(+ toutes celles correspondant à son/ses POS) 
+
+3.1.2 Attention à la polysémie ! Donnez des gloses… 
+
+Quelle que soit la nature du mot sur lequel vous contribuez, il est essentiel de déterminer s'il peut avoir plusieurs 
+
+sens. Si c'est le cas, il faut absolument traiter le type de relation désigné par Gloses. En fournissant des gloses 
+
+comme expliqué ici, vous aidez en effet à raffiner le terme, c'est-à-dire à faire entrer dans le Rezo de façon 
+
+indépendante chacun des sens possibles que peut prendre ce mot. 
+
+3.1.3 Les autres relations 
+
+Elles sont moins importantes, ou plus spécialisées voire confidentielles, mais néanmoins, si elles sont dans le Rezo… 
+
+C'est qu'elles ont une bonne raison d'y être… Au moment de la rédaction de ce guide, 115 relations font partie du 
+
+Rezo. Vous pouvez en consulter la liste intégrale ici, avec leur nom, leur numéro, et une explication succincte. Toutes 
+
+ne sont pas contribuables, et parmi celles qui le sont, beaucoup sont aisément compréhensibles et ne nécessitent 
+
+pas de les expliquer de façon détaillée. D'autres méritent qu'on s'y arrête, parce que leur définition peut prêter à 
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzHy2BpBZ5KOU1SbvmXtkZSkMrFo97kJalaab6U9r5-4Y9KlaJHUotxnonwIhfAyz5R6nB8hmbRmn8_gKikh2z7OKg72bjZNrs8g8SSdVcDkPHunPX9TNXQMC7SOoBRPjyEO3Sumw=w117-h40-v0
+
+9a805c11-12fd-4aa8-a102-5e5abd04eeb5
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxyTcJDc3_4fwBrUVNKMfWYti8Vlbpc-Qv1HVNWuv4dLacwpNzC7Zi-7Lx6BJlCCTiPzlCWLyYNzRzmfJZ4Z_z-zO8d8u3N7lPSUfF4J40vcSP9iHmZdxMjxic-9nmJ9O23jbnK=w630-h40-v0
+
+cde8f6bc-ec24-441d-bc20-bc121c4592d7
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAx3Y0EwNrjJ1WEWB2IQWwPajstABkXYz8A8ZWuSUk8wO_UOM29DN4caae2_EOa_pOoKd0zP_5JDmt8wubghlBzp4o9U44M9AWXY7CSWOYvLoUMrSavlhnZJM6owzwekafWQyI_Hpw=w117-h52-v0
+
+f78b000b-9c86-4d05-a2f0-588f8692a458
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzI99GAG9DzdwF_mfRAl_WPtdeVsYOgfUUiptcJHzuyLEjn_SB6wj_ExLp-e9dP7g8molTtXUq3zgxITvd5_qBRhzrEVohaq2gytiB5UAv1eSX5BFYkYHgr07AyDuXbrFuUG3QKZw=w630-h52-v0
+
+1f723f30-69fe-4cc7-aee1-bc3e917ccdbf
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwNRabKu6GPF5qtEqOjhXI7g1Sjs3a5jRp_ShEVf4TXM5YTQRRERp9YY6mkapcjaUszgszzHXfQWEs6NYaOXr-w2QE8Z_76eFrNsNQWVEKN_C1aa7SYnSyg-k1ReaS7RI1MKDJX=w117-h52-v0
+
+660c4f96-78bf-40ec-8ad4-e5dacf5bd3e8
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxP4g5g3menYr-EBTexAtAtcc-axRuKYsaKq213LUKKFd_jLV961W6zGRkXKGb9duCQzkitobEELsU7LPK0hbXGSj1qaMFYd-ozsoNR6scLm8Kq-zaebvUi5eYcM80uwtox1YSiMg=w630-h52-v0
+
+1dcab6a2-02c3-40f9-8f58-78b4c3067e4f
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyHWo5PnoM4G9h0lOB10qExphWuDwBDMbTip1DRBHvcLmyVlwIrq2JIopFgJe7ckOBWJIE1qb-KNa9yipT-LOF3eP30-UBIudpUxFQL9BZ1qvjiDHBULgsAbYvv5X5h6mxSJkg=w885-h741-v0
+
+c78b8f72-df53-4cfa-a5d5-cf0b2c26f33a
+
+ 
+
+certaines confusions au niveau des contributions attendues, ou parce que la sémantique est plus ou moins ambiguë. 
+
+Ce tableau recense les relations qui peuvent poser problème et sera complété/mis à jour au fur et à mesure de 
+
+l'ajout de nouvelles relations, ou de la survenue de difficultés ou d'erreurs de contribution. Comme pour les relations 
+
+prioritaires, leurs noms sont des liens vers l'explication détaillée. Quand il y a risque de confusion entre deux 
+
+relations, elles sont expliquées en miroir (colonne de droite). 
+
+Sentiments (r_sentiment) Possession (r_own) Spécifiques (r_hypo)/Instances (r_instance) 
+
+Rôle agentif (r_agentif-role) Possession-1 (r_own-1) Tout (r_holo)/Ensemble (r_item_set) 
+
+Bénéficiaire (r_beneficiaire) Lieu>action (r_lieu_action) Etymologie(r_family)/Morphologie(r_der_morpho) 
+
+Instrument-1 (r_instr-1) Contraire (r_anto) Implication (r_implication)/Impl. agent.(r-agen_impl) 
+
+Rôle télique (r_telic_role)   
+
+ 
+
+3.1.4 Les informations lexicales et sémantiques 
+
+Les deux menus visibles sur la copie d'écran ci-contre, offrent la possibilité d'ajouter des informations au terme de 
+
+l'entrée. 
+
+ 
+
+ Informations lexicales : les informations lexicales à privilégier concernent la catégorie du verbe : indiquez via 
+
+ce menu s'il s'agit d'un verbe d'état, d'action, pronominal, transitif, intransitif… Ceci dit, il n'est évidemment 
+
+pas interdit d'indiquer que le mot est latin, ou familier, ou encore qu'il s'agit d'un nom propre… 
+
+ Informations sémantiques : ce menu demande quelques éclaircissements : il est très long et les libellés des 
+
+informations à sélectionner ne sont pas forcément très parlants. De plus, pour d'obscures raisons 
+
+Figure 3 : Ajouter des informations lexicales et sémantiques 
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwFuGJnGeI8ELmVm2Uq4Ftr85239WQ086jjKvageHoIDcHjQXcLT0VIzjYdsRGmezZSsV_GMyXxypiMWpr7AXvz6DdW-qdfBtUkCww938vucbbGkfLtvTYbpfvK9qZE1pcai7xcqA=w839-h591-v0
+
+72adca07-b762-4656-98c0-0344f88f0f0e
+
+ 
+
+techniques, il comporte aussi des informations plutôt de nature lexicale. Bref, pour que vous vous y 
+
+retrouviez, j'ai listé ci-dessous les informations importantes pour le contributeur (donc pas toutes), avec une 
+
+explication sommaire : 
+
+_INFO-POLYSEMIC Cette information très importante, qui indique que le terme est polysémique DOIT être ajoutée chaque fois qu'on découvre un terme polysémique et qu'on en donne les différents sens (voir Gloses). 
+
+_INFO-MEANING-LITTERAL En cas de terme polysémique, cette information est à appliquer au raffinement correspondant au sens propre. 
+
+_INFO-MEANING-FIGURED En cas de terme polysémique, cette information est à appliquer au raffinement correspondant au sens figuré. 
+
+_INFO-MEANING-PREFERED En cas de terme polysémique, cette information est à appliquer au raffinement correspondant au sens le plus fréquemment utilisé du terme. 
+
+_INFO-POLYMORPHIC A ajouter quand le terme a plusieurs natures grammaticales (POS) possibles (dîner est à la fois un verbe et un nom commun). 
+
+_INFO-BAD-ORTHO Si l'entrée comporte une faute d'orthographe, signalez-le et indiquez la forme correcte dans le champ Forme incorrecte de. 
+
+_INFO-LCOUNTABLE-NO Le terme est indénombrable (riz, beurre, huile, neige…). 
+
+_INFO-LCOUNTABLE-YES Le terme est dénombrable. (voiture, chat, rhinocéros…). 
+
+_INFO-SEM-ABSTRACT-NOUN _INFO-SEM-THING-ABSTRACT 
+
+Ces deux informations redondantes s'appliquent aux noms abstraits (jalousie, emprise, chaleur, liberté, épuisement…). 
+
+_INFO-SEM-COLOR-RELATED Cette information s'applique non seulement aux termes de couleur, mais à tous ceux en relation avec l'aspect visuel (opaque, translucide, irisé, nacré, lisse…) 
+
+_INFO-SEM-CONCR-NOUN _INFO-SEM-THING-CONCRETE 
+
+Ces deux informations redondantes s'appliquent aux termes désignant des entités concrètes (exemple : cafetière, compas, vernis à ongle, entrecôte, rhinocéros…) 
+
+_INFO-SEM-THING-ARTEFACT Cette information s'applique à un objet fabriqué par l'homme (meuble, assiette, maison…). 
+
+_INFO-SEM-EMOTION-RELATED Cette information s'applique à tout terme en rapport avec les sentiments/émotions (crainte, respect, mais aussi avoir peur ou vexé…). 
+
+_INFO-SEM-EVENT A ajouter quand le terme désigne un évènement (procès, mariage, meurtre, seconde guerre mondiale…). 
+
+_INFO-SEM-IMAGINARY A ajouter quand le terme désigne quelque chose d'imaginaire, comme un personnage, un lieu, un animal… (licorne, centaure, Peter Pan, bottes de 7 lieues…) 
+
+_INFO-SEM-LIVING-BEING Cette information s'applique aux êtres vivants réels ou imaginaires. 
+
+_INFO-SEM-NAMED-ENTITY A ajouter quand le terme désigne une entité nommée, que ce soit un lieu, une personne, un titre de roman… (Saint Louis, Guerre et Paix, boulevard Haussmann…) 
+
+_INFO-SEM-PLACE _INFO-SEM-PLACE-ABSTRACT 
+
+_INFO-SEM-PLACE-ANATOMICAL _INFO-SEM-PLACE-GEO 
+
+_INFO-SEM-PLACE-HUMAN 
+
+Ces informations désignent toujours des lieux avec les nuances suivantes : Un lieu abstrait (roman, conte, histoire…) Un lieu anatomique (foie, estomac, cavité abdominale, artère…) Un lieu géographique (ville, pays, forêt, quartier, département…) Un lieu dans lequel on peut trouver un être humain (gare, cabane, musée, cinéma...) 
+
+_INFO-SEM-QUANTIFIER Cette information s'applique à tout ce qui permet de quantifier (cuillerée, bouchée, poignée, pincée…et toutes les unités de mesure). 
+
+_INFO-SEM-SEX-NO Cette information s'applique à tout terme sans rapport avec le sexe. 
+
+_INFO-SEM-SEX-YES Cette information s'applique à tout terme en rapport avec le sexe. 
+
+_INFO-LHYPOCORISTIC Le terme a une connotation affectueuse (exemples : frérot, lapin, canard, biche…) 
+
+3.1.5 Ergonomie de la contribution : comment faire quoi ?  
+
+3.1.5.1 Entrer des propositions 
+
+Pour pouvoir entrer des propositions pour un type de relation donné, il faut cliquer sur le petit  à droite de son 
+
+nom. Le champ de texte s'ouvre, on peut taper, on valide avec la touche Entrée. 
+
+3.1.5.2 Entrer une succession de propositions  
+
+Vous avez plein d'idées et c'est fastidieux d'appuyer sur la touche Entrée à chaque mot : tapez vos propositions à la 
+
+suite, en les séparant par * et validez à la fin ! Exemple : Snoopy*Woodstock*Linus*Lucy*Charly Brown 
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAw17viojzqmIvEkWQUXiFit5c7008P7WwoBTdixJpFvgd-Z1KNUOarDef1iV-0IgzLHOGay0mFOJssqy_x_TKrA3be7tlINJZRLwTjoLnAawx4qrxADeZ0Vc6xo2rDL6EMYzXNP=w207-h52-v0
+
+a8358294-35b8-4fc0-aada-04476f0b3243
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyZQFIEP2LK2kcA0KIIK6vbPFyH_h02cobhdsUzVZcM6MwNiPXlpR8n3ACckRBrCSslmZz8S0Jjn7HukNhgBmKiKbBim9kZUaaiQmtbDYoPxt4uxGUswVu2cIn6FAKPCSKoJfe_=w540-h52-v0
+
+23d249f5-4bab-48fd-ae79-03a5a8d63624
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyPHIMwzzVbDSZVK5Sinp6ZGgRP7fujeT_C-5sT5vfVC13lmFYal_ip6H_LhsPbdxbkYP4wpd4eyEcVIikSUHzyfyD34gDgiVgo8RxaStgkGjGbtd8HKspNIcUflAeXEw0TCB-H7g=w207-h34-v0
+
+50daf1e9-e8a2-412f-9cdb-4ea55f8a6c4b
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAw33wuWaL_wWk86Wcyyec01Va9K6g9BHE-_kR8WbJR8iKY07N_9lCXGPEZeU1Wz3WGS13VlHlaKfpQmsjDbbIIt9ImloZiQNdGFW_yNgncNPrETiZbXKCweMDr1V1AYICC4q5-iEA=w540-h34-v0
+
+59d04d04-9edd-453c-8ea1-59480e2fd449
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxfT-10Io5cxDRBTj-YFXgdEKltnUm2YH11wd-X4VA-V-09QqGdtBcTAv8Zx-KgwfMPgd4eL_w1uYGgJJSCkBBZ-AC-eHWkNdsiKk2047gShbwtSlLMmfxOvqHQEucSp1DbaIC2=w207-h35-v0
+
+d37c5a4b-d6b7-4417-979c-01a78be4da8e
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAypEdjwdeNeUvlbv1FDQhLd6c2zV2cB6Yd1SllhpPLvEoqkvrVMbZ_39LbqWWRpySww8FfobQdWEDbnPL180dRqy_Y1yC2afdmmSC2DujbOYBb7YGpyuF7-iEw6uIgci8ocKXOJnA=w540-h35-v0
+
+caad7596-b611-4592-8727-4ed288abe990
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxpc2ZaxAga9E9FfJVrGMAPIi9tDu4ffkgpbAIUhZySCHyz4zDBrFbNKIoC_igHNs1rIYwdltkE1siIue08dzJLGZ53VEdHfqPI92kYffK-KQOFnYj4Faxj_zAd7RuGl1IwSCoa1g=w207-h34-v0
+
+bb0f6bfb-9871-46eb-9d5f-7b136c797998
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAw3kGx-YQD1Ov3tDbkK9Nwu52RRoddJp7NA44xS-VIP-SwEh33HuF86Tn3wN_N7wdbT-NBoIn4H3vAEHgBXD4gvp3wThPonaYO7vxUWQmLRnBq1j2RCBQeYUKCUfwNeBi9bz0O5-g=w540-h34-v0
+
+7bbe313a-323b-40c0-b098-31708d53aa0b
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAx0TGnBi5tUON8uhWTJVHhwBAJM-G9E2lE0UWRzxgotT3U43m6qD4Zv5M8u9lyksthqussgY9-c8MHKMachUVsnI-o_pS-frZvem3Kr8EutiOU5DRD8Yff6VeQcxfiKuMtRVMU_GQ=w207-h35-v0
+
+f5538253-0aa2-4cee-94b9-1e4f372ca3c7
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxchrHV17km6uZL3Bj4anMksOnG4m2l9n-TrWRlPch1wRfCPrCcn6aaFRVhbkevfXCxVW40FZ9KS4cyMeDt-TgreqIXjw5zsAdhn4XGBfdGX0gJreIL43Ocjg4ohpWVC4nojLpSSA=w540-h35-v0
+
+13e53129-a55d-42e9-a99a-6d40b274fa65
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzbVKfRR9hz5kQSN-dSE7wwm4IIsklSle1NUYbCfuevLCMBSWvnc6JHrY6BWuJtjf6YZTqbHj1La_S9CbJwVbjEbBy595LRIS6KCX5cZSQsK6BqWfxnAYgYSNuSd2km9x_T9VPTLg=w207-h34-v0
+
+a6924c2a-142e-43bd-bd41-ce666e4ba9b8
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwRjjuI3IwsPm21ewdzP8iJl2mQbwjs6cPw6Ti8GirtiuwqNt8Qn9FO9RkkwwUpEqfeSOGv4ADdC7Tl8DXwV18WJHmqbkiQpJZ7d7gZ1yD6ayrBbgagTsPuRvrsbESUpdND_udH=w540-h34-v0
+
+e8602374-b423-4722-9746-46ad6f0a4a9e
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxzhOuRurJnGLT9a9IZTKhtCCGbscMXACQJdBIOSQijLfGdRoDXb8ajArSeXr8DLX0IGgXqTKA9hRqO4LyG-GmBgG8YNeZXMeRDx_8Wxcv0vQUlfkDQClUnCI1VcJd-0OVdfxtZ9A=w207-h39-v0
+
+c002b58c-ffdb-4b42-b814-ccbd6370dd95
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwiThmF4KAiM7hHviJG-DPOPNZ1_dtfmokvw0POIXMx1H0CuVuVH6927Mut1kG4frQUdKn26mW317gGXEd1_ywTJTRdFO0CYkG-vAV76NGqeJi9wk_TVA7t7TujeMBwgi8wjiIR=w540-h39-v0
+
+8af57bd4-c279-4bce-a8f6-a3f1dd8e9ab2
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzHLJ6mjGhE9ENoyMcD-cLgzmR7xwy6yTrosU9zQ8Ln6ShFyPJQQ1ceQn5Xy__2Qi6ZPJmZDsRF54V1mBe-_cLVWaAFLam_5Z8zVP3PD19RS3I9v6su-2Mg0nM-WVk42RN7aRcHEg=w207-h34-v0
+
+938efc7c-572f-4c1f-80b6-63e911855018
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxXpsVx9zhFhb657w9coxKrjRsCaF78veGfBCuQP4TNGLK9RdfzlPtt7SqofNh3NfRJmFIdraDvmhn0YoxPPPyUEjZq7iuxzopXCuJggMQH9OMYU2EkzUhROxk-8-DDV_VLKf98LQ=w540-h34-v0
+
+77941e67-1164-4b79-a5da-09720b7776a7
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwDu_2JxBfbpdDF50FDoZwJHvOr4VZdVEiFQedtMpggI6jrdV_PnA637aN198n-j7EWwSbZBAtQ7sOWoaO00YdgGfir8TrPXTA8dtS-bdSrTE-Iw1MwXuvGR0SwHaeuF4F5K9S6nA=w207-h35-v0
+
+e2990fca-68df-4aaa-ad30-047f6ff05187
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyAxj5K1qHSiuc5k6Dtbzz810VW3-1sv7qL7f1Es_g3ffHVok7mE1vouGtwmn1lWEbOT9BWo4Qlx16X3_zasWJ4SEFeF6PdZ9tsrfPL1sAWIzFdFx1QkLidZx1m9DltF13CWVnIRw=w540-h35-v0
+
+cd64e2ed-07db-4635-b4bc-a3cd8701a2ea
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzJ8gaXgTI_1lnucvU2G56ZPU41piQ9ragAV-Qo1hoyp9CiC5TwlIye7CosatZLOFtRkpVPmOU0NtJsAmci-y3YcON60WPmT6XzdbxPxizb7RzY-9bE0mFfVhHq6JfrnC-Gi-uXlw=w207-h34-v0
+
+dfa9e10c-ca92-46e9-a714-75f027dda908
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzumeR59QHShMvMstjNMpuPJ7H1h0cPLTH1LtthFJAtdb0OvCoJjYgMjd6hJXbAtHexTxEcZwCm14wMG12f6CrLJOnDMdDVKOO25VvLZasq_1nHfBbiqrRq5i2C1-GGJNv75gkDGA=w540-h34-v0
+
+717a5aa8-9b5c-4002-aa84-9bdba1355035
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyd49aCNSSGIU6ufQNxxquulngpxc3fHNhVHH7PaKjGSDKtHIord6VqdXBMOfrTzk4NraYI_T9JGHXt-FucYT5Iy05G4jw4GVkGIWdHx68Ux3ZKNVOx3uVG9fX0KN8RNCXecJ6gZg=w207-h35-v0
+
+26f7f85c-f725-4413-860b-0035e30506d1
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAz1OA_rZcwKYUmq69ikJOEIYoBU3yLdqoki3H5QSh8a9gymfZG_Y3YsY-QMGqV_ZebkjhiI_AAQyuNtkWa6BLbyl6zhCI0dYHhTiZ1yzeCH4LA1HLgsd5b-IsmJt3MDepU0ayoRMA=w540-h35-v0
+
+4397d90c-1d12-4943-9dcc-1b3b19b030a8
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwtdr6x7Aosxs0JY7JcRUYPbq8OC2EWIIzg16inO_aAtpk9ovJ0L3eWbqi9HSVvvl1pDoicwP6_1ZTVZcojjblynjW6X_XicR6vMuz7_IAkqhxMu0H4TCtCivdSrik1D3E_NOCv1A=w207-h34-v0
+
+f401e517-5276-4afc-9792-68b7b9055ca8
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAw7des0zE_xB2nPaN46O1XYOHqMGo3zLVsmJN_NUuPoeftX_iB67X_UepFb-0b1NM82Xi1aPC1UMuV-wMv0xrIAV65hGKkYlOI1xh8u-kbU9h4X1yemykBt-kNRnZdMPrjZIOQxnQ=w540-h34-v0
+
+ac640f0b-1d33-4f69-8cd9-a6060aed016f
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzJ7erYlmkEbByC3TjG08YKsCzVY5ddYPnZ36AeiM5uoO7zMF0ValXo9242uYidpByE5Vs_6wv1ePAzFMMxiWCrJynvyAbx4AIKAAGgz05bRKcco7I27ck3uUPFAiKSMgaB15dxtA=w207-h35-v0
+
+9695d9ad-3638-40e5-9397-56060cbf62c9
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzthhelEeZNN0LVfdaP7OXxSssQG7YVMQfMQjlhUVaiMCLT0np0Q6tvhqqd-EM3g4p-qYjCp2XcOwi4pFpxMFEVV8T7-j0yn3-37PxmeiX1mngywP43noNEkc0QcWzNIpIwoej1xQ=w540-h35-v0
+
+7cc0c9e8-58bc-4722-9c88-bb1680551f05
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwrHfmLwjb2chh4pXFTq8LY1gtbH9e6n9wkfD9vDeLeHfzVYHlpD68wc1Vpv85TozpNCyI7V_9yaTs4jjdDbl6LzjDZ6KurEQF2SfNgRvwXTWWL9r5p-s_Lz_n9hMxNgHu4NjdduQ=w207-h86-v0
+
+e6852d3d-f95f-49fe-8253-e70c421c9da5
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwn8jO7kwATIMuMIex96C-qrrKJh4Tv8P6Cm7FwnLsgYhnrOFzU9BIsoZ4k7T4Ls_AlnNJ2e8GDtDly835HZchDeCCFcMU308PRoxNGKj4CQpwHqcnFaZBLvF730qUFBJfh_eqx=w540-h86-v0
+
+c59eae88-a0fd-43fb-a2ff-d95c03725b8f
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyveNmBKY_FlLHVG7A0dUc4f_8kLZK2D_2NEjZGmqNNQC87N0UEMFw3wPd9rOCsNyiQJBeaTnq0HV5ePa-v7Y9-_DZfCU_B8c_omRHy0YPMOpf0FgR7YhSu7tMgVcfKapf_MV2SIw=w207-h34-v0
+
+473858cb-7020-4c64-88d5-771092b077ff
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAymICA_PjNqCYEeVUoo-ASABuHci0xtdI0WLmmdcmzhx1_gUek3jEiThQNndM-Eju615UJfN0Z4vuTJGe-jB4uMtLe2ZrUeiLXrQK-AfV2RDopBG7o6-xvOLUTL3V7BnupzMOxA=w540-h34-v0
+
+78dbce6b-21a9-478a-9327-d24cda818c65
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwOQc0s_AurYhB8EsF7nHJYh74sylqxUO8inxNCRKdu-jA9xmQ2MmO5J7TTe5zk9KqWcZsaUNhoriJcmNENTwjue75Si_WzwSwaXfKSUzHGN0gxxgGu50rJBxDQW2FUoXk-Sv1v=w839-h59-v0
+
+61f70ca8-b5e4-42cd-919e-ebf39535f804
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwMNVyTSxlqhFycQyJq5OteBtxmkwmp02WYBrHfZXvCNXIr4Am5gSwptk0QNv-UPEiD09I7PBVU0tU0qawOeTTOCvSL1b3w2DEaf9wWYJwm9cuipiQkn-4e1wxACZRrmWUaXXSq-w=w960-h51-v0
+
+5b109993-ba27-4191-8f70-622646439d79
+
+ 
+
+3.1.5.3 Invoquer un mot 
+
+Vos propositions doivent s'afficher en vert, puisque par définition, ce sont des propositions, qui ne feront partie du 
+
+Rezo qu'une fois qu'elles auront été validées par un membre assermenté du HCEC4 . Mais il peut arriver que la 
+
+mention 'paracloucycle' est inconnu, le proposer ? apparaisse. Deux possibilités : la plus infâmante, c'est que vous avez 
+
+fait une faute d'orthographe (ça arrive aux meilleurs), vous corrigez, et hop, le mot apparaît en vert. La plus 
+
+excitante, c'est que vous avez déniché un mot impeccablement orthographié qui ne fait pas encore partie des 
+
+quelque 560 000 termes du Rezo. Vous pouvez alors l'invoquer en cliquant sur le proposer ? et en vous laissant guider 
+
+(parce qu'on va quand même pas tout vous dire…) Attention : si vous avez glissé un mot inconnu dans une succession 
+
+de propositions séparées par des *, il ne sera pas détecté : on ne vous proposera pas de l'invoquer, il sera purement 
+
+et simplement I-GNO-RÉ ! (oui, je sais c'est dur… Une seule parade pour les adeptes de la contribution multiple 
+
+(= avec *) : être attentif, et au moindre doute, retaper le mot tout seul.). Les mots que vous invoquez ainsi doivent 
+
+recevoir l'aval d'un membre assermenté du HCV5 pour faire leur entrée officielle dans le Rezo. Cependant il y a un 
+
+truc géniallissime : une fois que vous l'avez invoqué, ce mot qui apparaissait comme inconnu, vous allez pouvoir le 
+
+faire rentrer dans les propositions, et ce sans attendre que le HCV5 le valide ! vous le retapez comme contribution, et 
+
+hop, il apparaît en vert foncé, et il n'y a plus qu'à attendre le passage des deux HC, qui ne manqueront pas de se 
+
+réunir pour statuer sur vos invocations et propositions. 
+
+3.1.5.4 Corriger les erreurs  
+
+Contribuer, c'est enrichir et étoffer le Rezo, mais c'est aussi … le nettoyer ! Il est particulièrement important 
+
+d'essayer autant que possible de corriger les erreurs du Rezo, donc les propositions fausses qui sont déjà validées et 
+
+qui ne sont donc pas en vert mais dans des dégradés de bleu, violet, rose. Quand on repère un terme validé, mais 
+
+faux, il faut donc le re-proposer > il s'affiche alors en vert, puis voter contre en cliquant sur le carré rouge. Faites cela 
+
+quand vous êtes absolument sûr de l'erreur : en cas de doute, il vaut mieux ouvrir un fil de discussion comme 
+
+expliqué ci-après. 
+
+3.1.5.5 Ouvrir un fil de discussion 
+
+Pour ouvrir un fil de discussion, cliquez sur le petit crayon de n'importe quel type de relation, puis tapez _COM dans 
+
+le champ. Un clic sur le  qui apparaît fait surgir une fenêtre popup, avec une zone de texte (rédiger un 
+
+commentaire) dans laquelle on peut faire diverses choses : 
+
+ amorcer une discussion : comme dit plus haut, on peut faire part de ses doutes sur un terme, ou expliquer 
+
+pourquoi on a voté contre telle proposition. Les autres contributeurs, ou un membre du HCEC4 peuvent alors 
+
+répondre par le même moyen. On tape directement sa question ou son observation dans le champ de texte. 
+
+Le terme apparait alors avec une petite  en page d'accueil. Il n'y a plus qu'à attendre qu'on vous réponde ! 
+
+ mettre une définition : en tapant def: puis la définition du terme de l'entrée dans la zone rédiger un 
+
+commentaire, on obtient l'affichage de la définition en haut de l'entrée. Il est particulièrement utile de 
+
+rédiger des définitions (ou de les cc depuis une source libre de droits) pour chacun des différents sens 
+
+(raffinements) des termes polysémiques (voir Gloses). Un  à côté d'un terme indique qu'il possède une 
+
+définition : 
+
+ 
+
+Figure 4 : Les différents raffinements de détailler ont été dotés de définitions 
+
+ illustrer l'entrée : en tapant link:url_d'une_image, on peut illustrer une entrée. L'image choisie apparaîtra au 
+
+survol de l'icone  , en haut de l'entrée, à droite du menu informations sémantiques, et sera également 
+
+visible lors des parties de JDM sur ce terme. 
+
+                                                          4  Haut Comité d'Évaluation des Contributions 
+
+5  Haut Comité de Validation 
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxW8rxY1sbxnwb9xlwsXXYwsWmj6sx3PkLBR-nf3HfX09li4Q_xnRDRPk6dUG-CBBIKz5zrK56BMKs95kVKTBBtVnHejBOrewY_CgjLQ3XyUU9HkqiDpLAEy6vNxj-kNEFprP9s=w912-h349-v0
+
+695f7767-fa08-45eb-ae16-09572cc8e238
+
+ 
+
+3.1.5.6 Raffinez vos propositions 
+
+Quand vous proposez un mot pour un type de relation donné, il se peut que le mot que vous proposez soit 
+
+polysémique. S'il est déjà connu comme tel dans le Rezo, le système va vous proposer de choisir le sens 
+
+convenable, de deux manières : soit au moment ou vous le tapez, dans le menu d'autocomplétion, soit après 
+
+avoir cliqué sur Entrée, comme le montrent les copies d'écran suivantes : 
+
+ 
+
+Figure 5 : à gauche, l'auto-complétion propose les différents sens du mot journal au moment où on le tape, à droite, un menu propose d'ajouter le raffinement convenable une fois le mot journal introduit. 
+
+L'avantage de la deuxième manière, c'est que vous faites rentrer à la fois le terme non raffiné et le 
+
+raffinement correct. 
+
+3.1.5.7 Annotez les relations 
+
+Dans tous les cas, à l'exception d'idées associées, les relations sont annotables. Annoter une relation consiste à 
+
+fournir des informations, qui la précisent, la caractérisent, la restreignent éventuellement. On peut dire 
+
+qu'une relation est toujours vraie, ou possible, ou vraie mais non pertinente, ou sans intérêt, ou souvent crue 
+
+vraie… ou donner tout autre information qui vous semble pertinente et intéressante. Quelques exemples 
+
+d'annotation : 
+
+ Nadine Morano r_agent-1 parler : la relation n'est hélas pas fausse, elle est annotée comme [non 
+
+spécifique] ; en effet la capacité de parler n'est heureusement pas propre à Nadine Morano, mais c'est une 
+
+capacité typique d'un des génériques du terme, comme par exemple être humain, ou humain, ou personne. 
+
+ Chien r_has_part atomes : la relation est annotée comme [juste mais non pertinente] ; en effet le fait d'être 
+
+constitué d'atomes est une caractéristique beaucoup trop universelle pour pouvoir donner lieu à des 
+
+inférences intéressantes et informatives. 
+
+ roi r_lieu trône : cette relation terme>lieu typique peut être annotée avec la préposition de lieu [sur]. 
+
+L'annotation sert ici à préciser la relation de lieu : ainsi, pour roi r_lieu palais on annotera [dans]. 
+
+Pour annoter une relation, rien de plus simple : toutes les relations annotables sont suivies d'un petit  sur lequel il 
+
+suffit de cliquer pour ouvrir la fenêtre d'annotation. Sous la zone de saisie de l'annotation, figurent toutes les 
+
+annotations déjà réalisées. 
+
+3.1.5.8 Fabriquez des agrégés ! 
+
+ Un agrégé est une grosse tête un objet lexical constitué d'un terme ou groupe de termes relié à un autre terme par 
+
+une relation sémantique. Dans le Rezo, ça se présente comme ça : battre [objet] œufs, plonger [avec] palmes, faire 
+
+chier [objet] enseignant, refroidir [sujet] café, prix [carac] excessif, poils [lieu] lavabo… 
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyZoZOgMxqBRpUSayhHtkvd7Af4MtaLlQs_eAoj2eiFr2LTbdFqUVRhbQV7wqAC-GNAxZY_ZE6ueCvZ9o5ESv2aOMeVCSVlZm6v0Vf-Ipr7jeB7fLkbgravzXxPZ0dA45DcTh2x=w839-h305-v0
+
+2481766a-88a7-449e-a759-01128152f452
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyn6pdqWZYIDNILqkEshSlxSHNArZ5k0VA55m05peuiLNLtivJy9kT1GGBJ6y5qaP6goMpSOVBnVXL1vFr5xk1C0YjZVlQYei6cRtEKNqT6Br8jOEgRDBFeaVQuc2H4g7plruCJWA=w774-h160-v0
+
+0ce04b4f-feda-4caf-b0cd-5131ddd0ee68
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwA0h2FU99a1SpvBLEPVtPpOYxNPMjXalShFV1fwR4oAjWI0qpepdxatIz1asb77wHZmx4jDdJg5KFQ8GPu2Zo0l7QCYE8rmpafy3ZwqHEqP4dd8-a6eYB41Fsexh9_U12A1KU0=w461-h294-v0
+
+4eddc599-6faa-491b-a6d1-0224b05e3289
+
+ 
+
+On peut invoquer un agrégé de deux manières : en le tapant dans la zone de recherche avec une syntaxe similaire à 
+
+celle des exemples ci-dessus, puis en cliquant sur voulez-vous le proposer ? : 
+
+ 
+
+Figure 6 : Invoquer un agrégé via la fenêtre de recherche de Diko 
+
+Ou en utilisant la fenêtre d'annotation: aller dans l'entrée correspondant au premier terme (ici le verbe courir), puis 
+
+dans le type de relation r_agent (qui/quoi peut courir ?) et chercher rhinocéros, puis cliquer sur l'icône  pour 
+
+ouvrir la fenêtre d'annotation et enfin taper aggregate: dans la zone de saisie : 
+
+ 
+
+Figure 7 : Invoquer un agrégé via la fenêtre d'annotation 
+
+Notez qu'il est possible, pour les relations [carac] ou [manière], d'invoquer également la combinaison de termes, 
+
+sans forcément en faire un agrégé. Par exemple, on peut invoquer tarte salée et/ou tarte [carac] salée, ou encore 
+
+chanter faux et/ou chanter [manière] faux. Quelle que soit sa forme, il faudra que votre invocation soit validée par 
+
+un membre assermenté du HCV5 avant de faire partie du réseau et de pouvoir faire l'objet de contributions, ou être 
+
+livré soumis à l'imagination des joueurs via une partie de JDM. 
+
+3.1.5.9 Les signes cabalistiques du Diko 
+
+Un bref récapitulatif ci-après… peut-être pas exhaustif… Mais en cas de doute il y a généralement une info-bulle ! 
+
+[¿] Terme sans POS, ajoutez-le ! [§] Terme autoréférent. 6  
+
+♦ Nom sans générique, cherchez-en un !  La relation est annotable : cliquez pour annoter ! 
+
+[!] Terme mal orthographié (juste pour info) [↓] Relation annotée non spécifique 
+
+ Le terme est illustré…Survolez et enjoy ! [p] Relation annotée non pertinente 
+
+ Le terme a une définition [plus] Il y a d'autres données. Cliquez pour les voir. 
+
+ On discute sur cette entrée… Joignez-vous !  Ce terme a besoin de vos contributions… 
+
+                                                          6  Moi j'ai rien compris… Mais bon, c'est pas d'une importance capitale non plus… Si vraiment la curiosité vous taraude, adressez-
+
+vous là. 
+
+ 
+
+3.2 Les types de relations "contribuables", et comment bien les comprendre 
+
+3.2.1 Le POS (r_pos) 
+
+POS signifie Part Of Speech (Partie Du Discours): c'est du jargon de linguiste, pour le reste du monde, ça évoque 
+
+davantage Plan d'Occupation des Sols que… nature grammaticale, vous savez, ce qu'on a tous plus ou moins appris à 
+
+l'école primaire, et qui se décline en verbe, adjectif, nom commun, adverbe, préposition... Mais bon, ils ont l'air d'y 
+
+tenir, alors va pour POS… Quelques non-linguistes ont fait pression avec une certaine opiniâtreté pour que dans le 
+
+menu dévolu au choix du POS, en haut d'une Entrée de Diko, il y ait écrit…nature grammaticale !  
+
+Pour chaque terme, il est donc indispensable d'indiquer la nature grammaticale, en choisissant celle qui convient 
+
+dans le menu déroulant. Cela doit être fait systématiquement pour tout nouveau terme qui fait son entrée dans le 
+
+Rezo. Comme cela n'a pas été fait systématiquement au début, il y a… hélas environ 26 000 pauvres termes 
+
+orphelins de POS ! Quand vous vous ennuyez… Faites une BA : cliquez sur  en haut à droite, le système vous 
+
+proposera un de ces malheureux, et vous pourrez remédier à ce triste état… 
+
+Le menu est relativement explicite. Grâce à des demandes insistantes de contributeurs zélés, qui en avaient marre 
+
+d'aller chercher tout en bas Adj Mas Sing, il regroupe en haut les natures les plus fréquentes et communes… 
+
+Quelques décryptages s'imposent cependant : 
+
+Modifier Terme ou expression qui peut qualifier aussi bien un verbe qu'un nom, comme par exemple j'ai déjeuné sur le pouce et un repas sur le pouce, se mettre en pyjama et un enfant en pyjama, marcher en tongues et une fille en tongues. 
+
+Chunk Ce sont les agrégés en général, comme amour [carac] impossible ou De quelle manière pourrait-on agacer le Kaput ? Vous n'avez pas besoin de le mettre, le système est intelligent ;-p et le rajoute tout seul, dès que l'invocation d'un agrégé est validée. 
+
+Expression C'est une appellation contextuelle à géométrie variable qui ne correspond généralement pas à ce qu'on qualifie habituellement d'expression. Donc ne vous hasardez pas, demandez, ou ouvrez un fil de discussion… 
+
+et quelques remarques : 
+
+Ver: est à utiliser quand le verbe n'est pas à l'infinitif. Sinon, Verbe Infinitif: c'est mieux… 
+
+Un participe passé est très très souvent un adjectif aussi… C'est pourquoi, en tête de menu vous trouverez les 
+
+deux. 
+
+Contentez-vous de mettre les natures grammaticales évidentes (verbe, adverbe, adjectif, nom…avec leurs genre 
+
+et nombre pour ces deux dernières…), ça sera déjà très très bien…MAIS : 
+
+On indiquera le POS adverbe pour tout terme ou groupe de termes qui complémente un verbe, MEME SI 
+
+GRAMMATICALEMENT ce n'est pas un adverbe ! Exemple : un jour ou l'autre doit être considéré comme un adverbe. 
+
+En effet, en tant que complément circonstanciel de temps, il caractérise le verbe (Il reviendra un jour ou l'autre). 
+
+De même, on indiquera adjectif à tout groupe de termes qui caractérise un nom ou un groupe nominal. Exemple : 
+
+à carreaux, d'été, au chocolat doivent être étiquetés adjectif (Robe à carreaux, robe d'été, glace au chocolat). 
+
+Pour un terme de la forme nom + adjectif ou nom + complément du nom comme par exemple femme fatale, ou 
+
+femme de lettres, la nature grammaticale à indiquer est Nom Fem Sing:. De même pour un verbe+adverbe, comme 
+
+courir vite ou parler fort il faut mettre Verbe Infinitif:. D'une manière générale, indiquez toujours le POS du noyau 
+
+de la forme composée.  
+
+En cas de terme polysémique, mettez les POS correspondant à chacun des sens s'ils sont différents. Exemple, 
+
+éclaté est à la fois un nom et un adjectif, il faut mettre Nom Masc Sing: et Adj Mas Sing: (Bon c'est fait, hein ?) 
+
+Syntaxe : courir r_pos Verbe Infinitif: 
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwVV8AKIuHBL1HGDpDvzgGeRzR5gUqQnmaQxTke-mriN_uSr8aJfG9dPFgHklQPEOqL54gEKNWV6Kfm3H4VeocGGoOAoiPezzzn58ARfmrNw4eQA7pHivGlWL9y4BKWeXH4Q2Z1Dg=w78-h52-v0
+
+c026a949-e650-4327-a0d2-b540a730be39
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzfgHWtH_uEtCLgLU1Wu8w_u-Rpy-K9cVlowIo29T5kx0HTsCoHuWuGVRCORM8MLgaCDf6DRHbO9nnQJZVSN5HrP5JGx1ltd2MlkLLBp1XBPHjLm9H3Vpjl3rU7U9c42ahAd7_JTg=w670-h52-v0
+
+12234f79-5b67-4de1-813d-7c9a878dc9c7
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyga-nL_m01z02Q_4vaHOadshDVYV-kq2dEk9ccj_F-XRIVBPa5WnBa4I_ykSuGfMWvB8AzD7IeV1iNJsQ3y3L0FPG3I5XdTQbtEt1aDPkt7-S4NKGeBmCg5CphjlKlUfVrPnES=w78-h52-v0
+
+69a9c27e-f906-4d89-96c2-d0003fd31826
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAz8DhtX9MV3NsTzD6SnncxvxnFu4R6Rc3-P1jPCmVaR6YT1A8_Hzhocnely5R03ymLWOSXmsZh8B-t1TymCh5fWjMwJaLnXc-zAWT_5MdFT6ChYaJNQwgdSBNnqZGIxSOV-uxEqJw=w670-h52-v0
+
+80873a0a-b98c-490d-93ba-23f0c4c8371f
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyWUCBhMBw_Yy_FOrCvoA6AcYhsaHh62nMh9zuB2rkZLWDnu5mizG2zN02Ea9uSFqt8LcU42Mwrrse16Dg4dueFybJssg-uvZJRGiS8oJOMpHOW-_RqqMmdZ4FU-K0d9AYc0qYM=w78-h34-v0
+
+50684b38-f563-4886-92a3-dcef9d3dea8f
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAztLhXsfTqXt34jSenEGZe8ouTP6yGVGSv0WJrskrCvTAj69XcgVJK5LPil3GM5RUxbCRUcp1wLayZ6ZyZQnpNLXtZC3i5mDQeq0QkP0Jn6bs9vJg93L7lj4QI7VbYFgP1crjGPXA=w670-h34-v0
+
+11a71371-4736-4ee2-a081-b6c047fededc
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyoEDdAXOxLRjQN-Vh1uylIXknfnK_JW255uAQbLY6DN34pp3qi8mAx4FOlRR-0-ToM7gdQBN1TMsp7mWgm-ysmV86iHt9uj-t0clDyMTyp-6YsviSH2unVGYag7t9MRhueMq4wtw=w839-h124-v0
+
+57be9227-f885-4ddb-819b-d60798717d85
+
+ 
+
+3.2.2 Le lemme (r_lemma) 
+
+Le lemme ou forme canonique est la forme non fléchie du terme, c'est-à-dire l'infinitif pour un verbe, le singulier 
+
+pour un nom, et le masculin singulier pour un adjectif. Attention, un terme peut avoir plusieurs lemmes. Par 
+
+exemple : avions peut avoir pour lemmes avoir et avion. 
+
+Syntaxe : désuètes r_lemma désuet 
+
+3.2.3 Générique (r_isa) 
+
+Voilà un type de relation très très très important , et même LE PLUS important, carrément incontournable pour un 
+
+nom ! C'est en s'appuyant -entre autres- sur cette précieuse information que les elfes qui parcourent le Rezo 
+
+parviennent à faire des déductions plus ou moins judicieuses… Le générique ou hyperonyme d'un terme, entretient 
+
+avec ce dernier une relation sémantique hiérarchique : il l'englobe, le comprend, désigne une catégorie (pas 
+
+forcément la seule) à laquelle il appartient. 
+
+Exemples : animal est un générique de mammifère, de rhinocéros, d'hippopotame, d'éléphant, de souris, de 
+
+gazelle… Et mammifère est lui-même générique de tous les autres, qui en sont des spécifiques ou hyponymes. 
+
+Matière grasse est un générique de beurre, huile, margarine, saindoux. 
+
+Meuble est un générique de lit, table, chaise, canapé, armoire. 
+
+Attention, ce n'est pas toujours aussi simple… Une idée de générique pour fosse ? Pour route des épices ? Pour 
+
+aléa ? Ben…moi non plus… cela mérite réflexion… c'est juste pour dire que parfois, c'est vraiment difficile… Quand 
+
+on ne sait pas trop, quand on hésite, on peut Ouvrir un fil de discussion. 
+
+Pour la relation générique (r_isa) les propositions doivent être de même nature grammaticale. 
+
+Syntaxe : rhinocéros r_isa vertébré 
+
+3.2.4 Lieu (chose>lieu) (r_lieu) 
+
+Pour une chose, il s'agit simplement d'indiquer dans quel(s) lieu(x) on peut la trouver, les lieux pouvant être de 
+
+toutes natures : physique, géographique, anatomique… 
+
+Syntaxe : rhinocéros r_lieu Afrique 
+
+Si le terme  sur lequel on contribue est également susceptible de désigner un lieu, il faut en profiter pour renseigner 
+
+la relation symétrique : que peut-on trouver dans ce lieu ? (r_lieu-1) : par exemple on peut trouver autobus dans les 
+
+lieux route, autoroute, parking, ravin, mais autobus étant également un lieu, on renseigne alors la relation ci-après : 
+
+3.2.5 Lieu-1 (lieu>chose)(r_lieu-1) 
+
+Pour toutes les termes qui représentent des lieux possibles, comme des choses aussi diverses qu'autobus, cafétéria, 
+
+estomac, tiroir, écurie, garrigue, rivière, on ne doit pas se priver de lister ce qu'on peut y trouver. 
+
+Pour les relations r_lieu et r_lieu-1 les propositions doivent être des noms ou groupes nominaux. 
+
+Syntaxe : écurie r_lieu-1 cheval, poney, pur-sang, paille, jument, poulain, palefrenier… ou encore garrigue r_lieu-1 
+
+promeneurs, amoureux, thym, cigale, cailloux ou encore inconscient collectif r_lieu-1 idée reçue… 
+
+3.2.6 Caractéristique (r_carac) 
+
+Pour une chose au sens le plus large possible, qu'elle soit concrète ou abstraite, on énumère ici ses 
+
+caractéristiques typiques ou possibles, sans craindre de mettre des caractéristiques évidentes (la machine ne sait 
+
+rien, elle n'a aucune expérience de la vie, faut tout lui dire, que l'eau mouille, que le feu brûle…) : ainsi, une tarte 
+
+salée a comme caractéristique salée , une zone urbaine est urbaine, un sorbet est froid, une flamme est brûlante… 
+
+Les caractéristiques sont essentiellement des adjectifs et des participes passés, mais il est possible de mettre comme 
+
+caractéristique tout terme ou expression qui complémente un nom, même si ce n'est pas un adjectif sensu 
+
+ 
+
+grammatico. Ainsi, à carreaux, en robe de soirée, cucul-la-praline, en robe des champs, en cul de poule, à emporter, 
+
+doré à l'or fin, à l'eau de rose sont des caractéristiques. 
+
+Un adjectif ou un adverbe peuvent également être caractérisés par un adverbe : dans très grand, plus beau, assez 
+
+difficile, ou plutôt gentiment, les adverbes très, plus, assez, et plutôt caractérisent respectivement les adjectifs 
+
+grand, beau, difficile et l'adverbe gentiment. 
+
+Pour la relation caractéristiques (r_carac) on proposera des adjectifs, des participes passés, des groupes nominaux 
+
+prépositionnels, etc. pour les noms / groupes nominaux et des adverbes pour les adjectifs et les adverbes. 
+
+Syntaxe : rhinocéros r_carac herbivore, lourd, massif ou encore roman r_carac à l'eau de rose ou encore aimable 
+
+r_carac très 
+
+3.2.7 Patient pour un nom (r_patient-1) 
+
+Pour un nom ou un groupe nominal X, ce type de relation correspond à la question que peut-on faire à/de X ? et 
+
+demande donc des verbes, dont le terme X sera complément d'objet direct. Par exemple, pour oie, on pourra mettre 
+
+attraper, gaver, saigner, plumer, découper, farcir, faire mariner, enfourner, mettre au four, découper, déguster. 
+
+_________________________________________________________________________________________°,> 
+
+Si le terme X est complément d'objet indirect (d'un verbe transitif indirect donc), il est patient s'il est introduit par la 
+
+préposition de. Par exemple dans parler d'un livre, ou rêver d'un voyage, livre et voyage sont patients de parler et 
+
+rêver. Si le complément d'objet indirect est introduit par la préposition à, comme dans sourire à son voisin ou 
+
+téléphoner à sa sœur, alors on considèrera que le COI est un bénéficiaire et non un patient (voir Bénéficiaire 
+
+(r_beneficiaire))7 
+
+Syntaxe : rhinocéros r_patient-1 admirer ou encore voyage r_patient-1 rêver ou bouquin r_patient-1 parler 
+
+3.2.8 Agent pour un nom (r_agent-1) 
+
+Pour un nom ou un groupe nominal X, ce type de relation correspond à la question que peut faire X ? et demande 
+
+donc des verbes, dont le terme X sera sujet. Par exemple, pour oie, on pourra mettre fuir, courir, se sauver, mordre, 
+
+se débattre, battre des ailes... 
+
+Syntaxe : rhinocéros r_agent-1 trottiner 
+
+Pour les relations (r_patient-1) et (r_agent-1) les propositions doivent être des verbes. 
+
+3.2.9 Parties (r_has_part) 
+
+En termes savants, on parle de méronymes, et cela désigne les éléments constitutifs d'un objet au sens large, ceux 
+
+qui garantissent son intégrité, ses pièces détachées en quelque sorte. Par exemple, les parties de voiture sont 
+
+moteur, roues, volant, pot d'échappement, rétroviseur, aile (voiture), levier de vitesses, etc. On ne doit pas faire de 
+
+confusion avec des éléments qui peuvent être inclus dans l'objet sans en être des constituants : par exemple, stylo, 
+
+crayon, gomme, ne font pas partie de la trousse, ils sont contenus dedans. De même, le sucre ne fait pas partie du 
+
+sucrier, il est à l'intérieur de ce dernier, tout comme un parasite sanguin est à l'intérieur du système circulatoire 
+
+sans en être un élément intrinsèque. 
+
+Quand un élément constitutif est présent à plusieurs exemplaires, comme les roues pour une voiture, on doit 
+
+privilégier le mot au pluriel. Disons qu'on peut mettre les deux formes, mais si on n'en met qu'une, on préfèrera 
+
+roues à roue. 
+
+Pour la relation parties (r_has_part) les propositions doivent être des noms ou groupes nominaux. 
+
+                                                          7  Si un autre cas se présente et que trancher entre patient et bénéficiaire semble difficile, merci d'ouvrir un fil de discussion ! 
+
+(voir Ouvrir un fil de discussion ) 
+
+ 
+
+Syntaxe : rhinocéros r_has_part corne, queue, abdomen, pattes… 
+
+3.2.10 Thèmes/domaines (r_domain) 
+
+Cette relation rend compte de la (des) thématique(s) ou du (des) domaine(s) dont relève le terme considéré. Il s'agit 
+
+d'indiquer le contexte général (sport, loisir, médecine) relatif au terme, ou une grande catégorie à laquelle il 
+
+appartient. Par exemple, batteur électrique aura pour domaines ustensiles de cuisine, électroménager, art 
+
+culinaire, pâtisserie, tandis que pour smartphone on proposera téléphonie, technologie, communication, réseaux 
+
+mobiles… 
+
+NB: Si vous mettez une catégorie d'objets, pensez à la mettre au pluriel. Par exemple, mettre produits laitiers plutôt 
+
+que produit laitier qu'on réservera à la relation générique, ou encore voitures de collection plutôt que voiture de 
+
+collection. Par contre, on mettra bien sûr les secteurs d'activité au singulier : médecine, littérature, gastronomie, 
+
+matériel de bureau, politique, écologie, industrie automobile, etc. 
+
+Pour la relation Thèmes/domaines (r_domain) les propositions doivent être des noms ou groupes nominaux. 
+
+Syntaxe : mouton r_domain zoologie, élevage, industrie alimentaire, industrie textile, boucherie, alimentation… 
+
+3.2.11 Agent pour un verbe (r_agent) 
+
+L'agent pour un verbe est toujours le sujet, c'est-à-dire l'entité qui effectue typiquement l'action si le verbe est à la 
+
+voix active, et l'entité qui la subit dans le cas d'un verbe transitif direct à la voix passive. Dans Le rhinocéros est 
+
+examiné par le vétérinaire du zoo, l'agent est bien l'entité qui subit l'action passive d'être examiné donc le 
+
+rhinocéros, et non l'entité qui la fait, c'est-à-dire le vétérinaire. (NB : si on prend le verbe à la voix active (examiner), 
+
+la phrase devient : Le vétérinaire examine le rhinocéros. L'agent de la forme passive devient le patient de la forme 
+
+active, tandis que le complément d'agent de la forme passive (le vétérinaire) devient l'agent de la forme active.) 
+
+Pour la relation Agent (r_agent) les propositions doivent être des noms ou groupes nominaux. 
+
+Syntaxe : récolter r_agent paysan ou être examiné r-agent malade 
+
+3.2.12 Complément d'agent pour un verbe à la voix passive (r_compl_agent) 
+
+Pour les verbes qui figurent dans le Rezo à l'infinitif de la voix passive, comme être mangé, être battu, être déçu, 
+
+être élu, etc. on vient de voir que l'agent était l'entité qui subissait l'action passive. Il faut donc indiquer les entités 
+
+susceptibles d'effectuer l'action, c'est-à-dire les compléments d'agent. Par exemple, être élu peut être fait par 
+
+peuple, être mangé peut être fait par prédateur, être battu par rival, être tué par assassin… 
+
+Pour la relation Complément d'agent (r_compl_agent) on proposera des noms ou groupes nominaux. 
+
+Syntaxe : être ovationné r_compl_agent foule, spectateurs, public, groupies, assistance (public)… 
+
+3.2.13 Patient pour un verbe (r_patient) 
+
+Le patient est l'objet de l'action désignée par le verbe c'est l'entité qui la subit. Par exemple, dans La gousse de 
+
+vanille parfume bien la compote de pomme, le patient du verbe parfumer est la compote de pommes. Notez bien 
+
+que la relation patient ne peut exister pour un verbe intransitif. Elle n'a de sens que pour les verbes transitifs directs, 
+
+où le patient est le complément d'objet direct grammatical. Pour les verbes transitifs indirects, les choses sont un peu 
+
+plus compliquées : il semble légitime de considérer le complément d'objet indirect comme patient quand les verbes 
+
+transitifs indirects se construisent avec la préposition de. Par exemple, dans la phrase je parle de politique avec mes 
+
+amis parler a pour patient politique, ou je me sers de mon couteau, se servir de a pour patient couteau. Par contre, 
+
+quand le verbe transitif indirect se construit avec à, comme dans Je parle à mon rhinocéros, la relation sera plutôt du 
+
+type verbe>bénéficiaire 7(voir Bénéficiaire (r_beneficiaire)). 
+
+ 
+
+Enfin notons que tout verbe transitif (direct comme indirect) peut avoir comme objet, donc comme patient un autre 
+
+verbe : dans Je préfère me taire ou J'ai besoin de te voir, les verbes préférer et avoir besoin de ont respectivement 
+
+pour patients les verbes se taire et voir. 
+
+Syntaxe : dévorer r_patient gratin ou repeindre r_patient volets ou prendre soin r_patient vêtements ou aimer 
+
+r_patient marcher 
+
+Pour la relation Patient (r_patient) les propositions seront des noms ou groupes nominaux, ou encore des verbes. 
+
+3.2.14 Causes (r_causatif) 
+
+Le type de relation Causes concerne des noms, des verbes, des adjectifs, voire des adverbes… Il s'agit de tout ce qui 
+
+peut avoir une relation causative avec le terme. Par exemple : 
+
+maigrir peut avoir comme causes régime, maladie, faire un régime, anorexie mentale, grève de la faim, faire la 
+
+grève de la faim… 
+
+embonpoint peut avoir comme causes manque d'exercice, sédentarité, manger gras, trop manger, malbouffe… 
+
+optimiste peut avoir comme causes tempérament, nature, caractère… 
+
+sincèrement peut avoir comme causes sincérité, sincère, franchise, état d'esprit… 
+
+Syntaxe : prendre l'avion r_causatif être obligé, partir en vacances, distance, destination… 
+
+3.2.15 Conséquences (r_conseq) 
+
+Comme le précédent, le type de relation Conséquences peut caractériser noms, verbes, adjectifs, et adverbes, et lie 
+
+le terme à tout ce qui peut en être une conséquence possible. Par exemple : 
+
+manger équilibré peut avoir comme conséquences bonne santé, être en forme, ne pas grossir, garder la ligne… 
+
+malbouffe peut avoir comme conséquences embonpoint abdominal, grossir, mauvais cholestérol, plaque 
+
+d'athérome, faire un infarctus, gras, obésité, obèse… 
+
+optimiste peut avoir comme conséquences prendre la vie du bon côté, voir la vie en rose, avoir confiance, garder 
+
+le moral, coolitude, zénitude… 
+
+brutalement peut avoir comme conséquences surprise, frayeur, sursauter, affolement, apeuré, être sous le 
+
+choc… 
+
+Syntaxe : prendre froid r_conseq tousser, avoir mal à la gorge, s'enrhumer, rhume, rhinopharyngite, enrhumé… 
+
+Pour Causes et Conséquences on proposera des noms ou groupes nominaux, des verbes, des adjectifs… 
+
+3.2.16 Lieu d'action (r_action_lieu) 
+
+Ce type de relation unit un verbe au lieu typique où peut être réalisée l'action qu'il désigne. Les propositions doivent 
+
+répondre à la question Où peut-on [verbe] ?, et être des noms ou groupes nominaux, qui devront idéalement être 
+
+estampillés comme des lieux via les informations sémantiques INFO-SEM-PLACE, INFO-SEM-PLACE-ABSTRACT, INFO-
+
+SEM-PLACE-ANATOMICAL, INFO-SEM-PLACE-GEO. 
+
+Exemple : Des lieux d'action typiques pour le verbe nager sont mer, océan, lagon, piscine, grands fonds… 
+
+Syntaxe : dessiner r_action_lieu mur 
+
+Pour la relation Lieu d'action (r_action_lieu) les propositions doivent être des noms ou groupes nominaux. 
+
+3.2.17 Instrument (r_instr) 
+
+Ce type de relation unit un verbe avec l'instrument avec lequel peut être faite l'action qu'il désigne, et ne présente 
+
+pas de difficulté particulière. Exemple: couper peut être fait avec ciseaux, couteau, lame, scie sauteuse, eau…  
+
+ 
+
+Syntaxe : masser r-instr mains nues, huiles essentielles, baume, onguent, crème (cosmétique)… 
+
+Pour la relation Instrument (r_instr) les propositions doivent être des noms ou groupes nominaux. 
+
+3.2.18 Manière (r_manner) 
+
+Pour un verbe, ce type de relation indique comment l'action qu'il désigne peut être réalisée. Les propositions 
+
+attendues sont des adverbes de manière, mais aussi des locutions adverbiales, des groupes nominaux 
+
+prépositionnels, des locutions verbales, des gérondifs..., bref, tout ce qui répond à la question Comment peut-on 
+
+[verbe]? Par exemple, répondre peut être fait rapidement, la bouche pleine, brutalement, à brûle-pourpoint, à côté, 
+
+du tac au tac, par écrit, sans réfléchir… 
+
+Syntaxe : se moquer r_manner gentiment, avec amour, tendrement… parler r_manner en mangeant… 
+
+Pour la relation Manière (r_manner) les propositions doivent être des adverbes, locutions adverbiales, formes 
+
+verbales, groupes nominaux prépositionnels… 
+
+ 
+
+3.2.19 Être caractéristique de (r_carac-1) 
+
+Pour un terme qui est une caractéristique possible, donc un adjectif, un participe passé, un groupe nominal 
+
+prépositionnel, un adjectif verbal, etc., mais également un adverbe, vis-à-vis d'un adjectif ou d'un autre adverbe, il 
+
+faut indiquer les termes susceptibles de posséder cette caractéristique. Par exemple, doux peut caractériser un ours 
+
+en peluche, du tissu, du cidre, un animal, une personne un mot, un billet, le temps…De même, extrêmement peut 
+
+caractériser gentil ou très peut caractériser exceptionnellement. 
+
+Syntaxe : blanche r_carac-1 oie, nuit, canne, poudre, souris, angine, blouse, voix… 
+
+Pour la relation Être caractéristique de (r_carac-1) les propositions doivent être des noms ou groupes nominaux. 
+
+3.2.20 Synonyme (r_syn) ou quasi-synonymes (L'admin est très tolérant) 
+
+La relation de synonymie concerne toutes les natures de termes et s'établit entre termes de même nature 
+
+grammaticale (POS) : entre deux noms, entre deux adjectifs, entre deux adverbes… 
+
+Bruit a comme synonymes boucan, raffut, chahut, tumulte, brouhaha, tapage, vacarme… 
+
+délicieux a comme synonymes suave, charmant, succulent, exquis, savoureux, excellent… 
+
+beaucoup a comme synonymes très, fortement, extrêmement, considérablement, intensément… 
+
+Il est important, tout le temps mais en particulier quand on contribue sur la synonymie, de faire attention à la 
+
+polysémie : quand un synonyme a plusieurs sens, il faut chercher le bon raffinement de ce terme et le proposer. Si le 
+
+terme est raffiné, il suffira de le choisir dans la liste des raffinements proposés ou dans l'autocomplétion, comme 
+
+expliqué plus haut (voir Raffinez vos propositions). Par exemple : 
+
+Dialecte a pour (quasi) synonyme langue. Or langue est polysémique. Comme synonyme de dialecte, il faut donc 
+
+choisir langue (langage) en plus de ou préférentiellement à langue tout court. 
+
+Si on s'aperçoit que le bon raffinement n'existe pas, soit que le terme polysémique n'est pas raffiné du tout, soit qu'il 
+
+manque un ou plusieurs raffinements, alors il faut absolument proposer le ou les sens manquant(s), afin que le 
+
+HCRT8 puisse créer le(s) raffinement(s) correspondant(s) (voir Gloses). 
+
+Pour la relation Synonyme (r_syn) les propositions doivent être de même nature que le terme cible. 
+
+                                                          8  Haut Comité du Raffinement des Termes 
+
+ 
+
+3.2.21 Qu'est ce qui peut être fait de cette manière ? (r_manner-1) 
+
+Ce type de relation concerne tout adverbe ou locution adverbiale, ou groupe nominal jouant un rôle de complément 
+
+circonstanciel de manière : il s'agit d'indiquer ce qui peut être fait de cette manière. Par exemple, monter 
+
+(équitation) peut être fait à cru, ou encore dans le sens du poil est une manière de caresser… 
+
+Syntaxe : à brûle-pourpoint r_manner-1 demander, silencieusement r_manner-1 défiler 
+
+Pour la relation Manière-1 (r_manner-1) les propositions doivent être des verbes. 
+
+3.2.22 Gloses (r_meaning) 
+
+Un terme polysémique est un terme qui a plusieurs sens possibles. Les gloses sont des termes qui évoquent chacun 
+
+de ces sens possibles. Évoquer signifie qui font penser à ce sens. Il ne s'agit pas forcément de synonymes, il faut juste 
+
+que la glose soit telle qu'elle fasse immanquablement penser à un sens précis du terme, à l'exclusion de tous les 
+
+autres. Par exemple, pour le mot essence, qui a 5 sens différents, trois d'entre eux sont glosés (= évoqués) par des 
+
+synonymes plus ou moins stricts : carburant, concentré, et huile aromatique, tandis que les deux derniers sont 
+
+glosés par les domaines, parce que c'est plus évocateur : philosophie et botanique. Pour la forme verbale être lourd, 
+
+les deux sens possibles sont glosés par des noms qui discriminent aisément le sens propre et le sens figuré : 
+
+insistance et poids. 
+
+Syntaxe : ampoule r_meaning pharmacie, cloque, ampoule électrique, électricité, anatomie, lampe, bobo, 
+
+médicament 
+
+Pour la relation Gloses (r_meaning) les propositions peuvent être de toutes natures. 
+
+Il est important de comprendre que le rôle de ce type de relation, Gloses, est de permettre/faciliter le raffinement 
+
+du terme : des parties de JDM ont comme consigne Quels sens/significations pouvez-vous donner à ce terme ? Les 
+
+réponses communes aux deux joueurs sont directement validées comme gloses et viennent donc alimenter la liste 
+
+des termes évocateurs des différents sens. C'est au sein de cette liste de propositions qu'un membre assermenté du 
+
+HCRT8 choisira les gloses les plus pertinentes afin de créer les raffinements sémantiques9 des termes : chaque 
+
+raffinement (chaque sens du terme) sera alors présent dans le Rezo sous la forme terme (glose). Ainsi, les 
+
+raffinements sémantiques pour essence sont essence (carburant), essence (huile aromatique), essence (concentré), 
+
+essence (philosophie) et essence (botanique). 
+
+Actuellement, plus de 96% des termes étiquetés comme polysémiques au sein du Rezo sont raffinés. Mais ça ne 
+
+signifie pas que tous les termes polysémiques ont été identifiés comme tels, d'une part, et d'autre part, de nouveaux 
+
+termes, potentiellement polysémiques, arrivent tous les jours. Ce qu'on attend du contributeur, c'est : 
+
+ Qu'il se pose systématiquement la question de savoir si le terme sur lequel il contribue est polysémique. 
+
+ Lorsqu'il remarque qu'un terme est raffiné, mais qu'il manque un ou plusieurs sens, qu'il le(s) propose en tant que 
+
+glose(s). 
+
+ Lorsqu'il invoque un nouveau mot, et que ce dernier est polysémique, qu'il pense à l'étiqueter comme tel (via le 
+
+menu informations sémantiques, choisir _INFO-POLYSEMIC) et à proposer les gloses pour les différents sens. 
+
+ Si possible, une fois les raffinements correspondants effectués par le HCRT8 qu'il pense à aller contribuer dessus… (oui je sais ça fait beaucoup… Mais vous aurez une statue à l'entrée du LIRMM…) 
+
+3.2.23 Sentiments (r_sentiment) 
+
+Par expérience de ce que les joueurs répondent dans les parties JDM sur ce type de relation, on voit que la notion de 
+
+sentiment/émotion semble très extensible : les gens ont tendance à répondre par association d'idée, et à mettre 
+
+des adjectifs ou des verbes plutôt que des substantifs désignant réellement des sentiments. Pour éviter cela, on 
+
+                                                          9  Le choix de la glose la plus pertinente n'étant pas toujours simple, la relation raffinements sémantiques (r_raff_sem) n'est pas 
+
+directement contribuable. C'est l'apanage du HCRT 8 .  
+
+ 
+
+mettra donc peur plutôt que avoir peur, découragement plutôt que baisser les bras, lassitude ou épuisement plutôt 
+
+que au bout du rouleau, affolement plutôt que affolé. Par contre, les substantifs qui ne désignent pas directement 
+
+un sentiment, mais sont explicites sous la forme un sentiment de sont admis. Par exemple, richesse ou austérité sont 
+
+des propositions acceptables, car on peut dire un sentiment de richesse, ou un sentiment d'austérité. 
+
+Syntaxe : examen scolaire r_sentiment confiance en soi, trac, inquiétude, appréhension, doute, perplexité, espoir, 
+
+découragement, je-m'en-foutisme 
+
+Pour la relation Sentiments/émotions (r_sentiment) on proposera des noms ou groupes nominaux. 
+
+ 
+
+3.2.24 Rôle agentif (r_agentif_role) 
+
+Cette relation a également souvent été mal comprise, et interprétée à tort lorsqu'elle est proposée dans le jeu : la 
+
+consigne demandant De quelle manière peut-être créé/construit le terme suivant ?, on a souvent tendance à 
+
+répondre avec des verbes qui vont constituer des conditions de la réalisation du terme, mais qui ne sont pas des 
+
+réalisateurs. Ainsi pour ovation, il ne faut pas répondre applaudir, crier ou se mettre debout. Certes, ce sont bien 
+
+des actes qui peuvent préluder à une ovation, mais ce ne sont pas eux qui la créent, qui lui donnent naissance. La 
+
+relation rôle agentif demande un ou des verbe(s) transitif(s) qui remplissent la double condition : 1) le terme va en 
+
+être le patient, le complément d'objet direct ou indirect (on ne peut pas dire *applaudir une ovation =>applaudir ne 
+
+convient pas) 2) au niveau sémantique, l'action portée par le verbe doit réellement donner naissance à l'objet ou 
+
+patient, qui n'existait pas auparavant. 
+
+Ainsi, pour ovation, des propositions qui conviendraient serait déclencher, susciter, provoquer… (Déclencher une 
+
+ovation, susciter une ovation, provoquer une ovation…) Pour fruit on ne proposera pas pousser ou mûrir (bien que 
+
+ce soit des conditions nécessaires à l'obtention de fruits, on ne pousse pas un fruit, et si on le mûrit artificiellement à 
+
+l'éthylène, c'est qu'il existait déjà, ça ne lui donne pas naissance). Par contre, produire convient : on produit des 
+
+pommes, du raisin, des pêches…) 
+
+Syntaxe : tomates farcies r_agentif_role préparer ou schéma r_agentif_role esquisser, tracer, faire… 
+
+Pour la relation Rôle agentif (r_agentif_role) on proposera des verbes transitifs. 
+
+3.2.25 Bénéficiaire (r_beneficiaire) 
+
+Le bénéficiaire est l'entité qui tire un avantage ou un préjudice de l'action. C'est un complément d'objet indirect 
+
+introduit par les prépositions à , pour, ou des locutions prépositives telles que en faveur de, au profit de… C'est ce 
+
+qu'on appelle aussi un complément d'attribution, c'est ce qui correspond au datif en latin. Le bénéficiaire est donc à 
+
+distinguer du patient. (voir Patient pour un verbe (r_patient)) Par exemple, dans la phrase Paul a rédigé un petit mot à 
+
+l'attention des cambrioleurs, petit mot est le patient et cambrioleurs est le bénéficiaire.  
+
+Syntaxe : parler (avouer) r_beneficiaire avocat, policier, police, enquêteur… 
+
+Pour la relation Bénéficiaire (r_beneficiaire) on proposera des noms ou groupes nominaux. 
+
+suite dès que possible… 

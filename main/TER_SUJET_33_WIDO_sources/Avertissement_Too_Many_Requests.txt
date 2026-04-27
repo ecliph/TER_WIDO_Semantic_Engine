@@ -1,0 +1,5 @@
+Too Many Requests
+
+Serveur occupé
+
+Veuillez patienter... rechargement automatique dans 2 seconde(s).

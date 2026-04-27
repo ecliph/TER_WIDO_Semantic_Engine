@@ -1,0 +1,489 @@
+Computing trees of named word usages from a crowdsourced lexical network 
+
+Mathieu Lafourcade, Alain Joubert 
+
+LIRMM – Université Montpellier 2 – CNRS Laboratoire d'Informatique, de Robotique et de Microélectronique de Montpellier 
+
+161, rue Ada – 34392 Montpellier Cédex 5 – France Email: {lafourcade, joubert}@lirmm.fr 
+
+Abstract. Thanks to the participation of a large number of persons via web-based games, a large-sized evolutionary lexical network is available for French. With this resource, we tackled the question of the determination of the word usages of a term, and then we introduced the notion of similarity between these various word usages. So, for a given term, we were able to build its word usage tree: the root groups together all its possible usages and a search in the tree corresponds to a refinement of these word usages. The labelling of the various nodes of the word usage tree of a term is made during a breadth-first search: the root is labelled by the term itself and each node of the tree is labelled by a term stemming from the clique or quasi-clique this node represents. We show on a precise example that it is possible that some nodes of the tree, often leaves, cannot be labelled without ambiguity. This paper ends with an evaluation about word usages detected in our lexical network. 
+
+Keywords:  collaboratively  constructed  lexical  network,  labeled  word  usage tree, word usage identification 
+
+1  Introduction 
+
+In this paper, we describe an approach for acquiring lexical structures useful for word  sense  disambiguation  (WSD).  Having  a  word  sense  inventory  is  often mandatory prior to many text analysis application but those resources are quite rare especially for French. By text analysis, we mean here a task where word senses and relations amongst word senses need to be identified. Furthermore, being constructed either  by  experts  (generally  lexicographers)  or  automatically  from  corpora,  they barely reflect what people would think of. An adequate resource would then mostly refer to word usages than word senses (in the classical meaning of dictionaries) and would also try to have some evaluation of the proper weight of an usage1. A very immediate usage of a term, in either for general and specialized domains, would have a higher weight than a rare one. We can then expect a quite large discrepancy between 
+
+1 Definition for word usage is given several lines below, in this paragraph, and the weight of an usage is explained in section 3. 
+
+INVESTIGATIONES LINGUISTICAE vol. XXI, 2010 
+
+a  proper  inventory  of  usages  and  inventory  of  meanings  (in  dictionaries).  Some usages would not be in dictionary either being elisions (like in French sapin for sapin de Noël – eng. fir for Christmas tree) or popular (like in French caisse as car). Some meaning would be absent of a popular meaning inventory when too technical, too rare or simply unknown by the vast majority of people. Can we try to define precisely what is the difference between a word sense and a word usage? Word usages are broader and would certainly include senses, but not the other way around. In French,  for example, sapin (fir) beside being the tree, has a strong usage related to Christmas (fir as  Christmas tree) and tends to become autonomous. A putative definition of a word usage could be a  specific meaning in a given context, popular enough to be  spontaneously given by someone. 
+
+The method and evaluation presented in this paper are based on a resource under  construction but already freely available: the JeuxDeMots lexical network2.  We first briefly remind the reader of the principles of two games which aim at building a large  collection of relations between terms. The first of these two games (JeuxDeMots3) allows the construction of a lexical network, while the second game (PtiClic2) allows the user to strengthen associations acquired thanks to JeuxDeMots. With the network thus obtained, we tackle the problem of the word usage determination, by analysing the  relations  between  every  term  and  its  immediate  neighbours.  The  similarity between the various usages of the same term can be computed allowing us to build the classification tree of the usages of a term, the nodes of which being labelled. Such a word usage tree structure as of primary interest for WSD should be evaluated against users before considering using it in applications. Furthermore, one of the objectives is to  be  able  to  connect  the  relations,  not  on  the  very  terms  (with  ambiguities  for polysemous terms), but on their usages (thus by clearing up lexical ambiguities). 
+
+2  Lexical network construction 
+
+2.1  Structure of the lexical network 
+
+The structure of the lexical network we are building is composed of nodes and links between nodes, as it was initially introduced in the end of 1960s by  [1], de-veloped in [2], used in the small worlds by [3] and [4], and more recently clarified by [5]. A node of the network refers to a term (or a multiple word expression), usually in  its canonical form (lemma). The links between nodes are typed and are interpreted as a possible relation holding between the two terms. Some of these relations correspond to lexical functions, some of which have been made explicit by [6], [7] and [8]. It would have been desirable the network to contain all the lexical functions defined in [6], but, considering the principle of our software JeuxDeMots, detailed in section 2.2, 
+
+2 This  resource  is  available  at  http://www.lirmm.fr/jeuxdemots/rezo.php for  the  lexical network and at http://www.lirmm.fr/jeuxdemots/diko.php for the obtained dictionary. 3 JeuxDeMots and PtiClic are available at  http://jeuxdemots.org and  http://pticlic.org. An English version has recently been added, as well as a Thai, Japanese and Spanish versions (http://www.lirmm.fr/jeuxdemots/world-of-jeuxdemots.php) 
+
+40 Mathieu Lafourcade, Alain Joubert
+
+it is not reasonably feasible. Indeed, some of these lexical functions are too much spe-cialized; for example, [6] makes the distinction between the Conversive, Antonym and Contrastive functions. He also considers refinements, with lexical functions character-ized as  "wider" or  "more narrow".  JeuxDeMots being intended for  users who are "simple  Internet  users",  and  not  necessarily  experts  in  linguistics,  such  functions could have been badly interpreted by them. Furthermore, some of these functions are too poorly lexicalized, that is, very few terms possess occurrences of such relations; it  is for example the case of the functions of Metaphor or Functioning with difficulty. 
+
+More formally, a lexical network is a graph structure composed of nodes (vertices) and links. 
+
+ A node is a 3-tuple : <name, type, weight> 
+
+ A link is a 4-tuple <start-node, type, end-node, weight> 
+
+The name is simply the string holding the term. The type is an encoding referring to the information holding by the node. For instance a node can be a term or a Part of  Speech (POS) like :Noun, :Verb. The link type refer to the relation considered. A node weight is interpreted as a value referring to the frequency of usage of the term. The weight of a relation, similarly,  refers to the strength of the relation. Figure 1 shows a partial example of the kind of lexical network we are dealing with. 
+
+JeuxDeMots possesses a predetermined list of relation types, and for now the play-ers cannot add new relation types. These types of relation fall into several categories: 
+
+ Lexical relations: synonymy, antonymy, expression, lexical family These types of relations are about vocabulary. 
+
+ Ontological  relations: generic (hyperonymy), specific (hyponymy), part of 
+
+(meronymy), whole of (holonymy) … It is about relations concerning knowledge in objects of the world. 
+
+ Associative relations: free association, associated feeling, meaning 
+
+It  is  rather about subjective and global knowledge; some of them can be con-sidered as phrasal associations. 
+
+ Predicative relations: typical agent, typical patient … 
+
+They are about types of relation associated with a verb and the values of its argu-ments (in a very wide sense). 
+
+The types of relation implemented in JeuxDeMots are thus of several natures, par-tially according to a distinction made by [9]: some of them are part of knowledge of the world (hyperonymy / hyponymy, for example), others concern linguistic know-ledge (synonymy, antonymy, expression or lexical family, for example). Most players do not make this distinction which remains often vague for them. 
+
+Throughout this article, the word “relation” has to be understood as a link, that is an occurrence of relation, and not as a type of relation. Such relations can be con-sidered as quadruplets: origin term, type of relation, destination term, weight of this relation. Let us note that between two same terms, several relations of different types can exist. Examples of relations acquired in JeuxDeMots can be seen in [10]. 
+
+Computing Trees of Named Word Usages from a Crowdsourced Lexical Network 41
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwm36V7HXHaXdoIKIPna3Cx9LMyeShyzH6uBbvpK-rB6VNBSHibHrxLekM69yJCp0uIS5NushciZuInC90vLB6weoa_WRu5IxoszvmN7ktSLcUo_RJeD_V4ILfowQHy5e_Jqz-6=w816-h1280-v0
+
+271667e1-fc72-4419-b24e-b40b5db8ace1
+
+Fig 1 : An example of a lexical network. For sake of clarity, the relation weights are not repres-ented here. Only nodes corresponding to terms are displayed. 
+
+42 Mathieu Lafourcade, Alain Joubert
+
+2.2  Principle of the software 
+
+The basic principles of JeuxDeMots (JDM) software, the game design, as well as  the incremental construction of the lexical network, have already been described in [10]. A game takes place between two players, in an asynchronous way, based on the concordance of their propositions. When a first player begins a game, an instruction concerning a type of competence (synonyms, opposite, domains …) is displayed, as well as a term4 T randomly picked in a base of terms. This player has then a limited time  to  answer  by  giving  propositions  which,  to  his  mind,  correspond  to  the instruction  applied  to  the  term T.  The  same term,  along the  same instruction,  is  afterwards proposed to another  player;  the process  is  then identical.  For the same target term T and a same instruction (synonyms, domains, free associations …), we record  the  answers  common  to  both  players.  Validations  are  thus  made  by concordance of the propositions between pairs of players. This validating process is similar to the one used by [11] to index  images and, as far as we know, this has never  been done in the field of the lexical networks. The morphosyntactic category was not initially indicated in JDM. A recent evolution, published in [12], has allowed us to introduce the notion of  refinement  of  a  term.  This  refinement  can depend on the meaning (case of polysemous terms) or on the morphosyntactic category of the term. In Natural Language Processing, some other Web-based systems exist, such as Open Mind Word Expert [13] that aims to create large sense tagged corpora with the help of Web  users,  or  SemKey [14]  that  exploits  WordNet  and  Wikipedia  in  order  to disambiguate lexical forms to refer to a concept, thus identifying a semantic keyword. 
+
+In a similar  way to JDM, a PtiClic game takes  place in  an asynchronous way between two players. A target term T, origin of relations, as well as a cluster of words  resulting from terms connected with T in the lexical network produced by JDM are proposed to a first  player.  Several  instructions corresponding to  types of  relations (synonym,  hypernym,  hyponym,  predicate  relations  like  possible/typical  agent, patient  or  instrument,  part-of  and  substance,  ...)  are  also  displayed.  The  player associates words of the cluster with instructions he thinks correspond by a drag and drop.  The  same  term  T,  as  well  as  the  same  cluster  of  words  and  the  same instructions, are also proposed to a second player. According to a principle similar to that set up for JDM, only the propositions common to both players are taken into account, thus strengthening the relations of the lexical network. Contrary to JDM, the players of PtiClic cannot suggest new terms, but are forced to choose among those proposed. This choice of conception has to allow to reduce the noise due to misspelt  terms or to the confusions of meanings. 
+
+The collaborative building of resources by non-experts may induce some errors. In fact, as one may expect, we detected some of them, such as classical orthographic mistakes (eg: théatre for théâtre) or traditional confusions (eg: French singer Dalida with the biblical character  Dalila)… These well-known mistakes are relatively rare and they can be manually detected. 
+
+According to the JeuxDeMots Web site, at the time of the writing of this paper, the lexical network contains around one million relations linking 221000 terms. Around 
+
+4 A term can be a compound word (for example: Christmas tree) and each of its words may be a term (Christmas and tree). 
+
+Computing Trees of Named Word Usages from a Crowdsourced Lexical Network 43
+
+800000  games  have  been  played  corresponding  to  more  than  13000  hours  of cumulated play. 
+
+3  Similarity between usages of a term 
+
+3.1  Word Usage Determination 
+
+If  a  term  T  is  polysemous,  the  terms  which  are  directly  connected  with  it  (semantically connected in the lexical network) form several different groups, each of these groups constituting a word usage of T. The notion of word usage (often referred to as "usage") is much more accurate and relevant than the notion of meaning which, as shown by [15], is relatively poor when we refer to traditional dictionaries or to resources as WordNet. Our hypothesis is that the usages of a term correspond in the network  to  the  various  cliques  this  term  belongs  to.  A  clique  is  a  set  of  terms constituting a fully connected subgraph in the lexical network. Two terms T i and Tj 
+
+belong to the same clique if there is at least one relation between T i and Tj and at least one relation between Tj and Ti. Our approach is similar to the one developed by [16] from dictionaries of synonyms. 
+
+Why  using  the  JeuxDeMots  lexical  network  for  our  experiment  instead  of WordNet  [17],  EuroWordNet  or  WOLF  [18] ?  These  resources  are  handcrafted contrary to the JeuxDeMots lexical  network which is crowdsourced through some games, and by itself it is interesting to assess if common word usage can be identified.  Similar approaches like [19] have been conducted on contexonyms but on resources trained on very large corpora (and again not extracted from people). 
+
+For the clique identification, we take into account all relation types available in the lexical network. Of course we might certainly consider that they do not contribute equally to the induced word usage, but the principle of JeuxDeMots induce that the most important relations have the highest weights and that the most important relation types (for a given term) are the most populated. So, there is, a priori, no need to stress on  specific  relation  type,  as  this  information  is  already  implicitly  present  in  the network. Estimating the relevance of a usage consists in obtaining a measure of its importance  both  in  terms  of  frequency  and  of  lexical  coverage.  Considering  the principle of the weighting of the relations, the weight of a usage is correlated with the weights  of  the  relations between the  terms of  the  clique  which  characterizes  this usage. We have the following notations : 
+
+ C is a given clique for the term T (this is a set of terms and instances of relation). 
+
+  Call is the union of all C (that can be seen as the full pseudo clique for T). 
+
+ W(C) is the sum of the weights of the relations between the terms of C. 
+
+ Card(C) is the number of terms in C. 
+
+So, for a clique C related to the term T, we define formally the relevance as : 
+
+Rel(C) = W(C) * log(Card(Call)/Card(C)) 
+
+The Rel measure for a clique may be seen as an adaptation of the tf/idf measure where, for the sake of simplicity, we have not divided by W(Call). If there is only one 
+
+44 Mathieu Lafourcade, Alain Joubert
+
+clique, the relevance is equal to 0 and of course in that case we consider that there is only one usage. Figure 2 presents the obtained usages for the term sapin (fir), and the relevance of each of these usages. 
+
+0: 'sapin' 'fiacre' REL = 52 fir, hansom 
+
+1: 'sapin' 'cercueil' REL = 55 fir, coffin 
+
+2: 'sapin' 'montagne' REL = 38 fir, montain 
+
+3: 'sapin' 'épicéa' 'ginkgo' 'conifère' 'cèdre' 'mélèze' 'résineux' REL = 66 fir, spruce, ginko, conifer, cedar, larch,conifer 
+
+4: 'sapin' 'vert' 'arbre' REL = 126 fir, green, tree 
+
+5: 'sapin' 'épicéa' 'épinette' 'conifère'      REL = 59 fir, spruce, spruce, conifer 
+
+6: 'sapin' 'aiguille' REL = 43 fir, needle 
+
+7: 'sapin' 'conifère' 'arbre' REL = 139 fir, conifer, tree 
+
+8: 'sapin' 'guirlande' 'Noël' REL = 111 fir, garland, Christmas 
+
+9: 'sapin' 'boule' 'boules' REL = 51 fir, ball, balls 
+
+10: 'sapin' 'boule' 'Noël' REL = 108 fir, ball, Christmas 
+
+11: 'sapin' 'Noël' 'sapin de Noël' 'sapin de noël' REL = 84 fir, Christmas, Christmas Tree,  Christmas tree 
+
+12: 'sapin' 'Noël' 'fête' REL = 152 fir, Christmas, celebration 
+
+13: 'sapin' 'arbre' 'bois' 'forêt' REL = 219 fir, tree, wood, forest 
+
+14: 'sapin' 'arbre' 'bois' REL = 148 fir, tree, wood 
+
+15: 'sapin' 'conifères' REL = 71 fir, conifers 
+
+Fig 2 : 16 usages for the term sapin (fir) as found in the lexical network at the writing time. 
+
+The most relevant clique is {sapin,  arbre, bois,  forêt}  (fir,  tree,  wood, forest) with a score of  219, followed by {sapin, Noël,  fête} (fir,  Christmas, celebration) with a score of 152. 
+
+3.2  Clique Similarity 
+
+The similarity between two objects can be defined according to [20] as being a function of their common characteristics with regard to all their characteristics.  In NLP, we find several definitions of the similarity, for example [21] or [22]. More recently,  [23] evaluated several  different measures of lexical  semantic relatedness, 
+
+Computing Trees of Named Word Usages from a Crowdsourced Lexical Network 45
+
+while [24] presents a general survey on this question. In our case, it corresponds to the ratio between the weight of the relations connecting two cliques and the total weight of the relations on all the terms of these two cliques. We note W(E) the weight sum of the relations between the terms of the set E (as in 3.1). The similarity between two cliques C1 and C2 will be equal to the Jaccard  indice : 
+
+Sim(C1,C2) = W(C1 ∩ C2) / W(C1 U C2) 
+
+We should note here, that the Jaccard indice is in our case applied on the set of relations and that the 'cardinality' of this set is the sum of the weights. Usually the Jaccard indice is applied on the true cardinality of the sets, considering equally all elements of the set. Figure 3 shows the similarities between the cliques of the term sapin (fir). 
+
+0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+
+1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+
+2 0 0 1 0 0.04 0 0.08 0.04 0 0 0 0 0 0.01 0.03 0 
+
+3 0 0 0 1 0.31 0.66 0.06 0.54 0.02 0 0.02 0.02 0.02 0.2 0.18 0.36 
+
+4 0 0 0.04 0.31 1 0.29 0 0.75 0.03 0 0.03 0.03 0.03 0.68 0.72 0.15 
+
+5 0 0 0 0.66 0.29 1 0.09 0.56 0.03 0 0.03 0.03 0.03 0.16 0.13 0.48 
+
+6 0 0 0.08 0.06 0 0.09 1 0.05 0 0 0 0 0 0 0 0.33 
+
+7 0 0 0.04 0.54 0.75 0.56 0.05 1 0.03 0 0.03 0.03 0.03 0.64 0.66 0.46 
+
+8 0 0 0 0.02 0.03 0.03 0 0.03 1 0.14 0.69 0.6 0.77 0.01 0 0 
+
+9 0 0 0 0 0 0 0 0 0.14 1 1 1 1 0 0 0 
+
+10 0 0 0 0.02 0.03 0.03 0 0.03 0.69 1 1 1 1 0.01 0 0 
+
+11 0 0 0 0.02 0.03 0.03 0 0.03 0.6 1 1 1 1 0.01 0 0 
+
+12 0 0 0 0.02 0.03 0.03 0 0.03 0.77 1 1 1 1 0.01 0 0 
+
+13 0 0 0.01 0.2 0.68 0.16 0 0.64 0.01 0 0.01 0.01 0.01 1 1 0.06 
+
+14 0 0 0.03 0.18 0.72 0.13 0 0.66 0 0 0 0 0 1 1 0.08 
+
+15 0 0 0 0.36 0.15 0.48 0.33 0.46 0 0 0 0 0 0.06 0.08 1 
+
+Fig 3 : Similarity matrix between the cliques of the term sapin (fir). The clique numbers are those from figure 2. For example, the similarity between cliques 8 (fir, garland, 
+
+Christmas) and 12 (fir, Christmas, celebration) equals 0.77. The matrix is sym-metric. Values have been rounded after the second decimal. 
+
+4  Classification Tree of Word Usages 
+
+4.1  Construction 
+
+Our aim is to obtain a representation of the various usages of a term T in the form of a tree, with the root grouping together all the meanings of T and the branches corresponding  to  its  various usages.  Generally,  most  of  terms possess  several  not separate cliques. In that case, the further away we go from the root of the tree, the  
+
+46 Mathieu Lafourcade, Alain Joubert
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzaQ1pibUgdlLSVPKIj7N576X3Xa2K1xyigz0WIwOQgFcjFhOfKRyaQe84SdoJ0T3GW_syrPp52JYkVEr6ifzTB9T_lpMDNz4Ha5AK0diZXpTp51tZ9O_tomWh-ibFPkNC2_DzQBg=w899-h539-v0
+
+54eb797e-4d29-45af-98da-e4e547be9659
+
+more we meet fine distinctions of usages. In fact, we build the tree of the usages of a  term T according to a "bottom - up" method: from all of its cliques, that is, from its leaves and going back up to its root which groups together all the meanings of T. For that purpose, we apply an agglomerative hierarchical clustering algorithm: we merge the cliques, two by two, beginning with those whose coefficient of similarity is the highest: thus, we build quasi-cliques representing groups of usages, close during the first fusions, less and less close during the successive fusions. The merging algorithm ends when all coefficients of similarity are equal to zero. For example, the two cliques we first merge for the term sapin (fir) are those number 8 and 12 (figure 2), which are very similar ones with a similarity coefficient equal to 0.77 (figure 3). 
+
+The usage tree of a term is a structure expressing the refinements of its various meanings  as  deduced  from the  state  of  the  lexical  network.  It  thus  constitutes  a decision  tree,  a  data  structure  which  can  be  exploited  for  disambiguation. Furthermore, nodes of this tree are weighted allowing to identify usages that are the most common, which is both useful for guessing default cases and ordering usages from the most activated for people to the least activated. 
+
+Figure 4 shows the tree we obtain for the term sapin (fir). 
+
+Fig 4 : Word usages tree for the term sapin (fir). The clique numbers lower than 15 are those from figure 2 and those higher than 16 result from our merging algorithm. 
+
+4.2  Labelling 
+
+The labelling of the various nodes of the usage tree of a term is made during a width-first search, that is, according to a top-down method. The tree root is labelled by the term itself. Every node of the tree is labelled by a term stemming from the clique or the quasi-clique this node represents; the selected term is the one whose sum of the weights of its relation with the root term is the highest, after eliminating all the terms  labelling  the  nodes  of  the  tree  situated  in  a  depth  lower  than  that  of  the concerned node. Thus, it is possible that a node cannot be labelled if all the terms which define it have already been used in the labelling of nodes previously done. In 
+
+Computing Trees of Named Word Usages from a Crowdsourced Lexical Network 47
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxotWTfWNQiLhNiMoC2-4zDGGXut6XJOekfYH-ORMpTt_4Jus5eIAOjnr6sRxgMhjCK-orW5qr45qPwAXz_fUHo7yh-IES5Z8peQgGXFZEGv1yu4bCbinzweJoOiY1RycRujKgifg=w867-h346-v0
+
+6e3232aa-f0d9-4acd-ab54-4331ca1d7dd5
+
+this case, this node, but also its brother and all its successors, are not labelled. Figure 5 shows the tree obtained for the term sapin (fir). 
+
+4.3  Tree pruning and term refinements 
+
+The  relevance  of  an  inner  node  of  the  tree  is  computed  as  defined  above considering the quasi clique obtained during the merging. We ignored the usages of  the tree which relevance is  below a given threshold (empirically  set  to  50 in  our experiment). This threshold correspond to the configuration where both terms have been associated to each other to only two pairs of player (one pair for each direction) and maybe it could have been accidental. In figure 5, in the tree for the term sapin, we discard the  sapin (montagne)  node at level 1 which relevance is only equal to 38 (clique number 2 in Figure 2). The nodes for sapin as fiacre, cercueil, arbre and Noël have respectively a relevance of 52, 55 and more than 300 for the last two. 
+
+These last four nodes constitute four refinements for the term sapin. After their val-idation by an expert, such refinements are placed as new nodes in the lexical network. So, refinements may be proposed as origin term in the JDM and PtiClic games; it leads the users to create new relations outgoing from these term refinements. On the other hand, when a JDM player propose a destination term which several refinements exist for, JDM displays these refinements for the player who is invited to choose one: this process leads to create incoming relations for refinement terms. 
+
+So, our model contains a double iterative process (as illutrated on figure 6). First,  the players supply the data base (the lexical network) furnishing relations and eventu-ally adding entries to the already existing base of terms; the weighting of the relations is computed according to the propositions of the players. Secondly, after the automat-ic construction of a word usage tree, an expert validates (or not) the meanings thus de-tected and so adds refinement nodes in the lexical network that can be proposed to the players. 
+
+Fig 5 : Labelled word usage tree for the term sapin (fir). We pruned this tree by deleting nodes which cannot be labelled or which the relevance is too low (below 50 in our experiment) 
+
+48 Mathieu Lafourcade, Alain Joubert
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyGlyPqBU6OxOn7Edzaa5tjbkG-hr2mG06jsN_GNNvjOhpRgswqsp7W-b-m9SUjJlJzDmQDFTDSHJK-IecVs8bRKP81CDo1J8L43Q4Q9by6VgL_XV58rsQmxXk80kzTt4PA3Z0cfw=w1280-h690-v0
+
+4ab4e66b-c187-448d-a622-9568188f8b97
+
+Fig 6 : The double iterative process: the players add relations and eventually new terms, the ex-pert validates refinements. Both are increasing the lexical network with relations and refine-
+
+ments. 
+
+5  Evaluation 
+
+5.1  Obtained Word Usages 
+
+Regularly, we examine the highly polysemous terms, and we ask an expert lexico-grapher to validate the meanings detected by JDM, after pruning the usage tree. The role of the expert does not extend beyond this validation: he doesn't add any meaning, even if he thinks some are missing, and he removes only those that obviously corres-pond to mistakes. As the time of writing this article, with the expert's help, we thus  obtain 5622 validated word usages for 1603 terms, which correspond to a mean of around 3.5 usages per term. Out of these 1603 terms more than 80% are labeled as very common terms (at least one meaning should be known at the age of 12). The terms are  mostly common nouns also some usages are tagged with other part-of-speech like verb or adjective. For example dîner in French can be at the same time a noun or a verb. The expert's role must go on to validate much more meanings detected in our lexical network. 
+
+5.2  User Evaluation 
+
+Evaluating the quality of such word usages is difficult, particularly in the absence of adequate gold standard. To our knowledge, there is no such resources for French. If we had got any, a (semi-)automatic evaluation might have been feasible on a very much large scale. So, we decided to make a user based evaluation, trying to access 
+
+Computing Trees of Named Word Usages from a Crowdsourced Lexical Network 49
+
+qualitatively and quantitatively the word usages we obtained so far. We undertook the evaluation only at the first level of the usage tree computed for a given term. 
+
+We based our assessment on naive users (i.e. not lexicographers) for two reasons. First, finding lexicographers for this task is not easy to say the least and certainly not  more than few ones. Secondly, we wanted to have an evaluation confronting common people to our data. The idea is to identify word usages the same way (as a result at least) an average person would do. We remind here that the JeuxDeMots lexical net-work  does  not  aim  at  being  more  than  an  average  representation  of  associations between terms. 
+
+We asked 30 non-expert persons to undertake four slightly different tasks. Given a word and the set of associated named usages,  they had to evaluate the number of missing usages and the number of supernumerary usages (either too specific or plain wrong). The task has to be done on two sets of different 50 words. On the first set, persons are not allowed to consult any dictionary (task Dict-), on the second they can check on dictionaries if they want to do so (task Dict+). The dictionary we proposed for reference is Wiktionary for French, but user where allowed to use any resources they want. Furthermore, the set of words is either taken from common words or non-common words (respectively usually known or unknown at the age of 12). 
+
+An example of what is asked to the people is the following (translated for the pur-pose of this article): 
+
+For the word sapin, we propose the following usages: 
+
+ sapin (arbre) (fir - tree) 
+
+ sapin (Noël) (fir -  Christmas) 
+
+ sapin (cercueil) (fir - coffin) 
+
+ sapin (fiacre) (fir - hansom) 
+
+Do you think some usages are missing, if yes how many ?  Do you think some proposed usages are inappropriate, if yes how many ? 
+
+Word usages are ordered by decreasing relevance (as defined in section 3.1). The four sets of  words proposed to  each evaluator  are completely random (al-
+
+though verifying the constraints described before, that is to say either common or un-common ones) and they are distinct (a given word may be present only in one set). Two different evaluators may have sets with words in common. The evaluators have all an age above 20 and had a similar proportion of 17 females and 13 males. The level of education was basically 2 years of university or more. The following tables present the collated result of this evaluation. 
+
+Common words Dict - Dict + 
+
+Missing usages 0.45 1.52 
+
+Added usages 0.66 0.37 
+
+Uncommon words Dict - Dict + 
+
+Missing usages 0.25 1.67 
+
+Added usages 0.76 0.28 
+
+Tables 1 & 2 : Average number of  missing usages and added usages without and with the help of a dictionary for common (table 1) and uncommon (table 2) words used in our evaluation. 
+
+50 Mathieu Lafourcade, Alain Joubert
+
+For users, added usages are those considered wrong (or at least far fetched). Miss-ing usages are those which should have been present. 
+
+5.3  Result Analysis 
+
+How can we interpret those results? Without dictionary there is systematically less  than one usage felt as missing or added. For the Dict- task, by debriefing the evaluat-ors it appears that the added usage is quite often a proper usage that was unknown to the user (technical,  old or rare).  Conversely in the Dict+ task, the missing usages value rises as more usages, unknown to the user are found in the dictionary. It seems that globally we are missing much more usages than adding wrong ones. This is quite  inline which the way the lexical network is constructed (by players indirect contribu-tion). Missing usages are those quite specific, rare and basically unknown to users. 
+
+The task on uncommon words tends to strengthen this analysis. Indeed, without any dictionary people feel that they are more added usages than with common words and less missing usages. The result of the Dict+ is contravariant with the Dict-. In-deed,  missing usage value rises and added usage value diminishes. 
+
+We can take several precise examples for illustrations. 
+
+Sapin (fir) 
+
+For the word sapin (a common word) we got : 
+
+sapin Dict - Dict + 
+
+Missing usages 0.5 0.9 
+
+Added usages 0.2 0.4 
+
+Table 3 : Average number of  missing usages and added usages without and with the help of a dictionary for the term sapin (fir). 
+
+The wiktionnary definitions are: sapin nom masculin 
+
+1. (Botanique) Arbre conifère résineux de la famille des abiétinées à aiguilles persistantes, au tronc droit, dont le fruit est un cône. (Botany) Conifer tree of the genus Abies with persistent needles, with the  straight trunk, the fruit of which is a cone. 
+
+2. Bois de cet arbre utilisé en menuiserie. Wood of this tree used in joinery. 
+
+3. (Par métonymie) Cercueil. (By metonymy) Coffin. 
+
+4. (Familier) (Vieilli) Fiacre. (Familiar) (Old-looking) Hackney cab. 
+
+Some people where doubting about the sapin (fiacre) usage although this is a cor-rect one. The usage of sapin as wood (mater) is missing but roughly only one person 
+
+Computing Trees of Named Word Usages from a Crowdsourced Lexical Network 51
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwyzbqsGffscE5VTAtFuUrE9bCmlfy5G53WvEX2uXn5tHSc0yenXY2ng6GEfzkBnwAym52J3PjotYoaUqEoC-4BmRxXx6ZyBThwFZCFgeX1RzGHm8U92zL52fqxKDg7Of9BI22cew=w818-h439-v0
+
+1b093c36-9b95-4fc0-b89b-a59c15e2c11d
+
+out of two have been thinking of it without checking in a dictionary. The added usage compared to the dictionary is the sapin (Noël) although it is present as a locution. 
+
+Frégate (frigate) 
+
+Fig 7 : Usage tree for the term frégate (frigate). 
+
+For the word frégate, we found out the following usages: 
+
+ frégate (navire) (frigate boat) 
+
+ frégate (oiseau)  (frigate bird) 
+
+frégate Dict - Dict + 
+
+Missing usages 0.15  0 
+
+Added usages 0.1   0 
+
+ Table 4 : Average number of  missing usages and added usages without and with the help of a dictionary for the term frégate (frigate). 
+
+The wiktionnary definitions are: frégate nom féminin 1. (Histoire) (Marine) (Militaire) Bâtiment de guerre qui n’avait qu’une seule 
+
+batterie couverte et qui portait de vingt à soixante bouches à feu. (History) (Marine) (Military) Warship which had only a single covered  battery and which carried from twenty to sixty pieces of ordnance. 
+
+2. (Zoologie) Oiseau de mer palmipède, d’une très grande envergure, et qui saisit à la surface de l’eau les poissons dont il se nourrit. (Zoology) Webfooted sea bird, with a very big wingspan, and which seizes  on the surface of the water fishes it feeds. 
+
+52 Mathieu Lafourcade, Alain Joubert
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAytQWDbSGba6yq1rv9SWLeo1UFzaMj9PEEqUFrUtF5ZDHxp1nEeS_zP2xy-J9uUU-MTyUf4eGigXlfKLQU9pyRAq4rDIRrqFA5YaebB9hlVfKOqmKDjlmgDwsaJKxyrYIXHxid0DQ=w486-h346-v0
+
+4adbacc0-4c80-492c-a6ba-6b9a2f1f407e
+
+For  frégate, some people made the distinction between the ancient boat and the modern boat. On a rare occasion the evaluator was doubtful on the bird meaning. Comparing with the dictionary, we got an exact match. 
+
+Blaireau (badger, dork, shaving brush) 
+
+Fig 8 : Usage tree for the term blaireau (badger, dork, shaving brush). 
+
+For the word blaireau, we found out and proposed the following usages: 
+
+ blaireau (animal) (badger) 
+
+ blaireau (pauvre type) (dork) 
+
+ blaireau (barbier) (shaving brush) 
+
+blaireau Dict - Dict + 
+
+Missing usages 0.3 1.1 
+
+Added usages 0 0 
+
+Table 5 : Average number of  missing usages and added usages without and with the help of a dictionary for the term blaireau (badger, dork, shaving brush). 
+
+The wiktionnary definitions are: blaireau nom masculin 1. Mammifère omnivore, bas sur pattes, au pelage noir, gris et blanchâtre, qui 
+
+se creuse de profonds terriers. Omnivore mammal, with short legs, in the black, grey and whitish fur, which  racks itself deep burrows. 
+
+2. (Arts) Brosse en poils de cet animal dont se servent les peintres et les doreurs. (Arts) Brush in hairs of this animal which is used by the painters and the  gilders. 
+
+3. Pinceau garni de ces poils dont on se sert, en se rasant, pour étaler et faire mousser le savon. 
+
+Computing Trees of Named Word Usages from a Crowdsourced Lexical Network 53
+
+Brush stocked with these hairs which is used, when shaving, to spread and  make the soap foam. 
+
+4. (Argot) (Vieilli) Nez. (Slang) (Old-looking) Nose. 
+
+5. (Argot) Individu grossier et antipathique ; imbécile, idiot. (Slang) Rude and unpleasant person; imbecile, stupid. 
+
+For blaireau some people found that the (painting) brush (meaning 2 of wikipedia) is indeed missing. Most people missed the nez (nose – meaning 4) meaning, which is quite old. 
+
+All in all, although being preliminary, those results are very encouraging both on the soundness of the method for determining and naming word usage and the quality of the resource collected so far (although evaluating this resource was not the primary goal of this paper). They seem to correspond to what people know and not specifically to some resources made by lexicographers or experts. 
+
+What is the effect of the label on the evaluation? If for a given word usage a differ-ent label would have been chosen to which extend the results might be modified? In fact there is no much choice for a reasonable label, and generally choosing a substi-tute like an hyperonym (for example animal instead of bird, in case of frigate) does not alter the results. Of course, this is less and less true as we go deeper in the tree,  but also there is less and less choices (if we stick to our labeling approach described in 4.2). Perhaps a deeper evaluation on this particular point should be conducted. 
+
+What can we do with the unlabeled usages? So far the answer is simple: nothing. But we should keep in mind that the network is in constant evolution and that some cliques existing now may be fusionned in the near future due to the players activity, or on the contrary being reinforced with new terms allowing them to be labeled. 
+
+6  Conclusion 
+
+Viewing the results we obtained, these trees of named usages seem to correspond in their main structures to those a human non-expert would build. In particular, the main branches, directly stemming from the root, correspond in the majority of cases to  the  meanings  of  the  root  term  as  we  could  find  them in  a  dictionary.  These meanings have been generally validated by an expert for more than 1600 terms. The main  branches  of  the  trees  are  subdivided  into  sub-branches  which  are  so  many refinements in the usages. 
+
+In their detailed structures however,  we notice elements  that are different from what a human would have written; for example, taken from figure 4,  sapin de Noël (Christmas  tree)  seems  to  be  a  refinement  of  guirlande (garland)  which  is  a refinement of sapin-Noël (fir-Christmas). Are these differences (can we really speak about abnormalities?) due to our method of construction of the trees of the labelled usages with help of players who are not experts, or are they due to the fact that the lexical network is not "complete" enough yet? Moreover, do not the word usage trees sometimes distinguish too subtle refinements? Using the similarity between nodes, how would it be necessary to prune them? 
+
+54 Mathieu Lafourcade, Alain Joubert
+
+A strong perspective of our work is to propose to the authors of the JeuxDeMots game to insert the identified word usages and proposed them to the players. Hence, the word usages are going to be associated to other terms of lexical database. It would be  interesting  to  assess  whether  or  not  reapplying  our  algorithm  leads  to  some convergence  as  expected.  If  it  is  not  the  case  for  a  given  term,  either  the  usage identified or the label (or both) are not appropriate and should be revised. 
+
+References 
+
+1. Collins A., Quillian M.R.: Retrieval time from semantic memory, Journal of verbal learning and verbal behaviour, 8 (2), pp. 240-248 (1969) 
+
+2. Sowa J.: Semantic networks, Encyclopedia of Artificial Intelligence, edited by S.C. Shapiro, Wiley, New York (1992) 
+
+3. Gaume B. « Cartographier la forme du sens dans les petits mondes lexicaux »,  Journées internationales d’Analyse statistiques des Données Textuelles (JADT), Besançon, France, pp. 451-465 (2006) 
+
+4.  Gaume  B.,  Duvignau  K.,  Vanhove  M. :  Semantic  associations  and  confluences  in paradigmatic networks , In :  Typologie des rapprochements sémantiques, M. Vanhove éd. (2007) 
+
+5. Polguère A.: Structural properties of Lexical Systems: Monolingual and Multilingual Per-spectives , In: Workshop on Multilingual Language Resources and Interoperability (COL-ING/ACL 2006), Sydney, pp. 50-59 (2006) 
+
+6. Mel’ uk I.A.č  : Dictionnaire explicatif et combinatoire du français contemporain, Les Presses de l’Université de Montréal (1988) 
+
+7.  Mel’ uk  I.A.,  Clas  A.,  Polguère  A.č  :  Introduction  à  la  lexicologie  explicative  et combinatoire, Editions Duculot AUPELF-UREF (1995) 
+
+8. Polguère A. :  Lexicologie et Sémantique lexicale, Les Presses de l’Université de Montréal (2003) 
+
+9. Schwab D. et Lafourcade M.: Modelling, Detection and Exploitation of Lexical Functions for Analysis , ECTI Journal, 2007, vol.2, ISSN 1905-050X, pp. 97-108 (2007) 
+
+10. Lafourcade M., Joubert A. : Détermination des sens d’usage dans un réseau lexical construit grâce  à  un  jeu  en  ligne,  Traitement  Automatique  des  Langues  Naturelles  (TALN’08), Avignon, pp. 189-199 (2008) 
+
+11. von Ahn L., Dabbish L.: Labelling Images with a Computer Game, ACM Conference on Human Factors in Computing Systems (CHI), pp. 319-326 (2004) 
+
+12. Lafourcade M., Joubert A. : Détermination et pondération des raffinements d’un terme à partir  de son arbre des usages nommés, Traitement Automatique des Langues Naturelles (TALN’10), Montréal  (2010) 
+
+13.  Mihalcea  R.,  Chklovski  T.:  Open Mind Word  Expert:  Creating  Large  Annotated  Data Collections  with  Web  Users'  Help,  Proceedings  of  the  EACL  2003  Workshop  on Linguistically Annotated Corpora (LINC 2003), Budapest (2003) 
+
+14.  Marchetti A., Tesconi M., Ronzano F., Rosella M., Minutoli S. :  SemKey: A Semantic Collaborative Tagging System, Proceedings of WWW2007, Banff, Canada (2007) 
+
+15.  Véronis  J. :   Sense tagging:  does it  make sense?,  Corpus linguistics’ 2001 Conference, Lancaster, U.K. (2001) 
+
+16.  Ploux  S.,  Victorri  B. :  Construction  d’espaces  sémantiques  à  l’aide  de  dictionnaires informatisés de synonymes. TAL, 39(1), pp. 161-182 (1998) 
+
+17. Fellbaum C.D.: WordNet: An Electronic Lexical Database. MIT Press, New York (1998) 
+
+Computing Trees of Named Word Usages from a Crowdsourced Lexical Network 55
+
+18. Fišer D., Sagot B.: Combining multiple resources to build reliable wordnets. In TSD 2008, Brno, Czech Republic (2008) 
+
+19.  Ji  H.,  Ploux  S.,  Wehrli  E.:  Lexical  knowledge  representation  with  contexonyms.  In Proceedings of the 9th MT summit, pp. 194-201 (2003) 
+
+20. Tversky A.: Features of similarity, Psychological Review, 84, pp. 327-352 (1977) 21. Manning C.D., Schütze H. : Foundations of Statistical Natural Language Processing, MIT 
+
+Press, Cambridge (1999) 22.  Fairon  C.,  Ho  N.D. :  Quantité  d’information  échangée  :  une  nouvelle  mesure  de  la 
+
+similarité des mots, Journées internationales d’Analyse statistiques des Données Textuelles (JADT’04), Louvain-la-Neuve (Belgique) (2004) 
+
+23.  Budanitsky  A.,  Hirst  G.:  Evaluating  WordNet-based  Measures  of  lexical  semantic Relatedness, Computational Linguistics, 32(1), pp. 13-47 (2006) 
+
+24. Turney P.D., Pantel P.: From Frequency to Meaning: Vector Space Models of Semantics, Journal of Artificial Intelligence Research, 37, pp. 141-188 (2010) 
+
+56 Mathieu Lafourcade, Alain Joubert

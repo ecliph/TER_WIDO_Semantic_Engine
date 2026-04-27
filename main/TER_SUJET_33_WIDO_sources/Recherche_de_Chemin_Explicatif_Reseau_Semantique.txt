@@ -1,0 +1,441 @@
+Explicative Path Finding in a Semantic Network 
+
+Kévin Cousot, Mathieu Lafourcade LIRMM / Campus St Priest, 161 Rue Ada, 34090 Montpellier, France 
+
+kevin.cousot@lirmm.fr, mathieu.lafourcade@lirmm.fr 
+
+Introduction 
+
+When building a knowledge base (KB), it is desirable to be able to assess its quality, and one approach to undertake such a task is to ex-hibit explanation(s) related to contained infor-mation. For example, from an information sta-ting that (a) tiger ’characteristic’ dangerous, we would like to be able to ask Why ? and ob-taining at least one explanation, for example tiger ’is-a’ ’wild animal’ characteristic’ dan-gerous or something more elaborated like tiger ’agent’ attack ’consequence’ death & dangerous ’consequence’ death. These explanations take the form of explicative path in the KB, and can be good clues of the quality of the know-ledge present in the database. To do so, the KB has to be represented (or converted) un-der the form of a lexico-semantic network (for instance, like Wordnet or Babelnet). 
+
+After presenting some related work, we de-tail some aspects of the JeuxDeMots lexical network on which we undertook our modeling and experiment. Then, we introduce our me-thod, the explicative path finding by triangula-tion and some evaluation. 
+
+1 Related work 
+
+Path finding in semantic resources is used in several applications. Path finding has been used in information retrieval to improve ran-king over semantic web resources and results relevance (Lee et al., 2009). In that work, paths are explored in an ontology from user query keywords and available resources. Every path is not meaningful and, in order to limit processing useless paths only those matching some practical constraints are considered. Ty-pically, for a path to be valid it is required that a relation’s range is the same as the next rela-tion’s domain (or a subclass of it). Thus, paths 
+
+look like : 
+
+writtenBy−1(Prof, Publication) ∧ hasT itle(Publication, Str). 
+
+The notation with the 
+
+R−1 
+
+is 
+
+R 
+
+with the order of its arguments inverted. Once meaningful paths are found, they are then weighted according to the in-formation content of their relations and mu-tual information of the entities they link. With those metrics it is possible to order paths ac-cording to their relevance. Path length is taken into account by decreasing the path weight as length increases because shorter paths are as-sumed to be more relevant. Finally, retrieved resources are ranked according to the num-ber of meaningful paths, keyword coverage and their distinguishability. In text-mining, (Song et al., 2015) use se-
+
+mantic paths to explore large text corpora and try to find relations between entities such as treatments and secondary effects. To perform closed-discovery, two terms are given to the system, source and target, which tries to in-fer intermediate terms between them. Inter-mediate, or linking terms are obtained from text corpora using text mining techniques. In particular, entities are extracted using a NER software and mapped to Unified Medical Lan-guage System (UMLS) while relations come directly from biomedical verbs identified in the corpora. The same process is applied to the linked terms, building a graph step af-ter step. The graph’s edges are weighted ac-cording to several similarity measures such as Path (Lin, 1998) and LCH (Leacock and Cho-dorow, 1998). Eventually, found paths are eva-luated by experts (people in NLP) and native speakers. Some research focused on causality. In 
+
+(Besnard et al., 2008) an inference system able to provide explanations of causal state-ments is developed. Based on first order lo-gic, it introduces a language to express cau-
+
+sal statements (such as On(alarm) causes Heard(bell)) and truths (Heard(soft_bell) 
+
+=⇒ ¬ 
+
+Heard(loud_bell)). In this language, predi-cates are unary and express facts related to en-tities whereas constants are elements of an on-tology listing (entities and their is-a relation-ships). From this, causal 
+
+(α 
+
+causes 
+
+β) 
+
+and ex-planation 
+
+(α 
+
+explains 
+
+β 
+
+because 
+
+φ) 
+
+atoms are introduced. A set of patterns manually defined then make it possible to infer explanations by exploiting the ontology (which allows genera-lization : if b is-a a then 
+
+p(b) 
+
+entails 
+
+p(a)) 
+
+and explanation transitivity. 
+
+2 RezoJDM : the JeuxDeMots lexical-semantic network 
+
+JeuxDeMots (Lafourcade, 2007) is a construction environment for RezoJDM, a lexical-semantic network for French. It is a graph whose vertices are labeled with terms, concepts or any kind of text expression. Edges are oriented, weighted and typed with either lexical (lemma, location, action to verb, . . .) or semantic (hypernymy, meronymy, agent, . . .) relations. Over 100 different lexical and semantic types are available. In the following, we use indistinctly the terms edge and rela-tion. In particular, polysemy, or some more precise usage of a word is expressed through the semantic refinement (raff_sem) relation type. For example, the word avocat has two meanings : it is either referring to lawyer (juriste) or avocado (fruit). This knowledge is encoded in the network with 3 vertices and 2 edges : 
+
+avocat 
+
+raff_sem−−−−−→ 
+
+avocat>juriste 
+
+avocat 
+
+raff_sem−−−−−→ 
+
+avocat>fruit 
+
+The weight of the relation expresses the strength o f association with the following principle : the higher the weight, the more rele-vant the relation between the terms (relatively to other relations with lower weight). Impos-sibilities and exceptions are identified with a negative weight. Typically : fly 
+
+agent/-100−−−−−−→ 
+
+os-trich. The weights are the result of the player activity in the JeuxDeMots games, i. e. the more a term is associated by player the hi-ghest the relation weight. Labelled vertices can also be linked to miscellaneous informations 
+
+such as their polarity (positive, negative, neu-tral), some conceptual information, their color if any, or even a political connotation. RezoJDM is built by combining different in-
+
+puts. For the most part, data is collected via GWAPs 1 in which players participate to the network expansion by providing new terms and relations or consolidating them. Direct contributions can be done through Diko 2 a collaborative dictionary that allows users to edit the network and add, validate or cor-rect knowledge data. Different inference me-chanisms also continuously explore the net-work, generating new data (Zarrouk et al., 2013). So far, RezoJDM has more than 
+
+1.5 
+
+mil-lions vertices and 100 millions relations. 
+
+3 Explicative path finding by triangulation 
+
+RezoJDM is a small world network : the dia-meter is quite small (around 6) as terms are of-ten linked to hubs (terms with a large number of edges, such as animal, person, place, process, etc. The weights of relations are distributed according a power law. Theses properties are very interesting as it makes many exploration heuristics possible and as such a lot of raw facts are easily accessible through high-level knowledge. For example, the following fact is correct : 
+
+drug 
+
+against−−−−→ 
+
+disease But this is not self-explanatory and it does not tell us very well why drugs are acting against diseases.. We believe more information would be inferred by focusing on paths instead on direct relations : 
+
+drug 
+
+instr−1 −−−−−→ 
+
+healing 
+
+against−−−−→ 
+
+disease 
+
+The interest of an explicative path is to pro-vide such an explanation, which gives clues of the rightfulness of the KB. Wrong paths can pinpoint defects in the KB. 
+
+3.1 Our Approach The inference of explanatory paths is based 
+
+on triangulation : it is a matter of completing triangular relations arrangements by using the KB to find the relationship (s) that are lacking for the triangle to be complete. 
+
+1. Game With A Purpose 2. http ://www.jeuxdemots.org/diko.php
+
+Starting from a true fact 
+
+x t−→ y, 
+
+induc-tion consists in finding an intermediary ver-tex 
+
+v 
+
+connecting 
+
+x 
+
+and 
+
+y. 
+
+In order to main-tain consistency, the 
+
+(v, y) 
+
+edge must have the same relation type 
+
+t 
+
+as the starting fact while 
+
+(x, v) 
+
+can be of any type. Not considering this constraint definitively leads to an increased number of nonsensical inferences. The result is an explicative path of length 2 (Figure 1). For instance, to explain why tiger 
+
+carac−−−→ 
+
+dangerous). we would like to get tiger 
+
+is-a−−→ 
+
+wild animal 
+
+carac−−−→ 
+
+dangerous. 
+
+Figure 1 – Triangle schema with L(eft), (R)ight and B(ase) relations. Induction pro-poses possible pairs (LR) of relations t and t’ from the initial (B) relation t. Conversely, consolidation proposes a possible initial rela-tion (B) from a pair (LR). 
+
+The process is then applied recursively to the path’s edges, expanding it and refining the explanation. Beside the triangulation, there is dual opera-
+
+tion named consolidation, which aims at fin-ding in the KB a shortcut between two connec-ted edges. In (Figure 1) finding a relation t from x, y is a consolidation. The consolidation task is undertaken along with induction. 
+
+The intermediary vertex choice is critical and one must choose a path that provides use-ful information. To tackle this task we use the confidence index from the data mining do-main. Given two events 
+
+X 
+
+and 
+
+Y 
+
+, the confi-dence in the rule 
+
+X → Y (X 
+
+gives 
+
+Y 
+
+) is the quotient of 
+
+X 
+
+and 
+
+Y 
+
+joint probability and the probability of 
+
+X 
+
+: 
+
+conf(X ⇒ Y 
+
+) = 
+
+P (X,Y 
+
+) 
+
+P (X) 
+
+= 
+
+P 
+
+(RB) 
+
+P 
+
+(L) 
+
+In our case, 
+
+X 
+
+is the number of occurrences of the following triangle’s pattern (right hand side and base, RB) : 
+
+x t−→ y 
+
+t←− v, 
+
+while 
+
+Y 
+
+is the triangle’s left hand side (L) : 
+
+x t’−→ v. 
+
+When co-occurring, 
+
+X 
+
+and 
+
+Y 
+
+form the triangle. Be-cause only relation types (and not vertices) are relevant, we write 
+
+conf(t, t′). 
+
+For example, if 
+
+the network contains 131 810 RB typed 
+
+agent 
+
+and 24 005 triangles with 
+
+instr 
+
+types for L then 
+
+conf(agent, 
+
+instr) = 
+
+0.182. 
+
+At each step, the 3 vertices with the highest confidence are chosen. We also add an arbitrary threshold un-der which vertices are ignored. Other measures could have been considered such as activation distance (Lafourcade, 2011) or Pointwise Mu-tual Information (Bouma, 2009). One question arises as why not is the confi-
+
+dence 
+
+conf(X ⇒ Y 
+
+) defined as 
+
+P 
+
+(RLB) 
+
+P 
+
+(B) (ins-
+
+tead of 
+
+P 
+
+(RB) 
+
+P 
+
+(L) ) ? This comes from the two 
+
+constraints we put on ourselves : first, we want triangles, second, B and R must be of same type. Therefore the confidence measure must allow us to chose the best amongst all possible L of type 
+
+t′. 
+
+The confidence measure allows us to choose some intermediary vertices, nevertheless we also need a way to limit the graph’s explo-ration. It is indeed pointless to continue the path’s expansion to exhaustion (and certainly not computationally sound). As the path gets longer, it becomes more likely that it will contain irrelevant informations, we therefore limit its length. Likewise we limit the distance between the intermediary vertex and the star-ting fact vertices by using Jaccard index (Jac-card, 1901) : 
+
+J(x, y) 
+
+= 
+
+|Γ (x) ∩ Γ (y)| |Γ (x) ∪ Γ (y)| 
+
+with 
+
+x 
+
+and 
+
+y 
+
+being two vertices and 
+
+Γ 
+
+the neighbor function which is the proportion of common neighbors. If a given J value falls be-low a given threshold, the expansion is cance-led. 
+
+4 Evaluation 
+
+For the evaluation, the following parame-ters were used. We used the following seman-tic relation types : is-a, charac(teristic), (has-)parts, place, against, agent, patient, instru-ment, consequence, implication and raff_sem. Explicative paths length is limited to 5. We also set the minimum J to 
+
+1/3 
+
+and the mini-mum confidence to 0.5. We undertook two ex-periments and the produced explicative paths have been manually evaluated :
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwy0KyjYyS7JGCFk-4ak6usgwH2PNv_iDK4dM5f0RPAm8iXlKxglyu-REao1-M0w4SWlG2GjzV-bVh7lPhwdkxlXvJGF89eB199J2NW74Yss2qpDgMnW4jQfpCYN-KPDQ_1Rma9eA=w224-h152-v0
+
+25e46ddb-91e0-4aaf-a21e-43f748f1e6ef
+
+ On the medicine domain (M1) : 100 facts (related to this domain) have been randomly selected in the KB ;  On general common sense (CS1) : 100 facts have been hand chosen (like kettle 
+
+agent−−−→ 
+
+burn). 
+
+4.1 Results Results are presented respectively in tables 
+
+1 and 2. Each path has been evaluated as valid, not valid or borderline (used when the eva-luators have some difficulties evaluating the soundness of the path). Some acceptable path examples : kettle 
+
+place−−−→ 
+
+fire 
+
+charac−−−−→ 
+
+hot 
+
+conseq−−−−→ 
+
+burn; and avocado 
+
+is-a−−→ 
+
+fruit 
+
+parts−−−→ 
+
+rind 
+
+patient-of−−−−−−→ 
+
+peel; Some borderline paths : avocat 
+
+is-a−−→ 
+
+homme 
+
+parts−−−→ 
+
+peau 
+
+patient-of−−−−−−→ 
+
+peler; (Eng. avocado/lawyer 
+
+is-a−−→ 
+
+man 
+
+parts−−−→ 
+
+skin 
+
+patient-of−−−−−−→ 
+
+to peal;) (as stated before, avocat and has two meanings : lawyer and avocado). 
+
+l nb valid not valid borderline 1 130 89 5 6 2 259 87 6 7 3 345 80 9 11 4 307 76 12 12 5 167 69 16 15 
+
+Table 1 – M1 results in % according to length of path (l). nb is the number of paths. 
+
+l nb valid not valid borderline 1 176 83 7 10 2 312 79 10 11 3 406 74 12 14 4 367 73 12 15 5 216 67 16 17 
+
+Table 2 – CS1 results in % according to length of path (l). nb is the number of paths. 
+
+The agreement between validators was fairly high, around 0.78 (the percentage of the com-mon evaluation). They were arguing mostly on borderline paths which acceptability might vary accordingly with the validator. There was 
+
+up to 5 validators and they were able to dis-cuss their choice remotely through chat sys-tems (Skype, Hangout, etc.). Validators were people involved somehow in the JeuxDeMots project and all of them have university de-grees. 
+
+4.2 Discussion First, we can compare the results for both 
+
+experiments. CS1 seems more productive (as regards the number of paths) : from the same number of initial facts (100), CS1 systemati-cally produces more path than M1. We should keep in mind than the number of paths in Table 1 and 1 does not represent all possible paths but only those selected by our method. The method does not produce as good re-
+
+sults on CS1 than M1, as there is always a hi-gher percentage of invalid or borderline paths. A beginning of explanation might be that the common language is certainly more polyse-mous and vague than that of a specific domain like medicine. Another possible reason would be the judgment of the evaluators. They are certainly stricter in the general domain (com-mon sens) which is often more meaningful for them than a specific domain. In both experiments, the number of paths 
+
+produced increases with length up to 3, then decreases. The negative impact of length tends to strongly filter the number of paths, hence there is not a combinatorial explosion of paths. 
+
+Conclusion 
+
+In this article we have presented an ap-proach for computing explicative paths in a lexical-semantic network. We undertook some experiments through the JeuxDeMots net-work. The preliminary results we detailed are quite encouraging as they effectively allowed to assess the network quality and consolidate many knowledge tidbits. 
+
+As future work, we aim at comparing and combining path and to do such some simila-rity functions should be defined on paths of different length. Furthermore, identifying al-most complete paths seems to be a good direc-tion for a new type of inference, where some extended context could be taken into account.
+
+References Besnard, P., M.-O. Cordier, and Y. Moinard 
+
+(2008). Ontology-based inference for causal ex-planation. 
+
+Bouma, G. (2009). Normalized (pointwise) mutual information in collocation extraction. Procee-dings of GSCL. 
+
+Jaccard, P. (1901). Etude comparative de la distri-bution florale dans une portion des Alpes et du Jura. Impr. Corbaz. 
+
+Lafourcade, M. (2007). Making people play for Lexical Acquisition with the JeuxDeMots pro-totype. In 7th International Symposium on Na-tural Language Processing (SNLP’07). 
+
+Lafourcade, M. (2011). Lexique et analyse séman-tique de textes - structures, acquisitions, calculs, et jeux de mots. Ph. D. thesis. 
+
+Leacock, C. and M. Chodorow (1998). Combining local context with WordNet similarity for word sense identification. 
+
+Lee, J., J. Min, and C. Chung (2009). An Effective Semantic Search Technique Using Ontology. In Proceedings of the 18th International Conference on World Wide Web. 
+
+Lin, D. (1998). An Information-Theoretic Defini-tion of Similarity. 
+
+Song, M., G. E. Heo, and Y. Ding (2015). Sem-PathFinder : Semantic path analysis for disco-vering publicly unknown knowledge. Journal of Informetrics. 
+
+Zarrouk, M., M. Lafourcade, and A. Joubert (2013). Inference and Reconciliation in a Crowdsourced Lexical-Semantic Network. Pro-ceedings of the 14th International Conference on Intelligent Text Processing and Computational Linguistics (CICLing).

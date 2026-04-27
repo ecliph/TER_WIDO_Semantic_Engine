@@ -1,0 +1,171 @@
+JeuxDeMots : aide
+
+Javascript doit fonctionner ! Activez-le et rechargez cette page.
+
+ 
+
+le jeu des mots à collectionner
+
+https://www.jeuxdemots.org/jdm-accueil.php
+
+⌂
+
+https://www.jeuxdemots.org/jdm-accueil.php
+
+Classement
+
+https://www.jeuxdemots.org/generateRanking-4.php
+
+Evénements
+
+https://www.jeuxdemots.org/generateEvents.php
+
+Souk
+
+https://www.jeuxdemots.org/souk.php
+
+BàM
+
+https://www.jeuxdemots.org/jdm-mylittlemuseum.php?owner=0
+
+Portail
+
+http://imaginat.name/JDM/Page_Liens_JDMv2.html
+
+Diko
+
+https://www.jeuxdemots.org/diko.php
+
+Discord
+
+https://discord.gg/Z8TFs3qKE8
+
+Options
+
+https://www.jeuxdemots.org/jdm-options.php
+
+ 
+
+Aide de JeuxDeMots 
+
+ 
+
+But du jeu
+
+L'objectif de JeuxDeMots est de collectionner des termes et de faire des collections de mots. Votre Boîte à Mots est votre coffre à trésors. Pour cela, il faut jouer sur les termes et tenter de les capturer en faisant de bonnes parties. N'hésitez pas à voler des mots possédés par d'autres joueurs.
+
+Pourquoi le projet JeuxDeMots ?
+
+http://imaginat.name/infosJDM.html
+
+• 
+
+Le Portail de JeuxDeMots
+
+http://imaginat.name/Page_Liens_JDMv2.html
+
+• 
+
+Pour bien jouer à JDM
+
+http://imaginat.name/JDM/AideJDMv1web.pdf
+
+Dernière mise à jour : 25 août 2014.
+
+Principe général
+
+Lorsqu'une partie démarre une consigne concernant un type de compétence (synonymes, contraires, etc) est affichée. Plus vous aurez de réponses en commun avec un autre joueur, meilleurs seront vos gains. Les réponses spécifiques et peu rencontrées rapportent plus que des réponses générales.
+
+Avant de jouer, vous devez avoir pris connaissance de 
+
+la charte de JeuxDeMots
+
+https://www.jeuxdemots.org/jdm-signin.php
+
+ et en avoir accepté les termes.
+
+Voici les éléments (indiqués en rouge) importants à découvrir lors d'une partie...
+
+ 
+
+... et le résultat d'une autre ...
+
+ 
+
+Contact : mathieu.lafourcade 'at' lirmm.fr/gmail.com - images d'aide par n@t.
+
+Histoire d'honneur
+
+L'honneur représente votre performance. Lors d'une partie vous pouvez gagner ou perdre de l'honneur. Ne pas répondre n'est pas très honorable. L'honneur a tendance à s'effriter avec le temps. Votre classement dépend du nombre de mots que vous possédez et de l'honneur, mais également de l'ensemble de votre activité depuis votre inscription.
+
+Histoire d'argent
+
+L'argent virtuel de JeuxDeMots est représenté par des crédits. Ceux-ci sont gagnés lors des parties, en fonction de la pertinence de vos réponses. Les crédits vous servent à plusieurs choses, notamment à acheter du temps lors d'une partie, mais aussi à débloquer l'accès à certaines compétences. Il existe aussi des pilules bleues vous permettant de faire des choses spéciales.
+
+Histoire de compétences
+
+Un nouveau joueur n'a accès au départ qu'à un seul type de consigne (on parlera de compétence). Dans le souk, vous pouvez acheter le droit de jouer avec d'autres compétences. Sachez qu'une compétence a une cotation qui influence (à la baisse ou à la hausse) vos gains. Plus une compétence est jouée, plus cette cotation baisse. Les compétences rares et difficiles valent donc plus que les autres. Toujours dans le souk, vous pouvez ajuster la probabilité qu'une partie en création corresponde à une de vos compétences. Ainsi, il vous est possible de jouer préférentiellement avec les compétences qui vous rapportent le plus ou que vous préférez. Vous n'influencez pas la proportion d'apparition des parties en attente.
+
+Histoire de réponses
+
+Le bouton "passer" permet de finir la partie avant l'échéance de temps. Si vous pensez qu'il n'y a pas du tout de réponse à la consigne donnée vous pouvez mettre *** comme réponse. Si votre partenaire pense comme vous, vous aurez des gains. Attention, une telle réponse termine immédiatement la partie en cours et annule les réponses que vous auriez pu donner avant.
+
+Les mots tabous ne sont pas interdits, mais ils vous rapporteront bien peu... tâchez d'en trouver d'autres.
+
+S'enregistrer Pourquoi ?
+
+https://www.jeuxdemots.org/HELP-FR.php
+
+Jouer comme invité est limité.
+
+En vous enregistrant, vous pourrez (en vrac) jouer sur le vocabulaire qui vous plait, avoir des amis, vous la péter dans le classement, recevoir et offrir des cadeaux, faire de la magie, participer aux procès, envoûter les autres joueurs, participer à la loterie, acheter des compétences, collectionner des mots... et découvrir plein d'autres choses encore. Une fois enregistré, vous pouvez également modifier vos options, et en particulier contrôler les courriels que vous voulez recevoir.
+
+Foire aux questions
+
+Q: Après 10 ou 11 propositions, je n'arrive plus à en mettre. Normal ?
+
+R : oui, c'est normal, le nombre de propositions est "plus ou moins" limité à 10. Mais moyennant des crédits vous pouvez repousser cette limite durant une partie.
+
+Q: J'ai ajusté une de mes compétences à 100% et pourtant j'ai parfois des consignes correspondant à d'autres compétences. Normal ?
+
+R : oui, c'est normal, l'ajustement ne concerne que les parties en création, et pas celles à finir (où on obtient le résultat immédiatement).
+
+Q: Il parait qu'il y a des raccourcis claviers ?
+
+R : oui, Alt+t pour acheter du temps, Alt+p pour repousser la limite du nombre de propositions, et F1 à F12 pour sélectionner un raffinement.
+
+Q: Il parait qu'on peut saisir plusieurs entrées à la fois ?
+
+R : oui, en les séparant avec le caractère *.
+
+Q: Je reçois trop de mails/courriels/spam. Que faire ?
+
+R : Le menu "Options" vous permet de contrôler les courriels que vous désirez recevoir.
+
+Q: Pourquoi posséder des mots ?
+
+R : Vos mots vous rapportent quand d'autres joueurs les jouent... vous pouvez faire de jolies collections à partir de votre Boîte à Mots (BàM)...
+
+Q: J'ai lu tout ça, je fais quoi maintenant ?
+
+R : Vous jouez, vous jouez, vous jouez... et si vous voulez être parmi les meilleurs allez lire cela : 
+
+Pour bien jouer à JDM
+
+http://imaginat.name/JDM/AideJDMv1web.pdf
+
+**invité
+
+Connectez-vous pour plus de détails
+
+https://www.jeuxdemots.org/jdm-signin.php
+
+**
+
+connectez-vous !
+
+ 
+
+ 
+
+0.08 s

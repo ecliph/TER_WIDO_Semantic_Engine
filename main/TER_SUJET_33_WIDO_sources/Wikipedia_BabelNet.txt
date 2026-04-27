@@ -1,0 +1,1340 @@
+Jump to content
+
+Main menu    Navigation 
+
+Main page
+
+Contents
+
+Current events
+
+Random article
+
+About Wikipedia
+
+Contact us
+
+ Contribute 
+
+Help
+
+Learn to edit
+
+Community portal
+
+Recent changes
+
+Upload file
+
+Special pages
+
+Search  
+
+Donate
+
+Create account
+
+Log in
+
+Donate
+
+Create account
+
+Log in
+
+(Top)  
+
+1   Statistics of BabelNet  
+
+2   Applications  
+
+3   Prizes and acknowledgments  
+
+4   See also  
+
+5   References  
+
+6   External links  
+
+BabelNet
+
+Afrikaans
+
+العربية
+
+বাংলা
+
+Català
+
+Español
+
+فارسی
+
+Français
+
+Italiano
+
+日本語
+
+한국어
+
+Português
+
+粵語
+
+中文
+
+Edit links
+
+Tools    Actions 
+
+Read
+
+Edit
+
+View history
+
+ General 
+
+What links here
+
+Related changes
+
+Upload file
+
+Permanent link
+
+Page information
+
+Cite this page
+
+Get shortened URL
+
+ Print/export 
+
+Download as PDF
+
+Printable version
+
+ In other projects 
+
+Wikidata item
+
+From Wikipedia, the free encyclopedia   Multilingual lexical-semantic knowledge graph and encyclopedic dictionary   BabelNet
+
+Stable release
+
+https://en.wikipedia.org/wiki/File:BabelNet_logo.svg
+
+BabelNet 5.3 / December 2023  
+
+Operating system
+
+https://en.wikipedia.org/wiki/Operating_system
+
+Virtuoso Universal Server
+
+https://en.wikipedia.org/wiki/Operating_system
+
+Lucene
+
+https://en.wikipedia.org/wiki/Operating_system
+
+Type
+
+https://en.wikipedia.org/wiki/Operating_system
+
+Multilingual encyclopedic dictionary
+
+https://en.wikipedia.org/wiki/Operating_system
+
+Linked data
+
+https://en.wikipedia.org/wiki/Operating_system
+
+License
+
+https://en.wikipedia.org/wiki/Operating_system
+
+Attribution-NonCommercial-ShareAlike 3.0 Unported
+
+https://en.wikipedia.org/wiki/Operating_system
+
+Website
+
+babelnet .org
+
+https://babelnet.org/
+
+BabelNet
+
+ is a 
+
+multilingual
+
+https://en.wikipedia.org/wiki/Multilinguality
+
+ lexical-semantic 
+
+knowledge graph
+
+https://en.wikipedia.org/wiki/Knowledge_graph
+
+, 
+
+ontology
+
+https://en.wikipedia.org/wiki/Ontology_(information_science)
+
+ and encyclopedic 
+
+dictionary
+
+https://en.wikipedia.org/wiki/Dictionary
+
+ developed at the 
+
+NLP
+
+https://en.wikipedia.org/wiki/Natural_Language_Processing
+
+ group of the 
+
+Sapienza University of Rome
+
+https://en.wikipedia.org/wiki/Sapienza_University_of_Rome
+
+ under the supervision of 
+
+Roberto Navigli
+
+https://en.wikipedia.org/wiki/Roberto_Navigli
+
+.
+
+[ 1 ]
+
+[ 2 ]
+
+ BabelNet was automatically created by linking 
+
+Wikipedia
+
+https://en.wikipedia.org/wiki/Wikipedia
+
+ to the most popular computational 
+
+lexicon
+
+https://en.wikipedia.org/wiki/Dictionary
+
+ of the 
+
+English language
+
+https://en.wikipedia.org/wiki/English_language
+
+, 
+
+WordNet
+
+https://en.wikipedia.org/wiki/WordNet
+
+. The integration is done using an automatic mapping and by filling in lexical gaps in resource-poor 
+
+languages
+
+https://en.wikipedia.org/wiki/Language
+
+ by using 
+
+statistical machine translation
+
+https://en.wikipedia.org/wiki/Statistical_machine_translation
+
+. The result is an 
+
+encyclopedic dictionary
+
+https://en.wikipedia.org/wiki/Encyclopedic_dictionary
+
+ that provides 
+
+concepts
+
+https://en.wikipedia.org/wiki/Concept
+
+ and 
+
+named entities
+
+https://en.wikipedia.org/wiki/Named_entity
+
+lexicalized
+
+https://en.wikipedia.org/wiki/Named_entity
+
+ in many languages and connected with large amounts of 
+
+semantic relations
+
+https://en.wikipedia.org/wiki/Semantic_relation#Relationships
+
+. Additional lexicalizations and definitions are added by linking to free-license wordnets, OmegaWiki, the English 
+
+Wiktionary
+
+https://en.wikipedia.org/wiki/Wiktionary
+
+, 
+
+Wikidata
+
+https://en.wikipedia.org/wiki/Wikidata
+
+, 
+
+FrameNet
+
+https://en.wikipedia.org/wiki/FrameNet
+
+, 
+
+VerbNet
+
+https://en.wikipedia.org/wiki/VerbNet
+
+ and others. Similarly to WordNet, BabelNet groups 
+
+words
+
+https://en.wikipedia.org/wiki/Word
+
+ in different languages into sets of 
+
+synonyms
+
+https://en.wikipedia.org/wiki/Synonyms
+
+, called 
+
+Babel 
+
+synsets
+
+https://en.wikipedia.org/wiki/Synsets
+
+. For each Babel synset, BabelNet provides short definitions (called 
+
+glosses
+
+https://en.wikipedia.org/wiki/Definition
+
+) in many languages harvested from both WordNet and Wikipedia. 
+
+BabelNet is a multilingual semantic network obtained as an integration of WordNet and Wikipedia.  
+
+Statistics of BabelNet
+
+[
+
+edit
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=1
+
+]  
+
+As of December 2023
+
+[update]
+
+, BabelNet (version 5.3) covers 600 
+
+languages
+
+https://en.wikipedia.org/wiki/Language
+
+. It contains almost 23 million synsets and around 1.7 billion 
+
+word senses
+
+https://en.wikipedia.org/wiki/Word_sense
+
+ (regardless of their language). Each Babel synset contains 2 synonyms per language, i.e., word senses, on average. The semantic network includes all the lexico-semantic relations from WordNet (
+
+hypernymy and hyponymy
+
+https://en.wikipedia.org/wiki/Hyponymy
+
+, 
+
+meronymy
+
+https://en.wikipedia.org/wiki/Meronymy
+
+ and 
+
+holonymy
+
+https://en.wikipedia.org/wiki/Holonymy
+
+, 
+
+antonymy
+
+https://en.wikipedia.org/wiki/Antonymy
+
+ and 
+
+synonymy
+
+https://en.wikipedia.org/wiki/Synonymy
+
+, etc., totaling around 364,000 relation edges) as well as an underspecified relatedness relation from Wikipedia (totaling around 1.9 billion edges).
+
+[ 1 ]
+
+ Version 5.3 also associates around 61 million images with Babel synsets and provides a Lemon 
+
+RDF
+
+https://en.wikipedia.org/wiki/Resource_Description_Framework
+
+ encoding of the resource,
+
+[ 3 ]
+
+ available via a 
+
+SPARQL endpoint
+
+https://en.wikipedia.org/wiki/SPARQL_endpoint
+
+. 2.67 million synsets are assigned domain labels. 
+
+Applications
+
+[
+
+edit
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=2
+
+]  
+
+BabelNet has been shown to enable multilingual 
+
+natural language processing
+
+https://en.wikipedia.org/wiki/Natural_language_processing
+
+ applications. The lexicalized 
+
+knowledge
+
+https://en.wikipedia.org/wiki/Knowledge
+
+ available in BabelNet has been shown to obtain state-of-the-art results in: 
+
+Semantic relatedness
+
+https://en.wikipedia.org/wiki/Knowledge
+
+,
+
+[ 4 ]
+
+[ 5 ]
+
+Multilingual 
+
+word-sense disambiguation
+
+https://en.wikipedia.org/wiki/Word-sense_disambiguation
+
+[ 6 ]
+
+https://en.wikipedia.org/wiki/Word-sense_disambiguation
+
+ and 
+
+entity linking
+
+https://en.wikipedia.org/wiki/Entity_linking
+
+, with the 
+
+Babelfy
+
+https://en.wikipedia.org/wiki/Babelfy
+
+ system,
+
+[ 7 ]
+
+Video games with a purpose
+
+.
+
+[ 8 ]
+
+Prizes and acknowledgments
+
+[
+
+edit
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=3
+
+]  
+
+BabelNet received the META prize 2015 for "groundbreaking work in overcoming language barriers through a multilingual lexicalised semantic network and ontology making use of heterogeneous data sources". 
+
+The Artificial Intelligence Journal paper that describes BabelNet
+
+[ 1 ]
+
+ won the Prominent Paper Award in 2017.
+
+[ 9 ]
+
+BabelNet featured prominently in a 
+
+Time
+
+ magazine article
+
+[ 10 ]
+
+ about the new age of innovative and up-to-date lexical knowledge resources available on the Web. 
+
+See also
+
+[
+
+edit
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=4
+
+]  
+
+Babelfy
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=4
+
+EuroWordNet
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=4
+
+Knowledge acquisition
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=4
+
+Linguistic Linked Open Data
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=4
+
+Semantic network
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=4
+
+Semantic relatedness
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=4
+
+Wikidata
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=4
+
+Wiktionary
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=4
+
+Word sense disambiguation
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=4
+
+Word sense induction
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=4
+
+UBY
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=4
+
+References
+
+[
+
+edit
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=5
+
+]  
+
+^ 
+
+a
+
+b
+
+c
+
+R. Navigli and S. P Ponzetto. 2012. 
+
+BabelNet: The Automatic Construction, Evaluation and Application of a Wide-Coverage Multilingual Semantic Network
+
+https://dx.doi.org/10.1016/j.artint.2012.07.001
+
+. Artificial Intelligence, 193, Elsevier, pp. 217-250.  
+
+^
+
+https://dx.doi.org/10.1016/j.artint.2012.07.001
+
+R. Navigli, S. P. Ponzetto. 
+
+BabelNet: Building a Very Large Multilingual Semantic Network
+
+http://www.aclweb.org/anthology/P/P10/P10-1023.pdf
+
+. Proc. of the 48th Annual Meeting of the 
+
+Association for Computational Linguistics
+
+https://en.wikipedia.org/wiki/Association_for_Computational_Linguistics
+
+ (ACL 2010), Uppsala, Sweden, July 11–16, 2010, pp. 216–225.  
+
+^
+
+https://en.wikipedia.org/wiki/Association_for_Computational_Linguistics
+
+M. Ehrmann, F. Cecconi, D. Vannella, J. McCrae, P. Cimiano, R. Navigli. 
+
+Representing Multilingual Data as Linked Data: the Case of BabelNet 2.0
+
+http://www.lrec-conf.org/proceedings/lrec2014/pdf/810_Paper.pdf
+
+. Proc. of the 9th Language Resources and Evaluation Conference (LREC 2014), Reykjavik, Iceland, 26–31 May 2014.  
+
+^
+
+http://www.lrec-conf.org/proceedings/lrec2014/pdf/810_Paper.pdf
+
+R. Navigli and S. Ponzetto. 2012. 
+
+BabelRelate! A Joint Multilingual Approach to Computing Semantic Relatedness
+
+http://www.aaai.org/ocs/index.php/AAAI/AAAI12/paper/download/5112/5126
+
+Archived
+
+http://www.aaai.org/ocs/index.php/AAAI/AAAI12/paper/download/5112/5126
+
+ 2016-03-03 at the 
+
+Wayback Machine
+
+https://en.wikipedia.org/wiki/Wayback_Machine
+
+. Proc. of the 26th AAAI Conference on Artificial Intelligence (AAAI 2012), Toronto, Canada, pp. 108-114.  
+
+^
+
+https://en.wikipedia.org/wiki/Wayback_Machine
+
+J. Camacho-Collados, M. T. Pilehvar and R. Navigli. 
+
+NASARI: a Novel Approach to a Semantically-Aware Representation of Items
+
+http://aclweb.org/anthology/N/N15/N15-1059.pdf
+
+. Proc. of the 2015 Conference of the North American Chapter of the Association for Computational Linguistics (NAACL 2015), Denver, Colorado (US), 31 May-5 June 2015, pp. 567-577.  
+
+^
+
+http://aclweb.org/anthology/N/N15/N15-1059.pdf
+
+R. Navigli and S. Ponzetto. 
+
+Joining Forces Pays Off: Multilingual Joint Word Sense Disambiguation
+
+http://www.aclweb.org/anthology/D12-1128
+
+. Proc. of the 2012 Conference on Empirical Methods in Natural Language Processing (EMNLP 2012), Jeju, Korea, July 12–14, 2012, pp. 1399-1410.  
+
+^
+
+http://www.aclweb.org/anthology/D12-1128
+
+A. Moro, A. Raganato, R. Navigli. 
+
+Entity Linking meets Word Sense Disambiguation: a Unified Approach
+
+http://www.aclweb.org/anthology/Q14-1019
+
+Archived
+
+http://www.aclweb.org/anthology/Q14-1019
+
+ 2014-08-08 at the 
+
+Wayback Machine
+
+https://en.wikipedia.org/wiki/Wayback_Machine
+
+ Transactions of the Association for Computational Linguistics (TACL), 2, pp. 231-244, 2014.  
+
+^
+
+https://en.wikipedia.org/wiki/Wayback_Machine
+
+D. Jurgens, R. Navigli. 
+
+"It's All Fun and Games until Someone Annotates: Video Games with a Purpose for Linguistic Annotation"
+
+https://web.archive.org/web/20150103085712/http://www.transacl.org/wp-content/uploads/2014/10/421-camera-ready.pdf
+
+(PDF) . Archived from the original on January 3, 2015 . Retrieved  2015-01-03 . {{
+
+cite web
+
+https://en.wikipedia.org/wiki/Template:Cite_web
+
+}} : CS1 maint: bot: original URL status unknown (
+
+link
+
+https://en.wikipedia.org/wiki/Category:CS1_maint:_bot:_original_URL_status_unknown
+
+)  Transactions of the Association for Computational Linguistics (TACL), 2, pp. 449-464, 2014.  
+
+^
+
+https://en.wikipedia.org/wiki/Category:CS1_maint:_bot:_original_URL_status_unknown
+
+"AIJ Awards: List of Current and Previous Winners"
+
+https://en.wikipedia.org/wiki/Category:CS1_maint:_bot:_original_URL_status_unknown
+
+.  
+
+^
+
+https://en.wikipedia.org/wiki/Category:CS1_maint:_bot:_original_URL_status_unknown
+
+Steinmetz, Katy (May 12, 2016). 
+
+"Redefining the Modern Dictionary"
+
+https://time.com/4327440/redefining-the-modern-dictionary/
+
+. 
+
+Time
+
+. 
+
+187
+
+: 20-21.  
+
+External links
+
+[
+
+edit
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+]  
+
+Official website
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+v
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+t
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+e
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Natural language processing
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+General terms  
+
+AI-complete
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Bag-of-words
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+n
+
+-gram
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Bigram
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Trigram
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Computational linguistics
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Natural language understanding
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Stop words
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Text processing
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Text analysis
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Argument mining
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Collocation extraction
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Concept mining
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Coreference resolution
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Deep linguistic processing
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Distant reading
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Information extraction
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Named-entity recognition
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Ontology learning
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Parsing
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+semantic
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+syntactic
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Part-of-speech tagging
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Semantic analysis
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Semantic role labeling
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Semantic decomposition
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Semantic similarity
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Sentiment analysis
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Stylometry
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+adversarial
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Terminology extraction
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Text mining
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Textual entailment
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Truecasing
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Word-sense disambiguation
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Word-sense induction
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Text segmentation
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Compound-term processing
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Lemmatisation
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Lexical analysis
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Text chunking
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Stemming
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Sentence segmentation
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Word segmentation
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Automatic summarization
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Multi-document summarization
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Sentence extraction
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Text simplification
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Machine translation
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Computer-assisted
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Example-based
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Rule-based
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Statistical
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Transfer-based
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Neural
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Distributional semantics
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+ models  
+
+BERT
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Document-term matrix
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Explicit semantic analysis
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+fastText
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+GloVe
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Language model
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+large
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+small
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Latent semantic analysis
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Long short-term memory
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Seq2seq
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Transformer
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Word embedding
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Word2vec
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Language resources
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+, 
+ datasets and corpora Types and 
+ standards  
+
+Corpus linguistics
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Lexical resource
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Linguistic Linked Open Data
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Machine-readable dictionary
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Parallel text
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+PropBank
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Semantic network
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Simple Knowledge Organization System
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Speech corpus
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Text corpus
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Thesaurus (information retrieval)
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Treebank
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Universal Dependencies
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Data  
+
+BabelNet
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Bank of English
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+DBpedia
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+FrameNet
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Google Ngram Viewer
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+UBY
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+WordNet
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Wikidata
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Automatic identification 
+ and data capture
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Speech recognition
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Speech segmentation
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Speech synthesis
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Natural language generation
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Optical character recognition
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Topic model
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Document classification
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Latent Dirichlet allocation
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Pachinko allocation
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Computer-assisted 
+ reviewing
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Automated essay scoring
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Concordancer
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Grammar checker
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Predictive text
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Pronunciation assessment
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Spell checker
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Natural language 
+ user interface
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Chatbot
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Interactive fiction
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Question answering
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Virtual assistant
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Voice user interface
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Related  
+
+Formal semantics
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Gensim
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Hallucination
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Natural Language Toolkit
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+spaCy
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&action=edit&section=6
+
+Retrieved from "
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&oldid=1274939181
+
+https://en.wikipedia.org/w/index.php?title=BabelNet&oldid=1274939181
+
+"  
+
+Categories
+
+https://en.wikipedia.org/wiki/Help:Category
+
+: 
+
+Lexical databases
+
+https://en.wikipedia.org/wiki/Help:Category
+
+Knowledge bases
+
+https://en.wikipedia.org/wiki/Help:Category
+
+Ontology (information science)
+
+https://en.wikipedia.org/wiki/Help:Category
+
+Knowledge representation
+
+https://en.wikipedia.org/wiki/Help:Category
+
+Computational linguistics
+
+https://en.wikipedia.org/wiki/Help:Category
+
+Online dictionaries
+
+https://en.wikipedia.org/wiki/Help:Category
+
+Multilingualism
+
+https://en.wikipedia.org/wiki/Help:Category
+
+Hidden categories: 
+
+Webarchive template wayback links
+
+https://en.wikipedia.org/wiki/Help:Category
+
+CS1 maint: bot: original URL status unknown
+
+https://en.wikipedia.org/wiki/Help:Category
+
+Articles with short description
+
+https://en.wikipedia.org/wiki/Help:Category
+
+Short description is different from Wikidata
+
+https://en.wikipedia.org/wiki/Help:Category
+
+Articles containing potentially dated statements from December 2023
+
+https://en.wikipedia.org/wiki/Help:Category
+
+All articles containing potentially dated statements
+
+https://en.wikipedia.org/wiki/Help:Category
+
+Official website different in Wikidata and Wikipedia
+
+https://en.wikipedia.org/wiki/Help:Category

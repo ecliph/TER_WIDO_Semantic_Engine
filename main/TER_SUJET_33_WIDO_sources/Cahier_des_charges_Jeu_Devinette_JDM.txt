@@ -1,0 +1,111 @@
+Ministère de l’Education Nationale 
+
+Université Montpellier II 
+
+Cahiers des charges de l’unité d’enseignement FMIN200 du master informatique 1ère année 
+
+effectué lors du second semestre de l’année 2007-2008 
+
+Sujet 23 
+
+Modélisation et implémentation d’un jeu de type devinette à JeuxDeMots 
+
+Encadrant LAFOURCADE Mathieu 
+
+Auteurs LAHRIZI Youssef PANCALDI Vincent PATERSON Richard PELOV Adrien
+
+Table des matières 
+
+1 Présentation du sujet 2 1.1 Le sujet . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 1.2 La problématique . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 1.3 Les contraintes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3 
+
+2 Planning et résultats envisagés 4 
+
+3 Méthode de travail et répartition des tâches 5 
+
+4 Diagramme de Gantt 6 
+
+5 Références 9 5.1 Livres . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9 5.2 Ressources web . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9 
+
+Chapitre 1 
+
+Présentation du sujet 
+
+1.1 Le sujet 
+
+Dans le cadre de notre deuxième semestre en master informatique (1ère année), nous sommes amenés à réaliser un T.E.R. en groupe sur un sujet préalablement affectés par tirage au sort. Nous réalisons dans le cadre de ce T.E.R. un projet dont l’intitulé est ”Modélisation et implémentation d’un jeu de type devinette à JeuxDeMots”, dont l’encadrant est M. Lafourcade Mathieu. Le pro-jet s’inscrit dans un ensemble de projets dont la thématique est rattachée à celle de JeuxDeMots. JeuxDeMots est un jeu dans lequel le joueur doit associer un mot à d’autres mots pour mettre en évidence une relation entre eux. La pertinence de cette association est évaluée et le joueur est récompensé à la hauteur de sa contribution. Sous un ensemble de mécanisme d’addiction le but non révélé au joueur est de faire émerger les relations entre les mots. Notre projet de devinette est un également un jeu, il consiste à laisser des joueurs créer des devinettes à partir d’un dictionnaire donné et d’un ensemble de schémas de fonctions lexicales. Par exemple avec le mot vache et les schémas (est mangé par y, mange y, produit du y), le joueur peut com-poser les devinettes (est mangé par l’Homme, mange de l’herbe, produit du lait) à condition qu’il utilise les schémas de fonctions lexicales fournies et que les mots utilisés conjointement à celles-ci soient dans le dictionnaire donné. Le but non revélé au joueur car sortant de l’univers du jeu, est d’alimenter avec de bonnes relations JeuxDeMots. Pour définir la pertinence d’une relation, le joueur est utilisé dans une autre phase de jeu qui consiste à trouver une devinette grâce aux questions composées par un ensemble de joueur, ses réponses vont conditionner la pertinence des relations entre les mots à deviner et les mots des schémas des fonctions lexicales. Du sujet émerge des besoins de consistence da la base de données, le joueur ne doit pas pouvoir rabaisser la pertinence de celle-ci à l’aide d’une stratégie de jeu, ou d’un procédé technique. Le dictionnaire existant pour jeuxdemots présente les structures de données suivantes : 
+
+– Un Noeud représente un mot du dictionnaire ; il possède un identifiant eid , le mot proprement dit n, un type t ainsi qu’un poids w. 
+
+– Une Relation représente une interaction entre 2 mots du dictionnaire ; elle possède un identifiant rid, un noeud de départ n1 et d’arrivée n2, un type t ainsi qu’un poids w. 
+
+– A noter que pour chaque relation le concernant, un mot possède un potentiel de réponse, représentant la quantité de mots pouvant lui être reliés. 
+
+1.2 La problématique 
+
+Pour clarifier nos objectifs dans ce projet nous allons formuler clairement et de façon concise dans cette section la problématique du projet qui est proposé. Pour cela on rappelle les éléments clefs, on formule celle-ci et on vérifie si elle représente bien ce qui nous est proposé. Le projet est un jeu devinette, dont la pratique de celui-ci par un ensemble de joueurs doit faire émerger une base données de relation entre termes, et dont l’utilisation doit favoriser la pertinence de la base données, en supprimant les stratégies visant à dégrader la pertinence de celle-ci. La problèmatique serait alors : Concevoir un jeu duquel va émerger une base de données de relations pertinentes entre termes, 
+
+ 
+
+en utilisant au mieux un ensemble de joueurs. Si l’on répond à cette problématique on a une solution qui est un jeu, produit une base de donnée de relations pertinentes, qui met le joueur au coeur de ce processus, en l’exploitant au mieux pour préserver les caractéristiques recherchées de celle-ci. On retrouve alors dans le projet les problematiques de game design d’un jeu, et de sécurité d’une solution. Les joueurs étant au centre du processus d’enrichissement de la base, leur participation intelligente est un pré-requis pour celui-ci : l’objectif est donc de fournir une expèrience de jeu suffisament intéressante pour leur donner envie de jouer le plus possible au jeu tout en suivant ses règles. Par conséquent, ces règles devront faire l’objet d’une conception visant a privilégier l’aspect ludique de l’application, couplée à des tests reguliers pour en éprouver l’equilibre et la pertinence : il s’agit typiquement d’un exercice de game design. Comme toute solution logicielle, l’application conçue devra bénéficier d’un choix d’architecture et de design orienté sécurité. De plus l’application devra être installée dans un environnement sécurisé, les composants qui l’entourent devront être soigneusement installés et configurés pour minimiser tout risque d’attaque logicielle. 
+
+1.3 Les contraintes 
+
+Le projet est soumis à un ensemble de contraintes, les unes sont inhérents au contexte, d’autres sont imposées par notre encadrant M. Lafourcade, et certaines sont nécessaires au bon fonctionnement du projet. Le projet doit s’effectuer du 16 janvier au 25 avril. La solution proposée doit utiliser les technologies php5 et mysql. La solution doit proposer une interface permettant de quantifier la pertinence de la base et des relations (données statistiques diverses). A cela s’ajoute les contraintes du jeu et celles liant le jeu et la base de données fixées par M. Lafourcade. 
+
+– Chaque devinette créée est proposée au moins à 10 joueurs différents pour maximiser la pertinence des relations entre les termes. 
+
+– L’ordre des indices donnés au joueur recherchant un mot sera aléatoire ce qui permettra d’eviter la triche ou de deviner trop facilement une devinette que le joueur a fourni ; à noter que la succession de ces indices devra être enregistrée. 
+
+– Le joueur composant la devinette reçoit le même nombre de points que celui ayant retrouvé le mot, ce score diminuant au fur et à mesure que des indices lui sont fournis et qu’il rentre ses propositions. 
+
+D’autres contraintes viendront naturellement se greffer durant l’évolution du projet, d’où l’intérêt d’une conception soignée.
+
+Chapitre 2 
+
+Planning et résultats envisagés 
+
+La nature de notre projet requiert qu’on lance une phase de test public le plus tôt possible. Nous allons mettre en place un processus de développement itératif, qui nécessite un découpage précis des fonctionalités de l’application et une planification de l’implémentation de celles-ci. L’itération initiale et l’itération finale sont plus longues que les autres, afin de stabiliser l’appli-cation pour travailler sur une base saine. Aussi dans notre processus itératif apparâıtront deux grandes phases en regard de ce critère, une phase de développement initiale avec une beta test close, et une phase de développment dans laquelle on mettra en oeuvre une beta test publique. On prévoit de lancer la deuxième phase début mars entre deux itérations. On prévoit de faire le déploiement de la solution finalisée deux semaines avant la date butoire du 25 avril. 
+
+Chapitre 3 
+
+Méthode de travail et répartition des tâches 
+
+Notre processus de développement est itératif. Notre méthode de travail s’inspire donc des méthodes agiles, et de l’extreme programming. Nous prenons ce qui nous convient dans chacune d’entre elles pour concevoir la nôtre. Cela se reflète sur notre diagramme de gantt, il arbore une forme en cascade. Les conséquences de ce choix sont que nous favorisons une communication accrue entre les membres et une grande souplesse de la répartition du travail, notamment en mettant en place des binomes flottants. Pour rendre simple cette communication au sein du groupe et communiquer en temps réel l’état d’avancement de celui-ci, nous avons mis en place une plateforme de développement utilisant l’outil code de google, qui permet de gérer en un endroit un serveur de version, un wiki pour la documentation, un système de communication des difficultés courantes, et un groupe de communication faisant office de forum. En plus de celà nous fixons une après midi de codage intensive ”hackaton” en fin de semaine où nous sommes groupés dans une salle de tp, pour résoudre les bugs non résolus avant le déploiement intermédiaire, pour auditer en profondeur les codes des autres, et faire un bilan ou mettre à jour le processus. 
+
+Autour des outils de gestion mis en place, un ensemble de bonnes pratiques qui nous viennent principalement du livre Code complete de Steve Mc Connel vont être utilisées. A cela s’ajoute un ensemble de bonnes pratiques pour la sécurité dont la source d’inspiration est Secure Code du même auteur. 
+
+Nous avons choisi d’utiliser : – Eclipse pour la plateforme principale de développement. – Eclipse PDT pour fournir en environnement personnalisé en PHP dans Eclipse. – PhpUnit pour automatiser les tests unitaires. – dOxygen pour avoir du code autodocumenté. – Subeclipse pour accéder au serveur de version. – ArgoUML pour la modélisation de la solution. – GanttProject pour planifier à l’aide du diagramme de Gantt. – Texmaker pour rédiger la documentation relative à la solution. L’idée qui a motivé notre choix réside dans la simplicité et dans la centralisation des outils, 
+
+et des efforts d’apprentissage de ceux-ci. Mais la simplicité n’a pas été sacrifié pour centraliser à tout prix dans eclipse. Et c’est ce qui a motivé le choix d’ ArgoUML et Ganttproject pour la modélisation et la planification. 
+
+Pour ce qui est de la communication avec M. Lafourcade nous avons fixé avec lui un créneau pour un rendez-vous hebdomadaire, puis nous lui avons donné accès à notre plateforme de développement. D’autre part pour les communications plus informelles nous utilisons un logiciel de messagerie instantanée. 
+
+Chapitre 4 
+
+Diagramme de Gantt 
+
+Voici le diagramme de Gantt découpé pour le faire rentrer dans le cahier des charges. 
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwcmuW66kXAvwLSoEBzd3hYOHd5jTyDFkwuOHSV1yytUs-sJcpStSuCT8dZwxj2vQ6HJdwK9wh209zAJP9aLAo_z29yurTLptofN_g2oOkjPv-2NHd4fKHRWJOE1SjOW704lu-iIQ=w446-h784-v0
+
+ebd5978a-d562-4791-b643-01e87522c120
+
+ 
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzy-ceu82_wXCpyvNokv_YtmeElBm4OD00KVtUfdXArR9rPdz10z45QU-vYnYO0YVL6oLxtyjX45ZFmMAclu8mtz_IVGM1tLiUdGCJNhyMNBmFcTwiyZDtsA1Oaf-_iWyHjrNsv8A=w493-h769-v0
+
+24f071e1-e9b5-4554-a8e0-b52e8fc8d482
+
+ 
+
+Chapitre 5 
+
+Références 
+
+5.1 Livres 
+
+– Code Complete 2nd de Steve McConnell ISBN :978-0735619678. – Rapid Development de Steve McConnell ISBN :978-1556159008. – Writing Secure Code ISBN :978-0735617223 – Writing solid code de Steve Maguire ISBN :978-1556155512 – Uml Distilled de Martin Fowler ISBN :978-0321193681 – Rules of play de Eric Zimmerman et Katie Salen ISBN :978-0262240451 
+
+5.2 Ressources web 
+
+– http ://www.jeuxdemots.fr/ le site de jeux de mots. – http ://code.google.fr/p/gurumeditation/ la plateforme de la solution. – http ://www.eclipse.org/ – http ://subclipse.tigris.org/ – http ://download.eclipse.org/tools/pdt/downloads/ – http ://home.gna.org/eclox/ – http ://ganttproject.biz/ – http ://argouml.tigris.org/ – http ://www.phpunit.de/ – http ://www.xm1math.net/texmaker/ – http ://gamestudies.org/ pour le processus de ”game design”. 

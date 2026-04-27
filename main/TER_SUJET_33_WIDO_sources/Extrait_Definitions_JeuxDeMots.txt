@@ -1,0 +1,10 @@
+<br>// D definitions du reseau JDM
+
+
+// 5729951 defs
+
+
+// Num de ligne | id term | definition ; 
+
+
+0|1|"Marque la surprise, la déception ou l'accord avec l'interlocuteur (surtout dans les dialectes du français d'Afrique).<br /><i>On ne s'en sortira jamais tant que notre pays sera dirigé par des voleurs et des anciens rebelles. ? Vraiment !</i> <br /><i>Le gouvernement a décrété une nouvelle hausse des impôts. ? Vraiment ! Mais pour quoi faire ça encore ! Comme si on n'avait pas déjà assez souffert ! Tchrouuu?</i> <br /><i>Eeeh vraiment ! Faut pas me faire ça Safi deh ! Toi aussi !</i>";

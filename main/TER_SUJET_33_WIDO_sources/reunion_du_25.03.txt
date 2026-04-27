@@ -1,0 +1,653 @@
+Réécriture exhaustive de la transcription de la conversation sur le projet WIDO / JeuxDeMots 
+
+Source de travail : transcription intégrale du fichier fourni. 
+
+1. Ouverture de la discussion : filtrage positif et calcul d’un poids global 
+
+La conversation s’ouvre sur une précision méthodologique concernant les requêtes et la manière de raisonner sur les poids. Le professeur explique que, lorsqu’une requête est faite avec un filtrage sur les poids positifs, il faut garder à l’esprit qu’un poids global peut ensuite être calculé à partir des différents poids obtenus. 
+
+Il propose comme idée que ce poids global puisse être, par exemple, la racine cubique du produit de trois  poids,  puis  il  généralise  en  rappelant  la  notion  de  moyenne  géométrique.  Il  distingue explicitement cette moyenne de la moyenne arithmétique habituelle : dans une moyenne arithmétique, on additionne les valeurs puis on divise par le nombre d’éléments ; dans une moyenne géométrique, on fait  le  produit  des  valeurs  puis  on  prend  la  racine  n-ième  du  résultat.  Il  ajoute  une  remarque humoristique  pour  marquer  les  esprits  :  heureusement  que  les  notes  universitaires  ne  sont  pas calculées de cette manière, sinon, dès qu’un étudiant a un zéro, « c’est mort ». 
+
+Cette entrée en matière pose déjà deux idées importantes : d’une part, le traitement des poids positifs, et d’autre part, la possibilité de construire une agrégation mathématique des résultats. 
+
+2. Les outils autour du projet et la place exclusive de l’API 
+
+Très rapidement, la discussion bascule sur la question des outils utilisables dans le projet. Un étudiant demande en substance si des outils comme Dico ou Dicasso peuvent être utiles. Le professeur répond de manière  très  tranchée :  ces  outils  peuvent  éventuellement  permettre  de  regarder  ce  qu’il  y  a autour du projet, de satisfaire une curiosité personnelle, ou d’explorer les données à la main, mais ils ne servent à rien dans l’implémentation elle-même. 
+
+Il insiste très fortement sur le fait que,  dans l’outil que les étudiants doivent développer,  la seule source autorisée pour accéder aux données est l’API. Il répète même plusieurs fois cette idée : « que ça, que ça, que l’API ». Les autres outils liés à JeuxDeMots peuvent être consultés, mais pas utilisés par programme.  Cette distinction entre exploration manuelle et exploitation logicielle est fondamentale dans son discours. 
+
+3. Mots, relations, idées : pourquoi il faut surtout manipuler des ID 
+
+Un autre point est ensuite clarifié : les étudiants se demandent si les mots eux-mêmes, les relations ou les idées associées aux entrées peuvent leur être utiles. Le professeur répond que, dans la pratique de l’implémentation, ils doivent surtout travailler avec des identifiants numériques. 
+
+Il précise le raisonnement : au début, on dispose d’un mot et on ne connaît pas encore son identifiant. Dans ce cas, on peut faire une recherche « from name » ou une recherche équivalente par nom. Mais une fois la première résolution effectuée,  on récupère surtout des ID,  et  ce sont ces ID qu’il  faut ensuite utiliser partout. La raison est simple : comparer des ID revient à comparer des entiers, ce qui est plus simple, plus rapide et plus efficace que comparer des chaînes de caractères. Un ID, dit-il, « c’est un entier », éventuellement un grand nombre, mais cela reste plus pratique qu’un mot. 
+
+4. Première grande explication technique : le principe du cache de requêtes API 
+
+Le  professeur  interroge  ensuite  l’un  des  étudiants,  appelé  «  Piston  »  dans  la  conversation,  sur  la manière  dont  il  compte  mettre  en  place  son  cache.  L’étudiant  répond qu’il  ne  sait  pas  encore.  Le professeur reformule alors la question : comment ferait-il un cache de requêtes API ? L’étudiant répond toujours qu’il n’a pas d’idée. 
+
+Le professeur expose alors le mécanisme de façon très concrète. 
+
+Il rappelle qu’une requête API est fondamentalement une URL, c’est-à-dire une route contenant un jeu de mots, des arguments et des paramètres. Cette URL doit être prise telle quelle et transformée en empreinte MD5. Le professeur insiste : on prend la requête, on en fait un MD5, et le nom du fichier de cache sera précisément ce MD5. 
+
+Le fonctionnement détaillé est le suivant : 
+
+On envoie une requête à l’API. On récupère le résultat sous forme de JSON. On sauvegarde ce JSON sur le disque dur. On donne au fichier comme nom le MD5 de l’URL de requête. 
+
+Le jour où l’on refait une requête, on recommence le calcul du MD5. On regarde alors si  un fichier portant ce même nom existe déjà : 
+
+s’il existe, cela veut dire que la même requête a déjà été faite ; on récupère donc directement le fichier sur le disque et on n’interroge pas l’API ; s’il n’existe pas, cela signifie soit que la requête n’a jamais été faite, soit que le fichier a été supprimé ; dans ce cas, on refait l’appel API et on resauvegarde le résultat dans un fichier dont le nom correspond à nouveau au MD5. 
+
+Le professeur ajoute une amélioration importante : si le fichier de cache est très ancien, par exemple s’il  date  d’un  mois,  on  peut  considérer  que  les  données  de  l’API  ont  peut-être  évolué  et  qu’il  y  a 
+
+1. 2. 3. 4. 
+
+ 
+
+ 
+
+désormais davantage d’informations disponibles. Dans ce cas, on supprime le fichier ancien, puis on refait la requête et on met à jour le cache. 
+
+5. Définition simple du cache et insistance absolue sur son importance 
+
+L’étudiant  reconnaît  qu’il  n’a  pas  encore  mis  en  place  ce  cache.  Le  professeur  répond  que  c’est important,  non  seulement  pour  des  raisons  d’élégance  technique,  mais  surtout  pour  des  raisons pratiques. Il demande aux étudiants de faire des requêtes et de les mettre en cache immédiatement, afin  d’avoir  localement,  sur  leur  machine,  une  partie  des  données  de  JeuxDeMots.  Il  précise  qu’ils n’auront évidemment pas toutes les données, mais qu’ils peuvent déjà constituer un stock utile pour leurs jeux de test : animaux, plantes, etc. 
+
+Un étudiant demande alors explicitement : « C’est quoi un cache ? ». Le professeur donne une définition volontairement simple : un cache, c’est l’enregistrement du résultat d’une requête dans un fichier afin de ne plus refaire la même requête. Il insiste : « c’est juste ça ». 
+
+Il revient ensuite sur la difficulté pratique : un problème fréquent dans la mise en place d’un cache est de savoir  comment nommer les fichiers. Sa réponse est toujours la même : on les nomme avec le MD5 de la requête, c’est-à-dire de l’URL ou de la route. 
+
+6. Le cache doit être implémenté tout de suite, pas à la fin 
+
+À ce stade, un étudiant explique qu’il pensait d’abord avancer sur d’autres parties du projet et voir le cache plus tard. Le professeur le contredit fermement. Pour lui, le cache ne doit pas être vu comme une dernière étape : il doit être fait tout de suite, dès maintenant. 
+
+L’étudiant lui demande alors si cela peut vraiment être commencé tout de suite. Le professeur répond que oui, bien sûr, et demande même pourquoi cela ne pourrait pas être fait immédiatement. L’étudiant explique qu’il pensait que cela viendrait à la fin, « une fois qu’on a le gros ». Le professeur rectifie : c’est justement quelque chose qu’il faut penser dès le début. 
+
+Il  ajoute  un  argument  pratique  décisif  :  une  maintenance  de  JeuxDeMots  est  prévue,  avec  un changement de machine. Pendant environ une semaine, selon lui, le service risque de ne plus répondre. D’où cette consigne très pressante : faire les caches au plus vite afin de pouvoir continuer à travailler même si JeuxDeMots ne répond plus pendant plusieurs jours. 
+
+7. Les étudiants savent déjà faire l’essentiel : interroger l’API 
+
+Lorsque l’étudiant répète qu’il ne sait pas comment faire, le professeur le pousse à reconnaître qu’il sait déjà accomplir le plus important. Il lui rappelle qu’il sait récupérer les résultats avec l’API et qu’il sait déjà interroger cette API depuis son programme. La mise en cache n’est donc qu’une surcouche au-dessus d’une compétence qu’il possède déjà. 
+
+C’est à ce moment qu’un étudiant veut montrer son programme et comment il le lance. 
+
+8. Les erreurs rencontrées au début, la mention de Node.js et les problèmes initiaux 
+
+L’étudiant explique qu’au début ils ont eu beaucoup d’erreurs. Il dit que la solution a été trouvée par quelqu’un nommé « Dangue », et que cette solution consistait à mettre « un no.js », ce qui correspond manifestement à Node.js. Le professeur demande alors : « Node.js ? » et veut comprendre le type exact d’erreur rencontré. 
+
+L’étudiant dit qu’il l’a notée quelque part, mais la discussion n’aboutit pas à un détail technique précis sur le message d’erreur, car le professeur préfère revenir sur quelque chose de plus fondamental : la manière dont les étudiants utilisent réellement l’API. 
+
+L’étudiant  résume le  premier  blocage ainsi  :  les  requêtes  simples  fonctionnaient,  mais  dès  qu’ils envoyaient des expressions ou des formes plus complexes, cela posait problème. 
+
+Le professeur réagit alors vivement et demande si ces expressions étaient vraiment envoyées telles quelles à l’API. Lorsque l’étudiant répond que cela concernait surtout le tout début, le professeur insiste avec énergie : il faut aller  sur la page de l’API, utiliser les exemples fournis, et arrêter de rendre la chose artificiellement compliquée. Il dit en substance qu’il ne comprend pas comment quelque chose d’aussi trivial peut donner lieu à autant de « cinéma ». 
+
+9. Connexion réseau, Eduroam, UMNet et difficultés pratiques d’accès 
+
+La conversation passe ensuite par une parenthèse très concrète sur la connexion réseau. Le professeur demande si l’étudiant est connecté, puis s’il est connecté à Eduroam. L’étudiant répond qu’Eduroam se déconnecte et que cela risque de ne pas marcher. Le professeur dit qu’Eduroam marche mieux que UMNet, puis les interlocuteurs échangent brièvement de façon informelle sur le fait que le réseau « ne l’aime pas ». 
+
+Ce passage montre que, au-delà de l’algorithme, les étudiants ont aussi des difficultés pratiques liées à l’environnement de travail. 
+
+10. Démonstration sur la page de l’API : partir des exemples officiels 
+
+Le professeur demande ensuite à l’étudiant de montrer  par programme comment il fait ses appels. L’étudiant annonce qu’il va montrer comment il lance son code. Le professeur lui demande plutôt d’aller sur ce qu’il appelle la « page jaune », c’est-à-dire la page de l’API contenant des exemples. 
+
+Il explique que cette page fournit plein d’exemples que l’on peut exécuter directement pour voir ce que l’API renvoie. Il demande si l’étudiant l’avait déjà fait. Celui-ci répond qu’il travaillait directement via sa propre page, même pour découvrir le fonctionnement. Le professeur semble préférer une exploration directe de l’API à partir des exemples fournis. 
+
+11. Exemple concret : récupérer le nœud correspondant à « chat » 
+
+Le professeur prend un premier exemple simple. Il part de quelque chose comme « node by id » ou « node by name » et remplace le paramètre de nom par le mot  chat. Il demande de copier l’exemple, d’ouvrir  un  nouvel  onglet,  d’y  mettre  «  chat  »  à  la  place  de  la  valeur  par  défaut,  et  d’enlever  les parenthèses si nécessaire. 
+
+Le résultat montre que le nœud chat a pour  ID 150. Le professeur le fait remarquer explicitement. Il commente aussi le fait que le type du nœud n’est pas très important ici, puisqu’on s’en fiche à ce stade, mais  il  note  que le  poids est  assez  fort,  ce  qui  signifie  que le  mot  est  d’usage courant.  Il  précise toutefois  qu’à  ce  niveau-là,  on  n’a  encore  «  zéro  information  »  réellement  utile  pour  le  type  de traitement attendu dans le projet. 
+
+12. Descendre plus bas dans l’API : explorer les relations 
+
+Le professeur demande ensuite de revenir à la page de l’API et de descendre plus bas pour regarder la partie concernant les relations. Il mentionne les raffinements, dit que certains peuvent être utiles, mais que ce n’est pas encore ce qu’il vise. Il veut la partie « relation ». 
+
+Il semble ensuite pointer vers une route de type « relation by type » ou « by type and id », puis propose de prendre un exemple avec from. Il demande de copier cette route et de remplacer la valeur d’exemple par un mot concret. 
+
+Il hésite à reprendre « chat », mais remarque immédiatement que ce mot est problématique car il est très  polysémique,  donc  «  chiant  »  à  utiliser  dans  un  premier  temps.  Malgré  cela,  l’exemple  est poursuivi. 
+
+Le résultat obtenu est une réponse JSON qui contient une liste de nœuds et une liste de relations. Le professeur montre qu’on peut y voir une relation dont les champs indiquent par exemple : 
+
+un premier nœud avec un ID autour de 35 814, un second nœud avec un ID autour de 18 815, un type de relation égal à 17, un poids égal à 35. 
+
+Il précise qu’il s’agit bien d’une relation. 
+
+13. Comprendre la structure JSON : les relations ne contiennent que des ID 
+
+L’étudiant cherche ensuite à savoir comment retrouver le mot derrière l’ID. Le professeur lui explique qu’il faut aller dans la liste des nœuds et y chercher le nœud dont l’ID vaut 35 814, puis faire de même pour 18 815. Il précise bien qu’il ne faut pas confondre l’ID du nœud avec la position de l’élément dans le 
+
+ 
+
+ 
+
+ 
+
+ 
+
+JSON. Par exemple, « node 100 » pourrait simplement être le centième élément du tableau, ce qui n’a rien à voir avec un identifiant de nœud égal à 100. 
+
+Il insiste sur le fait que toute cette présentation est seulement celle du navigateur qui affiche le JSON ; dans le programme des étudiants, il faudra tout remettre en mémoire et le reconstruire dans leurs propres dictionnaires. 
+
+14. Dictionnaires à construire : chaîne → ID et ID → chaîne 
+
+Le professeur explique que les étudiants doivent impérativement construire une représentation interne efficace. Il propose explicitement l’idée d’avoir : 
+
+un dictionnaire chaîne → ID, un dictionnaire ID → chaîne. 
+
+Il prend un exemple fictif avec le mot  couscous. Il rappelle qu’une relation de type  17 correspond à r_carac. On pourrait donc avoir quelque chose comme : 
+
+relation de type 17, premier nœud = couscous, second nœud = délicieux, poids = 40. 
+
+Mais dans le JSON, cette relation n’apparaît pas avec les mots « couscous » et « délicieux » ; elle apparaît avec les ID des deux nœuds et avec le type 17. Il faut donc retrouver les mots dans la liste des nœuds pour savoir que le premier nœud correspond à couscous et le second à délicieux. 
+
+Le professeur reformule alors le principe général : la réponse JSON comporte deux blocs, une liste de nœuds et une liste de relations, et les relations ne sont données qu’avec des ID, pas avec des chaînes de caractères. La raison, explique-t-il, est que c’est la représentation native de la base et que c’est une représentation économique. 
+
+15. Filtrer les relations dans l’API : poids positifs, types, orientation 
+
+Le professeur revient ensuite sur la manière d’interroger l’API. Il rappelle que, dans l’exemple vu, ils ont demandé trop d’informations d’un coup. Ils auraient pu filtrer davantage, par exemple : 
+
+ne demander que les relations positives, ne demander que les relations dont le poids est supérieur à zéro, ne demander que les relations d’un certain type, ne demander que les relations qui commencent par un nœud donné, ou au contraire celles qui terminent par un nœud donné. 
+
+Il donne l’exemple d’une route en from, mais rappelle aussi qu’on peut raisonner en to. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+16. Exemple de requête à partir d’une expression du projet : « $X r_isa animal » 
+
+À partir du parseur développé par les étudiants, le professeur imagine qu’ils obtiennent des structures contenant des variables. Il prend l’exemple suivant : $X r_isa animal. 
+
+Dans ce cas, explique-t-il, il faut interroger l’API non pas en mettant une valeur pour « from » puisque l’on ne connaît pas encore X, mais en mettant la valeur connue du côté to. Il propose donc une requête du type : 
+
+to = animal, type = 6 pour la relation r_isa, poids positif. 
+
+Dans la transcription, le professeur évoque le type « 6, 5 » de manière un peu hésitante, mais l’idée qu’il veut faire passer est claire : il faut connaître la table des relations et le numéro associé à chaque nom de relation. 
+
+17. La table des relations doit exister dans le programme 
+
+Un étudiant demande alors si la liste de toutes les relations avec leurs ID doit être présente quelque part dans le programme. Le professeur répond que oui, bien sûr. Il demande d’ailleurs aux étudiants s’ils savent où la trouver dans JeuxDeMots ; l’un d’eux répond qu’il les avait déjà enregistrées. 
+
+Le professeur insiste : il faut pouvoir faire la correspondance entre le nom d’une relation et son type numérique. Sans cela, il serait impossible d’interroger correctement l’API. 
+
+L’étudiant admet qu’il ne l’a pas encore intégré dans le programme, mais pense pouvoir récupérer cette table et la mettre dans un fichier. Il mentionne avoir vu quelque chose comme 152 ou 156 relations, ce qui suggère qu’il pense intégrer l’ensemble dans un fichier statique. 
+
+18. Les combinaisons de contraintes et la première grande heuristique d’intersection 
+
+Le professeur explique alors comment les étudiants peuvent combiner plusieurs contraintes. Il dit qu’ils peuvent, par exemple, récupérer séparément : 
+
+toutes les entités liées par r_isa, toutes celles liées par r_has_part ou r_carac, etc. 
+
+Il prend un exemple détaillé : 
+
+X r_isa animal, X r_has_part écaille, X r_color vert. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+La méthode qu’il propose est la suivante : 
+
+récupérer tous les animaux ; récupérer tout ce qui a comme partie des écailles ; récupérer tout ce qui a pour caractéristique la couleur verte ; sauvegarder tout cela ; traiter les fichiers obtenus pour en faire des tables exploitables. 
+
+Il donne ensuite des ordres de grandeur pour illustrer la stratégie : 
+
+la table de r_isa animal pourrait contenir 300 000 éléments ; la table concernant les écailles pourrait contenir 1 000 éléments ; la table concernant les éléments verts pourrait contenir 200 éléments. 
+
+L’idée est alors de commencer par la liste la plus petite, ici celle des éléments verts. Pour chacun de ces 200 éléments, on vérifie si son ID apparaît dans la liste des entités ayant des écailles. Si l’ID y est, on le garde ; sinon, on le supprime. On obtient alors une liste plus petite, par exemple  50 éléments qui sont à la fois verts et dotés d’écailles. 
+
+Ensuite, on compare cette nouvelle liste à la très grande liste des animaux, pour savoir lesquels de ces 50 éléments sont bien des animaux. On aboutit alors à un ensemble final encore plus restreint. 
+
+Le professeur ajoute que ce résultat intermédiaire pourrait lui aussi être mis en cache. Autrement dit, le  cache  ne  concerne  pas  seulement  les  réponses  brutes  de  l’API,  mais  peut  aussi  concerner  des combinaisons déjà calculées. 
+
+19. Les relations négatives et les cas plus compliqués 
+
+Après avoir demandé si cette explication est plus claire, le professeur introduit un point plus avancé : dans le langage de requêtes attendu, il n’y a pas seulement des relations positives, il peut aussi y avoir des relations négatives ou des formulations marquées par une étoile. 
+
+Il donne un exemple du type : 
+
+on demande des animaux ; puis on ajoute une contrainte étoilée sur une caractéristique « écaille » ; autrement dit, on cherche les animaux qui n’ont pas d’écailles. 
+
+Le professeur souligne que cela devient plus compliqué, car il faut distinguer plusieurs cas : 
+
+soit il n’existe tout simplement pas de relation disant que l’animal a des écailles ; soit il existe une relation explicitement négative disant qu’il n’a pas d’écailles. 
+
+Un étudiant demande alors si, lorsqu’une relation est négative, cela signifie forcément que l’entité n’a pas  cette  propriété.  Le  professeur  répond  par  l’exemple  :  si  je  te  dis  que  le  chat  a  une  relation négative avec les écailles, cela signifie que le chat n’a pas d’écailles. 
+
+Mais il ajoute immédiatement une mise en garde : il faut se méfier de la polysémie. En effet, « chat » peut aussi désigner le poisson-chat. Il en va de même pour « chien », ou même pour « guitare », qui peut désigner un type de poisson. Le professeur précise, avec une pointe d’humour, que ce genre de 
+
+1. 2. 3. 4. 5. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+cas est là « juste pour faire chier ». Il explique par exemple que le poisson appelé guitare doit ce nom à sa forme, qui évoque vaguement l’instrument ;  de même, le poisson-marteau ou le requin-marteau reçoivent leur nom d’une analogie morphologique. 
+
+Cette  parenthèse  n’est  pas  anecdotique  :  elle  rappelle  aux  étudiants  que  les  données  lexicales  de JeuxDeMots sont riches et ambiguës, et qu’il faut s’en méfier dans les traitements. 
+
+20. État d’avancement des étudiants et nécessité de trouver de bonnes heuristiques 
+
+Le professeur félicite alors les étudiants en leur disant qu’ils ont déjà bien avancé. Il note qu’ils ont déjà fait le parsing, au moins en partie, mais que le « plus gros » du travail sérieux commence maintenant. 
+
+Il  rappelle  que  l’objectif  n’est  pas  simplement  d’obtenir  un  résultat  correct,  mais  de  répondre  aux requêtes le plus efficacement possible, c’est-à-dire en prenant le moins de temps possible. Pour cela, il faut : 
+
+disposer d’un maximum de données dans les caches, éviter de refaire des appels à l’API, éviter de refaire des calculs intermédiaires déjà effectués. 
+
+Autrement dit, d’une requête à l’autre, il faut capitaliser. 
+
+21. Retour très détaillé sur le cache : fetch, cURL, vérification et péremption 
+
+Un étudiant revient encore sur le cache, parce qu’il n’a pas bien compris. Il demande si cette étape n’est pas plutôt une étape finale. Le professeur répond à nouveau que non : ce n’est pas la dernière étape, c’est quelque chose qui intervient dès qu’on commence à faire des requêtes. 
+
+Il réexplique alors toute la mécanique de manière encore plus détaillée. 
+
+Quand  on  veut  interroger  l’API,  on  dispose  d’une  URL.  L’étudiant,  lui,  utilise  fetch,  tandis  que  le professeur dit qu’il utiliserait plutôt  cURL, mais cela ne change pas le principe. On envoie l’URL et on obtient un JSON. 
+
+La fonction qui gère la requête doit ensuite faire deux choses : 
+
+transformer l’URL en MD5 ; regarder dans le dossier de cache s’il existe déjà un fichier portant ce nom. 
+
+Si aucun fichier n’existe, on fait la requête normale. Si un fichier existe, on ne refait pas la requête : on récupère directement son contenu. 
+
+Il ajoute ensuite ce qu’il appelle une « petite amélioration » : si le fichier est plus vieux qu’une certaine date de péremption,  par  exemple un mois,  alors  on peut  décider  qu’il  est  trop vieux et  qu’il  faut regénérer les données. 
+
+ 
+
+ 
+
+ 
+
+1. 2. 
+
+Un étudiant demande alors si cela revient à vérifier les métadonnées du fichier. Le professeur répond que non, en tout cas pas des métadonnées complexes ; il veut simplement dire que le fichier lui-même est le résultat brut de la requête API. Une fois ce fichier produit, on lui donne pour nom le MD5 de la route, c’est-à-dire le MD5 de l’URL. 
+
+Le professeur reformule encore : une fois l’API appelée et le fichier sauvé, si plus tard on redemande la même chose, on ne repasse plus par l’API, puisque le résultat est déjà là, sur le disque. 
+
+Il insiste sur le gain de performance : il est évidemment beaucoup plus rapide d’accéder à un fichier local sur le disque que d’attendre la réponse d’une API distante. Il rappelle aussi que si l’API est en maintenance, le gain n’est pas seulement un gain de vitesse : cela peut devenir la seule manière de continuer à travailler. 
+
+22. Comment savoir si l’API est en maintenance ? 
+
+L’un des étudiants demande comment on peut savoir si l’API est en maintenance. Le professeur répond de façon très simple : si le serveur est en maintenance, il ne répond pas. Il est éteint, ou débranché, parce que l’équipe effectue des opérations dessus. 
+
+Cela renforce encore son conseil précédent : faire des requêtes au plus vite, accumuler des données locales, constituer un stock de travail. 
+
+23. Conseils de constitution d’un jeu de tests local 
+
+Le  professeur  recommande  de  faire  rapidement  des  requêtes  sur  plusieurs  grands  ensembles thématiques, afin de se construire des jeux de test riches. Il cite explicitement des réseaux ou domaines comme : 
+
+les animaux, les plantes, les légumes, les réseaux « savants », les montagnes, les pays. 
+
+Un étudiant demande si  cela vaut le coup de commencer par des requêtes simples avec une seule variable. Le professeur répond que oui, d’abord pour tester, ensuite parce qu’il sera toujours temps de rajouter plus tard des variables et des conditions supplémentaires. 
+
+24. Il ne faut pas faire de requêtes multivariables directement dans l’API 
+
+Le professeur précise ensuite qu’il  ne s’agit  pas de faire des  requêtes multivariables directement dans l’API. L’API permet surtout de faire des requêtes simples, « point à point ». Par exemple, on peut lui demander si une relation d’un certain type existe entre un nœud 1 et un nœud 2. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Il prend l’exemple : peut-on demander à l’API si ours blanc r_lieu banquise ? Oui, on peut. Il suffit de préciser : 
+
+node 1 = ours blanc, node 2 = banquise, relation = r_lieu, de type 15. 
+
+Mais, ajoute-t-il,  si  l’on procède ainsi systématiquement, il  faudra  tout sauvegarder,  car ce type de vérification point à point peut devenir très lent. Il dit même que, dans ce projet, le vrai coût est là. 
+
+25. Les intersections de listes doivent être faites côté étudiants, pas par l’API 
+
+Le professeur  poursuit  en expliquant  qu’il  n’y  a  pas,  dans l’API,  de mécanisme magique pour faire l’intersection de deux résultats. Si on demande : 
+
+X est un animal, X est dans la banquise, 
+
+alors il faut : 
+
+récupérer tous les animaux ; récupérer tous les éléments qui sont dans la banquise ; comparer ensuite les deux listes d’ID. 
+
+Il dit clairement qu’à ce stade, il n’y a plus d’API pour faire l’intersection à leur place : c’est à eux de la faire. 
+
+26. Faut-il rendre ce mécanisme générique ? Oui, mais en commençant toujours par la plus petite liste 
+
+L’étudiant demande alors s’il doit dès maintenant construire un mécanisme d’intersection  générique, capable  de  gérer  non seulement  deux  listes,  mais  aussi  trois,  quatre  ou  cinq  listes.  Le  professeur répond  que  oui,  il  faut  penser  quelque  chose  de  générique,  mais avec  une  règle  fondamentale  : toujours commencer par la liste la plus courte. 
+
+L’étudiant  reformule  en  disant  que  cela  ressemble  à  une  question  d’optimisation.  Le  professeur confirme que oui,  mais  ajoute  que  c’est  aussi  du  simple  bon sens  :  on  ne  va  pas  commencer  les comparaisons par les plus grandes listes. 
+
+Il reprend l’idée que, une fois le JSON chargé en mémoire, on travaille avec des structures ressemblant à des  tables  de  hachage.  Il  dit  même  que  le  JSON,  dans  cette  logique,  peut  être  vu  comme  un dictionnaire : on ne parcourt pas forcément les données de façon séquentielle, on cherche dans une structure d’accès rapide. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+1. 2. 3. 
+
+27. Le cas des requêtes à deux variables 
+
+Le professeur passe alors à un autre niveau de difficulté : les requêtes avec deux variables. 
+
+Il  explique  qu’il  faut  d’abord  traiter  chacune  des  variables  séparément,  puis  seulement  ensuite regarder la relation qui les lie. 
+
+Il donne un exemple : 
+
+X est un avion, Y est une personne, on cherche une relation telle que Y soit dans X. 
+
+Il explicite le sens de cette requête avec des exemples concrets : 
+
+un pilote qui pilote le Concorde, une hôtesse de l’air qui est dans un Airbus, un passager qui est dans un Boeing. 
+
+La méthode proposée est donc : 
+
+récupérer tous les X avions ; récupérer tous les Y personnes ; comparer ensuite les couples possibles pour voir quels Y ont comme lieu ou comme relation appropriée le X considéré. 
+
+L’étudiant demande si, dans ce cas aussi, on suppose toujours des relations positives. Le professeur répond que oui, sauf dans les cas où l’énoncé demande explicitement quelque chose de contraire ou de négatif.  Mais,  pour  l’instant,  il  conseille  très  nettement  de  commencer  par  les  cas  positifs,  puis seulement ensuite de passer aux cas négatifs. 
+
+Il résume la progression attendue ainsi : 
+
+d’abord les requêtes mono-variables ; ensuite les requêtes à plusieurs variables ; ensuite les relations négatives. 
+
+28. Discussion sur la clarté des explications et organisation d’un prochain rendez-vous 
+
+Le professeur demande si  tout cela est  «  un peu plus clair  ».  Les étudiants répondent que oui.  La discussion glisse alors vers l’organisation. 
+
+Il propose de se revoir soit mercredi prochain, soit jeudi prochain. Il demande si, le jeudi après-midi, les étudiants sont pris. Ils répondent qu’ils ont  anglais, et que ce cours ne bouge jamais. Quelqu’un mentionne aussi que le jeudi est souvent bloqué par le sport, les TER ou d’autres activités. Les étudiants disent qu’après, ils finissent à 16h30. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+1. 2. 3. 
+
+1. 2. 3. 
+
+Le professeur demande alors si l’on parle bien du jeudi 2 avril prochain. Quelqu’un se demande si cela ne  tombe  pas  pendant  les  vacances.  La  discussion  cherche  alors  à  savoir  quand  commencent exactement les vacances. 
+
+29. Les vacances, le calendrier universitaire et la période des examens 
+
+Les interlocuteurs évoquent la semaine du 27 avril comme début probable des vacances de Pâques. Ils hésitent un peu, puis pensent que oui, c’est autour de cette semaine-là. Le professeur demande s’ils ont accès au calendrier universitaire, en particulier celui de la FDS (Faculté des Sciences). Il semble vouloir vérifier précisément les dates. 
+
+La discussion dérive ensuite sur le calendrier des  examens. Le professeur explique que la  deuxième semaine  du  mois  de  juin correspond  aux  examens  du  second  semestre,  puis  viennent  les rattrapages du premier semestre,  puis ensuite les  rattrapages du deuxième semestre.  L’un des étudiants réagit en espérant qu’ils ne feront pas trop de rattrapages, et quelqu’un rappelle qu’ils n’ont « que trois modules ». 
+
+30. Recherche d’un créneau précis : mercredi 10 h, 13 h ou 14 h 
+
+Les étudiants précisent qu’ils n’ont pas cours la semaine suivante, en tout cas pas le mercredi. L’un d’eux dit qu’ils peuvent tous les jours sauf le jeudi et le mardi matin. 
+
+Le professeur propose alors un rendez-vous  mercredi dans la matinée, mais précise que le soir il a quelque chose à faire : une gazette café à préparer, et il doit ensuite repasser chez lui, d’autant qu’il n’habite pas Montpellier. 
+
+Il propose alors un rendez-vous à 10 h sur place, mais l’un des étudiants répond immédiatement que, pour lui, « c’est la mort », parce qu’il travaille. Le professeur lui demande alors ses horaires. L’étudiant répond qu’il travaille de 10 h 30 jusqu’à la nuit. 
+
+Le professeur cherche donc une autre possibilité et propose plutôt  13 h ou  14 h. Il demande si  13 h conviendrait. Les interlocuteurs semblent partir sur cette hypothèse, avec l’idée qu’ils se confirmeront cela ultérieurement. 
+
+Le professeur ajoute toutefois une réserve importante : il faut surtout qu’ils aient avancé. S’ils n’ont pas suffisamment progressé, un rendez-vous ne servirait pas à grand-chose. 
+
+31. Discord, mail, visio et manière de poser les questions 
+
+Le professeur indique ensuite qu’en attendant, les étudiants peuvent poser leurs questions : 
+
+soit sur Discord, soit par mail. 
+
+ 
+
+ 
+
+Il dit qu’il y va, qu’il répond, et que si une question nécessite plus qu’une réponse rapide, il leur dira qu’il faut faire une  visio.  Il  précise qu’il  n’est pas nécessaire que les  quatre membres du groupe soient connectés en même temps : dès qu’un ou plusieurs sont présents, cela suffit pour avancer. 
+
+Il ajoute une remarque intéressante sur la manière de poser les questions. Parfois, explique-t-il, une question est difficile à traiter non pas parce que le sujet est compliqué, mais parce qu’elle repose sur un présupposé faux. Il donne un exemple absurde pour illustrer cette idée : si un étudiant lui demande « pourquoi à midi le ciel est rouge ? », il  aura du mal à répondre, parce que la prémisse même de la question est  discutable  ou erronée.  Cela  peut  signifier  soit  que l’étudiant  a  mal  compris  ce  qu’il  a expliqué,  soit  qu’il  s’est  lui-même  mal  exprimé.  À  l’inverse,  certaines  questions  sont  très  nettes  et appellent une réponse simple, du type oui ou non. 
+
+32. Conclusion pédagogique du professeur : vous avez bien avancé, mais faites le cache immédiatement 
+
+Avant de conclure la partie principale de l’échange, le professeur redemande si c’est désormais plus clair. Les étudiants répondent que oui. Il les félicite à nouveau en disant qu’ils ont bien avancé et qu’ils ont bien cerné le sujet. 
+
+Mais il martèle une dernière fois la même consigne : faire le cache très vite, tout de suite, dès qu’ils font des requêtes. 
+
+Il ajoute aussi une précision pratique : dans leur fonction de récupération avec cache, ils peuvent tout à fait prévoir une option permettant  d’ignorer le cache si besoin. Cela permet de forcer une requête fraîche lorsqu’on veut volontairement bypasser le fichier local. 
+
+33. Distinction explicite entre cache et pré-calcul 
+
+Les  étudiants  demandent  si  l’on  est  bien  d’accord  pour  dire  que  le  cache  n’est  rien  d’autre  que l’enregistrement d’un fichier de résultat. Le professeur répond que oui, mais il introduit immédiatement une distinction importante. 
+
+Selon lui, il faut distinguer : 
+
+le cache, qui consiste à enregistrer le résultat brut d’une requête API ; le pré-calcul ou pré-processing, qui consiste à repartir de ces fichiers enregistrés pour faire des traitements supplémentaires utiles au programme. 
+
+Autrement dit,  enregistrer une réponse JSON pour éviter de refaire une requête n’est pas la même chose que produire, à partir de ce JSON, des structures transformées, indexées ou optimisées pour la suite. Le professeur insiste bien : ce sont deux choses différentes. 
+
+34. Fin de l’entretien principal 
+
+Le professeur conclut en disant en substance que, lorsqu’ils ont des questions, ils reviendront vers lui. Il dit qu’il travaille « dans le tableau » — formule un peu floue dans la transcription, mais qui marque la fin 
+
+1. 2. 
+
+de son intervention. Les étudiants le remercient,  il  les remercie en retour,  et l’entretien principal se termine. 
+
+35. Discussion annexe après l’entretien : problème de dépôt de fichier 
+
+Après cette phase, la conversation change de nature et devient plus informelle entre étudiants. Il est question d’un problème de fichier déposé. 
+
+Quelqu’un dit que ce n’est pas « Project Final V1 », mais Practical 3. Un autre répond qu’il ne sait pas pourquoi le fichier a été appelé « Final Project V1 » alors qu’il  s’agit en réalité du  Practical 3.  Il  est suggéré de mettre les deux dénominations si nécessaire. 
+
+Quelqu’un propose alors d’écrire au professeur ou à l’enseignante pour expliquer qu’une  mauvaise version du fichier a été déposée par erreur dans la matinée. La formulation esquissée est du type : 
+
+« Je vous contacte concernant… » « Par erreur, j’ai déposé une version incorrecte du fichier d’un autre membre du groupe » « J’ai cependant déposé la version finale ». 
+
+La discussion montre donc qu’un étudiant a envoyé le mauvais fichier, appartenant apparemment à un autre membre du groupe, puis a corrigé l’erreur en déposant la bonne version. 
+
+Quelqu’un dit espérer que la destinataire répondra cette fois-ci. Une autre personne relativise en disant que parfois elle ne répond pas forcément, mais qu’elle prend quand même en compte l’information. 
+
+Il est aussi fait mention d’une heure de fin autour de 13 h 30. 
+
+36. Tout dernier échange : persistance des questions et sentiment de confusion 
+
+La transcription s’achève sur des remarques encore plus relâchées. L’un des étudiants dit en substance : « Vous avez bien compris, les gars, ce qu’il dit ? Moi, je viens et j’ai encore plus de questions. » Il exprime alors une forme de doute :  s’il  pose trop de questions au professeur,  il  craint peut-être de paraître confus ou de trop le solliciter. 
+
+La fin est très orale, un peu hachée, avec des formulations incomplètes, ce qui laisse transparaître l’état d’esprit des étudiants à ce moment-là : ils ont compris une partie des choses, mais ils restent aussi avec beaucoup d’interrogations, ce qui est cohérent avec la densité technique de l’échange. 
+
+ 
+
+ 
+
+ 
+
+37. Synthèse finale des points explicitement abordés pendant la conversation 
+
+Pour qu’aucune information ne soit perdue, voici la liste consolidée de tous les thèmes effectivement abordés au cours de la conversation : 
+
+le filtrage des poids positifs dans les requêtes ; l’idée d’un poids global calculé via une moyenne géométrique ; la distinction entre moyenne arithmétique et moyenne géométrique ; la remarque humoristique sur le zéro qui ruinerait une moyenne géométrique de notes ; l’inutilité pratique, dans le code, d’outils comme Dico et Dicasso ; le fait que seule l’API doit être utilisée dans le programme ; la nécessité de travailler principalement avec des ID plutôt qu’avec des mots ; la possibilité initiale de faire une recherche par nom pour retrouver un ID ; la nécessité de mettre en place un cache de requêtes API ; le principe du MD5 de l’URL pour nommer les fichiers de cache ; le stockage local des réponses JSON sur le disque ; la réutilisation du fichier si le même MD5 existe déjà ; la suppression et la régénération d’un fichier de cache s’il est trop vieux ; l’idée que le cache n’est pas une étape finale mais une étape à faire dès le début ; l’annonce d’une future maintenance de JeuxDeMots et la nécessité d’anticiper cette indisponibilité ; la définition simple du cache comme enregistrement de requête pour éviter de la refaire ; les erreurs initiales rencontrées par les étudiants ; la mention de Node.js comme solution trouvée à un moment ; les problèmes ou hésitations liés à la connexion Eduroam / UMNet ; la démonstration sur la page de l’API et ses exemples ; l’exemple du mot chat avec l’ID 150 ; l’idée que le type du nœud compte parfois peu, mais que le poids donne une indication d’usage ; la navigation dans les routes de relations de l’API ; un exemple de relation avec des IDs comme 35 814 et 18 815, un type 17 et un poids 35 ; l’explication selon laquelle le JSON contient une liste de nœuds et une liste de relations ; le fait que les relations ne contiennent que des ID et pas les mots eux-mêmes ; 
+
+la nécessité de construire des dictionnaires ID → mot et mot → ID ; 
+
+l’exemple fictif couscous / délicieux pour expliquer la lecture des relations ; la possibilité de filtrer l’API par poids positif, par type, par from ou par to ; l’exemple de requête $X r_isa animal à traiter par une requête vers to = animal avec le type 6 ; la nécessité d’avoir, dans le programme, la table des relations et leurs identifiants ; l’idée d’une table d’environ 152 ou 156 relations à placer dans un fichier ; l’heuristique consistant à combiner plusieurs listes issues de différentes contraintes ; l’exemple détaillé animal / écaille / vert avec des tailles de listes comme 300 000, 1 000, 200, puis 50 ; la consigne de commencer toujours par la plus petite liste ; la possibilité de mettre en cache aussi des résultats intermédiaires déjà calculés ; la complexité des relations négatives ; l’exemple d’animaux qui n’ont pas d’écailles ; la distinction entre absence de relation et relation explicitement négative ; la polysémie de mots comme chat, chien, guitare, et les exemples de poissons ; la nécessité de faire les requêtes le plus efficacement possible ; la possibilité d’utiliser fetch ou cURL pour appeler l’API ; 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+le fait que le fichier de cache contient le résultat brut de l’API ; l’idée qu’on peut prévoir une option pour ignorer le cache ; la distinction entre cache et pré-calcul / pré-processing ; la constitution de jeux de test locaux sur des domaines comme animaux, plantes, légumes, réseaux savants, montagnes, pays ; l’idée qu’il ne faut pas faire de vraies requêtes multivariables directement dans l’API ; l’exemple ours blanc / banquise / r_lieu = 15 ; l’idée que les intersections doivent être faites côté étudiants ; la volonté de rendre ces intersections génériques ; la gestion des requêtes à deux variables avec l’exemple avion / personne (Concorde, Airbus, Boeing) ; la progression recommandée : mono-variable, puis multi-variable, puis négatif ; l’organisation d’un prochain rendez-vous, avec les contraintes de jeudi, d’anglais, de 16 h 30, de mercredi, de 10 h, 13 h et 14 h ; les considérations sur les vacances autour de la semaine du 27 avril ; les éléments de calendrier sur les examens et les rattrapages du premier et du second semestre ; la possibilité de poser les questions sur Discord, par mail, ou en visio ; l’idée qu’une question mal posée peut contenir un présupposé faux ; l’exemple absurde du « ciel rouge à midi » ; le rappel final : faire le cache immédiatement ; le problème de mauvaise version de fichier déposée ; la correction du dépôt avec une version finale ; la mention des appellations Project Final V1 et Practical 3 ; le sentiment final des étudiants d’avoir compris des choses mais d’avoir aussi encore beaucoup de questions. 
+
+Cette  réécriture  reprend  donc,  sous  forme  structurée  et  continue,  l’intégralité  des  informations présentes  dans  la  transcription  orale  d’origine,  sans  en  supprimer  les  dimensions  techniques, méthodologiques, organisationnelles, concrètes ou informelles. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 

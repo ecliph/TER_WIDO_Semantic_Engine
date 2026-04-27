@@ -1,0 +1,513 @@
+Description Sémantique des Relations - JeuxDeMots
+
+Ce document répertorie les relations sémantiques utilisées dans le réseau lexical JeuxDeMots (JDM). Chaque relation est définie par son nom technique, une description explicite et des exemples d'usage.
+
+1. Relations Hiérarchiques et d'Équivalence
+
+Is-A / Generic (
+
+r_isa
+
+)
+
+Désigne un lien de généralisation (hyperonymie). Le terme cible est une catégorie dont le terme source fait partie.
+
+chat | r_isa | mammifère
+
+truite | r_isa | poisson
+
+marteau | r_isa | outil
+
+Hyponym / Specific (
+
+r_hypo
+
+)
+
+Désigne un lien de spécification. Le terme cible est une instance ou une sous-catégorie du terme source.
+
+insecte | r_hypo | mouche
+
+arbre | r_hypo | chêne
+
+métal | r_hypo | or
+
+Synonym (
+
+r_syn
+
+)
+
+Relie des termes ayant un sens identique ou très proche.
+
+chat | r_syn | matou
+
+voiture | r_syn | automobile
+
+casser | r_syn | briser
+
+Antonym (
+
+r_anto
+
+)
+
+Relie des termes ayant des sens opposés.
+
+chaud | r_anto | froid
+
+grand | r_anto | petit
+
+monter | r_anto | descendre
+
+2. Relations de Composition (Méronymie / Holonymie)
+
+Has-Part / Meronym (
+
+r_has_part
+
+)
+
+Indique que le terme cible est une partie, un constituant ou un membre du terme source.
+
+voiture | r_has_part | roue
+
+visage | r_has_part | nez
+
+livre | r_has_part | page
+
+Part-Of / Holonym (
+
+r_holo
+
+)
+
+Indique que le terme source fait partie d'un ensemble plus vaste (le terme cible).
+
+main | r_holo | corps
+
+tuile | r_holo | toit
+
+élève | r_holo | classe
+
+3. Caractéristiques et Propriétés
+
+Characteristic / Attribute (
+
+r_carac
+
+)
+
+Associe un nom à ses attributs ou adjectifs qualificatifs typiques.
+
+eau | r_carac | liquide
+
+neige | r_carac | blanche
+
+citron | r_carac | acide
+
+Has-Color (
+
+r_has_color
+
+)
+
+Spécifie la couleur typique d'un objet.
+
+sang | r_has_color | rouge
+
+ciel | r_has_color | bleu
+
+corbeau | r_has_color | noir
+
+Has-Property (
+
+r_has_prop
+
+)
+
+Indique une propriété intrinsèque ou une capacité de l'objet.
+
+moteur | r_has_prop | puissance
+
+aimant | r_has_prop | magnétisme
+
+verre | r_has_prop | fragilité
+
+4. Relations Actancielles et Procédurales
+
+Le premier terme (terme source) est 
+
+toujours
+
+ un verbe à l'infinitif.
+
+Agent / Subject (
+
+r_has_agent
+
+)
+
+Désigne l'entité qui effectue l'action (le sujet typique du verbe à l'infinitif).
+
+manger | r_has_agent | chat
+
+voler | r_has_agent | oiseau
+
+courir | r_has_agent | sportif
+
+Patient / Object (
+
+r_has_patient
+
+)
+
+Désigne l'entité qui subit l'action (l'objet typique du verbe à l'infinitif).
+
+manger | r_has_patient | souris
+
+réparer | r_has_patient | voiture
+
+lire | r_has_patient | livre
+
+Instrument (
+
+r_has_instr
+
+)
+
+Désigne l'outil ou le moyen utilisé pour accomplir l'action (qui est toujours un verbe à l'infinitif).
+
+couper | r_has_instr | couteau
+
+écrire | r_has_instr | stylo
+
+peindre | r_has_instr | pinceau
+
+Location / Venue (
+
+r_has_location
+
+)
+
+Indique le lieu typique où se trouve un objet ou où se déroule une action.
+
+carotte | r_has_location | potager
+
+poisson | r_has_location | mer
+
+étudier | r_has_location | école
+
+5. Dynamique Temporelle et Causale
+
+Has-Consequence (
+
+r_has_conseq
+
+)
+
+Indique un effet ou une conséquence directe d'une action ou d'un état.
+
+tomber | r_has_conseq | se blesser
+
+étudier | r_has_conseq | réussir
+
+pluie | r_has_conseq | inondation
+
+Has-Cause (
+
+r_has_causatif
+
+)
+
+Indique la cause ou l'origine d'un état ou d'une action.
+
+blessure | r_has_causatif | chute
+
+fatigue | r_has_causatif | travail
+
+fumée | r_has_causatif | feu
+
+Time-Successor (
+
+r_has_successeur_time
+
+)
+
+Indique ce qui suit chronologiquement le terme source.
+
+jour | r_has_successeur_time | nuit
+
+printemps | r_has_successeur_time | été
+
+déjeuner | r_has_successeur_time | sieste
+
+6. Production et Transformation
+
+Makes / Produces (
+
+r_make
+
+)
+
+Indique ce que l'entité source produit ou crée.
+
+abeille | r_make | miel
+
+boulanger | r_make | pain
+
+vache | r_make | lait
+
+Material / Substance (
+
+r_object>mater
+
+)
+
+Indique la matière dont est composé l'objet.
+
+poutre | r_object>mater | bois
+
+bague | r_object>mater | or
+
+statue | r_object>mater | marbre
+
+Can-Become / Transformation (
+
+r_can_become
+
+)
+
+Indique une transformation possible du terme source.
+
+chenille | r_can_become | papillon
+
+glaçon | r_can_become | eau
+
+farine | r_can_become | pâte
+
+7. Relations Fonctionnelles et Diverses
+
+Purpose / Goal (
+
+r_but
+
+)
+
+Indique l'objectif d'une action.
+
+courir | r_but | santé
+
+travailler | r_but | argent
+
+dormir | r_but | récupérer
+
+Telic-Role / Function (
+
+r_telic_role
+
+)
+
+Indique la fonction primaire pour laquelle un objet a été conçu.
+
+couteau | r_telic_role | couper
+
+chaise | r_telic_role | s'asseoir
+
+lunettes | r_telic_role | voir
+
+Against / Opposes (
+
+r_against
+
+)
+
+Indique ce que le terme combat ou empêche.
+
+médicament | r_against | maladie
+
+parapluie | r_against | pluie
+
+digue | r_against | inondation
+
+Sentiment / Emotion (
+
+r_sentiment
+
+)
+
+Relie un terme à une émotion ou un sentiment qu'il évoque.
+
+victoire | r_sentiment | joie
+
+échec | r_sentiment | tristesse
+
+araignée | r_sentiment | peur
+
+Accompanied-By (
+
+r_accomp
+
+)
+
+Indique une association fréquente entre deux termes.
+
+pain | r_accomp | fromage
+
+couteau | r_accomp | fourchette
+
+orage | r_accomp | éclairs
+
+Actor of Process (
+
+r_processus>agent
+
+)
+
+Désigne l'entité ou l'acteur qui réalise le processus ou l'événement spécifié.
+
+nettoyage | r_processus>agent | technicien de surface
+
+enseignement | r_processus>agent | professeur
+
+chirurgie | r_processus>agent | chirurgien
+
+Patient of Process (
+
+r_processus>patient
+
+)
+
+Désigne l'entité qui subit le processus ou sur laquelle l'action de l'événement s'exerce.
+
+découpe | r_processus>patient | viande
+
+soin | r_processus>patient | malade
+
+récolte | r_processus>patient | blé
+
+Instrument of Process (
+
+r_processus>instr
+
+)
+
+Désigne l'outil, le moyen ou l'instrument nécessaire à la réalisation du processus.
+
+découpe | r_processus>instr | couteau
+
+transport | r_processus>instr | camion
+
+communication | r_processus>instr | téléphone
+
+Intensification / Magnification (
+
+r_has_magn
+
+)
+
+Indique un terme ou une expression qui intensifie le sens du terme source.
+
+fièvre | r_has_magn | fièvre de cheval
+
+peur | r_has_magn | peur bleue
+
+amour | r_has_magn | amour fou
+
+Logical Implication (
+
+r_implication
+
+)
+
+Indique ce qu'un terme implique logiquement ou nécessairement.
+
+ronfler | r_implication | dormir
+
+courir | r_implication | se déplacer
+
+câlin | r_implication | contact physique
+
+Similar-To (
+
+r_similar
+
+)
+
+Relie des termes qui se ressemblent ou présentent une forte similarité sans être synonymes.
+
+congre | r_similar | anguille
+
+zèbre | r_similar | cheval
+
+orange | r_similar | mandarine
+
+Has-Instance (
+
+r_has_instance
+
+)
+
+Relie un type général à une instance c'est-à-dire une entité nommée spécifique.
+
+cheval | r_has_instance | Jolly Jumper
+
+transatlantique | r_has_instance | Titanic
+
+ville | r_has_instance | Paris
+
+Set-to-Item (
+
+r_set>item
+
+)
+
+Désigne l'élément type qui compose un ensemble ou un collectif.
+
+essaim | r_set>item | abeille
+
+forêt | r_set>item | arbre
+
+foule | r_set>item | personne
+
+Item-to-Set (
+
+r_item>set
+
+)
+
+Désigne l'ensemble ou le collectif composé par l'élément (inverse de r_set>item).
+
+abeille | r_item>set | essaim
+
+arbre | r_item>set | forêt
+
+soldat | r_item>set | armée
+
+Promotion / Favors (
+
+r_promote
+
+)
+
+Indique ce que le terme source favorise ou encourage.
+
+catalyseur | r_promote | réaction chimique
+
+engrais | r_promote | croissance
+
+étude | r_promote | réussite
+
+Domain / Field (
+
+r_domain
+
+)
+
+Spécifie le domaine d'activité ou de connaissance auquel appartient le terme.
+
+corner | r_domain | football
+
+scalpel | r_domain | chirurgie
+
+octave | r_domain | musique

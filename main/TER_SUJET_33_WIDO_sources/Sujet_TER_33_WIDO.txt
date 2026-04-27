@@ -1,0 +1,25 @@
+Sujet principal du projet numéro 33 : 33. Interface web de langage de requêtes avec l'API JeuxDeMots
+
+ 
+
+WIDO
+
+ 
+
+Identifiant : jeremie.roux_1_2025-26 • Encadrant(s) : jeremie.roux@lirmm.fr, mathieu.lafourcade@lirmm.fr
+
+Résumé : JeuxDeMots (https://www.jeuxdemots.org) est une base de connaissances développée au LIRMM et constituée à l'aide de jeux sérieux éponymes. Le but de ce TER est d'extraire des informations de JeuxDeMots via l'API récemment développée (https://jdm-api.demo.lirmm.fr) en vue de créer une interface web interrogeable par un programme. Celle-ci devra se présenter sous la forme d'un langage de requête de sélection dans la base de données à l'aide de variables et d'opérateurs (OU, ET, =) afin de donner les valeurs possibles pour ces variables en respectant les contraintes. Dans un soucis d'optimisation, il faudra mettre en place des heuristiques traitant en priorité les clauses les plus contraintes. Voici des exemples de requêtes à 1 et 2 variables :
+
+Requête 1 : (
+x r_isa artiste) ET ((
+x = ba%) OU (
+x = Ba%)) -> Donner les termes ayant pour hyperonyme 'artiste' (c'est à dire étant des artistes) et commençant par 'ba' ou 'Ba'.
+Résultat de la requête 1 (
+x) : (batteur) (Bach) (bassiste) (baryton) (barbarigaire) (bassoniste) (Bachir Touré) (Barbara) ...
+
+Requête 2 : (
+x r_isa animal) ET (
+y r_isa animal) ET ($x r_can_eat 
+y) -> Donner les couples de termes ayant comme hyperonyme 'animal' (c'est à dire étant des animaux), dont le premier peut manger le second.
+Résultat de la requête 2 (
+x,$y) : (lion,gazelle) (lion,antilope) (chat,souris) (caméléon,mouche) ...

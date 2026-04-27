@@ -1,0 +1,2341 @@
+ 
+
+ 
+
+le projet JeuxDeMots 
+
+The contribution of gaming in knowledge building: the JeuxDeMots 
+
+project 
+
+Mathieu Lafourcade1, Nathalie Le Brun2 
+
+1  Équipe Texte – LIRMM – Université Montpellier, France, mathieu.lafourcade@lirmm.fr 
+
+2  Imaginat, Lunel, imaginat@imaginat.name 
+
+RÉSUMÉ. Le projet JeuxDeMots a pour objet de construire une base de connaissances de sens commun et de 
+
+spécialité, en français, à l’aide de jeux. Une douzaine de jeux ont été conçus dans le cadre de ce projet ; chacun 
+
+permet soit de collecter des informations spécifiques, soit de vérifier les informations acquises via les autres jeux. Cet 
+
+article présente les données collectées et construites depuis le lancement du projet, à l’été 2007. Nous présenterons 
+
+le jeu principal, éponyme du projet, mais nous décrirons également en détail Sémintox, notre dernier outil : un jeu de 
+
+devinette permettant la vérification et la correction des données. 
+
+ABSTRACT. The JeuxDeMots project aims to build a broad base of common and specialized knowledge, in French, 
+
+by using games. About a dozen games have been designed as part of this project. Each game allows one to either 
+
+collect specific information or to verify the information acquired through the other games. This article presents, both 
+
+qualitatively and quantitatively, the data collected and constructed since the launch of the project in the summer of 
+
+2007. The main game of the project is presented as well as our last game, Sémintox, a guessing game where the 
+
+player verifies and corrects collected data. 
+
+MOTS-CLÉS. Réseau lexico-sémantique, base de connaissances, GWAPs (jeux avec but), relations lexicales, 
+
+relations sémantiques, représentation des connaissances, acquisition lexicale, vérification, consolidation. 
+
+KEYWORDS. Lexical semantic network, knowledge base, GWAPs (games with a purpose), lexical relationships, 
+
+semantic relationships, representation of knowledge, lexical acquisition, data checking, data correction. 
+
+Introduction 
+
+Bon nombre des problématiques du TALN (Traitement Automatique des Langues Naturelles) et 
+
+de l'IA (Intelligence Artificielle) nécessitent l’utilisation de ressources lexicales et sémantiques, et 
+
+faciliter la construction de ces dernières s’avère crucial. Toutefois, l’automatisation de cette tâche, 
+
+quelle qu’en soit la méthode, présente le risque d’introduire divers biais dans la ressource construite. 
+
+[FAB 06] mettent ainsi en évidence le problème que représente la polysémie dans l’extraction 
+
+automatique de relations typées entre termes à l’aide de patrons syntaxiques, et également pour la 
+
+construction d'une ressource à partir de textes. Il existe aussi diverses méthodes manuelles de 
+
+construction de ressources lexico-sémantiques ; quant aux approches contributives, leurs principaux 
+
+intérêts sont un coût moindre et une plus grande rapidité, en comparaison avec le recours à des 
+
+experts. Le crowdsourcing (ou peuplonomie) consiste à solliciter un grand nombre de locuteurs 
+
+bénévoles, motivés par leur intérêt pour la langue et le vocabulaire ; c'est le moyen d'obtenir une 
+
+ressource de qualité. On parle en général d'intelligence collective, [FIS 09], [STE 09]. Les GWAPs, 
+
+Games With A Purpose ([AHN 04], [AHN 06a], [AHN 06b], [AHN 08]), ou « jeux à but » sont une 
+
+autre déclinaison de l'approche contributive : ils sont conçus pour construire la ressource par 
+
+consensus entre les joueurs, qui jouent le rôle de contributeurs bénévoles : leurs parties alimentent la 
+
+ressource (le réseau lexico-sémantique, dans le cas de JeuxDeMots), qui grandit et se ramifie. 
+
+Éventuellement, des mécanismes d'inférence peuvent contribuer à la ressource et il est possible 
+
+(mais rarement mis en pratique) que le jeu principal s'auto-contrôle via des jeux annexes dévolus à 
+
+la vérification et à la consolidation des données acquises. D'une façon générale, les mécanismes de 
+
+contrôle se fondent essentiellement sur les principes d'accord entre joueurs sur les entrées et les 
+
+ 
+
+ 
+
+manuellement, sachant que cela demande un effort en temps et ressource conséquent. La vérification 
+
+et le croisement des données récoltées par des « contre-jeux » semblent propres au projet 
+
+JeuxDeMots. 
+
+À partir des réseaux lexicaux et de leur utilité dans les problématiques liées au TALN et plus 
+
+largement à l’IA, nous montrerons comment les approches ludo-contributives sont performantes 
+
+pour constituer des ressources tant lexicales que sémantiques, en détaillant les conditions que doit 
+
+remplir, pour être efficace,  un « jeu à but » (GWAP), en l’occurrence un jeu dont la finalité est 
+
+l’acquisition de données lexicales et sémantiques. En particulier, il apparaît donc clairement que 
+
+construire une ressource en se fondant sur des jeux est plus économique, plus efficace et aboutit à 
+
+des ressources de meilleure qualité et diversité qu'une approche manuelle classique (réalisée soit par 
+
+des spécialistes soit via des plateformes de myriadisation de tâches comme Amazon Mechanical 
+
+Turk). L'innovation majeure que constitue l'utilisation de multiples jeux comme facteur 
+
+motivationnel pour ce système de collecte de données rend possible la conception de plateforme de 
+
+co-construction de connaissance (textuelles) entre humains et agents artificiels. En effet, pour que 
+
+les agents artificiels puissent assister les utilisateurs humains à l'aide d'inférences, ils doivent 
+
+disposer de suffisamment d'informations concernant les termes employés. Le couplage avec la 
+
+plateforme JeuxDeMots permet de renseigner très rapidement ces termes grâce à l’activité de 
+
+joueurs. En l'espace de quelques heures, un terme précédemment inconnu du système peut être 
+
+renseigné de façon satisfaisante. 
+
+La description du projet JeuxDeMots, et en particulier du jeu principal éponyme, viendra illustrer 
+
+ces considérations théoriques. Et comme parallèlement aux jeux dédiés à l’acquisition de ressources 
+
+le projet comporte aussi des jeux de vérification des données acquises, nous évoquerons également 
+
+notre dernier outil de vérification, le jeu Sémintox, mis en ligne en avril 2022. Le réseau lexico-
+
+sémantique JeuxDeMots, qui est la ressource obtenue via cette approche ludo-contributive, sera 
+
+ensuite présenté, en mettant l’accent sur certains aspects de sa construction et sur sa dimension auto-
+
+correctrice. 
+
+1. Des jeux pour construire des ressources lexico-sémantiques  
+
+La science dite « participative » est en plein essor depuis une quinzaine d'années [KAW 12]. 
+
+Cependant, relativement peu de GWAPs sont mis en œuvre ; ils reposent soit sur le traitement d’un 
+
+grand nombre de données (microtâches), soit sur la résolution de problèmes complexes et coûteux 
+
+en temps de calcul (pour une revue des GWAPs, voir [LAF 15a]). Très peu concernent la production 
+
+de ressources (à ce sujet, voir par exemple [MIH 03] et [CHK 05]). Dans ces jeux dits « sérieux », force 
+
+est de constater que la dimension ludique est souvent très minime, et qu’on fait davantage appel à 
+
+l’argument « jouez pour aider la science » pour attirer et motiver les joueurs. 
+
+Les questions liées aux écueils du crowdsourcing ont été largement étudiées [CHN 13], [MEK 13], 
+
+[DEC 99], [FOR 11], [GOH 11], [KUN 18]. Il existe peu de véritables jeux dont la finalité est 
+
+l’acquisition de ressources textuelles et/ou de connaissances [SIO 08], [KUO 09]. Par ailleurs, les 
+
+données ainsi générées étant rarement accessibles, l’approche mise en œuvre peut difficilement être 
+
+analysée. Notons aussi que beaucoup de ces jeux ont été très éphémères, car conçus dans le cadre de 
+
+projets ponctuels ou encore de thèses. Parmi ceux qui sont maintenus, citons Phrase Detective [CHA 
+
+08], [CHA 09] et PlayCoref [HLA 09], dédiés à la collecte de données de coréférence, ou M-Gwap, qui 
+
+permet l’annotation d’états mentaux [PAO 19]. 
+
+Lancé durant l’été 2007, le projet JeuxDeMots est un des rares – sinon le seul – non seulement à 
+
+perdurer, mais à s’être considérablement étoffé. Le jeu éponyme initial a donné naissance à un 
+
+portail qui rassemble aujourd’hui une quinzaine de jeux pérennes tout en mettant les données ainsi 
+
+produites à la disposition de tous (domaine public). Ces données sont par ailleurs largement 
+
+ 
+
+ 
+
+[CHP 17], [LAF 17b], [LAF 18]). Outre ceux du projet JeuxDeMots, certains GWAP ont toutefois 
+
+perduré, comme par exemple FoldIt, Galaxy Zoo, Phylo, Eyewire, PhraseDetective ou encore 
+
+EteRNA. Dans [CUR 15] et [LEO 21], des études sur les motivations des joueurs à participer à ce type 
+
+de jeux, est mis en évidence l'intérêt que peut susciter l’idée de participer à un projet de science 
+
+ouverte. Voir également [MIL 22], en ce qui concerne les obstacles à la participation à des jeux de 
+
+science ouverte. Plus récemment, LingoTown [ALT 22] a été l'occasion de tester l’impact de 
+
+l'interface utilisateur (plutôt textuelle ou plutôt graphique) sur l'engagement des joueurs, dans le cas 
+
+d'un GWAP pour le TALN. Le jeu FindItOut [BAL 22] ainsi que le modèle de conception Intrinsic 
+
+Elicitation [GUN 18] partagent avec JeuxDeMots l’objectif de faire construire par les joueurs des 
+
+éléments de connaissance de sens commun, de chercher à capturer les pluralités des points de vue 
+
+sur le monde. 
+
+C'est WordNet [MIL 90], [FEL 98] qui a rendu les réseaux lexico-sémantiques généralistes 
+
+incontournables pour les problématiques du TALN, en particulier la désambiguïsation lexicale [VER 
+
+90]. Un réseau sémantique est une base de connaissances prenant la forme d'un graphe, qui permet 
+
+de relier des connaissances du monde à des informations lexicales et de vocabulaire. Ces relations 
+
+lexicales ou sémantiques ne sont le plus souvent pas pondérées : on ne sait rien de leur « force » ou 
+
+de leur fréquence au sein du réseau. Or, force et fréquence, qui sont des paramètres précieux pour 
+
+les algorithmes de propagation en désambiguïsation, sont difficiles à évaluer, et quand ils le sont, 
+
+c'est souvent manuellement, ou au prix de croisement de données, procédure nécessitant également 
+
+une vérification, manuelle [SAG 08]. 
+
+On trouve au sein des réseaux lexico-sémantiques différents types de relations ontologiques et 
+
+lexicales. [DON 06] ont conçu manuellement Hownet, une ressource lexicale chinois/anglais. La base 
+
+de connaissances générales CYC [LEN 95], également construite manuellement, peut s’apparenter à 
+
+un réseau sémantique. Citons aussi BabelNet [NAV 10], un réseau multilingue de relations 
+
+associatives construit par extraction/compilation automatique des articles de Wikipedia. Quant à 
+
+[ZES 09], ils ont utilisé le crowdsourcing pour vérifier la similarité sémantique entre termes. 
+
+Cet article décrit l’approche développée dans le projet JeuxDeMots [LAF 07] dont la finalité est la 
+
+constitution d’un réseau lexico-sémantique de grande taille pour le français, à travers la mise en 
+
+œuvre de GWAPs. Un réseau lexico-sémantique (RLS) est une (grande) collection de relations. 
+
+Formellement, une relation lexico-sémantique est un quadruplet <début, fin, type, poids> : 
+
+– début et fin, sont des termes du lexique, ou n'importe quelle information symbolique (ne faisant 
+
+pas partie du vocabulaire et correspondant à une information non ambiguë, par exemple _INF-SEM-
+
+PERSON, qui indique que le terme lié à ce symbole a le statut de « personne ») ; 
+
+– le type 1  est une information indiquant la nature de la relation, il s'agit d'un symbole comme par 
+
+exemple : r_isa (est un type de), r_carac (a comme caractéristique), r_lemma (a pour lemme), 
+
+r_agent-1 (est agent de), etc. ; 
+
+– le poids est une valeur numérique réelle positive ou négative. Une relation fausse a un poids 
+
+négatif. 
+
+Dans la suite de cet article, sauf quand cela s'avère nécessaire, nous n'indiquons pas le poids des 
+
+relations. Éventuellement, nous indiquerons si le poids est positif ou négatif. Ainsi, on écrira une 
+
+relation de la façon la plus intuitive possible, par exemple : 
+
+fourmi r_isa insect (fourmi est un insecte) (poids non précisé, supposé positif) 
+
+poisson r_isa <0 oiseau (poisson n’est pas un oiseau) (poids négatif non précisé) 
+
+                                                          1  La liste des relations est disponible à  : https://www.jeuxdemots.org/jdm-about.php 
+
+ 
+
+ 
+
+Le projet JeuxDeMots a donc pour objet la collecte de relations sémantiques et lexicales de ce 
+
+type au moyen de jeux. Outre une présentation rapide des données ainsi collectées depuis l’initiation 
+
+du projet durant l'été 2007, quelques aspects de la conception de ce type de jeux seront développés, 
+
+à la lumière du recul que nous donnent 15 ans d’expérience. Notons déjà la double question 
+
+centrale : comment « accrocher » des joueurs, les séduire et les fidéliser, et quels mécanismes mettre 
+
+en place pour assurer sinon garantir la qualité des données produites ? 
+
+2. Le défi est d'attirer les joueurs et de s'assurer de la qualité des données 
+
+Il s’agit de concilier deux impératifs, communs à tous les jeux dévolus à l’acquisition de 
+
+ressources lexicales : proposer un jeu suffisamment plaisant pour attirer et fidéliser les joueurs, et 
+
+s’assurer que leurs contributions génèrent une ressource de bonne qualité. Quelques rares études 
+
+s’intéressent aux modalités de conception d’un GWAP [AHN 08], mais la plupart sont de simples 
+
+descriptions de jeux [THA 11]. 
+
+2.1. Susciter la motivation, favoriser l'addiction… 
+
+La qualité des contributions s’améliorant avec l’expérience des joueurs, rendre le jeu attirant au 
+
+point non seulement séduire le joueur, mais de l’inciter à revenir suppose de satisfaire à plusieurs 
+
+conditions : 
+
+– l'intérêt ludique : s’agissant d’un jeu lexical, la plus grande source d’intérêt procède non 
+
+seulement de la variété et la quantité des mots et des relations proposés, mais aussi de la richesse 
+
+thématique et de la diversité des niveaux de langue ; la polysémie du français, de par les ambiguïtés 
+
+qu’elle génère, est aussi un atout précieux. 
+
+– des règles immédiatement accessibles, simples et intuitives : des consignes de jeu brèves et 
+
+claires doivent être affichées en même temps que la partie, afin d’éviter au joueur de devoir aller lire 
+
+de longues explications. 
+
+– créer de l'émulation, valoriser les joueurs : il est motivant de se mesurer à des pairs et de 
+
+pouvoir évaluer son niveau grâce à un classement multi-critères, assorti d’un système de récompenses 
+
+et de bonus ; la compétitivité pousse les joueurs à revenir, et que ce soit pour maintenir leur rang ou 
+
+progresser dans le classement, et jouer beaucoup et souvent améliore indéniablement la qualité des 
+
+contributions. 
+
+– divers niveaux de difficulté : pour ne pas lasser les joueurs fidèles et expérimentés, il est bon de 
+
+proposer un niveau de jeu plus difficile, avec un vocabulaire moins courant et des consignes plus 
+
+contraignantes. La question de la progression dans les GWAP pour le TALN a été abordée par [DOR 
+
+20]. 
+
+– des parties courtes et un résultat immédiat sont une incitation puissante à jouer et rejouer: 
+
+visualiser son score et son impact immédiat sur le classement général est un des facteurs qui poussent 
+
+à faire une nouvelle partie, limitée par défaut à 1 minute dans JeuxDeMots. Une enquête a montré que 
+
+la durée moyenne d’une session de jeu était de l’ordre de 10 minutes, voire plus quand l’addiction est 
+
+forte. 
+
+2.2. Consensus, intérêt ludique et gratuité : les clés d'une ressource de qualité 
+
+Le fait qu’une donnée lexicale ou sémantique ne rentre dans le réseau que si elle a été produite 
+
+par deux joueurs au moins, qui jouent anonymement et de façon asynchrone, est une garantie de 
+
+qualité ; c’est ainsi qu’en 15 ans, le réseau lexico-sémantique JeuxDeMots est devenu une 
+
+incontournable base de connaissances générales, de sens commun et de spécialités (médecine, 
+
+gastronomie, biologie, etc.). Par ailleurs, proposer un jeu gratuit est de très loin préférable au recours 
+
+ 
+
+ 
+
+qualité des données récoltées : les joueurs ont à cœur de « bien jouer », c’est même la principale 
+
+motivation de la plupart. 
+
+Le coût de construction de la ressource est également un critère important, et dans le cadre d’un 
+
+GWAP, il reste faible, puisque limité au développement et à la maintenance. L’évaluation et la 
+
+valorisation de la ressource sont du ressort de l’équipe de recherche impliquée dans le projet. Et 
+
+quand un GWAP bénéficie d'une grosse communauté de joueurs motivés, ce sont ces derniers qui 
+
+assurent une grosse partie de l'évaluation des données récoltées. 
+
+L’acquisition de connaissances générales suppose que les joueurs soient représentatifs d’une 
+
+population de locuteurs. Or, dans le projet JeuxDeMots, le fait même de proposer de jouer sur le 
+
+langage introduit un biais inévitable en attirant préférentiellement des femmes, ayant fait des études 
+
+supérieures. Force est de constater que les gens moins diplômés sont moins intéressés, malgré une 
+
+promotion du jeu sur les réseaux sociaux et au sein de forums généralistes. 
+
+Plus de 7000 joueurs se sont inscrits depuis le lancement du jeu, en 2007, mais jouer en invité, 
+
+sans s’inscrire, est possible. Une dizaine de joueurs jouent sans interruption depuis leur inscription, 
+
+soit plusieurs années ; d’autres, plus « pulsionnels » vont jouer souvent et longtemps pendant un 
+
+laps de temps donné : plus de 200 joueurs ont ainsi fait plus de 1000 parties, et plus de 4000 en ont 
+
+fait entre 100 et 1000. L’ensemble des joueurs inscrits totalise 1,56 million de parties pour le jeu 
+
+principal. On constate que l’activité des joueurs se distribue suivant une loi de puissance : environ 
+
+10 % des joueurs assurent la moitié de l’activité totale. Environ 57 % des joueurs sont des joueuses, 
+
+et elles ont contribué à la construction de la ressource à hauteur de 69 % (elles sont plus nombreuses 
+
+et jouent plus que les hommes). 
+
+3. Le projet JeuxDeMots : acquisition et consolidation 
+
+Le projet JeuxDeMots [LAF 07] associe un jeu principal et des jeux annexes d’acquisition (ces 
+
+derniers permettant de préciser les données récoltées par le jeu principal) avec des jeux destinés à la 
+
+vérification et à la consolidation des informations ainsi acquises. Le tableau 1 ci-après présente 
+
+quelques-uns des jeux du projet. 
+
+ 
+
+Jeu type modalité Finalité 
+
+JeuxDeMots jeu d’acquisition contribution 
+
+ 
+
+construire un réseau lexical pour le 
+
+français, acquisition de relations lexicales et 
+
+sémantiques 
+
+Totaki jeu d’acquisition 
+
+Devinettes 
+
+et contributions 
+
+ 
+
+vérifier les informations du réseau, 
+
+rechercher des lacunes et créer de nouvelles 
+
+relations  
+
+AskYou activité  
+
+de consolidation votes 
+
+vérifier les relations par lots associés à un 
+
+terme 
+
+AskIt jeu de correction votes vérifier les relations, en particulier les 
+
+raffinements sémantiques 
+
+Emot jeu d’acquisition votes et 
+
+contribution 
+
+associer aux termes une émotion ou un 
+
+sentiment 
+
+ColorIt jeu d’acquisition votes et 
+
+contribution 
+
+associer aux termes une information de 
+
+couleur/texture/aspect 
+
+SexIt jeu d’acquisition votes associer aux termes une connotation 
+
+sexuelle (ou pas) 
+
+PolitIt jeu d’acquisition votes associer aux termes une connotation 
+
+politique 
+
+LikeIt jeu d’acquisition votes associer aux termes une polarité positive, 
+
+négative, ou neutre 
+
+Tierxical jeu de 
+
+réordonnancement votes hiérarchiser les poids des relations  
+
+Top 10 jeu de 
+
+réordonnancement 
+
+votes et 
+
+contribution hiérarchiser les poids des relations  
+
+Yakadirou jeu d’acquisition votes caractériser les relations de type “a pour 
+
+lieu” par la préposition pertinente 
+
+Selemo jeu de 
+
+réordonnancement  votes vérifier les relations 
+
+Tableau 1. Liste des jeux du projet, avec leur type, leur(s) modalité(s) et leur finalité.  
+
+Les jeux dont la modalité est le vote sont bien adaptés à des supports sans clavier physique, 
+
+comme des tablettes ou des smartphones. La question est fermée et il s'agit de cliquer sur la bonne 
+
+proposition affichée à l'écran. En pratique, certains de ces jeux peuvent avoir un mode avancé où il 
+
+est possible d'ouvrir la question à des réponses non listées. 
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzbLUD7FJ6_UlAqYWcycrYiZYpT2NiLmLyC2qlQNUjk0v3NS5czq2WXbpIFfDU7gaTfC1LBjqLLb1uqU-0zOzaTVFHh-xxwNh4xmew3oT1ZciIWRLNTIuoelAaZqfuh_D_FH--bEg=w107-h73-v0
+
+0196cb3f-859a-4780-ac43-a5f1197346a1
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzd2aSjrHMzjb_pccMPS3zEFNaaWudba0EYwBMbAuPsU0E6IL-qX8_NKVWQUA4ovdCVM1Q80PH3MYCZ4R6KULGjuTgrlPlOr7hhfuFjZy8hxFcz7zpG9SBmUERbGRO58JOrL6uq=w166-h73-v0
+
+6804f8b4-ceae-42fc-81be-391f8431d04f
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyKRJLlhS9zOdguuAEt2DMr6xZaiwBLG5t48e96mD1oKCHprpFSFOagqsA-1K64bXvhh__6drhTPaZ6xeNi10j_HaBGd-n1XMaKocmJIfpD87WwLALOStA0zHTminLDgtVP6T1DNg=w108-h73-v0
+
+aa38cfcd-3ab3-474a-8f1f-b1514da05a7c
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxBA6ZOuSAYjNUtyhMviZcxvV8q9r-cRHnFJHQb6VYa5CYYNt3BtxenL-zr3CJUVTqoIo23XNtGJxmeCXhsQhRUHF2FaYjmyndp94mWPKi3fDtFTF83HhpZOn0xSOa0LY8eDnJREQ=w294-h73-v0
+
+06e8b7e2-a31f-4b04-a27d-2625bce086d0
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzdkhrBtuzV-H0FQsMok2lrrX78LgfA_8Br328pQRUbutHnDD4EpxUbrp5dsM68_aESF07ilTeCykOm4r6BZi8OwYHMXmV2wWwA03sJGgblI_2EWC1NUkxewr28f-pnSz17iFpoew=w107-h76-v0
+
+a7082805-ec85-450f-a669-85aa90206384
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAznpxWHaDVggW7CMnWmpdRBnkKQfCURxC8dpiBHq7h-Pl2_MAixneTVS7ZTIgBlX-mH8uTkR9SXK8Ep8if9623yrgtMn7b-igZY5-4gxsluNwENWn6pVCwzSVONS5DuLrxR-5eX=w166-h76-v0
+
+2e667edf-7c09-4fea-bde6-2821a74c9c5e
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzAExZvdGJtRxII-UBZXJy9NzaMv_SuZ9lGNk6sL6OtzP4PzeqBd7EUqI3xnPfCVaG8Mj0UgSCpvVKy08yYjMxsEFxxU3SVcc3i7EQpncZrPVRCe-iEUlLpUYVazfNuiq9oq6cc=w108-h76-v0
+
+ca75d09e-ca7e-4f06-b34f-0b00b80db5df
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyhcrRuYTicIHjEUVCVorW-dfMq6-v4oaT8-rrNNIlBXrYhp53rP-9aN0kszm5TXOajJj5PgIHm97-UUwRCH6K5_k-xO2jkXyGjWH5pbF7HKCrwh8I42_R9Mfy0tGkG-DogdRae_Q=w294-h76-v0
+
+d0f3f011-ebbd-4dc7-8039-e0c125bc1854
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzgstX0K6ThqQLRgj1EhlXlQT9_aBj3GGLc8eHDcOHIRkJLZG2vBgLHPNT6EFsdf892n2OfyMtMWU6KrSdv6LS5943wbKVcviKjNs-VcSdFWhOpWFB8UD09f95odcdC_ro5M2kMUA=w107-h51-v0
+
+a16f3b9a-e099-4fcd-956e-6f9c9572e829
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxRJmwc7EWBfR5FOEttfkPyk0TcBo0tS1bBgwZGdeBgCtF19YPcxeNgAkVs4BM3398RGnEOMDWF4rqPujajhlpsMmZeZex7blPHoXqoz0Ra_vMnfOrbL0e13AjMbPJEf0YbDZu9Pg=w166-h51-v0
+
+a4fe6f48-f137-44be-b84d-aa6d410c2070
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwdQOpBznoiCVXa9AIZSlxPyDe5j2MLv42N61OcxIk-d3hEInKhKBr9BZCr-GJAHg8BRNduT-XbS9TT34k2XzrQOs2APFD2XlyxzkGNHevuq8F4pdCxfN7_kfFG2GexzSRyJPUEKQ=w108-h51-v0
+
+2ca2aefc-910a-4f55-8080-fd8bd9e715e3
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwhjfuDozni9oUWmXs3JwPNRTSK1ONSUmW8URJw0Y87Z4UJn_zTt78bK392PJ3BHmF5V4ED5rInWbICwTbsSgsg2-TB7McKXXjpn0zf231ZtEqPxXJVXLOBW1h2KhsFrOURm4zv=w294-h51-v0
+
+49819a3b-defc-4451-acc9-a8fc5a1bf897
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxvJOecdICUgVcx0jqKajrcMaYfvKZJQVIg3gQ0J5MF6bNfs48BQLRG3p4hA-iXJsJSpmplTRuUEZZo-pMOu83_uu2c-H6DG0wnX0Jp2DQI6qFT4-XGCzol-7mUDwwUZpMcKOBB=w107-h51-v0
+
+d2439165-b43c-47d1-a397-848d188bd708
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyxozTJ1y7cKEl-tUnZzS-CT3Y3u0uY76W8DtvvmXm-LdDja565xyu-wjG96K0SnzHJEIov-Euuju-lbp56PItk6f5l1JRqkTumXUnH-R3ttAGlu_G1nF90DY7JqKYdCzVAlImTBg=w166-h51-v0
+
+b9584df6-abbf-4ad5-87d3-dee5460384ea
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAw5qlxKEEXedj96ZCQld9pJHF3M2mNjGnQPLzjA3G-JSb9OuVeLlkM_NxW7CXBygxi7fEOT3D5PQ4RDrCHrLj0EB4BdiV3UImWpPQ0GODijoRPd6DCZOpnOhLTIh23WdqG6Fout=w108-h51-v0
+
+812f7d1c-3074-46ea-a111-0e29027bfadb
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzEkILobRlcuglmD4aY8Sn7M-25vO14oDgu3t-7jb5IAdhFgEFfCZoyTB1NWJEq0-lmArGhjvIeFUARGus1A4RKlSlXU5M31EttRosNuyRhFRqVVpIz_gmwFzUaLVhyjBWXUhwlAg=w294-h51-v0
+
+9f499851-d3b6-42e4-a4c6-b244a6490d24
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwW_9Ae_NxPHMdrwlaLCd11Jy4Aiu1d7WE9yfeUKMEhcE_GpyASvLSDcdYOpLD1OPqFY1UVqiUcYVrTgFOlGOz7q0sBGiY2cKeBbucH-am1Nc1vySboqJb8rxFsfrVD-d3jT56Ftg=w107-h51-v0
+
+1e644ef0-f1ff-4d67-90c6-320466700fa2
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxH-qxuva4fzTFDSD1iKYhflctXCUNoJAXTeSWQ2ECBM6qXek3G9-u1zhcdGbke0ekrpNGkMXlSuwaJ74NWJ5hEPcVld3Q3KFWvq3K_fr4b-rahAMY19Yxv6_f41lu8c6LNNlXTKg=w166-h51-v0
+
+88e204b9-e67c-4793-b4b5-991c8d90e673
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzF0AqmCXd34JWFE_YGJqti6FONjl5_Ulh_Yjixw7LNCmevUPWKyfxfop1QxtWxM_CVbUJJx2SrjPKqOlVqrY8vtlzgN4zQxH9kfpTAloRW3_sj7hoeOeajybxWqSGsgJg5_JJaaw=w108-h51-v0
+
+ea793c80-a0e1-49c5-9066-60c9bd1ff23b
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAw7eEtdi1Kf2YRBF_m1nXA3eOd0WxwmduGvm0etXUnbDO7kv6XVkJQhbf1Qd3yP05H-SbA37SCIl2uC7IHaRy6nYTEp6VrocEALnZCyUD0W877ffBbmmD3JMAQa-NjgreNaUyEh2A=w294-h51-v0
+
+4c19eda6-4e95-4bd9-bda9-2e517cd000a5
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxKr_B5FCy1vyiTQLxMXRqZa3d-nbdJajVKxiNWwrHYvw17QYST8hqOtjMlsgjxifRXchG05saMluafAULrREXin7pDXHp2evL37cZnGuRkVgoGzRUTtULC-IhwVk7TCtaKn7Bavg=w107-h51-v0
+
+5376476f-d963-4f6d-b1a8-3f489128d993
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzSQBcUF9rKRak7Rm4MPXHCknHFgD_pYSjGgD3aAdAdvo9WSsTccNtfZx6uiianVapjoka8of_FLv6f514n-oTBQdOv3mJ8MFEOidGMuLigxXs4i7F2y48lvKJgREY_a09-OUWGTw=w166-h51-v0
+
+b84d2dc4-354f-472d-b67f-0ca25d0d0f0c
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAw79YI9TnGaVmVSQb4JWu_-uhCXzALhiXUwhmJo7mEOLxf2n_SU4iLrAChngH68FBj_N-H436tnmAK3flfAspNi6DyZZLSLu4__C0y20Ea_42WMqo91WtV9_35FuvqEq9f_t51jCQ=w108-h51-v0
+
+a68a94d1-f611-48cd-b9e6-9cdd5b2a9624
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAy1n9kcvwUaFYSmvzeXLJtes157OrT3wURYuy_EGO2wDEs8Doma3Fp9PG30JhRqvF2UR6T8OpzQM37cuwMmeMpKE5yRGfndOXgY8jV5RDvtCOdOmGsuc0bSk0_zrR7O-VcBWBZGzQ=w294-h51-v0
+
+8f80d09d-9dd3-4526-989f-d9cb29d60290
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAz_ZysYHtL4haNWha6a695kCviXkcL-KbCdms6uC3TbKZF71aUoHxKJ47JNDNg5x6qK_TPtNAmyxAQSLrNA289RR603RS3Md7pnalZO-7YGkLZbc9x735n11GKKirgSY7khxy6Zaw=w107-h51-v0
+
+897f5d97-2dbd-49f0-8ef2-aafe71ba48c6
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAw9qtA6gBdtH7wMuuGlG7xeFNx6MsWK4pBRr7YqL8siU4p-YDEBu9xdAQodbQ3T1NaZ0_xJ0zO_mjsAE9elKVElz6nC9xsV9Css4PzF55LqNSdJoXlGZAnQVkBh3vYdhy7i8KNTag=w166-h51-v0
+
+0c1bae15-6267-44a9-9177-7d65ea30f066
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwV-kp-9jqpKEaJ1UKpv4Ao0WPrDeQ-wQ1IZBRG8WzuIAWnNmmoHQkGqe9h2IrrapbHO6tFdptF1KWOI7lbl_vuVphUf6MSafBY0AahattARwIRMP_Tz91DwZBephm36wYP-KWiBg=w108-h51-v0
+
+f3d48ffd-b46a-40ae-b1ff-f9e3d83dc5a5
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzXOvck6W9n55TfGTUwPmZoyvOx5FKnl4fx0cRZ2biKIhpZXnIaN1D1NaEsNiZF3wNDzd2KDP_E-I02ZTcdnSFveF4Jz144EmBh9MXqpKmFMPK9_oEY6bEpredLjbkzGLqlW3fbpA=w294-h51-v0
+
+ddc11300-c585-407d-b78b-d347863490cc
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwN66YIPqoiOoIWLo6e8suHOOokzIspSLtac_Rdy_nPwNQ2VdqsnokDNxp1yv-LI0bWa0hI53iaa0JI48N_hlnGl5QwO_-jTLzdX_kIt7uds26zkA0TIOX81gUnCiobQL7_CEvs=w107-h51-v0
+
+6db7dbc5-7f20-4d3f-bbc6-f006fbb7dbdb
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAy8FeZ-zazwyPpxWlkxhyWYCuMCxCI0z5geZ2DoFyRD_7B9FguNkDJW421im1Pd6UjJZWT3KoKjsPgyQuXFJDDUUin6UxQ-OI9tforeUC9uDUKer8Mg9M_ebzGg69J0YziykxeqBA=w166-h51-v0
+
+b34bfecf-bbf0-47a5-9299-b27e09bbb110
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAy1tLo2R3TyUySaUyzFTBf3NRe8jwU2bsp3awhAPxhbFOFv9pM90-YWTrLN1AWucaZHZZ5dmiOwGo18M4cjxVlQqTRfaG79bq0TAyhjj-KopF8Z3VBTwM6AHV3TdYmFfmiFg_TE=w108-h51-v0
+
+de66e27e-b344-40e4-8f1b-079c03ce59b5
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxH8z8fBvTjvFaJqIFQKPp41J3rKQtDOVhFOdn5Oz_gXaNLWf2DStwVdqXZzaO91dIO2Z_FdssUIX0WGdpUgMlnYKSHJnUgcZNP0iBMsj3e0B1T3R1_MBQ-5nnH1qtsqpDhWvta=w294-h51-v0
+
+93de30db-e485-4f3e-9e24-7df76a9656e2
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzBK2spFNKi4Mne7_RZh7WRqGARNDLlNpL4tx5sGwqxiueU5xNCMB1fhzUdL3LWHdLpxgFjDknSSsAO3RkBFlmqj6K6UY3-gpbzjwU59SIdQkYol3KRQiA75oUkIYNzdkVT9sob-Q=w107-h51-v0
+
+9b92e8b5-27af-43a9-a8f6-c031f5f1fca3
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxXeW-boumQ_qfYdo3e8mvxn21WlaNOU5hiLekxlPID8ujmc_WMZ5VAVYiF3NKH-_I3jiNwRn6FcVy5_48SKDYHu4ElT88Gs021Nv5muITuUp_uSIlGqGhCKMl9_2x457wWaxAM=w166-h51-v0
+
+fd769b9c-e06e-488d-87eb-0c2533ccad79
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAw00rHLlUq9IlLVAuX2v2W-wp6cEz5zt4XGOnFkUt6HEIWDXxIR7i8g8aYu--bs-KHDc5bWLWndmbv2m_RG-APp2VyhCF1p2k4E6RHvDnLXyPxNEPFr6DSh1a1fX9y976FSqhjD3Q=w108-h51-v0
+
+fae5fbc7-a629-4407-b10f-558972b1c1c1
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwcfH99HfihVYuq72T7e7DbOorlY6vudNO0_yVg9mW0MyMqxbLcbdIA-DETqV4QtJLku_VAuIkd-kyFsUdIfkLunCj2tmR6Lx3vXJEy7pqz59AIm3osb--mWUwA2fXvzWa8RiP9=w294-h51-v0
+
+6e7c528f-ed87-4c4b-b6a7-475017539944
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzBkzO2_k6bftzS0LTbXvx-KEVp9X-OdEJLPS_2011b1XJ1tJAiAje2ewhJ2bW8t95-9FMnQcZx2UzG-Wmk1jAg-DdVO2jk7tcmy5J5byMTpEk9maggLAxn1awsKKMDssI0dQkh0w=w107-h51-v0
+
+815a1da5-58f8-442f-9e42-116340c1cf2f
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxHKETKZFrjJ5FCatLeyG05hfc4Rk9nMhPsDFLqwZwmAo08GxTf005AaNcQnLUX67JJyOW3ms0HnOBaQ4alSGDp1jTdoXfBR8uK-EKxbdUPpo_52er5WIzlyeXo2hgU30A4U6gmIQ=w166-h51-v0
+
+f96a3fc3-6d68-4339-bbf3-f94ae858fa60
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzsXMRCviL36q4kixMdvYBBqxuC7YBjP6SY4v7PS0WQnrNkq2DBLt7ej2tyx3Tt5sZjAepj4bdCPC31tx8Uu2UCPZJRTy-KJCd-ZwiWjus39RP68GHHIbdXJufWpQxX6NxNhH-9Rw=w108-h51-v0
+
+041326a1-9942-41b7-8d2c-dc21df8941b7
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwrKuxH5gi_5dxE-rr6U49XSewFAlbaSWKjKr4UiFbBlmLLC3oMCGrDZE4wLZkw-4aGzhfaufTuRZNVA56RRMTUQ5vHuDSM7rPrJ1PiOFZyT29N8lx8iCQI0lwnW_JSElk6RJP_qw=w294-h51-v0
+
+220c3a22-73a9-4aa1-8b9e-83ee5480cffb
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxPV0XD0cxQdlZOxOHDwLws27qnxMMgmw6UnrFVp5_LxHRd_A8eHk-KjUkD1WXLyw8SlxictNMh2Q12XHlVokPnye9a033omV93NSGLR2NG6ELkZe1dWtXiMQy0MgT-XZCCtEPDfg=w107-h51-v0
+
+eeeb53e1-4809-4ddf-8e2e-92754d7e495f
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAz4PhFAPYVZEUsloEq01z6TBHcjXQcHwfIeQ07kZCpSJmnBz8i8-cABkI_omgileQ3YUafHrbUuaXtK1V6FgZ81q3y6COzriS6rGKOHdbYelx0uGNOr-rrI-moyxS7eQS7ayHja=w166-h51-v0
+
+3d0f95e9-1269-4e74-9c31-4e8417c5c794
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAz4Yp6naI10rMrRzezd0sRwLLZH0F1f8HZetJTsMlbrW_tquhid4vjxhqr7zunVC9NeMl-2O_H8ACXreYepkyKB1eLJotfj9erDMupI1scoAlgw1pJW5EDEYCl-X6DePRjR733Hkg=w108-h51-v0
+
+4dfc9a42-d75c-427f-b756-242128d952be
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxc428A0E2xHpVsFsN74AuEheZnKfe05_N3-DZaf5dZdEqxUKTHdQEmN316MSQAMTid6cKz_toCrT_qCK0Rmv5FFeSj5ghjDMAD5POPs4zVxTTdmLlM4qb1o-g87XXcjOXuYAdQ=w294-h51-v0
+
+7b96e6b1-c042-49cf-aeed-1e63d128a471
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyQUuqEaqIMigT20DNNcRVczSycVLLI8j9QGvw1j9oe3IjDEuDbsd-tCmE2HN7f8zlSPTvUi_V-ogWodkhpiJtpFsxaPtaqhSwF3OJ1S-7cpmx8jKb7ygv0TmbrX-m_Raan64F1sg=w107-h51-v0
+
+e271a0ec-0bc5-4309-b2e0-7277f861eefe
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyVEOCcCN2yDdS-hZmKKHtCKU30l6puFry2L0SfP2N0OcCBdT3bTR4a950KHzdIHfIZY01Acct0MvYhfb1UDWfMhIBa3n-KexSNSn1WMOQ5INPOUcApWVGmP46yRoWM99CClcElEQ=w166-h51-v0
+
+98699719-3d3f-4029-8864-0262ab504656
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzCmoiRdxq1yXJ4EynUJxKJommWZQPB88XIXaxaTp7aM4O8C338TvEIfp9frxHqOqLUznbKO9VertydX6UQm5g-2RsX_eeoQSgq4WsVqH3mF0isE-6RPYi3sPw-u2wILfzRBGun=w108-h51-v0
+
+92e7549f-0efa-4263-a437-30c9f6c89daf
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwz2k0uNTSJ_2iw3L6fg5ZT-UaARiHKDA-EM0ghgcYbdV0gB-ZcYR0efgvrKs4ozbfeQm0v3feUCgddonD4SO6fGKVc4Zgj6lxAqJvhTOe3G_e6h94c2o6qtOOhtXUo4Y_2p9vmUw=w294-h51-v0
+
+05e242df-aeb7-4fbf-803e-efa61cc233f3
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyVizkMdMjA8TuNOtm-YH84KDx7ceBLbpnn2bmxnBO5cu9ewDYXM4IEVj-aJrxCkJRf1S9zB5-l5QRNwY0_2sltAhGcRi2nRloHYRXnQKu57eK8JJ-dukRmg_2xrBpTOBdbeX8l3w=w107-h51-v0
+
+b1901aa1-f090-477f-9da4-ad026b0fa172
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAw-wbP9DC-U8_FM4eXAfQ_0DPFTRmWvBwA_YPqnxxzh0AAczFCIuldVL4DSmE5o6ZeGbPfNn8EVS1c9sGVHMtOQ9K2drPDXEdwKZeR6lFJ283xN5lBeUo7zOJFxOWbIk_WAvjsfjQ=w166-h51-v0
+
+eacaade3-c6b9-4baf-8f91-e1eb91d4eaff
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAw-i0j5odBBAigoj9AD_Mvyh3EFVQy66NBzZQ7hU6RqDc-g20ZACWE72dA6JPiaSvssAegaUdZeItx7gik9a0Km3zgMoUUwLp0PG4tsVssHk9jlElm3J8b_vHMKOmb6RTegW8Y8=w108-h51-v0
+
+0c508368-d22e-49f8-b9a7-818dc108c2c0
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyv8ZQtGyHKkYfrzE3glMp46iYx8DVJ6WbyX_an5MEhXURneM50gCCWaanWu2iGRdbDuv3moRdFGs2ElnBj_bXEZ7Bo36U6he-wOJ6_T59zQ1n7GKGy3w4-Q77n3voZSc5PL_pC=w294-h51-v0
+
+bfaf38c1-7cc8-4a76-bdcf-68158d0580e4
+
+ 
+
+Jeu 
+
+Durée moyenne de 
+
+jeu 
+
+ou de la séquence 
+
+Nombre de 
+
+parties jouées 
+
+Nombre moyen de contributions 
+
+par partie ou séquence (NMC) 
+
+Remarques 
+
+JeuxDeMots 
+
+1 min. 
+
+3 min pour les joueurs 
+
+achetant du temps 
+
+1 500 000 
+
+NMC = 13 
+
+Jeux de base de la plateforme JeuxDeMots.  
+
+Jeu ouvert contributif 
+
+Totaki 4 min. 
+
+ 
+
+25 000 000 
+
+ 
+
+NMC = 5 
+
+Temps de réflexion important 
+
+AskYou séquence de 15 min  560 000 NMC = 50 
+
+Temps de réflexion important 
+
+AskIt séquence de 20 min 86 000 000 NMC = 200 
+
+Temps de réflexion modéré 
+
+Emot séquence de 10 min 850 000 NMC = 100 
+
+Réponse rapide + jeu ouvert, plus lent 
+
+ColorIt séquence de 10 min 1 200 000 NMC = 100 
+
+Réponse rapide + jeu ouvert plus lent 
+
+SexIt séquence de 30 min 170 000 000 NMC = 300 
+
+Jeu rapide 
+
+PolitIt séquence de 10 min 650 000 NMC = 100 
+
+Jeu rapide 
+
+LikeIt séquence de 35 min 120 000 000 NMC = 500 
+
+Jeu très rapide 
+
+Tierxical séquence de 10 min 260 000 NMC = 50 
+
+Temps de réflexion modéré 
+
+Top 10 séquence de 20 min 360 000 NMC = 120 
+
+Temps de réflexion important 
+
+Yakadirou séquence de 10 min 150 000 NMC = 80 
+
+Temps de réflexion modéré 
+
+Selemo séquence de 10 min  120 000 NMC = 50 
+
+Temps de réflexion modéré 
+
+ 
+
+Tableau 2. Liste des jeux du projet, avec la durée des parties ou des séquences de jeu (pour les jeux à 
+
+clics) et le nombre de parties jouées depuis leur lancement. Le nombre moyen de contributions par partie 
+
+ou par séquence est une estimation de l'enrichissement de la ressource lors d'une partie ou séquence. 
+
+3.1. JeuxDeMots, le jeu des mots à collectionner  
+
+JeuxDeMots, le jeu principal, a été lancé en juillet 2007, sur un corpus d’environ 150 000 termes 
+
+sans aucune relation entre eux, qui ont initié la construction du réseau lexical. Le but de ce jeu 
+
+« ouvert » est de thésauriser des mots, qui sont acquis – ou pas – au terme d’une partie dont la règle 
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzE_50WOTzyA_6ACQbi5rVZfgO2AJRQTWMWXjYHYNA_WZxjYO_rWj5rsF55JbLx6czXMcmfO4FfZkInvKu0QoZ6wbfhV53_ruUBum0vgjRQuraqd8z8xhwtVZ2m7T7hVGhg4kO0=w108-h88-v0
+
+1a3290a7-fe12-44f4-bde3-fa8993f7a02a
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwPPVgY8L3hmQHh1F2hqt24QQcCiGmmKiBn6vjU1Qkqx4NWI7la99TFzcFDSRxN33CkjWzzUnxnOGzWhIs1qxj1_dgpdk3cgoB2rE7JJGPBS7OekkmWEQq-I7g2F3oYGEgC56ECXg=w166-h73-v0
+
+2010e7ec-c340-40b1-9acd-f4d482e69c4f
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAw--RcENF2oCcfLawdRj9tIO4D5O721rXd8iNJiTTmzixDivDOhkyPgP9JFV26Wd7_MQMWLywzIwpPBG8Q3jaii5UkKXyYiYHmMdrNn7e__nAjVTAvQQYWkpNnSL7WfFd9pTeH5-Q=w110-h88-v0
+
+cdc61c0e-1750-4ef7-a851-6f95916faad3
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAz4pRiuu-gkdQdjs5TOCPHAaTK71bX_7z7tmTgBZeoGwa5jdVRO8Ao7ooaCGPiFzk6-UxmCg5CM0Bo2uLAsSrp8qH-VJMinzGHUiTs64JjNA_uK4ov77s5exh8TQrTz_mxsl4y8KA=w294-h73-v0
+
+0ac58b6c-6fcd-48b9-bc87-4d74e60014e5
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyNZmBCYK0FjSCFcphvZdGmmcDqRtBCSCq7J8BxIJI_4O3nnluvVxqhhzmYYTHpA2CBSX3BSNevz25Bzj1tjFliylfvM2dlRiyCPSY2A8BjgCUNBf3-O7gOzMjIdYSRhXFYKFHBLQ=w107-h79-v0
+
+de61b43b-b308-4c03-aa9a-9a36b4073a2d
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAww2L6iKQRxN2ML09gfqaGTOkSJR9RbDenUhMn0PzelNn6vpDbEk3INSJ8xsCieyeCQomH0R9Shc6J0O5MuJ7tczJCM-6CcbaDBSevOExQBa1FbluixG49Dfc2b293_lZBy0OxF=w166-h79-v0
+
+b2eea1ee-f4bd-44e2-a3e1-e8991fc7d2b3
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAw5jrr_gsza6eklojsbXKSBIa0TYS_fb1uJNjJb6FY0Otx4-wyCUhFH0lV8XFOsqg2amTXae84gw4dKLE9XIi1tKqOiBXlDF2yoKb6VeYB0OgAcj91FZBJHQOpQn6gMpiaNOMMy=w108-h79-v0
+
+5d4299ce-e8bc-4a51-95a1-928c8ae5d339
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAz_ItEBTdcqYfNchLRcd12FmZWy-AkZ0vJIVipHy0GA6DNX-apUNDfpiX73lxGvjx6_mNHtomkL-PQyzXkYFEZm6FgitNvKDu8nP05jG4YIbWqzAdDQjyEoZAW4rZkl5vBZbc0P=w294-h79-v0
+
+437b182a-7e60-4221-8c2d-ff95ab4adc67
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzPOc5_lflNXHtonwJXx8oJbXCEtNjeCpHa1vX5cuV_wgungiFFjm_GkrsEBWv-EzfFZAzd7eTZ3uNhlN6xIAhXijCNOoUQch9DHMRKainO9Zrt561FoBVmOmyFSvK-UX3UomSt=w107-h79-v0
+
+41767179-5671-404b-a9ca-a8581af997b8
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzK8phdlwNfJDih09l5dRmDhdNlY9aC9GP0qvAKNc13bHOhNuLXavedFI0jkA9TdSL5cEu7LpI7IcJ7NbjxuVkzexFwOAPihYLP94SCHmMdXw_AnKyHaxzbddWD4um18AGxoX6juQ=w166-h79-v0
+
+85be0a6d-3f25-4848-bdcb-458cdd0575d6
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwrEeCu3mB-XICArLnk5hikyWozirFnDdDMgNluvxNcPlshkmiq7eZNldzj4Ajp1wjSkk_q7ys0i2eDZeAzw-nYPDAeT0ggM_QMDH3YU_z4dl-COFFZZAkcoU6CmAYuoCX_MbGq5g=w108-h79-v0
+
+aa960810-933a-4e65-b142-07b85e7e9696
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyEWsfLfYj6-kAVJnP18I_5UMEZeQz-7DiA12gBFz5aEien6qgdySYgk7PTC4aGgs7Zey95WN2SIIk2RmAWPu_o-lyBGituF3-sOo2z4mZxRTihztYglHrc1dPTud-ThxPu7wSVrw=w294-h79-v0
+
+b47dfd90-2a01-46f5-b0ae-38bb5a89fb0f
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyG75yXITyFflWLnKyIbGO4_KWYSHd3LujpV6W6_X8cGX010sBBQjBN18JUx4mM5viIrP1EMFwQqdxitpbZLzw4WrVbeeb9dVEKG06gH30qw7zOQnR7oSuKER1zq5afX_qcQDQ2uA=w107-h54-v0
+
+941fef7d-1426-48a2-a413-37021164e198
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzdknxIQKguBFkgD6ATQ8eRdnJxGtBT2xi1pNpf_rsiQQ5Jy2ieoBRXJwrPWcq1WhCstUVSWCgGH8XMDntjC36rkHmIsU-noyKx6FdNm2vwBXkpl-lO1JVUmLzTkxQ2YR3Nb-hC-g=w166-h54-v0
+
+ba300bc8-bd92-4e8f-9399-0d43928fb66a
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxuJPZvk0LaQTwD6-qturt7uCU1yHDVqGos7j2RPvg5ji-2YLsY1f8Cyj1FGJ6Y-sNdOFnz7ykA5WDqM55zkVK-YJtYnT3CqlZCLgB5pRj4FIw0WrSqiAV37fj08jN-h1HhbyOWFQ=w108-h54-v0
+
+c58c3ed1-a7f2-41b5-9b2a-8be9fe28ecd5
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwu54CnJJk8PDMUofI_7oc1VBrcaRcZB03--KYxsnmK011BWCRNzZzA-pfrzJJziJbsxxwLXGWb8qNyYzJ830cqvQQRy2vciDwOnzXk4IlQ4NLplI4Xs18egGSwNlsi1ks2Kejj=w294-h54-v0
+
+3e339649-ba13-4a24-9cfb-fbdcefd300d8
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwyJxOftZcGusPLfSZHSWSpGQ0Sp5bnJyHLQGKqitxLu-yrb3fC20PTbE7sDKWZ1vvK0K2tQYIcHzqm5Cec4whGTCRb_Gd3U5ovTd71ONnWUiOTmxYWEO_uj4j-mEARQ_A-b36gVA=w107-h54-v0
+
+1f2f1a6b-649b-4fbc-87a4-9817649b8b9f
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwtgBjXESpJ0KQNDC7Z3pQueHV75n7cQHgz5GJwMuvRSo04eOVd340YxVwcF5_0DnTHfo3A9aj7SrIe89Ea_y5Zx2F3iwBAmqI6jkriUHA_e3yhwpZVD8LUX-dYvW3i48a_yLwE=w166-h54-v0
+
+a4eb8609-9ccc-4000-818b-3d87fc6c8d56
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwdjtiKQ53sxTdCPC6blUjKQGK0MMeldB-1RhQc_4PrK0xJK5i73Uszu2JgDgZQss__XvHnRMDdkPoZhS4NeFfDwIxLrNESKaS1Kj-pedg8eE1y_pjcj4LdQPOF1i2H0OxVXPs9Ag=w108-h54-v0
+
+5572a603-5bf3-443e-897b-9af21cf7a89d
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxb3txkiDnGrV65cWORfRNyZo6HFIuO8gAweu3Xh6pYo273lxzG2oP3xLF--zwIJSBlpEHmg5VkGJ7YTOHwFRmuveTefIaCleIWS2_OACNaPhV27w5J8NDWw_yveXFYcaMu-49Tkw=w294-h54-v0
+
+e3938dbb-83df-4001-9f5b-d4925eaa893e
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwqp7S9sZQgDQlUSpkT7L2PxnSj4Y3nCVxyop6FuWkFP3irYCzicxvZLB4oUuVHHBIv2A7Fed914mZDKdiLHzBOE6tmLwZLzZSvCVblBN-raSeD3k9n_Avs0eLapVK5URNqn9-9Wg=w107-h54-v0
+
+a7717f90-54f2-4480-ac84-5edd463f2992
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyYScRTCCE_5PwcnAnB-bI4DSXHTZWNcD1gr5Nl8_ASLs6mm3TbweSI5iYRVgW4N52Vrsv9FTYKaZkuKCQdWGzr1iBWzi4_ArKmZRQER7OYhIh6OTcpn4A-bd1liWceoZT2tYgYWA=w166-h54-v0
+
+d8be70f1-6789-4d52-be51-6c3ead1da862
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwon-b8ULqsug6VeBuN1Kxq8CTYvSlIvkew6Jdan9SKg9MRcH1FJ_k1NaFYdpg5E3Wc7bNhdNa2mPHcsne_DFvliCAZSLVm4MXXzlJwnMuCO_Q7w4RWaDy4sCDqlK9SyLfXQx068w=w108-h54-v0
+
+75eea2fe-eee1-4d98-9fe2-473aff2bb0df
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAw3ba5BJWOit5BWxd_uWfEddM6nQbfZ0RWTHqzfR_QhTcM2t-qHFVbebNXATqltLGlK_Mk5IiT3R2SxIECGXS5t482wZuEVrQfl3HG9Uov_Cn_drIq-BgY-MgIMiZ0e6fO1vsrhyQ=w294-h54-v0
+
+f939f2c1-e83c-429a-ab6d-e6c48acf7399
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwHKQRw_MCgWLfyGVIwNG1beSWhxy42uCgta6lqC0iLrJrAxzQ_LjP1ux9yoxykBT9Qb4FnsQk_2uQF1SR3EwNraaYuy_CLLWp0VEG8DnpnLeG0tLmamJH87w404O5ZaZG0jUnhiQ=w107-h54-v0
+
+fb19c453-1baa-43b4-844c-534da2a36e47
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAx9FDT_xTuLK9FssP4DRAipvnLghlr28bCFIm3v1_WA4nu28uxLfLYSlyNCXbu9pTYJ3iZ_H7S8WlqRcudvLHQwhmE-QZlIslcF_SmOE4pZ0lTN7J8Dgu3lS1lgICsuGebhMYzA3A=w166-h54-v0
+
+fab518fa-80de-4713-b720-0e2f5424ab9c
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwHGutO08w2nbG77rvOABJClRZZ_cnVHn7wWBrjP9-ohVfMveUBBG7SogVmJwua88AeKQa9t_MewPi9ZKnIVSWiuqzesf0rO6ZOB_maeQINmkfZT9bZJrHl0-YVxqLuwC1a4v3kjw=w108-h54-v0
+
+d7c82bed-559f-4a80-ba9f-8c9507942634
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwzWuW4mZbYQDAWAn1ytKazcO07dm1CK12_CUjnwCJkAwUq8ZWSYXMb_4xCw3WgIDVoobHKArYrzUbYb2Rd83uMin1Lflkmn8Q3hrRJArU36i93xWLmm8DuSAAMp-pWBMOCMFlgkQ=w294-h54-v0
+
+4aeb4f79-a37d-4c86-be74-361e72898fec
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxqHWwnKupBX6B1QVa8lER04AjyB_jai0TMQMZpNuwXSzeDb_Kl-QoRz85C2KwQETE6c2FmA7YWzEiGc7WiVCiJ-VRcsP9bJx0NV1cuAGfIQgRhr2k9FjoUvmv3EWPfNebjqOlgfg=w107-h54-v0
+
+18a9f77d-173f-49d9-92fe-b874e6ec912f
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxGpr2gl_-s8SYD1nwkYmX2MVodGKUfmlCJ3g1cOvRmJsnSdUF3WvLt14lgozO_4qmdXZ5X1RDQGvEXLqan3WJNMWgTo3fLuYr_l9F5f8RrWxTJQE8O-S8NfYInRx7xUVhuOX871g=w166-h54-v0
+
+e24937f9-8ed8-4378-9dc5-13fc5a6776ec
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAymJPwVOuNfOZaFzJBCNixY98s63SPt0B8XBE83NuqoP3N7Yr3IwAzLQL5aXfEgm3WtQSQvamXN82yqqGiY4HOlM9rGdlB8qwQEX3GFvKJIgKGhp8I4ikNSHK5fsbi-TiY13mQv=w108-h54-v0
+
+91e2a832-09f9-4ef5-be44-b36c8f5b332d
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAw3mdmSo25itlFlOCOG_yx2h71umhDqBRyTpMJMyImW1J1ikKldRNOk-Rq0sL6Pn2jAM00pA4lMUYsDOxwZ9W5hKKvXU22XjJxXJnVi3I-dPxf6NrWWylG82JNSh7Mn6sZPt96T=w294-h54-v0
+
+334acee0-5969-444d-9d7d-7406d88eebb6
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzvVRc2ZI-xzWCZTVLEy_TihCsbatAWZaaFh7BzprVDDLRgXBUh9Dr_1tQbOFSke3JUbzNBfGnRqH7okUUVsZg4kS0OVIOY9mAtgeMqiqAL9sKddQwCc0IIyBfV8rVwWSNZgGRm-A=w107-h54-v0
+
+42f00490-a3ff-4963-bbbd-01fd4ce3ec56
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzKNZhl0Tlky0LQaHaAwhpt4rUuk1YLf2PnKFVbvpMNqubLHMd94J4Vin-cm7UV79uBEVpkpgDRaXLL-Cfi4DxtTcw89sIQN5LEoVoJDWbUjqKNVZCl540KfJLoC8PzrHLwOGxm=w166-h54-v0
+
+3f10b0dc-9d4b-47ca-b2cb-148df77ed487
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxXjkoYq3rrXlSNawQt9z3tZL8CpSHTaQS6uOEq_vESBkm840JGGFd57BMPWAJFKjVe96bAPbo-14oe0Ga6DQLQ_vrZiyZY6vhLUcmnZWT8p2WwRFPInLsajFMbJgTEMYBUvSaf=w108-h54-v0
+
+9ca92640-62da-425f-9a36-9855c098c06f
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAy6pYOibUSoSqnl40F7bA59wHJ-yhOUokvEQMMlhutd9ldSGBvvnAw9bB1afNZjjk6now4wRvNaF0Wggwt8KjVc6yf13auo6zMVErl_A5KJdt1-OFAShx12mJoBep2MfY17ZY3w0w=w294-h54-v0
+
+bfd0dd07-e4f6-4b4f-a4d1-f26e9051811a
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzj2xvjonm_FoRW24SLhL5ZqYXDxu2YeaDD0HOfB73T4QrTIVQwp-dVHF0XPZK1W5H06_qc5C6tyzo_x6Fop12xmZeBxtfZsb0ixTj1afEDvVwG_bUeYKUTfD1NdfwQWwBo52b4Pg=w107-h54-v0
+
+141f9a4d-f260-46d1-ad94-3d2094748cd4
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwGL8-fAPrc8dngjEU2uZPlDalHvNQTgeBHKTrV956L8mpmY-S8g0bNy0Vd3FnByRTjlRmG2dx4aF_A0DB9FCDi2EcVzz1D2E2DxcpmDND0clPcuEkEzCLjcSe9GRSlvdfD_1RREA=w166-h54-v0
+
+28c46dd7-2f98-4478-96f5-9435d9dceb61
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzIKNjOCBNZl34JBxa87AGCuC3UQzDDt-BxR06B9ulBJCvfkxwr_RBLE7FfdQFh1PhX5-0W4tb1OTxMliPFvJQu0XfDiKN1QRGereJ_BfYhW1GeX8vH_NFRDUHrZAe6eDgyvDQUvg=w108-h54-v0
+
+18f5ec9b-bcf8-4ac2-abcd-67864add7dbe
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxxZJ21BqyOsB-D7jVfw663sA0OPWMzZi5sOD8uwFwUTU7Mz4ThENbKHSoQ6lFGC5PnyYNxz2KTashYMLnTn4BQ0rzvg7ECdD_gCcwbuh7IUIlqxvF9nLIHagYYcLolOChRX_pt=w294-h54-v0
+
+cacaa33d-78e9-4ac5-aba8-14e50bc9f5b6
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzU12GX56Wefb-ywa2UL9FEv_V8LnlTWDZ7rHX8WI8FN0NdCtSmhzDE5szg_PM5lAME6BAj-WhMshUF5M1a9LmhUx8CNQQps2xizXCmUsYbuA-C7W5_vSeUF09xGxkL91cNJyy3dw=w107-h54-v0
+
+1e83a6bf-8ef8-4d11-8a42-9ce4a7494016
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAw6sH2SQ4GqlBJfwZY0AZpJGXW37HNk-hApcCI3qNYhcSVjP7dzIogunNbhJOkslHn53kMkD_wsyL9gboNdkvJUev9dD0FYdPSpV9EpzJwFwjku1xbmgB4IvLJBBI9CScRSYImi=w166-h54-v0
+
+6954c209-072a-419d-954e-e523cd3b0ea0
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwCNQGTJ5sGEFQ55XritEo_uCNZmFBqxnB5Ad0ntgdXLkZgy6VCw9S_UfguZucJleGGxQrYu7EqNL7vE6ULRkuxt8eb5hi1bRSGkXCgnb9mhUz3ZEeShlUqb4H2h_tXUUqoDBOarg=w108-h54-v0
+
+03f20353-ce8a-4bd6-8057-f0c54a543d1d
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAy00dZM0gamLXuE7yQjMh6LooM3BZr4TfDQ0F_NoyYYL1Zvi1W4Dm6NP-tiuWoW2avK25GzaNrIeaEzaWjaMBGnZaFi-JQne55NJJHIpgKrrODH3RF17-__Xn3h8_WpsgVXqWFLxQ=w294-h54-v0
+
+24a71de0-cb6d-40f0-91da-42688cd8eadc
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyNA-exvmh2m9hVB52RwUpp-XiAjxIQnzdogOnnaU6erhkVe802TEGP0_YsZkDcgkC2CevP9NyWqHjdxBVCRN-mPU8_swRf6E5QgxgpGDwmJ8XT6S6ai-yZW2qJS6LfwA=w107-h54-v0
+
+f9edcaa5-cd41-41a5-b4f1-33e47147bc6f
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyY9FB6K6hVFUIyPgT50G8hPY5sq5ezSVieF3mgp8H5ng0M3Uz70p2cnFEc7sIgREqsmPnC6mbgWUegKcFHLdjinnU1RcFhgaddJLCv7ML3BNtm-pv9YQzHZJhbR6s5dOMkXJ6rGw=w166-h54-v0
+
+f24a98c4-aee3-48d3-8711-5f15de2bd741
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyp23eMMlKJlpvVmsSrYaaxEaMCKd9rnEuEcNSc2T8AfpokY9pdELoB60-TyKANGCba_a0scfXoW7n0FasYL4PJQY7jOFLfMFIAFwEN-Wb0QUQyAmxIbOYzL5vbkpSd-WBLP8PcNw=w108-h54-v0
+
+e106ace1-e829-426f-b950-20ffe884b50c
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzU6osp7JKkmDUa6GRVAU-79j-9SqeV4M8XkRz_7mrzYpr7gw5G7YdKZsQEEa9sY7ugFJ-AA_AN2kJeCAs6wRWKUk43LBMTIvbUZjVVeRlOa750rnZAJn_nF_Pdi2F4gnlvUaiQ7Q=w294-h54-v0
+
+91d3a8ed-0639-4f09-9f55-859431947325
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxOPjE8oYnI7PqRioUi11NWJsUaEj8FcPLqbn0FAroKaCm9vY44HXeBanux2MPsJCKm82EgE5bkDPGUI8kgy8zAZVslWAvbQllf1W9ZV0zTvAxi4-gb59b8Tr-LjEdObl41TRC4=w107-h54-v0
+
+81d71b54-f492-4ac9-a108-940bfb9ddb20
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAx0bkGlrvv2J21yCh_Ds5tfVn0xNxAOLqJVX_fTjotbktF81PPGUrqP577KpGB4HlhSRnxkVOwqF6hihIJoJwqfvs7YqtH0dquJd02eECv8HmjtAl00qJN4WR7WsmRTzafk-eJs=w166-h54-v0
+
+7bdba188-5518-411f-83cd-a8f31772bbb1
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAz9mzL7iY2pQr6CTLYHGenq4YyCe3kp3K5vmw5X1qdn6FSNSw63qTU0UDDVLa6OjUiJ4r6to3VMqNWJ4prwN0XtYIm7ejsTqx4cmCodqLKPdMf4ZWC3mR-JDlg5lQiSXQfV5Nuclg=w108-h54-v0
+
+e99ef52c-6344-43ce-acec-c5645b7d339b
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwSC-8H92hVGapLZc4EBcclxFVCbFuQ1kllSJAv5tG4OyMc0Wg6E24IbXymr1cGiIqUnovurAoMl5EOV9QVXxzSt1CPN7Ag9EgMF9pdzIVX1--9MY2nVpOzIkb6QClAxSxeOuKJ6g=w294-h54-v0
+
+ae0d9345-e5d8-478c-bc40-75cd87a5efc0
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyzoOkGaA4Gg-qmaX0pu9RI8bDSQ8TP7qEM7qjR31YHmbaafJWZl2kIs8lAe0IDCdYjAjIsk2WXFgrJqbSjAYuG8NifHYkT4ZfBseAU59zfHJhdGL0Rr-6mpR1E32E6_BnfO4XafA=w107-h54-v0
+
+06797c84-f9f6-4b71-917c-06fc8e45d6b6
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAz2n13EWBeY1IKh6WvNXsI4fOLaAsZuVknfz1QN5o0jdDSu8dLf1H8qJ8QAlQIEXFYZ1eDybhcZwLaYMchnMF6Wj_HLE_zFEBgh1RNJgdZV1YG0NLmV38Td-2XSZtS480c4ZHmE0Q=w166-h54-v0
+
+fdb9b885-3460-44de-b5c9-273fc72c94e7
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwlXEit0Qfk8Fs0ICrGYdLe44nb8sGq3dKaSpOpS-rWyyV3oUXr9trjhUhnH9wMOYJOneGgdk239JbKNb9v_ZjGmN2VOWqVETTIhlIX1NSRqHK8VVShqaPgTagDgRn87Mp8UD9KcA=w108-h54-v0
+
+edd71a96-80f1-4ead-8aa7-cec495bad934
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyEmuw5lk3LAqnyHqf6oLnsaK2d-hF9r-KPhEvSJ_wYL7_SG65dyDuniWcwpZI-7L8ttf8WeAK3CimsHU4p2SH76ARWPAuNEpJndD4Y6GJCrp5Aj_hxdH_pZwM_HyOwfnhux0kuqw=w294-h54-v0
+
+476b4dd1-4412-42c2-8843-72035fc08f3d
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwvztXXkG6G7hn_q5JtSUYz0LF6sT755djPcLPM1pmJCCZ4uLbgWtPnTIjmlQ-XZG9HD601HR3em-bm9olDsL0UT_yXHoDPyUmWNzOaLBYY_O0sK_9CQE5NfqbHpK1dQkBiAb0f=w1152-h572-v0
+
+144512c2-9ee2-412d-a0fc-8eaa40c61d2a
+
+ 
+
+ 
+
+défaut, faire des propositions via un champ de texte. 
+
+ 
+
+Figure 3. Exemple d'une partie de JDM où le joueur doit indiquer des lieux possibles pour le terme saumon 
+
+(au sens du poisson). Il lui reste 41 secondes pour faire des propositions, et les réponses déjà fournies sont 
+
+listées à droite. Certaines propositions ont été « raffinées » par le joueur (c-à-d qu'il a indiqué un sens 
+
+particulier de ce terme, par exemple fleuve > cours d'eau) 
+
+La figure 3 montre une partie de JeuxDeMots où la consigne est d'énumérer des lieux pour le 
+
+terme « saumon » (type de relation : r_lieu). Le joueur a fait 17 propositions (à droite de l'image). 
+
+Quand le temps est écoulé, ses propositions sont comparées aux réponses (stockées dans la base) 
+
+d’un autre joueur, qui a joué sur le même terme avec la même consigne. Les parties étant 
+
+asynchrones, le joueur actif ne connaît pas l’identité de l'autre joueur, ce qui rend impossible la 
+
+triche par connivence avec un complice. Le pseudonyme de l'autre joueur n’est dévoilé qu’avec le 
+
+résultat, qui indique le nombre de propositions communes aux deux joueurs (figure 4), lesquelles 
+
+sont mémorisées par le système et viennent alimenter le réseau lexical. Les relations ainsi acquises 
+
+sont pondérées en fonction du nombre de paires de joueurs qui les ont proposées. Elles représentent 
+
+au sein du réseau des quadruplets : le mot-cible, le mot qui lui a été associé par au moins une paire 
+
+de joueurs, le type de la relation correspondant à la consigne, et son poids, soit (approximativement) 
+
+le nombre d'occurrences de cette association.  
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxA-AMxofMbU664_k57N1-QpEbZEQ5EYSaFtntmsuZsp-darENgj6psRUyHRUodCssmvfOUgspzk-FT6EvvN7qF9iYDa86DovNJ4XuW7LgoLxfh5O1WGEiynbDe_G94WFaRkgc5aw=w1158-h675-v0
+
+98cb2b62-b17a-4856-a3fe-66d0b4acf49f
+
+ 
+
+ 
+
+Figure 4. Résultat de partie de JDM sur le terme saumon (poisson) avec la relation r_lieu. Les deux 
+
+joueurs ont fourni 10 réponses communes, et gagnent 1034 crédits et 23 points d’honneur. Les réponses 
+
+communes renforcent les relations (saumon > poisson r_lieu eau douce ; poissonnerie ; rivière ; mer ; etc.). 
+
+Le résultat de la partie énumère les propositions communes aux deux joueurs, et le score s'affiche 
+
+sous forme d’un gain en « crédits », la « monnaie » du jeu, et en « points d’honneur », un paramètre 
+
+d’évaluation du joueur. Les gains en crédits sont modulés par l'état du réseau avant la fin de la 
+
+partie, état qui est fonction du poids des relations entre le mot-cible et les propositions du joueur, et 
+
+du type de la relation.  
+
+À l’issue de la partie, je joueur peut faire diverses choses : s’il juge erronées les réponses de son 
+
+adversaire et est déçu par le mauvais score qui en résulte, il peut lui intenter un procès, ou exercer 
+
+toutes sortes de représailles : attaque, envoûtement, envoi de « patate chaude », etc. S’il est content 
+
+de ses propres réponses, investir des « crédits » dans la partie permettra qu'elles soient proposées à 
+
+d’autres joueurs. En cas de score supérieur ou égal à 200 crédits, il est récompensé ; au choix, il peut 
+
+« proposer un nouveau terme », « ajouter un ami », lancer une « patate douce » à un joueur, changer 
+
+de pseudo, etc. Enfin, il gagne le mot et peut l’ajouter à sa « boîte à mots » si son score est supérieur 
+
+à la valeur du mot. 
+
+Nombre de ces actions, en favorisant les interactions entre joueurs, stimulent l’esprit de 
+
+compétition, créent de l’émulation et les diverses « représailles » possibles incitent à jouer : un 
+
+joueur qui fait l'objet d'une « attaque » laquelle se traduit par le vol d'un de ses mots, est prévenu par 
+
+mail :  se venger consistera à attaquer son agresseur pour tenter de récupérer son mot, ou de lui en 
+
+voler un autre, donc… à jouer. Les « procès », en revanche, ont une vocation pédagogique : en 
+
+rendant publics le terme, la consigne, les réponses des deux joueurs et les griefs du plaignant, ils 
+
+sollicitent la communauté des joueurs afin qu'elle tranche en rendant son verdict (coupable, 
+
+innocent, relaxé au bénéfice du doute), à la suite de débats et de votes sur un espace dédié du site. Il 
+
+résulte souvent de ces débats, auxquels les administrateurs du jeu peuvent utilement participer, une 
+
+meilleure compréhension des consignes difficiles. Enfin, les joueurs peuvent s'offrir des 
+
+« cadeaux », qui sont des parties dont le terme et la consigne sont choisis par le donateur, et 
+
+représentent donc des incitations à jouer… et à remercier le donateur en lui offrant à son tour une 
+
+partie prometteuse. Il s'agit là de l’un des aspects « coopératifs » du jeu, avec la motivation 
+
+« sociale » de se montrer sous son meilleur jour en offrant des parties « intéressantes » c'est-à-dire 
+
+ 
+
+ 
+
+compétition : mieux on joue, plus on augmente son score, mais comme le score profite aux deux, on 
+
+favorise aussi celui de l’autre. C'est l'aspect coopératif, tandis que les diverses formes de classement 
+
+poussent à se démarquer en surpassant les autres, ce qui suppose de jouer plus et mieux qu'eux. 
+
+Les autres jeux d’acquisition consistent à poser une question ouverte au joueur, avec 
+
+éventuellement une modalité de réponse mixte : le joueur peut choisir une des réponses proposées, 
+
+ou en donner une autre via un champ de texte. C'est le cas pour Emot et ColorIt, destinés à associer à 
+
+des termes-cibles des émotions/sentiments pour le premier, et des informations de couleur et 
+
+d’aspect pour le second. Les autres jeux d’acquisition se prêtent à jouer sur smartphone ou tablette, 
+
+dans toutes les situations d'attente et dans les transports, puisque ce sont des jeux à votes (ou à clics), 
+
+qui ne nécessitent pas de claviers physiques.  
+
+3.2. Sémintox, le jeu qui vous enfume  
+
+Sémintox 2  est un jeu de devinettes, dont le but caché est la vérification/consolidation des données 
+
+de JeuxDeMots. Le système sélectionne un terme que le joueur doit deviner (la cible) en proposant 
+
+des mots candidats. Sémintox indique alors si le terme proposé est en rapport avec le terme à 
+
+découvrir, avec éventuellement une information sur la nature du lien sémantique existant entre les 
+
+deux. Ce lien correspond à une relation sémantique de JeuxDeMots (par exemple, est un type de, a 
+
+comme partie, se trouve dans, etc.) (cf. figure 5). 
+
+Le terme à découvrir, disponible pendant une heure, est proposé à tous les joueurs. À l'issue d'une 
+
+partie, que le joueur ait trouvé la cible ou que l'heure se soit écoulée, il est possible de contester les 
+
+indices fournis par Sémintox (cf. figure 6). 
+
+Le sous-titre de Sémintox, « le jeu qui vous enfume », au-delà du slogan provocateur visant à 
+
+amuser, intriguer et interpeller les joueurs, annonce indirectement que les informations fournies par 
+
+Sémintox pour chaque terme candidat peuvent être erronées. En effet, l'objet du jeu est bien de 
+
+corriger/compléter la base de connaissances ; on s'éloigne donc du jeu de devinette classique où la 
+
+réponse est « vrai » ou « faux ». Il est plus ludique et plus « accrocheur » d’évoquer une IA fourbe 
+
+et menteuse qui « enfume » en répondant « à côté de la plaque » plutôt qu’une ressource avec des 
+
+lacunes et des erreurs. 
+
+Sémintox a été mis en ligne le 15 avril 2022. À la date du 15 octobre, environ 4300 mots cibles 
+
+(pas forcément différents, les mots sont choisis aléatoirement, un même terme peut donc être 
+
+proposé plusieurs fois) ont été proposés, sur lesquels 1800 mots (différents) ont été joués, 
+
+essentiellement entre 7 et 23 h, donnant lieu à environ 16 500 parties, soit une moyenne de 9 parties 
+
+par mot. 
+
+La sélection des termes cibles se fait par tirage aléatoire dans une liste 3  d'environ 4 700 termes du 
+
+vocabulaire commun du français. Il ne s'agit que de noms, verbes, adjectifs et adverbes 
+
+généralement dans leur forme lemmatisée (pas de verbe conjugué, donc). La plupart des termes sont 
+
+des mots simples, il y a cependant quelques termes composés (morceau de pain, botte de foin, fer à 
+
+repasser, etc.). Les administrateurs du jeu peuvent ajouter des termes à la liste ou fixer le prochain 
+
+terme à découvrir (en général le choix se fait en fonction de l'actualité).  
+
+                                                          2  https://www.jeuxdemots.org/intern_interpretor.php?semintox=1 
+
+3 
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxjLf4OPfm9P8WGmR3qfzJcNnCp0EQFx2zxKQxQw-K3ruTgjfmcMqHjaXR4AvWoAjTP-ir4Qq0dp24lmq7Y0dCLk_4WS52r0KzpQWMvzJyY5tU-9Eb7TUoEhI_bMRo5-fDzGTb8uA=w1280-h781-v0
+
+9b7354a0-97a5-401a-bd4f-28e021eb8074
+
+ 
+
+ 
+
+Figure 5. Partie de Sémintox. Le joueur a proposé un certain nombre de candidats et Sémintox a fourni 
+
+des informations relatives au rapport entre ces candidats et le terme cible 
+
+Nous avons cherché à évaluer si effectivement la possibilité de contestation était utilisée par les 
+
+joueurs et dans quelle mesure la ressource était améliorée. On notera que les corrections de la 
+
+ressource sont effectuées manuellement. Il y a plusieurs types de contestations :  
+
+– contester une absence de lien. Par exemple, dans la figure 5, la proposition 10 (la cible n'a pas 
+
+de rapport avec « rond »). Ce type de contestation, quand elle est légitime, traduit l’absence d’une 
+
+relation et amène à l'ajout de celle-ci entre la cible et le terme candidat, par exemple, ici, cible r_carac 
+
+rond) ; 
+
+– contester un lien typé (par exemple dénoncer la réponse « cible est un type de oiseau », si la 
+
+cible est « avion ». Si l’IA a répondu ainsi, c’est qu’elle a cherché une relation dans le réseau entre 
+
+la cible (avion) et le mot candidat proposé par le joueur (oiseau) ; comme elle n’a pas trouvé de 
+
+relation directe, elle a fait une inférence à partir de deux relations présentes dans le réseau : avion 
+
+r_syn coucou (avion a comme synonyme coucou) et coucou r_isa oiseau (coucou est un oiseau) et a 
+
+répondu que la cible était un type d’oiseau, puisque « coucou » est en effet un hyponyme de 
+
+« oiseau ». Dans ce cas, la contestation est légitime et la correction consiste à négativer la relation 
+
+incorrecte (son poids est rendu négatif). 
+
+En moyenne, 5 % des contestations sont fausses. Il peut s'agir de confusion de la part du joueur, 
+
+d'une réaction vexatoire (de ne pas avoir su exploiter l'indice) ou simplement de vandalisme. 
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxsUaQYOUWHNxD9NBJIFJkhoEcnjoNJjSMBJaxXXP1HUs9yPCm9-kvcCNAqLstjt-_m04IgvEk5yJsBLISh5vli1LQfJoKs2upLy7Rub_6Z54J2Zr8ywwMlGU3OK0Epz4HVuqOAeQ=w848-h768-v0
+
+b72abb1a-410e-467a-a270-0bb3bb715a1b
+
+ 
+
+ 
+
+Figure 6. Fin de partie de Sémintox (même mot cible que pour la figure précédente). Chaque information 
+
+fournie par Sémintox peut être contestée par le joueur en cliquant sur l'icône « pouce baissé ». 
+
+Nous avons constaté qu'une douzaine de termes ont été proposés et joués à plus de trois reprises. 
+
+Nous avons calculé le nombre moyen de contestations distinctes valides. Le tableau 2 montre que le 
+
+nombre de contestations diminue fortement entre la première et la troisième présentation du terme. 
+
+Entre ces présentations les corrections relevant des contestations précédentes ont été effectuées. La 
+
+moyenne des termes candidats proposés dans une partie est d'environ 35. 
+
+ 1 re 
+
+ occurrence 2 e  occurrence 3 
+
+e  occurrence 
+
+moyenne du 
+
+nombre de 
+
+contestations 
+
+justifiées 
+
+2,87 1,31 0,23 
+
+Tableau 3. Évolution du nombre moyen de contestations, sur 12 termes présentés 3 fois aux joueurs.  
+
+De ces chiffres très préliminaires, on peut sans doute conclure que le jeu incite effectivement les 
+
+joueurs à dénoncer les indices fournis par Sémintox quand ceux-ci semblent erronés, et que les 
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyJoVgjBk-WaWUtoTR-DRm_PKxtlReur1k4Mh0kHR-tZ_-nWTpQdpX1Lvu_KsPIG_aKwm3XhafgN5O-d9hCNnur3n580gF6do7uBBGzf046uEE_LifRZSROHnPg9MvIGGCfqF_Y=w158-h96-v0
+
+73212843-df7e-4904-b682-f78dc67a7f85
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzyEbZhCQkTWHGHfCuGzF95Z1RmkGchQAnx1MRNUonlTwPEsiCFdnLsJEJqUstOawHx4424uLbUdeJBNgDDqfs8rExVHFAOyG1_3NG394rMtySxDmYbFMeEwYnSQstG8dhns0-MRg=w158-h96-v0
+
+8aabe2f7-a337-41c1-944a-7e5dacdb9068
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyuA-CajUDmCPo5SpLkh_lrY7bq4II-s32DPkeqYQSpg3hwtKVfyrz-lmS-GcIlPvanJTrU0Fm4lD1dP_EYTqoznlfz-wfTm1SUSk5xb0BLaa7PLUPIGPqlVteOoMXgwb5NdOMF=w158-h96-v0
+
+31746312-d972-4ed0-8d69-5014b2880b58
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxvzqHL1hXvAc75Q6xWcm9eCDbyfKXiZlzAvHdVw_P-jNpjyMdxtxVgJL0jxKeBBEuegajrijRgpMS30eT5GYgUSZflAMkazQPpALHAOYM5-mU5iaemA6_vxRKzDzphBTdSl0JntA=w158-h96-v0
+
+4be09c49-ff40-4b20-a273-b2d50af44206
+
+ 
+
+ 
+
+les erreurs sont débusquées. En effet, rien n'indique que les termes candidats proposés par les 
+
+joueurs couvrent l'ensemble des relations possibles. De plus, la forme du jeu fait que les joueurs 
+
+développent des stratégies récurrentes qui ne permettent de détecter que certains types d'erreurs. 
+
+Pourquoi les joueurs dénoncent-ils les erreurs ? À l'exception des joueurs connaissant la finalité 
+
+du jeu et voulant « bien faire » (c'est-à-dire corriger les erreurs du réseau), la motivation principale 
+
+est de dénoncer « cette stupide IA » qui répond n'importe quoi. La satisfaction de se sentir plus 
+
+intelligent que ce système, et d'avoir réussi à trouver le terme mystère malgré certains indices faux 
+
+est un puissant moteur de contributions. 
+
+Du point de vue de la conception du jeu, le minuteur affichant le temps qu'il reste pour trouver le 
+
+terme mystère, ainsi que la barre de progression indiquant à quel point le joueur est proche du but, 
+
+sont des artéfacts qui « accrochent » le joueur. On constate que seulement 6 % des parties initiées 
+
+sont abandonnées. Par ailleurs, 63 % des parties initiées se terminent par la découverte du mot 
+
+mystère. Contrairement au jeu de base de JeuxDeMots, dans Sémintox, les éléments de gamification 
+
+standards (score de fin de partie, tableau de classement, récompenses diverses) ne sont pas inclus. 
+
+Par contre, quand un joueur a trouvé le terme mystère, est indiqué quel est son rang : « Vous êtes la 
+
+n e  personne à réussir ! ». Une enquête rapide auprès des joueurs montre que Sémintox étant 
+
+considéré comme un jeu occasionnel, cette récompense suffit amplement à développer une forme 
+
+d'addiction : certains joueurs mettent un point d'honneur à être le premier à trouver. La durée 
+
+moyenne d'une partie de Sémintox est d'environ 25 minutes. Les joueurs interrogés affirment jouer 
+
+environ 4 à 5 parties par jour (réparties sur la journée). 
+
+3.3. MICE pour les GWAP 
+
+Dans le domaine du renseignement d'origine humaine, l'analyse comportementale a cherché à 
+
+identifier les différents leviers manipulatoires pouvant inciter un agent potentiel à fournir des 
+
+renseignements. Une grille d'analyse est connue sous l'acronyme MICE : (Money, Ideology, 
+
+Coercion, Ego). Cette grille peut être utilisée avec profit dans l'analyse des leviers motivationnels de 
+
+joueurs. Dans le contexte ludique de JDM, l'argent correspond aux différentes récompenses 
+
+possibles : les crédits qui offrent un contrôle sur le jeu, les mots gagnés lors des parties, etc. 
+
+L'idéologie correspond à l'intérêt pour le domaine du jeu (ici langue et vocabulaire), mais aussi le 
+
+fait de participer à un projet d'importance, libre et gratuit. La coercition correspond à différentes 
+
+procédures punitives qui se déclenchent quand on ne joue pas assez, ou pas assez bien : perte de 
+
+niveau, perte de mots, « usure » du score, etc. Enfin l'ego est flatté par l'ensemble des types de 
+
+classements proposés dans JDM, qui permettent de se mettre en avant et de se valoriser aux yeux 
+
+des autres. Favoriser l'addiction du joueur devra être un objectif majeur du concepteur du jeu, qui 
+
+veillera cependant à ce que les ressorts envisagés soient compatibles avec la création de données de 
+
+qualité (ce dernier point constituant une différence majeure avec les jeux classiques). 
+
+4. La ressource obtenue et les modalités ludiques de sa constitution 
+
+4.1. Le réseau lexico-sémantique de JeuxDeMots 
+
+Depuis son initiation, en 2007, à partir d’une base de 150 000 termes, le réseau lexical s’est 
+
+considérablement étoffé, puisqu’il compte actuellement, au 1 er 
+
+ novembre 2022, plus de 5,5 millions 
+
+de termes reliés par plus de 416 millions de relations lexico-sémantiques, qui se répartissent en 
+
+environ 120 types. Parmi ces types de relations, une bonne moitié peut faire l’objet de parties dans 
+
+JDM, le jeu principal d’acquisition du projet JeuxDeMots. 
+
+ 
+
+ 
+
+r_associated (0) - 
+
+39.868 % 
+
+ 
+
+(1) - 0.022 % 
+
+ 
+
+r_raff_morpho (2) - 
+
+0.032 % 
+
+ 
+
+(3) - 0.539 % 
+
+23 054 279 r_pos (4) 
+
+- 5.554 % 
+
+4 599 784 r_syn (5) - 
+
+1.108 % 
+
+11 996 410 r_isa (6) 
+
+- 2.89 % 
+
+132 776 r_anto (7) - 
+
+0.032 % 
+
+10 457 516 r_hypo 
+
+(8) - 2.519 % 
+
+10 290 626 
+
+r_has_part (9) - 2.479 % 
+
+12 283 522 r_holo 
+
+(10) - 2.959 % 
+
+4 386 210 r_locution 
+
+(11) - 1.057 % 
+
+544 912 r_flpot (12) 
+
+- 0.131 % 
+
+3 971 361 r_agent 
+
+(13) - 0.957 % 
+
+242 795 r_patient 
+
+(14) - 0.058 % 
+
+1 274 096 r_lieu (15) 
+
+- 0.307 % 
+
+64 889 r_instr (16) - 
+
+0.016 % 
+
+1 343 370 r_carac 
+
+(17) - 0.324 % 
+
+5 732 802 r_data 
+
+(18) - 1.381 % 
+
+1 285 902 r_lemma 
+
+(19) - 0.31 % 
+
+24 848 r_has_magn 
+
+(20) - 0.006 % 
+
+28 164 
+
+r_has_antimagn (21) - 
+
+0.007 % 
+
+18 146 r_family (22) 
+
+- 0.004 % 
+
+1 408 345 r_carac-1 
+
+(23) - 0.339 % 
+
+3 931 696 r_agent-1 
+
+(24) - 0.947 % 
+
+70 957 r_instr-1 (25) 
+
+- 0.017 % 
+
+246 383 r_patient-1 
+
+(26) - 0.059 % 
+
+2 145 625 r_domain-
+
+1 (27) - 0.517 %  
+
+Tableau 4. Nombre d'occurrences des relations les plus représentatives du réseau lexico-sémantique 
+
+JeuxDeMots, obtenues au 1er juin 2022 (issu de https://www.jeuxdemots.org/jdm-about.php) 
+
+Initialement, les concepteurs avaient proposé un ensemble d’une vingtaine de types de relations 
+
+jouables, mais sous l’impulsion de joueurs assidus, et en concertation avec eux, de nombreux types 
+
+de relations ont été ajoutés. 
+
+Des relations comme les lemmes (environ 1,2 million de relations) ou les catégories 
+
+morphosyntaxiques (environ 20 millions de relations), qui ne sont pas intéressantes à jouer, sont 
+
+renseignées manuellement par des contributeurs bénévoles, ou automatiquement par des 
+
+mécanismes d’inférence ou d’extraction automatique depuis des corpus de textes. 
+
+4.2. Quelques aspects liés à la conception des jeux  
+
+Le désir de trouver absolument des réponses (dans le jeu principal) pousse de nombreux joueurs à 
+
+répondre à tout prix à la consigne, et ce malgré la possibilité de « passer » la partie, ou encore 
+
+d’indiquer par *** qu'il n’y a pas de réponse pertinente possible, comme c’est stipulé dans chaque 
+
+partie, sous la zone de saisie : « Si vous ne savez pas répondre, il faut passer la partie. Si vous 
+
+estimez qu’il n’y a pas de réponse possible, mettez ***. »  
+
+Ainsi, certains joueurs s'efforcent de proposer des réponses à tout prix (« forçage ») : quand ils ne 
+
+trouvent rien qui réponde bien à la consigne, ils fournissent des réponses qu'ils estiment 
+
+« approchantes ». On trouvera ainsi casserole, couteau, écumoire, comme conséquences de faire la 
+
+cuisine, alors qu’il s’agit plutôt d’instruments. Le comportement inverse, qui consiste à mettre *** 
+
+(réservé aux rares cas où aucune réponse pertinente n'existe) quand on ne trouve pas de réponse est 
+
+également fréquent. Nous avons évalué, en sélectionnant aléatoirement et automatiquement un petit 
+
+pourcentage de relations à vérifier que le « forçage » de réponses générait 0.08 % de relations 
+
+erronées, mais les contre-jeux permettent de compenser ce problème. Ces vérifications manuelles 
+
+sont assurées par des chercheurs impliqués dans le projet, et par des volontaires bénévoles. Par 
+
+contre, pour Sémintox, le principe consistant, non pas à donner des réponses, mais à faire des 
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwVDt36lmai3W3Rm9bXGYC1-I9BMbISU9g1ByA9WddXf3NwM1EgLI1PJeIl5ghPWjCtX8-yFrbah9PitqWq1XwPZH4Y1UyAXzpemOX3ic2-Uxe5q4HVJDGPaL1BzJmuA_b4OsZD=w159-h73-v0
+
+d6828dbe-6d0e-4b3d-8e72-1d7c455ca3fc
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyV9QnaYWU-QVjOm-80y6qYFxQdrruBFUUlwB_GdqIm6E_IVj46s6OWdEwi1zWRH1U8y6M3PlUJQiwVnvjqwoUc3D3JdNyWUwBhXwoX-M9B6_KXc_Y3T8y0ikWeCzx2nqhPtuHBwg=w159-h73-v0
+
+0bda825b-df4f-4618-a719-33d64ba21f57
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxh-oqmDr1yh2mk0UNZMNLH0cLdnsKEHwWrUrWSvcEv-VL3Hg8AkBDQQPziyxZgLlcRm7zEPfl5iqcmhxjwyvMM4_WXuKG7hagFW_gW0VN6MtIjNk-wvFS5OKQIlo3qz0F0asVD=w159-h73-v0
+
+8fb015a8-6d60-4b96-a48c-6f0ee754a45c
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAz027cnYLKRsyYIDdPfz-BkpYZxDOokmWBHfWjcsZhBZtV5Rdc4bq8ybMzQM5FmVxMrwh4MbEKbAtjq7LRdE1JPnIN8BM25E0ro5OHfEab1OqSMv-iszvtKlEE4Y0DEMxTy03HK=w159-h73-v0
+
+aa5f22e5-532d-4a4e-a2cf-78096e375bce
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxA517zjaFmt2vuBmvJnFrHoFXrrzfagAbKFlbRsMnn3g9PyTERVcRZ8Fe-CxeqOX_93Zi3jVXS_5CI9kZCXg9MpS3uBh19ISMav09z9cGhDNwefuWwdS6dx_SObPPXZzvpP2XGNw=w159-h51-v0
+
+dec89d7f-ec89-4001-a1b1-8f9c6bf44e97
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAy_Djivq0tP_qBxyBC3pDz2ljfR4EbSBuXvBDcbTQ9fMORpmv9viwJScW4XKYmca11jTzX2LJaWoUinSH3hEfTsTQI45nLyM0Yw4HJboKCD9XulkXHxc6baW454LzyUBQ3LjWyI=w159-h51-v0
+
+1217e393-23f2-416f-ae27-17713872bdf4
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzfkOsS9kHKaeZpAVTYxhuCvGy6ba1f5uxOyqb2E5BX65Z4ACI7DhfDfLONXIhAJObk0dye-BGnaP-KLBd_8Y6aj24nM_2nrBPKnaY-Q85_onvJ2aNDhAer8t416TdoTSL3_WrX0w=w159-h51-v0
+
+82e97a1d-99d6-4092-a6ae-042ef051b7df
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyGclhrGAnI0GUbU9wqWGVNPAoXgH7jiIfTRgO1RFHMPiTARowvaR4mN9qgU_w9jzh1Mpmp1B3-HsmdjOioipPc4EvmuhIJf3-CLp715dZ73rnQsLfNrbh3KLZOBeBoxHpzDfGk=w159-h51-v0
+
+70a823c0-1f3b-4af4-b1fd-b4433a431814
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxGV7wyUZYMSG0sIDNxHXZi8RhFKbGWoryueTdt57WdyZtIqPnIUVs6InC6MuNbBbZ1zoJAKuWv3O41g2lc7G-16m6BgosFmRsvCFSp1l0-REOsUjaXt8_s0jFWGLmWk3Bbh0LAiQ=w159-h51-v0
+
+41671a42-362b-4588-8ecd-3c4375c03f47
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwf3MCF6B16ywuAjD1LdRHdrZZqijgToYCZjrs1PDlO9I3NTfwt1sgykU8JFlVw8GBcyZUKJM9TfftiZhsyH_r_wzuo2wgJU4scvGg6WvFFJHuXj_LQrsXzyaYcKj936AuS38dAaA=w159-h51-v0
+
+aae02c15-68ad-43ff-b294-a7e12837053f
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAz8Dme49vD9aMjzO6sontBdhCkX5oQiZB3d3_Y1lo5l7EjV4sVqF8Q-UWtOBUBNuzPBMMxbZ5dSftIkJ9Ls4XYNFTJTVEJKrwI0EgKWyWuYY5bfjOD5vDJ20o61cGcltHT_KfrZug=w159-h51-v0
+
+9880969b-8c62-4291-9ea1-5e9da3ccc7cf
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxRieoLNBzM21JvexqjOFdnop0wllnFtLEHA_OoLlnjgPw99--VkpQIOkyWYMcLwcdGn7Pilk0Kbqw3TSImtV4x9fqWFd03K_kumICQYM4r_942VsUY-zgQCdGVCEk0rZKhSrB75A=w159-h51-v0
+
+410fffe6-b1cf-4500-aef2-a2ea11ce5a41
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzqZlOeUW8mpih44I4OlgFrAFM_2IvxsHKr2EKkokU1AZG-SWyN4S4uZZdi6pMMG5pw4g0L_uqYoKpng3lJKTSeEv6A3yLIrw1-o53c62kq9z_ZrXuAOLrb7Ety1AFw0k1Yn1Hpfg=w159-h51-v0
+
+b8356560-9553-4059-b305-db77459094a7
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyF9etY_-0IHqnjKUXJpO6tU0OiRsK5Md79YLHAxoUlAfVERh1SXv1ELEZNq6Q3Nn0JZGGSDMg74Y_mLjB7UwDZ0gzV7HbQLo5f5DCoMytq46EeXAd4DP73hlEcQs6vK7bd29Yxfw=w159-h51-v0
+
+10383566-72f7-493f-bc02-a13cfa65581e
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAz8x2ESVg0STPgk-ZdMAWQMrtzCn1wcDb3nRE8d2OHVzL3woBEIWY8KOTWQnRsYOf-UYcCUcGdn9X2YG4zLmdb4KTVxofL185wfCDNMD5NwwMyIkRvJfSncaTELJZ9mHRucB-yy=w159-h51-v0
+
+542e4368-b7b5-4b01-9d9c-ce2496d7ff38
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwS760CNKR7lLQTGbcJiMwvR8M3JbfB15Lg5HoZuYdNYo4uaOVPbDSUv29PJt_vOSTcLqsjFMuNKn5fBXMH0fTf6X3shddIXcV-faXva0beOPSHjDGQTvTo9YWYPmD38prip8gV=w159-h51-v0
+
+d05fd37c-9e5c-40d2-a0b6-ef67a34539d5
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAw8kpF8MGr7gonrSaLM2Q72TxazEY_MjYAB0smceppZ0CY1djr7Udr6dOObIcNsrTUEwGNRwmeOvVmU0qXBhp5tM1vc582-jgAfJUq7vK_GqoNywuPafjKKd1xHv8C5MWYSi3T1fg=w159-h51-v0
+
+e1680e1d-a004-4779-b233-ae1cbf135313
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAx0th8zH9X1aULOrvGrN5h0nbRNl5yRgrmVgBhXfcufXmDrJNl_cG5TkJph3-tzevJKTeQHLwPd3wjETw6G20Z25kpkscCp3e4rO6HiuvGmaXmM3yAcuPKIbBEgfOxlUGKvUk9yrA=w159-h51-v0
+
+c78f1704-73d2-4f84-b0e5-607eb534d69f
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzbWX9B7HaKwSyyfrHFSB4g3aJTMBd92srdXNcJGKUr1qIh4UizTTHvJZ9rwxCaAYAp9B9p6-38PVwYH_tvJqERU3otF0hoZtSYHYO_cgruevma_rLptLs8YBFezGt4vA4dfUxP=w159-h51-v0
+
+2c817def-e3ef-45ad-973f-64a578b999bd
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxaOPVm000c9_jbfcUIlWSrVUJ4Q1hB5UkEOyS7qciG63V1HIWC_xzA69-CR5KGXz04-cA_d7HAnyC8ZSwZEnyO-t8m0ZKxgIE7EOBkquyKubVyKkf0ZeoAv9N7YnsZFm91xXultQ=w159-h51-v0
+
+dc6433a3-4566-4c70-a177-f10f51b2e621
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyRPU2Ko88bXzuH9SZ5BzWYIMDs1fiPMp-9gQerEjY7ZrbvKC9iLGzirvp-AnhbzLhORg7AT-GMOVJ6sxeQlMF5LmVqfPz2opiNRbJknl_MElpWF2lMAh3h0nyuclA_3dZrNTCkAw=w159-h73-v0
+
+22a560e8-5abc-4878-9aee-e5e729e61054
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyDEtXz1V_v7qXRBHLFbRKFko0FJtxQfUP0HN_0kqtMkwJzXiIlo9VpU9UwJYhLkD1iqnxKZ2ZJGPK5pWCIhJaJgaCMbcmQp4weGA9Q5sB-enHxN04yt9G7iRrisfL0_BGGkJkD=w159-h73-v0
+
+94e90c00-0754-4b62-ac4e-9519e793ecdf
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzqvyjP6vFHnJy2vse4VQiZzvyWU7ThkXll0xTLtiS6y0W0yKtIh4rH1H69204dWks4O0tFaH0PAQ-kEYpkRDT-aRcQaxJsiGifITS-3qCWYlcG6E3hTsCNTz4sc0ideAX1WppF=w159-h73-v0
+
+e844de73-42a7-48b1-81d0-dd812f3107c2
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzIK1kMFna3GxmN_9PyKBQi-7U966BgxTXTEKDaM4_Pv5pZAWW-WqH_TNi9FA7FTvZxDKkUhc4c2QtVdZiGoFqkjaAESgx5ohHUJGAzplTodbSiUmraqjPVFOSTjPfZJwRdqKlazg=w159-h73-v0
+
+c11bfb2d-8a14-4967-b8ec-f9a24d8d3e98
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAyFgCkpQ3vzqFc9RsErSBFvaOaKGZEHgrZK6u-zpbE0dPCNLTSgwcGOsM3BBIokM_f0ITyitvgS3IaL17SeaOI7_mOoESZEJL9hqrg2ersyIH3UmHmE1DJWGYCvWNWnDzOaQe455A=w159-h51-v0
+
+0236d18a-77f5-4fe3-8938-a00c4fcf0820
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzXuwqTWIn888MwNFd7vScouG6PO_OH80Zr-DJmCZIT_4n4ACBWnCgarBL5dramBUWCD8Yq0gSnqC9rLXPztZLvCovh_NKbcmNOADA2zjyiZHiwifJxSOEa75Xm53IGCITTvaKaXw=w159-h51-v0
+
+c5566865-0656-4aa3-b285-430d0bba94b7
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAzhek0HchLYAeL5pAaDHgHhnpj0s5Ib8a-o1kRPCIsoIftyVoVpTsETbLQRD8TaNDzx66jL8J-b78wmWMuMchhLA7xqJh9VpUoYOWgSsWHFGKkmwV4sAaC3c7QBjOpXRSosRMsT0A=w159-h51-v0
+
+395a96b3-3a99-430f-bacb-831cd1b7ac73
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAxMi3Wgwhy2VCsOfC2PYHGpOxDGZESWS3DqdgdjBUDN9Z6e0AQNN6Z1vzGxGHB85nx-v_MhCvO-ZtQPkuvo2GdN4Rm7hJSfX_PU0a7tDquvn9yz6RmE_BBKRYF2RnBlG8QHSJ2fZg=w159-h51-v0
+
+093f263f-de50-4568-81f9-fcc4a24f3ada
+
+ 
+
+ 
+
+peut certes faire des contestations infondées, mais c’est marginal et sans effet. 
+
+Toujours dans le jeu principal, chaque partie (c'est-à-dire l’ensemble des réponses données pour 
+
+un terme et une consigne) est stockée avec le pseudonyme du joueur ; cela permet non seulement de 
+
+comptabiliser toutes les parties réalisées depuis son inscription, mais aussi de calculer divers 
+
+paramètres de classement, comme son « efficacité », ou le nombre moyen de mots qu'il propose par 
+
+partie. Ainsi, l'efficacité moyenne des joueurs en 2022 est de 2,84, celle du meilleur joueur atteint 
+
+11,83. De même, le nombre moyen de mots proposés dans une partie est de 11,6, mais les joueurs 
+
+expérimentés et assidus en proposent facilement une cinquantaine. 
+
+Grâce à des enquêtes régulières depuis le lancement de JeuxDeMots, effectuées soit sous forme 
+
+de questionnaires par mail, soit en interviewant des groupes de joueurs (typiquement, des étudiants), 
+
+nous avons pu établir un certain nombre de faits. 
+
+Comme nous l'avons déjà évoqué (cf. 2.2) pour l'ensemble des jeux proposés par le portail JDM, 
+
+65 % des joueurs sont des… joueuses, âgées en moyenne de 40 ans et plus. La fréquentation de la 
+
+plateforme JeuxDeMots dure en moyenne un mois. Une poignée de joueurs (une vingtaine) joue de 
+
+façon assez régulière et assidue depuis plus de 10 ans. Tous les joueurs sondés expriment un intérêt 
+
+pour le langage au sens large : vocabulaire, sémantique, linguistique… Concernant Sémintox, 
+
+dernier-né des jeux du projet, la mixité est plus grande ; le public, essentiellement étudiant, provient 
+
+de la communauté Cémantix (un jeu très similaire, mais qui n'est pas un GWAP) 4 . 
+
+Notons que les jeux relatifs au langage sont globalement crédités d’une connotation intellectuelle 
+
+et noble dont bénéficient ceux qui s’y adonnent intensément, dans la mesure où non seulement cela 
+
+leur évite le sentiment culpabilisant de perdre leur temps à jouer, mais en plus cela leur fournit une 
+
+double justification : se cultiver et contribuer à faire avancer la recherche, dans des conditions 
+
+éthiques irréprochables. En effet, le fait que les jeux soient gratuits, sans publicité ni incitation 
+
+mercantile de quelque nature que ce soit, qu'ils soient au service d'un projet de recherche publique 
+
+libre et ouvert, et enfin que les données recueillies soient estampillées « domaine public » sont des 
+
+caractéristiques plutôt attractives. 
+
+[MEK 13] ont étudié l’effet des scores sur la gamification. Il s'avère en effet, conformément à leur 
+
+analyse, que les différents classements (nombre de crédits, points d’honneur, nombre de mots 
+
+possédés, nombre de parties faites, niveau d’expertise, efficacité, etc.) sont extrêmement importants 
+
+et stimulants pour les joueurs réguliers du jeu principal. Ces divers scores permettent en effet de se 
+
+comparer aux autres, ce qui est motivant, bien que fréquent dans les jeux en général et les jeux en 
+
+ligne en particulier. À l’issue d’une partie de JeuxDeMots, quand sont dévoilées les propositions de 
+
+l’autre, un joueur peut se sentir valorisé par le fait d’avoir fourni plus de réponses et l’impression 
+
+d’avoir été plus pertinent que son adversaire. Il peut aussi apprécier l’originalité des réponses de 
+
+l’autre et avoir le sentiment gratifiant de s’instruire. 
+
+La nature des données manipulées et les modalités ludiques participent aussi fortement au côté 
+
+addictif des jeux de la plateforme. Quel que soit le type de jeu et sa modalité, attendre pour 
+
+visualiser ce qu’a répondu un autre joueur, ou quel couple mot/consigne, quelle question fermée va 
+
+proposer l’IA (le moteur qui sélectionne les données de jeu proposées lors des parties), ou encore ce 
+
+qu'a répondu la majorité, est accrocheur et pousse à rejouer, notamment dans le cas des jeux à votes. 
+
+Certains joueurs ont ainsi déclaré avoir joué compulsivement à certains jeux à votes (Askit, LikeIt, 
+
+SexIt, etc.), pendant des soirées entières, via leur smartphone. Quelques joueurs jouent au jeu 
+
+principal depuis 2007 de façon régulière, avec occasionnellement des périodes d'activité intense 
+
+lorsque de nouveaux joueurs se mettent à jouer avec assiduité et menacent de les dépasser dans le 
+
+classement. 
+
+                                                          4 
+
+ 
+
+ 
+
+heures. Les joueurs ne peuvent donc pas jouer compulsivement, mais ils pourraient jouer 
+
+collectivement. Dans l'immense majorité des cas, ils finissent par trouver le mot cible. Le minuteur 
+
+indiquant le temps qui reste est un incitateur fort pour trouver coûte que coûte. Ainsi, le nombre de 
+
+candidats peut parfois être important, permettant ainsi de consolider la ressource. Toutes les parties 
+
+sont enregistrées pour analyse.  
+
+En pratique, les joueurs sont en compétition pour être les premiers à trouver le mot courant – ils 
+
+ne collaborent pas. Cette concurrence qu'ils s'imposent a un effet favorable sur la qualité des 
+
+données, qui serait moindre si les joueurs mettaient en commun leurs efforts. 
+
+Nous avons mis en évidence certains biais. Dans JeuxDemots, par exemple, les joueurs 
+
+commencent par faire des réponses spontanées, et donnent dans un deuxième temps celles qu’ils 
+
+imaginent que d’autres joueurs ont pu fournir. C’est ainsi que les joueurs réguliers et expérimentés 
+
+arrivent à faire beaucoup de propositions. De même, pour les questions qui peuvent être liées au 
+
+genre, un joueur peut ajouter à ses propres réponses celles qu’il attribue à l’autre sexe. Comme nous 
+
+avons vu que les femmes étaient largement majoritaires, certaines mettent des réponses qu’elles 
+
+estiment typiquement masculines ; c’est ainsi que des relations à connotation sexiste peuvent entrer 
+
+dans le réseau, sans qu’aucun homme ne soit intervenu. Mais pour que les mécanismes d'inférence 
+
+soient efficaces, il s’agit d’obtenir un réseau d’associations valides aussi large que possible, quelles 
+
+qu’en soient les connotations sexistes ou politiques. Ce type de comportement et les biais qu’il 
+
+génère, loin d’être un obstacle, favorisent au contraire l’exhaustivité des relations. 
+
+4.3. Quelques projets innovants utilisant la ressource JeuxDeMots 
+
+Des projets de plateforme de co-construction de connaissances exploitent la ressource 
+
+JeuxDeMots, mais également stimulent son enrichissement. Une telle plateforme vise à solliciter des 
+
+utilisateurs humains (experts ou non) afin de construire collectivement une connaissance sur un sujet 
+
+donné. Cette démarche peut être adoptée, entre autres, dans un contexte de recherche (projet 
+
+OACS 5 ) ou un contexte pédagogique (projet AREN 
+
+6 ). Des agents informatiques analysent les 
+
+données produites par les utilisateurs et effectuent un certain nombre d'inférences en fonction des 
+
+tâches visées. En particulier, il est important d'identifier les termes (composés) du domaine de 
+
+connaissance concerné et de les renseigner (à savoir les relier à d'autres termes par des relations 
+
+sémantiques dans le réseau JDM). Les agents informatiques peuvent ainsi créer des parties en 
+
+attente à partir des informations inférées à partir des éléments textuels fournis par les utilisateurs 
+
+(contributions). Ces parties sont offertes aux joueurs de JDM (qui peuvent être distinct des 
+
+utilisateurs d'une plateforme donnée) afin d'enrichir la ressource sur les termes cibles. Il y a un 
+
+bouclage du système, dans le sens où les joueurs renseignent en jouant les termes proposés, puis les 
+
+agents font de nouvelles inférences (dont la qualité s'améliore à mesure que les termes sont plus 
+
+précisément renseignés), de nouvelles parties sont offertes aux joueurs et ainsi de suite… Le 
+
+contrôle des termes à enrichir et le choix des relations sémantiques sur lesquelles portent ces 
+
+enrichissements sont laissés à la machine. 
+
+le projet OACS (outil d'analyse de conformité des stipulations) consiste à construire une 
+
+plateforme 7  permettant de collecter des clauses de conditions générales de vente et de déterminer 
+
+automatiquement si celles-ci ont un caractère abusif ou non. Le système analyse la clause et produit 
+
+un sous-graphe de JDM issu des termes identifiés comme pertinents. Le système est abductif, dans 
+
+le sens où il compare la clause courante à celles déjà collectées dont on connaît le statut (clause 
+
+abusive ou non). Le système ne peut fonctionner correctement que si les termes relevant de la clause 
+
+sont connus de la base de connaissances (à savoir JDM) et correctement renseignés. Un terme                                                           5  http://www.gip-recherche-justice.fr/publication/outil-danalyse-de-conformite-des-stipulations-oacs 
+
+6  https://www.lirmm.fr/aren/ 
+
+7 
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAwWtGN9C3nm6RxlEUBdthANQOPiT31ZcxOcOG08GFXe84cqzGkuZvdQ2SZNOzHElzhkYCB2rvUtTjEsLI9CaQ7GfgxyLaWQ2C-fy8HLt6ICkMsvz325wyvoYbGFlqo0jNs9vbs4TA=w1153-h782-v0
+
+7a2e2613-1814-4aa4-a205-08097de9fbd7
+
+ 
+
+ 
+
+chose fait l'objet du traitement présenté ci-dessus, à savoir l'objet d'inférence et de parties offertes 
+
+aux joueurs. 
+
+ 
+
+Figure 7. Interface de la plateforme OACS. 
+
+Le projet AREN (ARgumentation Et Numérique) vise à construire une plateforme 8  de débats en 
+
+ligne favorisant le développement des compétences argumentatives des élèves de lycée et de leur 
+
+esprit critique, dans une perspective d’éducation à la citoyenneté. Une fonctionnalité de la 
+
+plateforme est l'indexation des arguments des débatteurs, sous la forme de termes clés (Lafourcade 
+
+et Sandillon-Rezer, 2020). Les termes clés sont proposés automatiquement par le système en 
+
+fonction du contenu textuel de l'argument, mais également du contexte plus large du débat en cours. 
+
+Une fois de plus il s'agit d'analyser le contenu de l'argument en explorant la ressource JDM (création 
+
+d'un sous-graphe en fonction des termes identifiés). Les débatteurs sont invités (sans que cela soit 
+
+une obligation) à valider ou invalider les termes d'indexation proposés par la machine. Une analyse 
+
+formelle de concepts (AFC) et des mécanismes d'inférence permettent de renseigner 
+
+automatiquement des termes dans la ressource JDM sous forme d'information en attente de 
+
+validation. Comme précédemment, des parties sont créées pour les termes cibles avec les 
+
+informations à valider et sont ensuite offertes aux participants de JDM et jouées par ces derniers. 
+
+Ainsi, les termes sont renseignés plus précisément, ce qui crée là encore un « cercle vertueux » 
+
+permettant de produire des termes d'indexation plus pertinents pour les argumentaires. 
+
+                                                          8 
+
+ 
+
+ 
+
+Figure 8. Exemple d'association automatique de termes (en bas) à un argument d'un débatteur (en haut). 
+
+Les débatteurs sont invités à valider (vert) ou invalider (rouge) ces termes clés. Les débatteurs peuvent 
+
+éventuellement ajouter leurs propres termes clés (violet). 
+
+Conclusion 
+
+Nous avons essayé de mettre en évidence l'intérêt des GWAPs, ou jeux à finalité, combinés avec 
+
+des approches favorisant la vérification des données, pour l’acquisition de ressources lexico-
+
+sémantiques de qualité satisfaisante. Le projet JeuxDeMots vise à construire, pour le français, une 
+
+ressource lexico-sémantique sous forme d'un graphe. La difficulté d’une telle approche tient non 
+
+seulement à concevoir des jeux populaires, mais surtout à concilier l’intérêt du joueur et la qualité 
+
+des données générées, de manière à ce qu'ils se renforcent mutuellement, dans une boucle 
+
+rétroactive.  
+
+À travers ce projet, nous montrons non seulement qu’il est possible de collecter des 
+
+connaissances de sens commun et des données lexicales au moyen de jeux s’adressant à un public 
+
+très large, mais que cette approche donne de meilleurs résultats, tant qualitatifs que quantitatifs, que 
+
+le recours à des spécialistes rémunérés. Cet ensemble de jeux qui participent à la création d’un 
+
+réseau lexico-sémantique a également la particularité d’être auto-correctif : en effet, il crée les 
+
+conditions d’une auto-évaluation assurée par les joueurs eux-mêmes, qui, par l’intermédiaire des 
+
+jeux annexes, valident, corrigent ou consolident les données fournies par les jeux d’acquisition, dans 
+
+une forme de « boucle vertueuse ». 
+
+Enfin, ce sont également les joueurs qui assurent l’échantillonnage : la possibilité de proposer des 
+
+termes qui n’appartiennent pas encore au réseau, et d’offrir des « cadeaux » associant un terme et 
+
+une relation crée l’opportunité d’établir des relations pertinentes et inédites dans quelque champ de 
+
+connaissances que ce soit. Quoi de plus efficace pour que le réseau soit un fidèle reflet de l'ensemble 
+
+des connaissances qui structurent la vie quotidienne ? 
+
+Bibliographie 
+
+[AHN 06a] VON AHN, L., « Games with a purpose », Computer, vol.39, n°°6, p. 92–94, 2006. 
+
+[AHN 04] VON AHN, L. & DABBISH, L., « Labeling Images with a Computer Game », ACM Conference on Human 
+
+Factors in Computing Systems (CHI). p. 319-326, New York, NY, USA, 2004. ACM Press, 2004. 
+
+[AHN 08] VON AHN, L. & DABBISH, L., « Designing Games With a Purpose », Communication of the ACM, vol.51, 
+
+n°°8, p. 58–67, 2008. 
+
+[AHN 06b] VON AHN, L., LIU, R. & BLUM, M., « Peekaboom: a game for locating objects in images », Proceedings of 
+
+CHI ’06, p. 55–64, 2006. 
+
+[AHN 06c] VON AHN, L., KEDIA, M. & BLUM, M., « Verbosity: a game for collecting common-sense facts », 
+
+Proceedings of ACM CHI 2006 Conference on Human Factors in Computing Systems, volume 1 of Games, p. 75– 
+
+78, 2006. 
+
+ 
+
+crises économiques, écologiques et sociales 
+
+ crise sociale • monnaie locale • surproduction • déprise 
+
+agricole • crise financière • agriculture durable • économie • 
+
+agriculture paysanne • crises épileptiques toniques • crise de la 
+
+dette publique grecque  • premier choc pétrolier • libération 
+
+sexuelle • cours du pétrole  • prise de conscience 
+
+environnementale • crise environnementale • respectueux de 
+
+l'environnement • crise économique • anonymisation  • gestion 
+
+locale des crises 
+
+ 
+
+https://lh3.googleusercontent.com/notebooklm/ANHLwAw3bByOGRfDHrS7SfCoBEc7WYZvUfmWbZZf9jQTGrFoUKjAb7t2Ai1K103bk4A13q0KHxCb646-t_vX58AKsrg0BYKSDDQjQVn9YABozBS85VCLRS-1IrOQ3w0vS_bqwBeaU4vpVw=w380-h200-v0
+
+014edcde-f0db-490b-9164-336fce249366
+
+ 
+
+ 
+
+GWAP for NLP », Proceedings of the 9th Workshop on Games and Natural Language Processing within the 13th 
+
+Language Resources and Evaluation Conference, p. 17-27, 2022. 
+
+[BAL 22] BALAYN, A., HE, G., HU, A., YANG, J., & GADIRAJU, U., « Ready Player One! Eliciting Diverse Knowledge 
+
+Using A Configurable Game », Proceedings of the ACM Web Conference p. 1709-1719, 2022. 
+
+[CHA 08] CHAMBERLAIN, J., POESIO, M. & KRUSCHWITZ, U., « Phrase Detectives: A Web-based Collaborative 
+
+Annotation Game », Proceedings of the International Conference on Semantic Systems (I-Semantics’08), Graz, 
+
+2008. 
+
+[CHA 09] CHAMBERLAIN, J., POESIO, M. & KRUSCHWITZ, U., « A demonstration of human computation using the 
+
+Phrase Detectives annotation game », HCOMP '09: Proceedings of the ACM SIGKDD Workshop on Human 
+
+Computation, p. 23-24, 2009. 
+
+[CHN 10] CHANDLER, D., & KAPELNER, A., Breaking monotony with meaning: Motivation in crowdsourcing markets, 
+
+University of Chicago mimeo, 2010. 
+
+[CHP 17] CHAPUIS, M. & LAFOURCADE, M., « Identifying Polysemous Words and Inferring Sense Glosses in a 
+
+Semantic Network », Proceedings of the 12th International Conference on Computational Semantics (IWCS), 
+
+Computing Natural Language Inference (CONLI) workshop, Montpellier, France, September 19-22, 5 p., 2017. 
+
+[CHK 05] CHKLOVSKI, T. & GIL, Y., « Improving the design of intelligent acquisition interfaces for collecting world 
+
+knowledge from web contributors », Proceedings of K-CAP’05, p. 35–42, 2005. 
+
+[CUR 15] CURTIS, V., « Motivation to participate in an online citizen science game: A study of Foldit. Science 
+
+Communication, vol.37, n°°6, p. 723-746, 2015. 
+
+[DEC 99] DECI, E., KOESTNER, R., & RYAN, R., « A meta-analytic review of experiments examining the effects of 
+
+extrinsic rewards on intrinsic motivation », Psychological bulletin, vol.125, n°°6, p. 627-668, 1999. 
+
+[DON 06] DONG, Z. & DONG, Q., « HowNet and the Computation of Meaning », WorldScientific, London, 2006. 
+
+[DOR 20] DORUK KICIKOGLU, O., BARTLE, R., CHAMBERLAIN, J., PAUN, S. AND POESIO, M., « Aggregation Driven 
+
+Progression System for GWAPs », Workshop on Games and Natural Language Processing, pages 79-84, Marseille, 
+
+France. European Language Resources Association, 2020. 
+
+[FAB 06] FABRE, C. & BOURIGAULT, D., « Extraction de relations sémantiques entre noms et verbes au-delà des liens 
+
+morphologiques », Proc of TALN'06, Leuven, Belgique, p. 121-126, 2006. 
+
+[FEL 98] FELLBAUM, C. & MILLER, G. A., WordNet, The MIT Press, 1998. 
+
+[FIS 09] FISHER, L., The Perfect Swarm: the Science of Complexity in Everyday Life, Basic Books, 260 p., 2009. 
+
+[FOR 11] FORT, K., ADDA, G. & BRETONNEL, C. K., « Amazon mechanical turk: Gold mine or coal mine? », 
+
+Computational Linguistics, vol.37, n°°2, 2011. 
+
+[FOR 14] FORT, K., GUILLAUME, B., AND CHASTANT, H., « Creating zombilingo, a game with a purpose for 
+
+dependency syntax annotation  », Proceedings of the First International Workshop on Gamification for Information 
+
+Retrieval, GamifIR’14, p. 2-6, New York, NY, USA. Association for Computing Machinery, 2014. 
+
+[GOH 11] GOH, D., AND LEE, C., « Perceptions, quality and motivational needs in image tagging human computation 
+
+games  », Journal of Information Science, vol.37, n°°5, p. 515-531, 2011. 
+
+[GUN 18] GUNDRY, D., AND SEBASTIAN D., « Intrinsic elicitation: A model and design approach for games collecting 
+
+human subject data », Proceedings of the 13th International Conference on the Foundations of Digital Games, 
+
+2018. 
+
+[HLA 09] HLADKA, B, MIROVSKY, J., & SCHLESINGER, P., « Play the language: play coreference », Proceedings of the 
+
+ACL-IJCNLP 2009 Conference Short Papers, p. 209-212, 2009.  
+
+[JOU 12] JOUBERT, A. & LAFOURCADE, M., « A new dynamic approach for lexical networks evaluation », 
+
+Proceedings of the Eight International Conference on Language Resources and Evaluation (LREC'12), Istanbul, 
+
+Turkey, 2012. 
+
+[KAW 12] KAWRYKOW, A., ROUMANIS, G., KAM, A., KWAK, D., LEUNG, C., WU, C., ZAROUR, E., SARMENTA, L., 
+
+BLANCHETTE, M., AND WALDISPÜHL, J., « Phylo: a citizen science approach for improving multiple sequence 
+
+alignment », PloS one, vol.7, n°°3, 2012. 
+
+[KUN 18] KUNKEL, J., LOEPP, B., & ZIEGLER, J., « Understanding latent factors using a GWAP », arXiv preprint, 
+
+arXiv:1808.10260, 2018. 
+
+ 
+
+ 
+
+« Community-based game design: experiments on social games for commonsense data collection », Proceedings of 
+
+the ACM SIGKDD Workshop on Human Computation, HCOMP’09, p. 15-22, New York, USA, 2009. 
+
+[LAF 07] LAFOURCADE, M., « Making People Play for Lexical Acquisition  », Proc. SNLP 2007, 7th Symposium on 
+
+Natural Language Processing. Pattaya, Thaïlande, 8 p., 2007. 
+
+[LAF 08] LAFOURCADE, M. ET JOUBERT, A., « Si beaucoup d'oiseaux volent, peut-on en déduire que tous les oiseaux 
+
+volent ? Production endogène de règles déductives dans un réseau lexico-sémantique », Proc. of the TAL et IA 
+
+2018, Nancy, France, juillet 2018. 
+
+[LAF 10] LAFOURCADE, M. & JOUBERT, A., « Computing Trees of Named Word Usages from a Crowdsourced 
+
+Lexical Network », Investigationes Linguisticae, vol.XXI, p. 39-56, 2010. 
+
+[LAF 11] LAFOURCADE, M., JOUBERT, A., SCHWAB, D. & ZOCK, M., « Évaluation et consolidation d'un réseau lexical 
+
+grâce à un assistant ludique pour le "mot sur le bout de la langue" », Proceedings of TALN'11, Montpellier, France, 
+
+p. 295-306, 2011. 
+
+[LAF 15a] LAFOURCADE M., LE BRUN, N. & JOUBERT, A., Jeux et intelligence collective - résolution de problèmes et 
+
+acquisition de données sur le Web. Collection Science cognitive et management des connaissances (sous la 
+
+direction de Joseph Mariani et Patrick Paroubek), ISTE éditions, 2015. 
+
+[LAF 15b] LAFOURCADE, M., LE BRUN, N. & JOUBERT, A., « Vous aimez ?... ou pas ? LikeIt, un jeu pour construire 
+
+une ressource lexicale de polarité  », 22 e  Conférence sur le Traitement Automatique des Langues Naturelles 
+
+(TALN), 2015.  
+
+[LAF 17a] LAFOURCADE, M. & LE BRUN, N., « Extracting semantic relations via the combination of inferences, 
+
+schemas and cooccurrences  », Proc. International Conference on Recent Advances in Natural Language Processing 
+
+(RANLP 2017), Varna, Bulgaria, September 2-8, 2015, 8 p, 2017. 
+
+[LAF 17b] LAFOURCADE, M., JOUBERT, A. & LE BRUN, N., « Si les souris étaient des reptiles, alors les reptiles 
+
+pourraient être des mammifères ou Comment détecter les anomalies dans le réseau JDM ? », 24rd French 
+
+Conference on Natural Language Processing (TALN 2017), Orléans, France, 26-30 Juin 2017, 7 p., 2017. 
+
+[LAF 20] LAFOURCADE, M. ET SANDILLON-REZER, N.-F., « Recherche de similarité thématique en temps réel au sein 
+
+d'un débat en ligne », 27e édition du Traitement Automatique des Langues Naturelles (TALN), Juin 2020, Nancy, 
+
+France, p. 258-267, 2020. 
+
+[LAW 09] LAW, E., & VON AHN, L., « Input-agreement: a new mechanism for collecting data using human 
+
+computation games  », Proceedings of the SIGCHI Conference on Human Factors in Computing Systems, p. 1197-
+
+1206, 2009. 
+
+[LEN 95] LENAT, D., « CYC: A large-scale investment in knowledge infrastructure  », Communications of the ACM, 
+
+38(11):33–38, 1995. 
+
+[LEO 21] DE LEON PEREIRA, R., TAN, A., BUNT, A., AND TREMBLAY SAVARD, O., « Increasing player engagement, 
+
+retention and performance through the inclusion of educational content in a citizen science game », The 16th 
+
+International Conference on the Foundations of Digital Games (FDG) 2021, number Article 16 in FDG’21, pages 
+
+1-12, New York, NY, USA, August. Association for Computing Machinery, 2021. 
+
+[LIE 07] LIEBERMAN, H., SMITH, D. & TEETERS, A., « Common Consensus: A Web-based Game for Collecting 
+
+Commonsense Goals  », Workshop on Common Sense for Intelligent Interfaces, ACM International Conference on 
+
+Intelligent User Interfaces (IUI-07), Honolulu., 2007. 
+
+[MEK 13] MEKLER, E. D., BRÜHLMANN, F., OPWIS, K., & TUCH, A. N., « Disassembling gamification: the effects of 
+
+points and meaning on user motivation and performance » CHI EA'13: CHI'13 Extended Abstracts on Human 
+
+Factors in Computing Systems. April 2013, p. 1137-1142 https://doi.org/10.1145/2468356.2468559, 2013. 
+
+[MIH 03] MIHALCEA, R., « Open MindWord Expert: Creating large annotated data collections with web users help », 
+
+Proceedings of the EACL 2003, Workshop on Linguistically Annotated Corpora (LINC 2003), 2003. 
+
+[MIL 90] MILLER, G. A., BECKWITH, R., FELLBAUM, C., GROSS, D. & MILLER, K., « Introduction to WordNet: an On-
+
+Line Lexical Database  », International Journal of Lexicography, vol.3, n°°4, pages p. 235-244, 1990. 
+
+[MIL 22] MILLER, J. A. AND COOPER, S., « Barriers to expertise in citizen science games », CHI Conference on 
+
+Human Factors in Computing Systems, p. 1-25, 2022. 
+
+[NAV 10] NAVIGLI, R. & PONZETTO, S., « BabelNet: Building a very large multilingual semantic network », 
+
+Proceedings of the 48th Annual Meeting of the Association for Computational Linguistics, Uppsala, Sweden, 
+
+ 
+
+ 
+
+States Annotation », arXiv, CoRR abs/1905.12884, 2019. 
+
+[POE 13] POESIO, M., CHAMBERLAIN, J., KRUSCHWITZ, U., ROBALDO, L., AND DUCCESCHI, L., « Phrase detectives: 
+
+Utilizing collective intelligence for internet-scale language resource creation », ACM Trans. Interact. Intell. Syst., 
+
+vol.3, n°°1, p. 1-44, April 2013. 
+
+[SAG 08] SAGOT, B. & FISER, D., « Construction d’un wordnet libre du français à partir de ressources multilingues », 
+
+Proceedings of TALN 2008, Avignon, France, 2008. 
+
+[SAG 11] SAGOT, B., FORT, K., ADDA, G., MARIANI, J. & LANG, B., « Un turc mécanique pour les ressources 
+
+linguistiques : critique de la myriadisation du travail parcellisé », Traitement Automatique des Langues Naturelles 
+
+(TALN), Montpellier, France, 2011. 
+
+[SIO 08] SIORPAES, K. & HEPP, M., « Games with a Purpose for the Semantic Web », IEEE Intelligent Systems, 
+
+Vol.23, n°°3, p. 50-60, 2008. 
+
+[STE 09] STEYVERS, M., MILLER, B., HEMMER, P., & LEE, M. D., « The wisdom of crowds in the recollection of order 
+
+information », Advances in neural information processing systems, p. 1785-1793, 2009. 
+
+[TIS 15] TISSERANT, G. & LAFOURCADE, M., « PolitIt, du crowd-sourcing pour politiser le lexique » Étudier le Web 
+
+politique : Regards croisés, Institut des Sciences de l'Homme (Lyon), 12-13 Juin 2015, 5 p., 2015. 
+
+[THA 11] THALER, S., SIORPAES, K., SIMPERL, E. & HOFER, C., « A Survey on Games for Knowledge Acquisition », 
+
+STI Technical Report, 2011. 
+
+[VEN 13] VENHUIZEN, N., BASILE, V., EVANG, K. & BOS, J., « Gamification for Word Sense Labeling  », Proceedings 
+
+of the 10th International Conference on Computational Semantics (IWCS 2013), p. 397-403, 2013. 
+
+[VER 90] VÉRONIS, J. & IDE, N., « Word Sense Disambiguation with Very Large Neural Networks Extracted from 
+
+Machine Readable Dictionaries », Proceedings of 13th International Conference on Computational Linguistics 
+
+(COLING'90), vol.2, p. 389-394. Helsinki, 1990. 
+
+[VOS 98] VOSSEN, P., EuroWordNet: A Multi-lingual Database with Lexical Semantic Networks. Kluwer, Dordrecht, 
+
+The Netherlands, 1998. 
+
+[ZES 09] ZESCH, T. & GUREVYCH, I., « Wisdom of crowds versus wisdom of linguists measuring the semantic 
+
+relatedness of words », Natural Language Engineering, Cambridge University Press, p. 25-59, 2009. 
+
+ 
