@@ -74,9 +74,25 @@ async function lancerRecherche() {
 
     resDiv.innerHTML = "Recherche en cours... ⏳";
     astDiv.innerHTML = "Fabrication de l'arbre...";
-    
+
+    // Timeout frontend : 45 secondes maximum
+    const FRONTEND_TIMEOUT_MS = 45000;
+    const controller = new AbortController();
+    const abortTimer = setTimeout(() => controller.abort(), FRONTEND_TIMEOUT_MS);
+
+    // Message progressif après 10s
+    const slowTimer = setTimeout(() => {
+        if (resDiv.innerHTML.includes('⏳')) {
+            resDiv.innerHTML += '<br><span style="font-size:0.88em;color:#94a3b8">⏳ Cette requête est complexe, cela peut prendre un peu de temps...</span>';
+        }
+    }, 10000);
+
     try {
-        const response = await fetch(`http://localhost:3000/recherche?q=${encodeURIComponent(q)}`);
+        const response = await fetch(`http://localhost:3000/recherche?q=${encodeURIComponent(q)}`, {
+            signal: controller.signal
+        });
+        clearTimeout(abortTimer);
+        clearTimeout(slowTimer);
         const data = await response.json();
 
         // 1. Affichage de l'arbre AST
@@ -150,8 +166,20 @@ async function lancerRecherche() {
             resDiv.innerHTML = headerHtml + "<div class='code-block'>Aucun résultat trouvé pour cette requête.</div>";
         }
     } catch (err) {
-        resDiv.innerHTML = "❌ Erreur de connexion au serveur. Est-il bien lancé sur le port 3000 ?";
-        console.error(err);
+        clearTimeout(abortTimer);
+        clearTimeout(slowTimer);
+        astDiv.innerHTML = '';
+        if (err.name === 'AbortError') {
+            resDiv.innerHTML = `
+                <div style="padding:12px; border-radius:8px; background:#7f1d1d22; border-left:4px solid #ef4444">
+                    <b>⚠️ Requête trop longue ou API JDM lente.</b><br>
+                    La recherche a été arrêtée après ${FRONTEND_TIMEOUT_MS/1000}s pour éviter un blocage.<br>
+                    <span style="font-size:0.85em;color:#94a3b8">Conseil : essayez une requête plus restrictive, par exemple <code>($x r_isa animal) ET ($x = ch%)</code></span>
+                </div>`;
+        } else {
+            resDiv.innerHTML = "❌ Erreur de connexion au serveur. Est-il bien lancé sur le port 3000 ?";
+            console.error(err);
+        }
     }
 }
 

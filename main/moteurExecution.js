@@ -97,8 +97,8 @@ class MoteurExecution {
             throw new Error(`Impossible d'exécuter une jointure variable-variable (${v1}, ${v2}) sans base.`);
         }
 
-        // ANTI-TIMEOUT : limite forte sur les candidats pour les jointures 2-variables
-        const JOIN_CANDIDATE_LIMIT = this.limits.joinCandidateLimit || 30;
+        // ANTI-TIMEOUT : limite forte sur les candidats
+        const JOIN_CANDIDATE_LIMIT = this.limits.joinCandidateLimit || 20;
         const EARLY_STOP = this.limits.joinEarlyStop || 20;
         const candidats = contexte.slice(0, JOIN_CANDIDATE_LIMIT);
         const wasLimited = contexte.length > JOIN_CANDIDATE_LIMIT;
@@ -109,39 +109,38 @@ class MoteurExecution {
         const autre = (ancrage === v1) ? v2 : v1;
         const isAutreKnown = !!candidats[0][autre];
 
+        // Construire un Set des IDs valides pour l'autre variable si elle est ancrée
+        // (ex: tous les $y animaux déjà connus)
+        const knownIds = isAutreKnown
+            ? new Set(candidats.map(t => t[autre] && t[autre].id).filter(Boolean))
+            : null;
+
+        // Toujours utiliser l'exploration directe depuis l'ancre (O(1) API par candidat $x)
+        // Puis filtrer contre knownIds si $y est déjà connu
+        const direction = (ancrage === v1) ? 'from' : 'to';
+
         for (const tuple of candidats) {
             if (results.length >= EARLY_STOP) break;
+            if (!tuple[ancrage]) continue;
 
-            if (isAutreKnown) {
-                // Vérification : les deux vars sont ancrées -> checkRelation(v1.id, rel, v2.id)
-                const ok = await this.api.checkRelation(tuple[v1].id, idRel, tuple[v2].id);
-                if (ok) {
-                    const clone = { ...tuple };
-                    clone.__score = (clone.__score || 0) + 10;
-                    clone.__preuves = [...(clone.__preuves || []), { clause: `(${v1} ${clause.relation} ${v2})`, rel: clause.relation, w: 10 }];
-                    results.push(clone);
-                }
-            } else {
-                // Exploration : ancrage connu, autre inconnu
-                const direction = (ancrage === v1) ? 'from' : 'to';
-                const data = await this.api.getRelations(tuple[ancrage].name, idRel, direction);
-                for (const r of (data.resultats || [])) {
-                    if (results.length >= EARLY_STOP) break;
-                    results.push({
-                        ...tuple,
-                        [autre]: { id: r.id, name: r.name },
-                        __score: (tuple.__score || 0) + r.poids,
-                        __preuves: [...(tuple.__preuves || []), { clause: `(${v1} ${clause.relation} ${v2})`, rel: clause.relation, w: r.poids }]
-                    });
-                }
+            const data = await this.api.getRelations(tuple[ancrage].name, idRel, direction);
+            for (const r of (data.resultats || [])) {
+                if (results.length >= EARLY_STOP) break;
+                // Si l'autre variable est déjà ancrée, ne garder que les IDs connus
+                if (knownIds && !knownIds.has(r.id)) continue;
+                results.push({
+                    ...tuple,
+                    [autre]: { id: r.id, name: r.name },
+                    __score: (tuple.__score || 0) + r.poids,
+                    __preuves: [...(tuple.__preuves || []), { clause: `(${v1} ${clause.relation} ${v2})`, rel: clause.relation, w: r.poids }]
+                });
             }
         }
 
-        // Attacher le warning si on a limité les candidats
-        if (wasLimited || results.length >= EARLY_STOP) {
-            const totalCandidats = contexte.length;
-            results._joinWarning = `Requête 2 variables limitée aux ${JOIN_CANDIDATE_LIMIT} premiers candidats sur ${totalCandidats} pour éviter surcharge API (${results.length} couples trouvés)`;
-        }
+        // Warning systématique pour les jointures 2 variables
+        results._joinWarning = `Requête 2 variables limitée aux ${JOIN_CANDIDATE_LIMIT} premiers candidats` +
+            (wasLimited ? ` sur ${contexte.length}` : '') +
+            ` pour éviter surcharge API (${results.length} couple(s) trouvé(s)).`;
 
         return results;
     }

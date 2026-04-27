@@ -20,11 +20,12 @@ app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'public', 'index_te
 const LIMITS = {
     maxInitialCandidates: 500,
     maxJoinPairs: 900,
-    joinCandidateLimit: 30,
+    joinCandidateLimit: 20,
     joinEarlyStop: 20,
-    maxApiCallsPerQuery: 100,
-    apiTimeoutMs: 15000,
-    maxResultsReturned: 200
+    maxApiCallsPerQuery: 50,
+    apiTimeoutMs: 10000,
+    maxResultsReturned: 200,
+    maxQueryDurationMs: 30000
 };
 
 // Initialisation des couches
@@ -48,8 +49,24 @@ app.get('/recherche', async (req, res) => {
         // 2. Planning (Heuristiques)
         const plan = Heuristiques.planifierExecution(ast);
 
-        // 3. Execution
-        const resultats = await moteur.executerPlan(plan);
+        // 3. Execution avec timeout global
+        const MAX_DURATION = LIMITS.maxQueryDurationMs || 30000;
+        const timeoutPromise = new Promise((_, reject) =>
+            setTimeout(() => reject(new Error('__QUERY_TIMEOUT__')), MAX_DURATION)
+        );
+        let resultats;
+        let timedOut = false;
+        try {
+            resultats = await Promise.race([moteur.executerPlan(plan), timeoutPromise]);
+        } catch (timeoutErr) {
+            if (timeoutErr.message === '__QUERY_TIMEOUT__') {
+                timedOut = true;
+                resultats = [];
+                resultats._joinWarning = `Requête arrêtée après ${MAX_DURATION/1000}s (délai maximum dépassé). Résultats partiels.`;
+            } else {
+                throw timeoutErr;
+            }
+        }
 
         const duration = Date.now() - start;
         const apiInfo = api.getDebugInfo();
