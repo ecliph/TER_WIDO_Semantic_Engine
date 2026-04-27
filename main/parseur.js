@@ -1,133 +1,75 @@
-// Cette partie contient la logique algorithmique et mathématique.
-
-/**
- * Objectif : transformer une phrase complexe (rigide) en un graphe (Arbre Syntaxique)
- */
 function creerArbreDeDecision(phraseUtilisateur) {
-    // ÉTAPE 1 : Nettoyage 
-    // "trim()" enlève espaces inutiles de la phrase envoyée
-    let phraseNettoyee = phraseUtilisateur.trim();
+    if (!phraseUtilisateur) throw new Error("Requête vide");
+    let phrase = phraseUtilisateur.trim();
 
-    // ÉTAPE 2 : Supprimer les "coquilles de protection" 
-    // Exemple : "($x r_isa animal)" Le but ici est de ne pas bloquer sur les "()"
-    if (phraseNettoyee.startsWith('(') && phraseNettoyee.endsWith(')')) {
-        // Vérification que c'est une seule et grande coquille sinon risque de casser et supprimer le début ou fin d'une phrase "($x) OU ($y)"
-        if (verifieParentheseSolitaireEtGlobale(phraseNettoyee)) {
-            // "slice(1, -1)" dit à l'algorithme : Tranche et enlève le 1er caractère parenthese et pareil à la fin.
-            let coeurDeLaPhrase = phraseNettoyee.slice(1, -1).trim();
-            // Ici recursivité 
-            return creerArbreDeDecision(coeurDeLaPhrase);
+    // Gestion des parenthèses englobantes (A ET B) -> A ET B
+    if (phrase.startsWith('(') && phrase.endsWith(')')) {
+        if (verifieParentheseSolitaireEtGlobale(phrase)) {
+            return creerArbreDeDecision(phrase.slice(1, -1).trim());
         }
     }
 
-    // ÉTAPE 3 : Trouver le mot du milieu de la phrase qu'on estime "le connecteur le moins fort", le "OU".
-    // La règle d'un parseur demande de chercher un "OU" qui n'est caché dans aucune parenthèse.
-    let positionDuConnecteur = enqueterSurPositionDuMotCle(phraseNettoyee, ' OU ');
-    let connecteurMagique = 'OU';
+    // Trouver le connecteur de plus bas niveau (OU d'abord pour respecter la priorité ET > OU)
+    // Mais ici le sujet semble demander ET dominant ou simplement séquentiel.
+    // Traditionnellement, ET a une priorité plus haute que OU.
+    // Donc on cherche OU en premier pour qu'il soit à la racine de l'arbre.
+    let pos = enqueterSurPositionDuMotCle(phrase, ' OU ');
+    let op = 'OU';
 
-    // Pas de "OU" ? Alors on cherche un "ET" qui nous servirait de tronçonneuse pour couper la phrase à la place.
-    if (positionDuConnecteur === -1) { // -1 = pas trouvé du tout
-        positionDuConnecteur = enqueterSurPositionDuMotCle(phraseNettoyee, ' ET ');
-        connecteurMagique = 'ET';
+    if (pos === -1) {
+        pos = enqueterSurPositionDuMotCle(phrase, ' ET ');
+        op = 'ET';
     }
 
-    // Je pense que ici il faudrait peut etre ajouté le "=" ? 
-
-    // ÉTAPE 4 : DÉCOUPAGE MAJEUR
-    // Si la recherche mathématique a réussi à trouver un mot connecteur " OU " ou " ET "
-    // On va utiliser l'endroit (coordonnée du positionnement) pour couper le texte là où il se trouve
-    if (positionDuConnecteur !== -1) {
-        // Extrait le texte du début de la phrase (0) jusqu'à la position de la césure du connecteur
-        let morceauA_Gauche = phraseNettoyee.substring(0, positionDuConnecteur);
-        // On prend le deuxième fragment restant vers la droite (on ajoute +2 pour esquiver les espaces autour du mot " OU ")
-        let morceauDe_Droite = phraseNettoyee.substring(positionDuConnecteur + connecteurMagique.length + 2);
-
-        // Création de l'arbre
-        // Javascript enregistre ces objets dans des accolades {}
+    if (pos !== -1) {
         return {
-            type: 'NOEUD_LOGIQUE',           // Sert à savoir quel étage ou type de données correspond au noeud
-            operateur: connecteurMagique,    // "Ou" ou "ET"
-            gauche: creerArbreDeDecision(morceauA_Gauche), // uniquement l'échantillon de gauche 
-            droite: creerArbreDeDecision(morceauDe_Droite) // Pareil à droite
-            // ICI A VERIFIER AVEC LE PROF CAR QUAND Y A 3 () CA MET 2 FOIS DROITE 
+            type: 'NOEUD_LOGIQUE',
+            operateur: op,
+            gauche: creerArbreDeDecision(phrase.substring(0, pos).trim()),
+            droite: creerArbreDeDecision(phrase.substring(pos + op.length + 2).trim())
         };
     }
 
-  // ÉTAPE 5 : ABSENCE DE CONNECTEURS (CAS FINAL)
-    // On nettoie les caractères parasites comme les parenthèses qui resteraient collées
-    let textePur = phraseNettoyee.replace(/[()]/g, ' ').trim();
-    let motsDivises = textePur.split(' ').filter(petitMot => petitMot.length > 0);
+    // Cas final : Clause simple ou Filtre
+    let textePur = phrase.replace(/[()]/g, ' ').trim();
+    let mots = textePur.split(/\s+/).filter(m => m.length > 0);
 
-    // Cas Numéro 1 : égalité simple "="
-    if (motsDivises[1] === '=') {
-        return {
-            type: 'CLAUSE_FILTRE',
-            variable: motsDivises[0],
-            filtre: motsDivises[2]
-        };
+    if (mots.length === 3) {
+        if (mots[1] === '=') {
+            return { type: 'CLAUSE_FILTRE', variable: mots[0], filtre: mots[2] };
+        }
+        return { type: 'CLAUSE_RELATION', variable: mots[0], relation: mots[1], cible: mots[2] };
     }
 
-    // Cas Numéro 2 : Relation (ex: $x r_isa animal)
-    return {
-        type: 'CLAUSE_RELATION',
-        variable: motsDivises[0],
-        relation: motsDivises[1],
-        cible: motsDivises[2] // Sera maintenant "chat" et non "chat)"
-    };
+    if (mots.length < 3) {
+        throw new Error(`Syntaxe invalide : clause incomplète "${phrase}"`);
+    }
+
+    return { type: 'INCONNU', texte: phrase };
 }
 
-
-/**
- * -------------------------------------------------------------
- * OUTILS SECONDAIRES POUR SUPPORTER L'ALGORITHME PRINCIPAL :
- * -------------------------------------------------------------
- */
-
-/**
- * Objectif ici : compter l'ouverture et fermeture de chaque boucle
- * Dès lors qu'il détecte que son "compteur est à zéro", il entre en "zone sans aucune parenthèse"
- */
-function enqueterSurPositionDuMotCle(texte, motCleRecherche) { // Trouver un mot précis (comme "OU"), mais uniquement s'il n'est pas enfermé dans des parenthèses 
-    let niveauDeProfondeur = 0;
-
-    // Boucle
-    for (let i = 0; i < texte.length - motCleRecherche.length + 1; i++) {
-        if (texte[i] === '(') niveauDeProfondeur++; // Si l'algo remarque qu'on entre de plus en plus profondément : IL COMPTE EN PLUS
-        if (texte[i] === ')') niveauDeProfondeur--; // S'il quitte la coquille, il compte EN MOINS
-
-        // Dans la fraction de test, SI son relevé niveau est de profondeur ZÉRO c'est le signal à attaquer.
-        if (niveauDeProfondeur === 0) {
-            // on sectionne brièvement les lettres qui "pourraient" matcher l'éligibilité " OU ".
-            let sectionDeLettresLues = texte.substring(i, i + motCleRecherche.length);
-            // S'il correspond ! YES ! BINGO.
-            if (sectionDeLettresLues === motCleRecherche) {
-                return i; // il rend fidèlement la coordonnée ou index à notre Parseur plus haut dans le Code.
+function enqueterSurPositionDuMotCle(texte, motCle) {
+    let niveau = 0;
+    for (let i = 0; i < texte.length - motCle.length + 1; i++) {
+        if (texte[i] === '(') niveau++;
+        if (texte[i] === ')') niveau--;
+        if (niveau === 0) {
+            if (texte.substring(i, i + motCle.length).toUpperCase() === motCle.toUpperCase()) {
+                return i;
             }
         }
     }
-    // "-1", c'est ce qu'on renvoie quand le code échoue à trouver pour lui dire "Impossible", Il testera alors un Plan B
     return -1;
 }
 
-/**
- * Vérificateur de Fausse parenthèses
- * Empêche le blocage sur un schéma 1 parenthese vs N parentheses
- * Vérifier si TOUT le texte est enfermé dans une seule grosse paire de parenthèses (ex: (A ET B))
- * éviter le piège: (A) ET (B)
- */
 function verifieParentheseSolitaireEtGlobale(texte) {
     let niveau = 0;
-    // boucle 
     for (let i = 0; i < texte.length - 1; i++) {
         if (texte[i] === '(') niveau++;
         if (texte[i] === ')') niveau--;
-        // Si d'une manière  l'indicateur de parenthèses tombe A 0 et qu'on n'est pas à la fin du texte lu : 
-        // on identifie une situation piège, alors on met une séparation en plein milieu, donc au moins DEUX GROUPES INDEPENDANTS au lieu d'une englobante
         if (niveau === 0) return false;
     }
-    // si la (les) condition n'a jamais "trahie", c'est bien une Unique Coquille surdimensionnée
     return true;
 }
 
-// alloue notre fonction 'creerArbreDeDecision' à la mémoire afin que l'autre fichier (Node.js) intègre tout avec simple Require
 module.exports = { creerArbreDeDecision };
