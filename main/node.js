@@ -7,7 +7,7 @@ const crypto = require('crypto');
 
 const serveurWeb = express();
 serveurWeb.use(cors());
-serveurWeb.use(express.static('public'));
+serveurWeb.use(express.static(path.join(__dirname, 'public')));
 
 // --- CONFIGURATION DU CACHE ---
 const DOSSIER_CACHE = path.join(__dirname, 'cache');
