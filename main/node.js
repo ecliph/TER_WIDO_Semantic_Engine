@@ -6,6 +6,7 @@ const fs = require('fs-extra');
 const crypto = require('crypto');
 
 const serveurWeb = express();
+console.log("🛠️ Initialisation du serveur...");
 serveurWeb.use(cors());
 serveurWeb.use(express.static(path.join(__dirname, 'public')));
 
@@ -115,21 +116,52 @@ function calculerUnionTuple(liste1, liste2) {
 }
 
 /**
+ * Résout un nom de nœud en ID via JDM v0
+ */
+async function resoudreNodeId(nomRel) {
+    const url = `https://jdm-api.demo.lirmm.fr/v0/node_by_name/${encodeURIComponent(nomRel.toLowerCase().trim())}`;
+    try {
+        const resp = await axios.get(url);
+        if (resp.data && resp.data.id) {
+            return { id: resp.data.id, name: resp.data.name };
+        }
+        throw new Error(`Nœud "${nomRel}" introuvable sur JDM (v0/node_by_name)`);
+    } catch (err) {
+        if (err.response && err.response.status === 404) {
+            throw new Error(`Nœud "${nomRel}" inexistant (404)`);
+        }
+        throw err;
+    }
+}
+
+/**
  * Récupère les données depuis JDM-API avec filtrage de pertinence et q_constraint
  */
 async function fetchJDM(mot, relId, direction = 'from') {
     const motPropre = mot.toLowerCase().trim();
 
-    // 1. Récupération intelligente du q_constraint depuis le gros JSON
+    // 1. Résolution Canonique (Point de vigilance 1)
+    let nodeInfo;
+    try {
+        nodeInfo = await resoudreNodeId(motPropre);
+    } catch (err) {
+        console.error(`❌ Échec résolution canonique pour "${motPropre}":`, err.message);
+        throw err; // On propage l'erreur explicite
+    }
+
+    const idNode = nodeInfo.id;
+    const nameNode = nodeInfo.name;
+
+    // 2. Récupération intelligente du q_constraint depuis le gros JSON
     const infoRel = relationsData.relations.find(r => r.id === relId);
-    // On met un poids minimum par défaut de 10, sinon on respecte la règle stricte du JSON pour cette relation
     const poidsMinRequis = (infoRel && infoRel.q_constraint && infoRel.q_constraint.min) 
                            ? infoRel.q_constraint.min 
                            : 10;
 
-    const urlJDM = `https://jdm-api.demo.lirmm.fr/v0/relations/${direction}/${encodeURIComponent(motPropre)}?types_ids=${relId}&min_weight=${poidsMinRequis}`;
+    // Utilisation du NOM canonique (JDM v0 relations ID semble buggé/incomplet)
+    const urlJDM = `https://jdm-api.demo.lirmm.fr/v0/relations/${direction}/${encodeURIComponent(nameNode)}?types_ids=${relId}&min_weight=${poidsMinRequis}`;
 
-    console.log(`\n🔗 URL JDM appelée : ${urlJDM}`);
+    console.log(`\n🔗 URL JDM appelée : ${urlJDM} (ID résolu: ${idNode})`);
     console.log(`🧭 Direction : ${direction} | ⚖️ Poids minimum ciblé : ${poidsMinRequis}`);
 
     const hash = crypto.createHash('md5').update(urlJDM).digest('hex');
@@ -137,7 +169,7 @@ async function fetchJDM(mot, relId, direction = 'from') {
 
     // --- VÉRIFICATION DU CACHE AVANT L'API (Obligatoire) ---
     if (await fs.pathExists(cheminFichierCache)) {
-        console.log(`📦 [CACHE] Récupération de sauvegarde existante pour : ${motPropre} (${direction})`);
+        console.log(`📦 [CACHE] Récupération de sauvegarde existante pour : ${nameNode} (${direction})`);
         return await fs.readJson(cheminFichierCache);
     }
 
@@ -196,15 +228,12 @@ async function executerArbre(noeud, contexte = {}) {
             const varName = noeud.variable;
             const cibleName = noeud.cible;
 
-            // Si on a déjà des candidats pour les deux, on vérifie l'existence de la relation
+            // 1. VERIFICATION : Si les deux sont déjà ancrées (Bind)
             if (contexte[varName] && contexte[cibleName]) {
+                console.log(`🧠 [HEURISTIQUE] Vérification de relation entre ${varName} et ${cibleName}`);
                 const results = [];
-                // Pour chaque combinaison possible dans le contexte actuel
                 for (const valVar of contexte[varName]) {
                     for (const valCible of contexte[cibleName]) {
-                        // On vérifie si la relation existe entre valVar et valCible
-                        // Note: Pour être efficace, on pourrait utiliser /v0/relations/from/{id}?to_id={id}
-                        // Mais lirmm v0 demande souvent le nom. Utilisons node_by_name ou l'ID si supporté.
                         const check = await verifierRelation(valVar.id, idRel, valCible.id);
                         if (check) {
                             results.push({ [varName]: valVar, [cibleName]: valCible });
@@ -213,6 +242,30 @@ async function executerArbre(noeud, contexte = {}) {
                 }
                 return results;
             }
+
+            // 2. EXPLORATION : Si une seule est ancrée
+            if (contexte[varName] || contexte[cibleName]) {
+                const ancrage = contexte[varName] ? { name: varName, data: contexte[varName], dir: 'from' } 
+                                                  : { name: cibleName, data: contexte[cibleName], dir: 'to' };
+                const cible = contexte[varName] ? cibleName : varName;
+                
+                console.log(`🧠 [HEURISTIQUE] Exploration de ${cible} via ancrage ${ancrage.name}`);
+                const results = [];
+                for (const valAncre of ancrage.data) {
+                    // Pour éviter de saturer l'API, on utilise fetchJDM avec l'ID déjà résolu
+                    // Mais fetchJDM attend un mot (nom). On va passer l'ID si fetchJDM le supporte ou modifier fetchJDM.
+                    // Pour l'instant, utilisons le nom car fetchJDM fait une résolution canonique.
+                    const data = await fetchJDM(valAncre.name, idRel, ancrage.dir);
+                    (data.resultats || []).forEach(rel => {
+                        results.push({
+                            [ancrage.name]: valAncre,
+                            [cible]: { id: rel.id, name: rel.name, w: rel.poids }
+                        });
+                    });
+                }
+                return results;
+            }
+
             throw new Error(`Recherche variable-variable impossible sans ancrage préalable pour ${varName} ou ${cibleName}`);
         }
 
@@ -300,7 +353,7 @@ function evaluerComplexite(noeud) {
     if (noeud.type === 'CLAUSE_RELATION') {
         const varEstVariable = noeud.variable && noeud.variable.startsWith('$');
         const cibleEstVariable = noeud.cible && noeud.cible.startsWith('$');
-        if (varEstVariable && cibleEstVariable) return 3; // Max complexité (jointure)
+        if (varEstVariable && cibleEstVariable) return 5; // Jointure (plus complexe)
         return 1; // Un ancrage constant (récupération initiale)
     }
     if (noeud.type === 'CLAUSE_FILTRE') {
