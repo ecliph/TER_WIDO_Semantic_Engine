@@ -18,15 +18,16 @@ class JdmApi {
             return response.data;
         } catch (err) {
             if (retries > 0 && (!err.response || err.response.status >= 500)) {
-                console.warn(`⚠️ Erreur API sur ${url}. Tentative restante : ${retries}`);
-                await new Promise(r => setTimeout(r, 1000));
+                // Une seule retry silencieuse pour les erreurs 500
+                await new Promise(r => setTimeout(r, 500));
                 return this.safeApiCall(url, retries - 1);
             }
-            
-            const errorMsg = err.response ? `HTTP ${err.response.status}: ${JSON.stringify(err.response.data)}` : err.message;
-            this.errors.push({ url, error: errorMsg });
-            
-            if (err.response && err.response.status === 404) return null; // Not found is not a failure for results
+            const errorMsg = err.response ? `HTTP ${err.response.status}` : err.message;
+            // Dédupliquer les erreurs (ne pas stocker deux fois la même URL)
+            if (!this.errors.find(e => e.url === url)) {
+                this.errors.push({ url, error: errorMsg });
+            }
+            if (err.response && err.response.status === 404) return null;
             throw err;
         }
     }
@@ -102,6 +103,11 @@ class JdmApi {
         } catch (e) {
             return false;
         }
+    }
+
+    resetDebugInfo() {
+        this.callCount = 0;
+        this.errors = [];
     }
 
     getDebugInfo() {

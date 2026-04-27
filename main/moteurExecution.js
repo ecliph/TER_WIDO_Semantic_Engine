@@ -20,12 +20,25 @@ class MoteurExecution {
         if (clause.type === 'CLAUSE_FILTRE') {
             return this.handleFilter(clause, contexte);
         }
-        if (clause.type === 'OU') {
+        // Gère les noeuds OU (qu'ils viennent du planifier ou directement de l'AST)
+        if (clause.type === 'OU' || (clause.type === 'NOEUD_LOGIQUE' && clause.operateur === 'OU')) {
+            const gauche = clause.gauche;
+            const droite = clause.droite;
+            // Si les branches sont des plans (tableaux), les exécuter comme plans
+            // Sinon les exécuter comme clauses
             const [baseG, baseD] = await Promise.all([
-                this.executerPlan(clause.gauche, contexte),
-                this.executerPlan(clause.droite, contexte)
+                Array.isArray(gauche) ? this.executerPlan(gauche, contexte) : this.executerClause(gauche, contexte),
+                Array.isArray(droite) ? this.executerPlan(droite, contexte) : this.executerClause(droite, contexte)
             ]);
             return this.calculerUnion(baseG, baseD);
+        }
+        // Gère les noeuds ET imbriqués (récursion cascade)
+        if (clause.type === 'NOEUD_LOGIQUE' && clause.operateur === 'ET') {
+            let res = contexte;
+            res = await this.executerClause(clause.gauche, res);
+            if (res.length === 0) return [];
+            res = await this.executerClause(clause.droite, res);
+            return res;
         }
         return contexte;
     }

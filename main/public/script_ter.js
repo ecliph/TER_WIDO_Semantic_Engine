@@ -87,14 +87,33 @@ async function lancerRecherche() {
         const statusColor = isPartial ? '#f59e0b' : '#22c55e';
         let headerHtml = `<div style="margin-bottom:12px; padding:8px 12px; border-radius:8px; background:${statusColor}22; border-left:4px solid ${statusColor}">`;
         headerHtml += `<b>Statut :</b> ${data.statut || 'Inconnu'} &nbsp;|&nbsp; <b>Résultats :</b> ${data.nb_total}`;
+
         if (data.warnings && data.warnings.length > 0) {
-            headerHtml += '<div style="margin-top:6px">';
-            data.warnings.forEach(w => {
-                headerHtml += `<div style="font-size:0.85em; color:#f59e0b">⚠️ ${w}</div>`;
-            });
-            headerHtml += '</div>';
+            const MAX_VISIBLE = 3;
+            // Séparer les infos (limité) et les vraies erreurs
+            const infoWarnings = data.warnings.filter(w => w.includes('Affichage limit'));
+            const realWarnings = data.warnings.filter(w => !w.includes('Affichage limit'));
+
+            // Afficher les infos en bleu (non bloquant)
+            if (infoWarnings.length > 0) {
+                headerHtml += `<div style="font-size:0.8em; color:#94a3b8; margin-top:4px">ℹ️ ${infoWarnings[0]}</div>`;
+            }
+            // Afficher les vrais warnings (max 3)
+            if (realWarnings.length > 0) {
+                headerHtml += '<div style="margin-top:6px">';
+                const visible = realWarnings.slice(0, MAX_VISIBLE);
+                visible.forEach(w => {
+                    headerHtml += `<div style="font-size:0.82em; color:#f59e0b">⚠️ ${w}</div>`;
+                });
+                if (realWarnings.length > MAX_VISIBLE) {
+                    headerHtml += `<div style="font-size:0.78em; color:#64748b">+ ${realWarnings.length - MAX_VISIBLE} autre(s) warning(s) (voir console)</div>`;
+                    console.warn('Tous les warnings:', data.warnings);
+                }
+                headerHtml += '</div>';
+            }
         }
         headerHtml += '</div>';
+
 
         // 3. Affichage des tuples de résultats
         if (data.resultats && data.resultats.length > 0) {

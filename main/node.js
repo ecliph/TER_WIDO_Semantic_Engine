@@ -38,6 +38,9 @@ app.get('/recherche', async (req, res) => {
     
     if (!q) return res.status(400).json({ statut: "Erreur", message: "Paramètre q manquant" });
 
+    // Réinitialiser les erreurs à chaque nouvelle requête
+    api.resetDebugInfo();
+
     try {
         // 1. Parsing
         const ast = creerArbreDeDecision(q);
@@ -51,13 +54,27 @@ app.get('/recherche', async (req, res) => {
         const duration = Date.now() - start;
         const apiInfo = api.getDebugInfo();
 
-        // Collecter les warnings (erreurs API + warning jointure)
-        const warnings = apiInfo.errors.map(e => `Échec API: ${e.url} (${e.error})`);
+        // Collecter et dédupliquer les warnings
+        const seenUrls = new Set();
+        const warnings = [];
+
+        // Un seul warning générique si des erreurs API existent
+        const apiErrors = apiInfo.errors.filter(e => !seenUrls.has(e.url) && seenUrls.add(e.url));
+        if (apiErrors.length > 0) {
+            warnings.push(`L'API JeuxDeMots n'a pas répondu correctement pour ${apiErrors.length} appel(s). Les résultats affichés sont partiels.`);
+        }
+
+        // Warning jointure 2 variables (déjà court et lisible)
         if (resultats._joinWarning) warnings.push(resultats._joinWarning);
+
         const cleanResultats = Array.isArray(resultats) ? resultats : [];
+        const hasErrors = apiErrors.length > 0 || !!resultats._joinWarning;
+        const isLimited = cleanResultats.length >= LIMITS.maxResultsReturned;
+
+        if (isLimited) warnings.push(`Affichage limité aux ${LIMITS.maxResultsReturned} meilleurs résultats.`);
 
         res.json({
-            statut: (apiInfo.errorCount > 0 || resultats._joinWarning) ? "Succès partiel" : "Succès",
+            statut: hasErrors ? "Succès partiel" : "Succès",
             query: q,
             nb_total: cleanResultats.length,
             resultats: cleanResultats,
