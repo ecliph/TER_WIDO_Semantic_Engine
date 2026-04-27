@@ -17,7 +17,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Configuration des Limites
 const LIMITS = {
     maxInitialCandidates: 500,
-    maxJoinPairs: 5000,
+    maxJoinPairs: 900,
+    joinCandidateLimit: 30,
+    joinEarlyStop: 20,
     maxApiCallsPerQuery: 100,
     apiTimeoutMs: 15000,
     maxResultsReturned: 200
@@ -47,12 +49,17 @@ app.get('/recherche', async (req, res) => {
         const duration = Date.now() - start;
         const apiInfo = api.getDebugInfo();
 
+        // Collecter les warnings (erreurs API + warning jointure)
+        const warnings = apiInfo.errors.map(e => `Échec API: ${e.url} (${e.error})`);
+        if (resultats._joinWarning) warnings.push(resultats._joinWarning);
+        const cleanResultats = Array.isArray(resultats) ? resultats : [];
+
         res.json({
-            statut: apiInfo.errorCount > 0 ? "Succès partiel" : "Succès",
+            statut: (apiInfo.errorCount > 0 || resultats._joinWarning) ? "Succès partiel" : "Succès",
             query: q,
-            nb_total: resultats.length,
-            resultats: resultats,
-            warnings: apiInfo.errors.map(e => `Échec API: ${e.url} (${e.error})`),
+            nb_total: cleanResultats.length,
+            resultats: cleanResultats,
+            warnings,
             arbre: ast,
             plan_execution: plan,
             debug: {

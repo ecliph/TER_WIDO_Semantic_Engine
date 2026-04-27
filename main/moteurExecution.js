@@ -45,80 +45,91 @@ class MoteurExecution {
             const direction = isTo ? 'to' : 'from';
 
             // Si la variable est déjà ancrée, c'est une VÉRIFICATION
+            // Stratégie rapide : 1 seul appel API -> filtrage local (O(1) au lieu de O(N))
             if (contexte.length > 0 && contexte[0][variable]) {
-                const results = [];
-                // On doit résoudre l'anchorName en ID pour checkRelation
-                const anchorNode = await this.api.resolveNodeByName(anchorName);
-                if (!anchorNode) return [];
+                // ($x rel constante) : isTo=true -> on veut les sujets de constante (direction='to')
+                // (constante rel $x) : isTo=false -> on veut les objets de constante (direction='from')
+                const fetchDir = isTo ? 'to' : 'from';
+                const data = await this.api.getRelations(anchorName, idRel, fetchDir);
+                const validIds = new Set((data.resultats || []).map(r => r.id));
 
-                for (const tuple of contexte) {
-                    const ok = isTo 
-                        ? await this.api.checkRelation(anchorNode.id, idRel, tuple[variable].id)
-                        : await this.api.checkRelation(tuple[variable].id, idRel, anchorNode.id);
-                    if (ok) {
-                        const clone = { ...tuple };
-                        clone.__score = (clone.__score || 0) + 15;
-                        clone.__preuves = [...(clone.__preuves || []), { clause: `(${v1} ${clause.relation} ${v2})`, rel: clause.relation, w: 15 }];
-                        results.push(clone);
-                    }
-                }
-                return results;
+                return contexte
+                    .filter(tuple => tuple[variable] && validIds.has(tuple[variable].id))
+                    .map(tuple => ({
+                        ...tuple,
+                        __score: (tuple.__score || 0) + 15,
+                        __preuves: [...(tuple.__preuves || []), { clause: `(${v1} ${clause.relation} ${v2})`, rel: clause.relation, w: 15 }]
+                    }));
             }
 
             // Sinon c'est une ANCRE (Exploration initiale)
             const data = await this.api.getRelations(anchorName, idRel, direction);
-            const nouveauxResults = (data.resultats || []).map(r => ({
+            let nouveauxResults = (data.resultats || []).map(r => ({
                 [variable]: { id: r.id, name: r.name },
                 __score: r.poids,
                 __preuves: [{ clause: `(${v1} ${clause.relation} ${v2})`, rel: clause.relation, w: r.poids }]
             }));
 
+            // Limiter les candidats avant la jointure pour éviter l'explosion cartésienne
             if (contexte.length > 0 && !contexte[0][variable]) {
+                const joinCap = this.limits.joinCandidateLimit || 30;
+                nouveauxResults = nouveauxResults.slice(0, joinCap);
                 return this.calculerJoin(contexte, nouveauxResults);
             }
             return nouveauxResults;
         }
 
-        // Cas : Variable -> Variable
+        // Cas : Variable -> Variable (jointure)
         if (contexte.length === 0) {
             throw new Error(`Impossible d'exécuter une jointure variable-variable (${v1}, ${v2}) sans base.`);
         }
 
+        // ANTI-TIMEOUT : limite forte sur les candidats pour les jointures 2-variables
+        const JOIN_CANDIDATE_LIMIT = this.limits.joinCandidateLimit || 30;
+        const EARLY_STOP = this.limits.joinEarlyStop || 20;
+        const candidats = contexte.slice(0, JOIN_CANDIDATE_LIMIT);
+        const wasLimited = contexte.length > JOIN_CANDIDATE_LIMIT;
+
         const results = [];
-        const ancrage = contexte[0][v1] ? v1 : (contexte[0][v2] ? v2 : null);
-        
+        const ancrage = candidats[0][v1] ? v1 : (candidats[0][v2] ? v2 : null);
         if (!ancrage) throw new Error(`Aucune variable du tuple (${v1}, ${v2}) n'est ancrée.`);
-
         const autre = (ancrage === v1) ? v2 : v1;
-        const isAncrageKnown = true; // Inferred from test
-        const isAutreKnown =!!contexte[0][autre];
+        const isAutreKnown = !!candidats[0][autre];
 
-        for (const tuple of contexte) {
-            if (isAncrageKnown && isAutreKnown) {
-                // Vérification
+        for (const tuple of candidats) {
+            if (results.length >= EARLY_STOP) break;
+
+            if (isAutreKnown) {
+                // Vérification : les deux vars sont ancrées -> checkRelation(v1.id, rel, v2.id)
                 const ok = await this.api.checkRelation(tuple[v1].id, idRel, tuple[v2].id);
                 if (ok) {
                     const clone = { ...tuple };
-                    clone.__score = (clone.__score || 0) + 10; // Arbitrary verification bonus
+                    clone.__score = (clone.__score || 0) + 10;
                     clone.__preuves = [...(clone.__preuves || []), { clause: `(${v1} ${clause.relation} ${v2})`, rel: clause.relation, w: 10 }];
                     results.push(clone);
                 }
             } else {
-                // Exploration
+                // Exploration : ancrage connu, autre inconnu
                 const direction = (ancrage === v1) ? 'from' : 'to';
                 const data = await this.api.getRelations(tuple[ancrage].name, idRel, direction);
-                (data.resultats || []).forEach(r => {
-                    const newTuple = { 
-                        ...tuple, 
+                for (const r of (data.resultats || [])) {
+                    if (results.length >= EARLY_STOP) break;
+                    results.push({
+                        ...tuple,
                         [autre]: { id: r.id, name: r.name },
                         __score: (tuple.__score || 0) + r.poids,
                         __preuves: [...(tuple.__preuves || []), { clause: `(${v1} ${clause.relation} ${v2})`, rel: clause.relation, w: r.poids }]
-                    };
-                    results.push(newTuple);
-                });
+                    });
+                }
             }
-            if (results.length > this.limits.maxJoinPairs) break;
         }
+
+        // Attacher le warning si on a limité les candidats
+        if (wasLimited || results.length >= EARLY_STOP) {
+            const totalCandidats = contexte.length;
+            results._joinWarning = `Requête 2 variables limitée aux ${JOIN_CANDIDATE_LIMIT} premiers candidats sur ${totalCandidats} pour éviter surcharge API (${results.length} couples trouvés)`;
+        }
+
         return results;
     }
 
@@ -161,18 +172,18 @@ class MoteurExecution {
     }
 
     calculerJoin(l1, l2) {
-        // Implementation for joining two independent set of results
-        // Standard inner join on common variables
         if (l1.length === 0) return l2;
         if (l2.length === 0) return l1;
 
         const keys1 = Object.keys(l1[0]).filter(k => !k.startsWith('__'));
         const keys2 = Object.keys(l2[0]).filter(k => !k.startsWith('__'));
         const common = keys1.filter(k => keys2.includes(k));
+        const cap = this.limits.maxJoinPairs || 5000;
 
         const res = [];
-        for (const t1 of l1) {
+        outer: for (const t1 of l1) {
             for (const t2 of l2) {
+                if (res.length >= cap) break outer;
                 let match = true;
                 for (const c of common) {
                     if (t1[c].id !== t2[c].id) { match = false; break; }
