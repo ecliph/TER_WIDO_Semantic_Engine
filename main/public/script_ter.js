@@ -79,22 +79,60 @@ async function lancerRecherche() {
         const response = await fetch(`http://localhost:3000/recherche?q=${encodeURIComponent(q)}`);
         const data = await response.json();
 
-        // 1. Affichage de l'arbre
-        astDiv.innerHTML = JSON.stringify(data.arbre, null, 2); 
+        // 1. Affichage de l'arbre AST
+        astDiv.innerHTML = JSON.stringify(data.arbre, null, 2);
 
-        // 2. Affichage des résultats dynamiquement en parcourant les tuples de jointure (ex: $x, $y)
-        if(data.nb_total > 0 || (data.resultats && data.resultats.length > 0)) {
-            resDiv.innerHTML = `<ul>${data.resultats.map((r, index) => {
-                let contenuTuple = Object.keys(r).map(variable => 
-                    `<div><b>${variable}</b> ${r[variable].name}</div>`
-                ).join('');
-                return `<li style="animation-delay: ${index * 0.05}s">${contenuTuple}</li>`;
-            }).join('')}</ul>`;
+        // 2. En-tête : statut + warnings
+        const isPartial = data.statut === 'Succès partiel';
+        const statusColor = isPartial ? '#f59e0b' : '#22c55e';
+        let headerHtml = `<div style="margin-bottom:12px; padding:8px 12px; border-radius:8px; background:${statusColor}22; border-left:4px solid ${statusColor}">`;
+        headerHtml += `<b>Statut :</b> ${data.statut || 'Inconnu'} &nbsp;|&nbsp; <b>Résultats :</b> ${data.nb_total}`;
+        if (data.warnings && data.warnings.length > 0) {
+            headerHtml += '<div style="margin-top:6px">';
+            data.warnings.forEach(w => {
+                headerHtml += `<div style="font-size:0.85em; color:#f59e0b">⚠️ ${w}</div>`;
+            });
+            headerHtml += '</div>';
+        }
+        headerHtml += '</div>';
+
+        // 3. Affichage des tuples de résultats
+        if (data.resultats && data.resultats.length > 0) {
+            const lignes = data.resultats.map((r, index) => {
+                // Variables réelles uniquement (celles qui ne commencent pas par __)
+                const variables = Object.keys(r).filter(k => !k.startsWith('__'));
+                const varHtml = variables.map(v => {
+                    const val = r[v] && r[v].name ? r[v].name : '?';
+                    return `<span style="margin-right:16px"><b>${v}</b> : ${val}</span>`;
+                }).join('');
+
+                // Score
+                const score = r.__score !== undefined && r.__score !== null
+                    ? Number(r.__score).toFixed(2)
+                    : null;
+                const scoreHtml = score !== null
+                    ? `<span style="font-size:0.8em; color:#94a3b8; margin-left:8px">Score : ${score}</span>`
+                    : '';
+
+                // Preuves (masquées par défaut, bouton toggle)
+                let preuvesHtml = '';
+                if (r.__preuves && r.__preuves.length > 0) {
+                    const pid = `p${index}`;
+                    preuvesHtml = `
+                        <span style="font-size:0.75em; cursor:pointer; color:#64748b; margin-left:8px" onclick="document.getElementById('${pid}').style.display=document.getElementById('${pid}').style.display==='none'?'block':'none'">[preuves]</span>
+                        <div id="${pid}" style="display:none; font-size:0.75em; color:#475569; margin-top:4px">${r.__preuves.map(p => `${p.clause} (w=${p.w})`).join(' | ')}</div>
+                    `;
+                }
+
+                return `<li style="animation-delay:${index * 0.04}s">${varHtml}${scoreHtml}${preuvesHtml}</li>`;
+            });
+            resDiv.innerHTML = headerHtml + `<ul>${lignes.join('')}</ul>`;
         } else {
-            resDiv.innerHTML = "<div class='code-block'>Aucun résultat trouvé pour cette requête.</div>";
+            resDiv.innerHTML = headerHtml + "<div class='code-block'>Aucun résultat trouvé pour cette requête.</div>";
         }
     } catch (err) {
-        resDiv.innerHTML = "❌ Erreur de connexion au serveur (Est-il bien lancé ?).";
+        resDiv.innerHTML = "❌ Erreur de connexion au serveur. Est-il bien lancé sur le port 3000 ?";
+        console.error(err);
     }
 }
 
