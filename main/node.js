@@ -18,14 +18,14 @@ app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'public', 'index_te
 
 // Configuration des Limites
 const LIMITS = {
-    maxInitialCandidates: 500,
-    maxJoinPairs: 900,
-    joinCandidateLimit: 20,
-    joinEarlyStop: 20,
-    maxApiCallsPerQuery: 50,
-    apiTimeoutMs: 10000,
-    maxResultsReturned: 200,
-    maxQueryDurationMs: 30000
+    maxInitialCandidates: 1000,
+    maxJoinPairs: 10000,
+    joinCandidateLimit: 500,
+    joinEarlyStop: 1000,
+    maxApiCallsPerQuery: 1000,
+    apiTimeoutMs: 15000,
+    maxResultsReturned: 1000,
+    maxQueryDurationMs: 120000
 };
 
 // Initialisation des couches
@@ -99,9 +99,12 @@ app.get('/recherche', async (req, res) => {
             arbre: ast,
             plan_execution: plan,
             debug: {
-                ...apiInfo,
+                apiCalls: apiInfo.appelsApiCount,
+                apiErrors: apiInfo.erreursApiCount,
                 ...cache.getReport(),
-                durationMs: duration
+                durationMs: duration,
+                timeoutReached: timedOut || false,
+                joinStats: resultats._joinDebug || null
             }
         });
 

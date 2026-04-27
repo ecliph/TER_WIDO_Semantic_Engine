@@ -75,15 +75,15 @@ async function lancerRecherche() {
     resDiv.innerHTML = "Recherche en cours... ⏳";
     astDiv.innerHTML = "Fabrication de l'arbre...";
 
-    // Timeout frontend : 45 secondes maximum
-    const FRONTEND_TIMEOUT_MS = 45000;
+    // Timeout frontend : 130 secondes maximum (aligné sur le timeout backend 120s)
+    const FRONTEND_TIMEOUT_MS = 130000;
     const controller = new AbortController();
     const abortTimer = setTimeout(() => controller.abort(), FRONTEND_TIMEOUT_MS);
 
     // Message progressif après 10s
     const slowTimer = setTimeout(() => {
         if (resDiv.innerHTML.includes('⏳')) {
-            resDiv.innerHTML += '<br><span style="font-size:0.88em;color:#94a3b8">⏳ Cette requête est complexe, cela peut prendre un peu de temps...</span>';
+            resDiv.innerHTML += '<br><span style="font-size:0.88em;color:#94a3b8">⏳ Cette requête peut être longue car elle explore beaucoup de candidats dans JeuxDeMots...</span>';
         }
     }, 10000);
 

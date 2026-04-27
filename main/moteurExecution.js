@@ -5,6 +5,7 @@ class MoteurExecution {
         this.relationsData = require('./relations_wido_optimized.json');
         this.relMap = new Map();
         this.relationsData.relations.forEach(r => this.relMap.set(r.name, r.id));
+        this._lastJoinDebug = null;  // persisté entre les étapes de pipeline
     }
 
     getRelId(name) {
@@ -97,10 +98,11 @@ class MoteurExecution {
             throw new Error(`Impossible d'exécuter une jointure variable-variable (${v1}, ${v2}) sans base.`);
         }
 
-        // ANTI-TIMEOUT : limite forte sur les candidats
-        const JOIN_CANDIDATE_LIMIT = this.limits.joinCandidateLimit || 20;
-        const EARLY_STOP = this.limits.joinEarlyStop || 20;
+        const JOIN_CANDIDATE_LIMIT = this.limits.joinCandidateLimit || 500;
+        const EARLY_STOP = this.limits.joinEarlyStop || 1000;
+        // Prendre TOUS les candidats dispo jusqu'à la limite
         const candidats = contexte.slice(0, JOIN_CANDIDATE_LIMIT);
+        const candidatsDisponibles = contexte.length;
         const wasLimited = contexte.length > JOIN_CANDIDATE_LIMIT;
 
         const results = [];
@@ -109,24 +111,22 @@ class MoteurExecution {
         const autre = (ancrage === v1) ? v2 : v1;
         const isAutreKnown = !!candidats[0][autre];
 
-        // Construire un Set des IDs valides pour l'autre variable si elle est ancrée
-        // (ex: tous les $y animaux déjà connus)
+        // Set de tous les IDs de $y valides (construit depuis le contexte complet)
         const knownIds = isAutreKnown
-            ? new Set(candidats.map(t => t[autre] && t[autre].id).filter(Boolean))
+            ? new Set(contexte.map(t => t[autre] && t[autre].id).filter(Boolean))
             : null;
 
-        // Toujours utiliser l'exploration directe depuis l'ancre (O(1) API par candidat $x)
-        // Puis filtrer contre knownIds si $y est déjà connu
         const direction = (ancrage === v1) ? 'from' : 'to';
+        let candidatsTestes = 0;
 
         for (const tuple of candidats) {
             if (results.length >= EARLY_STOP) break;
             if (!tuple[ancrage]) continue;
+            candidatsTestes++;
 
             const data = await this.api.getRelations(tuple[ancrage].name, idRel, direction);
             for (const r of (data.resultats || [])) {
                 if (results.length >= EARLY_STOP) break;
-                // Si l'autre variable est déjà ancrée, ne garder que les IDs connus
                 if (knownIds && !knownIds.has(r.id)) continue;
                 results.push({
                     ...tuple,
@@ -137,10 +137,28 @@ class MoteurExecution {
             }
         }
 
-        // Warning systématique pour les jointures 2 variables
-        results._joinWarning = `Requête 2 variables limitée aux ${JOIN_CANDIDATE_LIMIT} premiers candidats` +
-            (wasLimited ? ` sur ${contexte.length}` : '') +
-            ` pour éviter surcharge API (${results.length} couple(s) trouvé(s)).`;
+        // Métadonnées de debug — persistées sur l'instance pour survivre aux transformations de pipeline
+        const joinDebug = {
+            candidatsTestes,
+            candidatsDisponibles,
+            couplesTrouves: results.length,
+            wasLimited,
+            reachedEarlyStop: results.length >= EARLY_STOP
+        };
+        results._joinDebug = joinDebug;
+        this._lastJoinDebug = joinDebug;  // persisté sur l'instance
+
+        const partial = wasLimited || results.length >= EARLY_STOP;
+        if (partial) {
+            results._joinWarning = `Exploration limitée : ${candidatsTestes} candidat(s) testé(s) ` +
+                `sur ${candidatsDisponibles} disponibles ` +
+                `(${results.length} couple(s) trouvé(s)).`;
+        } else {
+            // Exploration complète — seulement avertir si aucun résultat
+            if (results.length === 0) {
+                results._joinWarning = `Exploration complète : ${candidatsTestes} candidat(s) testé(s) sans couple valide pour la relation ${clause.relation}.`;
+            }
+        }
 
         return results;
     }
@@ -157,14 +175,21 @@ class MoteurExecution {
     }
 
     async executerPlan(plan, contextInitial = []) {
+        this._lastJoinDebug = null;  // réinitialiser à chaque nouvelle plan
         let resultats = contextInitial;
         for (const step of plan) {
             resultats = await this.executerClause(step, resultats);
-            if (resultats.length === 0 && step.type !== 'OU') {
-                return [];
+            if (resultats.length === 0 && step.type !== 'OU' && step.type !== 'NOEUD_LOGIQUE') {
+                // Préserver le debug même en cas d'arrêt précoce
+                const out = [];
+                if (this._lastJoinDebug) out._joinDebug = this._lastJoinDebug;
+                return out;
             }
         }
-        return resultats.sort((a, b) => (b.__score || 0) - (a.__score || 0)).slice(0, this.limits.maxResultsReturned);
+        const sorted = resultats.sort((a, b) => (b.__score || 0) - (a.__score || 0)).slice(0, this.limits.maxResultsReturned);
+        // Ré-attacher le debug jointure qui survit aux transformations
+        if (this._lastJoinDebug) sorted._joinDebug = this._lastJoinDebug;
+        return sorted;
     }
 
     calculerUnion(l1, l2) {
