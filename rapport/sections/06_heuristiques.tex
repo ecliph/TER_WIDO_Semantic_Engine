@@ -1,0 +1,61 @@
+\chapter{Heuristiques d'optimisation}
+\label{chap:heuristiques}
+
+\section{Principe général}
+
+Pour les requêtes conjonctives (ET), l'ordre d'exécution des clauses influe directement sur le nombre d'appels API et la taille des ensembles intermédiaires. L'objectif du planificateur est de minimiser cet espace de recherche en exécutant d'abord les clauses les plus \textit{sélectives} (qui retournent peu de résultats).
+
+\section{Heuristique structurelle}
+
+La première heuristique est purement syntaxique : elle attribue un score de complexité à chaque clause selon sa structure et les variables déjà ancrées à ce stade de l'exécution.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{clp{7cm}}
+        \toprule
+        Score & Type de clause & Exemple \\
+        \midrule
+        0.5 & Filtre sur variable ancrée & \texttt{\$x = ch\%} (après ancrage de \var{x}) \\
+        1   & Ancrage par constante & \texttt{(\$x r\_isa animal)} \\
+        2   & Vérification (2 vars ancrées) & Jointure finale \\
+        5   & Exploration ciblée (1 var ancrée) & \texttt{(\$x r\_can\_eat \$y)} si \var{x} connu \\
+        8   & Filtre avant ancrage & \texttt{\$x = ba\%} (avant ancrage) \\
+        10  & Jointure sans ancrage & Interdit en première position \\
+        \bottomrule
+    \end{tabular}
+    \caption{Scores de complexité structurelle des clauses WIDO}
+    \label{tab:complexity}
+\end{table}
+
+\section{Heuristique de cardinalité}
+
+La deuxième heuristique estime la cardinalité (taille de la liste de résultats) de chaque clause d'ancrage par constante en effectuant un appel API sonde avec \code{limit=500}. Si la liste est de taille $n < 500$, la cardinalité est $n$. Sinon, elle est notée $\geq 500$ (grande liste).
+
+\begin{widobox}
+\textbf{Exemple d'application :} Pour la requête \texttt{(\$x r\_isa animal) ET (\$x r\_has\_part queue)},\\
+si \rel{r\_isa animal} renvoie $\geq 500$ résultats et \rel{r\_has\_part queue} en renvoie 105,\\
+le planificateur exécute d'abord \rel{r\_has\_part queue} (plus sélectif), puis filtre les résultats.
+\end{widobox}
+
+\section{Mise à jour dynamique des variables ancrées}
+
+Après l'exécution de chaque clause, le planificateur met à jour l'ensemble des variables déjà résolues. Cela modifie le score de complexité des clauses suivantes et permet de détecter qu'une jointure Var→Var peut désormais s'appuyer sur une variable ancrée.
+
+\section{Plan d'exécution (exemple)}
+
+Pour la requête \texttt{(\$x r\_isa animal) ET (\$y r\_isa animal) ET (\$x r\_can\_eat \$y)} :
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{clcl}
+        \toprule
+        Rang & Clause & Complexité & Raison \\
+        \midrule
+        1 & \texttt{(\$x r\_isa animal)} & 1 & Ancrage initial — cardinalité $\geq 500$ \\
+        2 & \texttt{(\$y r\_isa animal)} & 1 & Ancrage initial — cardinalité $\geq 500$ \\
+        3 & \texttt{(\$x r\_can\_eat \$y)} & 2 & Vérification ($\var{x}$ et $\var{y}$ ancrés) \\
+        \bottomrule
+    \end{tabular}
+    \caption{Plan d'exécution de la requête officielle à 2 variables}
+    \label{tab:plan}
+\end{table}

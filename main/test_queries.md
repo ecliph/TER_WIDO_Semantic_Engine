@@ -1,21 +1,57 @@
-# Test Queries for WIDO UI
+# Requêtes de test — WIDO
 
-Copy and paste these into the WIDO search bar to test different features.
+## Requêtes fondamentales
 
-## Variable Anchoring
-- `($x r_isa animal)`
-- `(chat r_isa $x)`
+```
+($x r_isa animal)
+(chat r_isa $x)
+(chat r_has_part $x)
+```
 
-## Filtering & Patterns
-- `($x r_isa animal) ET ($x = ba%)`
-- `(($x r_isa mammifere) OU ($x r_isa oiseau)) ET ($x = ch%)`
+## Filtres texte
 
-## Advanced Logical Combinations
-- `($x r_isa artiste) ET (($x = ba%) OU ($x = Ba%))`
+```
+($x r_isa animal) ET ($x = ch%)
+($x r_isa animal) ET ($x = ba%)
+($x r_isa artiste) ET ($x = ba%)
+```
 
-## 2-Variable Joins (Experimental)
-- `($x r_isa animal) ET ($y r_isa animal) ET ($x r_can_eat $y)`
+## Opérateurs OU
 
-## Error Cases
-- `($x r_isa)` (Should show syntax error)
-- `($x r_non_existent animal)` (Should show API error/warning)
+```
+($x r_isa mammifere) OU ($x r_isa oiseau)
+(($x r_isa mammifere) OU ($x r_isa oiseau)) ET ($x = ch%)
+($x r_isa artiste) ET (($x = ba%) OU ($x = Ba%))
+($x r_isa animal) ET (($x r_has_part aile) OU ($x r_has_part queue))
+```
+
+## Jointures ET (2 variables)
+
+```
+($x r_isa animal) ET ($x r_has_part queue)
+($x r_isa animal) ET ($x r_has_color blanc)
+($x r_isa animal) ET ($x r_carac domestique)
+```
+
+## Requêtes officielles du sujet TER
+
+```
+($x r_isa animal) ET ($y r_isa animal) ET ($x r_can_eat $y)
+(lion r_can_eat $y) ET ($y r_isa animal)
+(chat r_can_eat $y) ET ($y r_isa animal)
+```
+
+## Chaînes de 3 variables
+
+```
+(chat r_has_part $y) ET ($y r_isa $z)
+($x r_isa animal) ET ($x r_has_part $y) ET ($y = pa%)
+($x r_isa animal) ET ($x r_has_part $y) ET ($y r_isa $z)
+```
+
+## Cas d'erreurs (à montrer en démo)
+
+```
+($x r_isa)
+($x relation_inconnue animal)
+```

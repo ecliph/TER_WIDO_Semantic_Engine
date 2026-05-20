@@ -1,0 +1,66 @@
+\chapter{Architecture du moteur WIDO}
+\label{chap:archi}
+
+\section{Vue d'ensemble}
+
+Le moteur \wido{} suit un pipeline en cinq étapes (figure~\ref{fig:pipeline}) :
+
+\begin{enumerate}
+    \item \textbf{Parsing} : la requête textuelle est transformée en arbre de décision (AST) par le parseur ;
+    \item \textbf{Estimation de cardinalité} : pour chaque clause, un appel API sonde estime le nombre de résultats ;
+    \item \textbf{Planification} : le planificateur trie les clauses ET dans l'ordre d'exécution optimal ;
+    \item \textbf{Exécution} : le moteur interroge l'API JDM et croise les résultats par jointures sur les IDs ;
+    \item \textbf{Présentation} : les résultats sont triés par score, enrichis de preuves, et affichés.
+\end{enumerate}
+
+\begin{figure}[H]
+    \centering
+    % Schéma ASCII simplifié — remplacer par un diagramme TikZ si disponible
+    \begin{verbatim}
+        Requête utilisateur
+              ↓
+         [Parseur] → AST
+              ↓
+      [Cardinalité] → Map{clause → taille}
+              ↓
+       [Planificateur] → Plan ordonné
+              ↓
+     [Moteur d'exécution] ↔ [API JDM + Cache]
+              ↓
+          Résultats
+    \end{verbatim}
+    \caption{Pipeline de traitement d'une requête WIDO}
+    \label{fig:pipeline}
+\end{figure}
+
+\section{Technologies utilisées}
+
+\begin{itemize}
+    \item \textbf{Environnement d'exécution} : Node.js v14+
+    \item \textbf{Serveur HTTP} : Express.js
+    \item \textbf{Client HTTP} : Axios (requêtes vers l'API JDM)
+    \item \textbf{Cache disque} : fs-extra, fichiers JSON indexés par hash MD5
+    \item \textbf{Interface} : HTML5 + CSS3 (glassmorphique) + JavaScript vanilla
+\end{itemize}
+
+\section{Structure des fichiers}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ll}
+        \toprule
+        Fichier & Rôle \\
+        \midrule
+        \code{node.js} & Point d'entrée, routage Express, orchestration \\
+        \code{parseur.js} & Analyse syntaxique → AST \\
+        \code{heuristiques.js} & Planification par complexité et cardinalité \\
+        \code{moteurExecution.js} & Exécution, jointures, intersections \\
+        \code{jdmApi.js} & Client API JDM + pagination + cache \\
+        \code{cacheManager.js} & Cache disque MD5 persistant \\
+        \code{benchmark.js} & Tests automatisés + métriques \\
+        \code{verify\_logic.js} & Tests de validation du moteur \\
+        \bottomrule
+    \end{tabular}
+    \caption{Fichiers du projet WIDO}
+    \label{tab:fichiers}
+\end{table}

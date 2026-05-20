@@ -1,0 +1,500 @@
+[
+  {
+    "id": 1,
+    "query": "($x r_isa animal)",
+    "description": "Requête simple — variable à droite",
+    "statut": "Succès",
+    "nb_total": 1000,
+    "durationMs": 21,
+    "apiCalls": 0,
+    "apiErrors": 0,
+    "cacheHits": 1107,
+    "cacheMisses": 67,
+    "pagesFetched": 5,
+    "totalFetched": 5000,
+    "usedPagination": true,
+    "warnings": [
+      "Affichage limité aux 1000 meilleurs résultats (triés par score).",
+      "Pagination API utilisée : 5000 relations récupérées au total.",
+      "Résultats limités : la pagination a atteint la limite de sécurité (1000 max). Des résultats supplémentaires peuvent exister."
+    ],
+    "joinStats": null,
+    "planDetails": null,
+    "success": true,
+    "errorMessage": null
+  },
+  {
+    "id": 2,
+    "query": "($x r_isa animal) ET ($x = ch%)",
+    "description": "Filtre texte ch%",
+    "statut": "Succès",
+    "nb_total": 133,
+    "durationMs": 9,
+    "apiCalls": 0,
+    "apiErrors": 0,
+    "cacheHits": 1109,
+    "cacheMisses": 67,
+    "pagesFetched": 5,
+    "totalFetched": 5000,
+    "usedPagination": true,
+    "warnings": [
+      "Pagination API utilisée : 5000 relations récupérées au total.",
+      "Résultats limités : la pagination a atteint la limite de sécurité (1000 max). Des résultats supplémentaires peuvent exister."
+    ],
+    "joinStats": null,
+    "planDetails": [
+      {
+        "rang": 1,
+        "clause": "($x r_isa animal)",
+        "structuralComplexity": 1,
+        "estimatedCardinality": ">=500",
+        "reason": "Ancrage initial par constante, cardinalité estimée : >=500"
+      },
+      {
+        "rang": 2,
+        "clause": "($x = ch%)",
+        "structuralComplexity": 0.5,
+        "estimatedCardinality": null,
+        "reason": "Filtre local sur variable déjà ancrée (très rapide)"
+      }
+    ],
+    "success": true,
+    "errorMessage": null
+  },
+  {
+    "id": 3,
+    "query": "($x r_isa animal) ET ($x r_has_part queue)",
+    "description": "Jointure ET avec propriété",
+    "statut": "Succès",
+    "nb_total": 1000,
+    "durationMs": 15,
+    "apiCalls": 0,
+    "apiErrors": 0,
+    "cacheHits": 1113,
+    "cacheMisses": 67,
+    "pagesFetched": 10,
+    "totalFetched": 10000,
+    "usedPagination": true,
+    "warnings": [
+      "Affichage limité aux 1000 meilleurs résultats (triés par score).",
+      "Pagination API utilisée : 10000 relations récupérées au total.",
+      "Résultats limités : la pagination a atteint la limite de sécurité (1000 max). Des résultats supplémentaires peuvent exister."
+    ],
+    "joinStats": null,
+    "planDetails": [
+      {
+        "rang": 1,
+        "clause": "($x r_isa animal)",
+        "structuralComplexity": 1,
+        "estimatedCardinality": ">=500",
+        "reason": "Ancrage initial par constante, cardinalité estimée : >=500"
+      },
+      {
+        "rang": 2,
+        "clause": "($x r_has_part queue)",
+        "structuralComplexity": 1,
+        "estimatedCardinality": ">=500",
+        "reason": "Ancrage initial par constante, cardinalité estimée : >=500"
+      }
+    ],
+    "success": true,
+    "errorMessage": null
+  },
+  {
+    "id": 4,
+    "query": "(($x r_isa mammifere) OU ($x r_isa oiseau)) ET ($x = ch%)",
+    "description": "OU imbriqué + filtre",
+    "statut": "Succès",
+    "nb_total": 86,
+    "durationMs": 11,
+    "apiCalls": 0,
+    "apiErrors": 0,
+    "cacheHits": 1117,
+    "cacheMisses": 67,
+    "pagesFetched": 6,
+    "totalFetched": 5000,
+    "usedPagination": true,
+    "warnings": [
+      "Pagination API utilisée : 5000 relations récupérées au total.",
+      "Résultats limités : la pagination a atteint la limite de sécurité (1000 max). Des résultats supplémentaires peuvent exister."
+    ],
+    "joinStats": null,
+    "planDetails": [
+      {
+        "rang": 1,
+        "clause": "NOEUD_LOGIQUE",
+        "structuralComplexity": 3,
+        "estimatedCardinality": null,
+        "reason": "Complexité 3"
+      },
+      {
+        "rang": 2,
+        "clause": "($x = ch%)",
+        "structuralComplexity": 8,
+        "estimatedCardinality": null,
+        "reason": "Filtre en attente d'ancrage de la variable"
+      }
+    ],
+    "success": true,
+    "errorMessage": null
+  },
+  {
+    "id": 5,
+    "query": "($x r_isa artiste) ET (($x = ba%) OU ($x = Ba%))",
+    "description": "Requête officielle artiste",
+    "statut": "Succès",
+    "nb_total": 37,
+    "durationMs": 6,
+    "apiCalls": 0,
+    "apiErrors": 0,
+    "cacheHits": 1119,
+    "cacheMisses": 67,
+    "pagesFetched": 5,
+    "totalFetched": 5000,
+    "usedPagination": true,
+    "warnings": [
+      "Pagination API utilisée : 5000 relations récupérées au total.",
+      "Résultats limités : la pagination a atteint la limite de sécurité (1000 max). Des résultats supplémentaires peuvent exister."
+    ],
+    "joinStats": null,
+    "planDetails": [
+      {
+        "rang": 1,
+        "clause": "($x r_isa artiste)",
+        "structuralComplexity": 1,
+        "estimatedCardinality": ">=500",
+        "reason": "Ancrage initial par constante, cardinalité estimée : >=500"
+      },
+      {
+        "rang": 2,
+        "clause": "NOEUD_LOGIQUE",
+        "structuralComplexity": 3,
+        "estimatedCardinality": null,
+        "reason": "Complexité 3"
+      }
+    ],
+    "success": true,
+    "errorMessage": null
+  },
+  {
+    "id": 6,
+    "query": "($x r_isa animal) ET (($x r_has_part aile) OU ($x r_has_part queue))",
+    "description": "ET avec OU dans propriété",
+    "statut": "Succès",
+    "nb_total": 1000,
+    "durationMs": 16,
+    "apiCalls": 0,
+    "apiErrors": 0,
+    "cacheHits": 1125,
+    "cacheMisses": 67,
+    "pagesFetched": 15,
+    "totalFetched": 15000,
+    "usedPagination": true,
+    "warnings": [
+      "Affichage limité aux 1000 meilleurs résultats (triés par score).",
+      "Pagination API utilisée : 15000 relations récupérées au total.",
+      "Résultats limités : la pagination a atteint la limite de sécurité (1000 max). Des résultats supplémentaires peuvent exister."
+    ],
+    "joinStats": null,
+    "planDetails": [
+      {
+        "rang": 1,
+        "clause": "($x r_isa animal)",
+        "structuralComplexity": 1,
+        "estimatedCardinality": ">=500",
+        "reason": "Ancrage initial par constante, cardinalité estimée : >=500"
+      },
+      {
+        "rang": 2,
+        "clause": "NOEUD_LOGIQUE",
+        "structuralComplexity": 3,
+        "estimatedCardinality": null,
+        "reason": "Complexité 3"
+      }
+    ],
+    "success": true,
+    "errorMessage": null
+  },
+  {
+    "id": 7,
+    "query": "($x r_isa animal) ET ($y r_isa animal) ET ($x r_can_eat $y)",
+    "description": "Requête 2 variables — officielle TER",
+    "statut": "Succès",
+    "nb_total": 0,
+    "durationMs": 57,
+    "apiCalls": 0,
+    "apiErrors": 0,
+    "cacheHits": 1629,
+    "cacheMisses": 67,
+    "pagesFetched": 510,
+    "totalFetched": 18500,
+    "usedPagination": true,
+    "warnings": [
+      "Pagination API utilisée : 18500 relations récupérées au total.",
+      "Résultats limités : la pagination a atteint la limite de sécurité (1000 max). Des résultats supplémentaires peuvent exister."
+    ],
+    "joinStats": {
+      "relation": "r_can_eat",
+      "anchorVariable": "$x",
+      "discoveredVariable": "$y",
+      "candidatsDisponibles": 10000,
+      "candidatsTestes": 500,
+      "couplesTrouves": 0,
+      "wasLimited": true,
+      "reachedEarlyStop": false,
+      "usedDirectExploration": true,
+      "usedIdComparison": true
+    },
+    "planDetails": [
+      {
+        "rang": 1,
+        "clause": "($x r_isa animal)",
+        "structuralComplexity": 1,
+        "estimatedCardinality": ">=500",
+        "reason": "Ancrage initial par constante, cardinalité estimée : >=500"
+      },
+      {
+        "rang": 2,
+        "clause": "($y r_isa animal)",
+        "structuralComplexity": 1,
+        "estimatedCardinality": ">=500",
+        "reason": "Ancrage initial par constante, cardinalité estimée : >=500"
+      },
+      {
+        "rang": 3,
+        "clause": "($x r_can_eat $y)",
+        "structuralComplexity": 2,
+        "estimatedCardinality": null,
+        "reason": "Vérification de jointure (2 variables déjà ancrées)"
+      }
+    ],
+    "success": true,
+    "errorMessage": null
+  },
+  {
+    "id": 8,
+    "query": "(chat r_isa $x)",
+    "description": "Direction inverse — constante à gauche",
+    "statut": "Succès",
+    "nb_total": 350,
+    "durationMs": 3,
+    "apiCalls": 0,
+    "apiErrors": 0,
+    "cacheHits": 1631,
+    "cacheMisses": 67,
+    "pagesFetched": 1,
+    "totalFetched": 350,
+    "usedPagination": false,
+    "warnings": [],
+    "joinStats": null,
+    "planDetails": null,
+    "success": true,
+    "errorMessage": null
+  },
+  {
+    "id": 9,
+    "query": "(chat r_has_part $x)",
+    "description": "Exploration propriétés du chat",
+    "statut": "Succès",
+    "nb_total": 303,
+    "durationMs": 2,
+    "apiCalls": 0,
+    "apiErrors": 0,
+    "cacheHits": 1633,
+    "cacheMisses": 67,
+    "pagesFetched": 1,
+    "totalFetched": 303,
+    "usedPagination": false,
+    "warnings": [],
+    "joinStats": null,
+    "planDetails": null,
+    "success": true,
+    "errorMessage": null
+  },
+  {
+    "id": 10,
+    "query": "(chat r_has_part $y) ET ($y r_isa $z)",
+    "description": "3 variables — chaîne de relations",
+    "statut": "Succès",
+    "nb_total": 1000,
+    "durationMs": 10,
+    "apiCalls": 0,
+    "apiErrors": 0,
+    "cacheHits": 1668,
+    "cacheMisses": 67,
+    "pagesFetched": 34,
+    "totalFetched": 1314,
+    "usedPagination": false,
+    "warnings": [
+      "Affichage limité aux 1000 meilleurs résultats (triés par score)."
+    ],
+    "joinStats": {
+      "relation": "r_isa",
+      "anchorVariable": "$y",
+      "discoveredVariable": "$z",
+      "candidatsDisponibles": 303,
+      "candidatsTestes": 33,
+      "couplesTrouves": 1000,
+      "wasLimited": false,
+      "reachedEarlyStop": true,
+      "usedDirectExploration": true,
+      "usedIdComparison": true
+    },
+    "planDetails": [
+      {
+        "rang": 1,
+        "clause": "(chat r_has_part $y)",
+        "structuralComplexity": 1,
+        "estimatedCardinality": 303,
+        "reason": "Ancrage initial par constante, cardinalité estimée : 303"
+      },
+      {
+        "rang": 2,
+        "clause": "($y r_isa $z)",
+        "structuralComplexity": 5,
+        "estimatedCardinality": null,
+        "reason": "Exploration ciblée depuis variable ancrée"
+      }
+    ],
+    "success": true,
+    "errorMessage": null
+  },
+  {
+    "id": 11,
+    "query": "($x r_isa animal) ET ($x r_has_part $y) ET ($y = pa%)",
+    "description": "3 variables avec filtre",
+    "statut": "Succès",
+    "nb_total": 47,
+    "durationMs": 8,
+    "apiCalls": 0,
+    "apiErrors": 0,
+    "cacheHits": 1685,
+    "cacheMisses": 67,
+    "pagesFetched": 20,
+    "totalFetched": 6057,
+    "usedPagination": true,
+    "warnings": [
+      "Pagination API utilisée : 6057 relations récupérées au total.",
+      "Résultats limités : la pagination a atteint la limite de sécurité (1000 max). Des résultats supplémentaires peuvent exister."
+    ],
+    "joinStats": {
+      "relation": "r_has_part",
+      "anchorVariable": "$x",
+      "discoveredVariable": "$y",
+      "candidatsDisponibles": 5000,
+      "candidatsTestes": 15,
+      "couplesTrouves": 1000,
+      "wasLimited": true,
+      "reachedEarlyStop": true,
+      "usedDirectExploration": true,
+      "usedIdComparison": true
+    },
+    "planDetails": [
+      {
+        "rang": 1,
+        "clause": "($x r_isa animal)",
+        "structuralComplexity": 1,
+        "estimatedCardinality": ">=500",
+        "reason": "Ancrage initial par constante, cardinalité estimée : >=500"
+      },
+      {
+        "rang": 2,
+        "clause": "($x r_has_part $y)",
+        "structuralComplexity": 5,
+        "estimatedCardinality": null,
+        "reason": "Exploration ciblée depuis variable ancrée"
+      },
+      {
+        "rang": 3,
+        "clause": "($y = pa%)",
+        "structuralComplexity": 0.5,
+        "estimatedCardinality": null,
+        "reason": "Filtre local sur variable déjà ancrée (très rapide)"
+      }
+    ],
+    "success": true,
+    "errorMessage": null
+  },
+  {
+    "id": 12,
+    "query": "(lion r_can_eat $y) ET ($y r_isa animal)",
+    "description": "Requête ciblée — proies du lion",
+    "statut": "Succès",
+    "nb_total": 4,
+    "durationMs": 3,
+    "apiCalls": 0,
+    "apiErrors": 0,
+    "cacheHits": 1689,
+    "cacheMisses": 67,
+    "pagesFetched": 6,
+    "totalFetched": 5015,
+    "usedPagination": true,
+    "warnings": [
+      "Pagination API utilisée : 5015 relations récupérées au total.",
+      "Résultats limités : la pagination a atteint la limite de sécurité (1000 max). Des résultats supplémentaires peuvent exister."
+    ],
+    "joinStats": null,
+    "planDetails": [
+      {
+        "rang": 1,
+        "clause": "(lion r_can_eat $y)",
+        "structuralComplexity": 1,
+        "estimatedCardinality": 15,
+        "reason": "Ancrage initial par constante, cardinalité estimée : 15"
+      },
+      {
+        "rang": 2,
+        "clause": "($y r_isa animal)",
+        "structuralComplexity": 1,
+        "estimatedCardinality": ">=500",
+        "reason": "Ancrage initial par constante, cardinalité estimée : >=500"
+      }
+    ],
+    "success": true,
+    "errorMessage": null
+  },
+  {
+    "id": 13,
+    "query": "($x r_isa)",
+    "description": "Erreur syntaxique attendue",
+    "statut": "Erreur",
+    "nb_total": 0,
+    "durationMs": 1,
+    "apiCalls": 0,
+    "apiErrors": 0,
+    "cacheHits": 0,
+    "cacheMisses": 0,
+    "pagesFetched": 0,
+    "totalFetched": 0,
+    "usedPagination": false,
+    "warnings": [
+      "Syntaxe invalide — la requête n'a pas pu être analysée."
+    ],
+    "joinStats": null,
+    "planDetails": null,
+    "success": true,
+    "errorMessage": null
+  },
+  {
+    "id": 14,
+    "query": "($x relation_inconnue animal)",
+    "description": "Relation inconnue attendue",
+    "statut": "Erreur",
+    "nb_total": 0,
+    "durationMs": 2,
+    "apiCalls": 0,
+    "apiErrors": 0,
+    "cacheHits": 0,
+    "cacheMisses": 0,
+    "pagesFetched": 0,
+    "totalFetched": 0,
+    "usedPagination": false,
+    "warnings": [
+      "Erreur interne du moteur : Relation inconnue : \"relation_inconnue\". Vérifiez le dictionnaire des relations JDM."
+    ],
+    "joinStats": null,
+    "planDetails": null,
+    "success": true,
+    "errorMessage": null
+  }
+]

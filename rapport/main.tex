@@ -1,0 +1,163 @@
+\documentclass[12pt,a4paper]{report}
+
+% ─── Packages ─────────────────────────────────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{mdframed}
+\usepackage{tikz}
+\usepackage{forest}
+
+% ─── Mise en page ─────────────────────────────────────────────────────────
+\geometry{
+    top=2.5cm, bottom=2.5cm,
+    left=3cm, right=2.5cm
+}
+
+% ─── En-têtes et pieds de page ────────────────────────────────────────────
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\leftmark}
+\fancyhead[R]{\small WIDO — Moteur Sémantique}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ─── Couleurs ─────────────────────────────────────────────────────────────
+\definecolor{codeblue}{RGB}{0,120,215}
+\definecolor{codegray}{RGB}{128,128,128}
+\definecolor{codegreen}{RGB}{0,128,0}
+\definecolor{codebg}{RGB}{247,247,247}
+\definecolor{jdmblue}{RGB}{30,100,200}
+
+% ─── Style code ───────────────────────────────────────────────────────────
+\lstdefinestyle{wido}{
+    language=JavaScript,
+    backgroundcolor=\color{codebg},
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{codeblue}\bfseries,
+    commentstyle=\color{codegray}\itshape,
+    stringstyle=\color{codegreen},
+    numberstyle=\tiny\color{codegray},
+    numbers=left,
+    numbersep=5pt,
+    breaklines=true,
+    frame=single,
+    framesep=4pt,
+    rulecolor=\color{codegray},
+    tabsize=4,
+    showstringspaces=false,
+    captionpos=b
+}
+
+% Style pour les requêtes WIDO
+\lstdefinestyle{widoquery}{
+    basicstyle=\ttfamily\normalsize,
+    backgroundcolor=\color{codebg},
+    frame=single,
+    framesep=5pt,
+    rulecolor=\color{jdmblue},
+    breaklines=true
+}
+
+\lstset{style=wido}
+
+% ─── Commandes personnalisées ──────────────────────────────────────────────
+\newcommand{\wido}{\textsc{WIDO}}
+\newcommand{\jdm}{\textsc{JeuxDeMots}}
+\newcommand{\var}[1]{\texttt{\$#1}}
+\newcommand{\rel}[1]{\texttt{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+
+% Boîte de mise en valeur
+\newenvironment{widobox}{
+    \begin{mdframed}[
+        linecolor=jdmblue,linewidth=1.5pt,
+        backgroundcolor=blue!3,
+        skipabove=8pt, skipbelow=8pt,
+        innerleftmargin=10pt, innerrightmargin=10pt
+    ]
+}{
+    \end{mdframed}
+}
+
+% ─── Hyperref ─────────────────────────────────────────────────────────────
+\hypersetup{
+    colorlinks=true,
+    linkcolor=jdmblue,
+    urlcolor=codeblue,
+    citecolor=codegray,
+    pdftitle={WIDO — Moteur Sémantique pour JeuxDeMots},
+    pdfauthor={Mohamed TEDJINI & Maurice DJOBO}
+}
+
+% ─── Début du document ────────────────────────────────────────────────────
+\begin{document}
+
+% ─── Page de titre ────────────────────────────────────────────────────────
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge\bfseries WIDO\par}
+    {\Large Moteur Sémantique pour JeuxDeMots\par}
+    \vspace{0.5cm}
+    {\large Langage de Requêtes Formelles avec Heuristiques d'Optimisation\par}
+    \vspace{2cm}
+    \hrule height 1pt
+    \vspace{0.5cm}
+    {\large Rapport de projet TER\par}
+    {\normalsize Master Informatique — Spécialité ICO\par}
+    {\normalsize Université \ldots, 2025--2026\par}
+    \vspace{0.5cm}
+    \hrule height 1pt
+    \vspace{2cm}
+    {\Large\bfseries Mohamed TEDJINI\par}
+    {\Large\bfseries Maurice DJOBO\par}
+    \vspace{1.5cm}
+    {\normalsize Encadrant : \ldots\par}
+    \vfill
+    {\normalsize Mai 2026\par}
+\end{titlepage}
+
+% ─── Résumé ───────────────────────────────────────────────────────────────
+\begin{abstract}
+\wido{} est un moteur de recherche sémantique permettant d'interroger le graphe de connaissances \jdm{} (JDM) via un langage de requêtes formel à variables. L'utilisateur formule des requêtes telles que \texttt{(\$x r\_isa animal) ET (\$x r\_has\_part queue)}, que le moteur parse en arbre de décision, optimise par des heuristiques structurelles et de cardinalité, puis exécute en interrogeant l'API JDM v0. Les résultats sont croisés par jointures ensemblistes basées sur les identifiants des nœuds, classés par score de pertinence, et présentés avec leurs preuves dans une interface web glassmorphique.
+\end{abstract}
+
+% ─── Table des matières ───────────────────────────────────────────────────
+\tableofcontents
+\clearpage
+
+% ─── Corps du rapport ─────────────────────────────────────────────────────
+\input{sections/01_introduction}
+\input{sections/02_contexte}
+\input{sections/03_etat_art}
+\input{sections/04_architecture}
+\input{sections/05_parseur}
+\input{sections/06_heuristiques}
+\input{sections/07_moteur}
+\input{sections/08_api}
+\input{sections/09_interface}
+\input{sections/10_evaluation}
+\input{sections/11_limites}
+\input{sections/12_conclusion}
+
+% ─── Bibliographie ────────────────────────────────────────────────────────
+\bibliographystyle{plain}
+\bibliography{bibliographie}
+
+\end{document}

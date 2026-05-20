@@ -1,0 +1,18 @@
+\chapter{Interface utilisateur}
+\label{chap:interface}
+
+\section{Design glassmorphique}
+
+L'interface web adopte un style glassmorphique : fond sombre, éléments translucides avec \code{backdrop-filter: blur()}, typographie claire.
+
+\section{Zone de saisie et résultats}
+
+L'utilisateur saisit sa requête. La touche Entrée déclenche la recherche. Les résultats affichent : variables liées, score de pertinence, et preuves (bouton toggle).
+
+\section{Panneau de diagnostic}
+
+L'interface affiche : statut, warnings, joinStats (candidats testés, couples trouvés), pagination (pages et relations récupérées), AST.
+
+\section{Gestion des erreurs}
+
+Quand \code{statut: "Erreur"}, bannière rouge avec message. Aucun \code{undefined} affiché.

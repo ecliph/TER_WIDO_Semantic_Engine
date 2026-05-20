@@ -1,0 +1,52 @@
+\chapter{Contexte et données}
+\label{chap:contexte}
+
+\section{JeuxDeMots}
+
+\jdm{} est un jeu en ligne sérieux développé par le LIRMM (Montpellier) dont le but est de construire collaborativement un réseau lexical du français. Les joueurs associent des mots à des propriétés, des catégories, des synonymes, des actions possibles, etc. Le résultat est un graphe de connaissances contenant des millions de nœuds et de relations.
+
+\section{Structure du graphe JDM}
+
+Chaque \textbf{nœud} représente un concept (mot, expression, syntagme) et est identifié par un entier unique (ID JDM). Chaque \textbf{relation} est un triplet (nœud source, type de relation, nœud cible) associé à un poids (score de confiance) allant de 1 à plusieurs milliers.
+
+Les types de relations principaux utilisés dans \wido{} sont :
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lll}
+        \toprule
+        Nom & ID & Signification \\
+        \midrule
+        \rel{r\_isa} & 6 & Appartient à la catégorie \\
+        \rel{r\_has\_part} & 9 & Possède la partie \\
+        \rel{r\_can\_eat} & 43 & Peut manger \\
+        \rel{r\_color} & 42 & A pour couleur \\
+        \rel{r\_carac} & 12 & A pour caractéristique \\
+        \rel{r\_synt\_synon} & 1 & Synonyme syntaxique \\
+        \bottomrule
+    \end{tabular}
+    \caption{Types de relations JDM utilisés dans WIDO}
+    \label{tab:relations}
+\end{table}
+
+\section{API JDM v0}
+
+L'API REST publique du LIRMM expose les données JDM via des endpoints structurés. Elle supporte la pagination native (\code{limit} + \code{offset}) et le filtrage par type de relation (\code{types\_ids}) et poids minimum (\code{min\_weight}). Le tableau~\ref{tab:endpoints} résume les endpoints exploités dans \wido{}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ll}
+        \toprule
+        Endpoint & Usage \\
+        \midrule
+        \code{/v0/node\_by\_name/\{name\}} & Résoudre un nom en nœud JDM \\
+        \code{/v0/relations/from/\{name\}} & Récupérer les relations sortantes \\
+        \code{/v0/relations/to/\{name\}} & Récupérer les relations entrantes \\
+        \code{/v0/relations/from\_by\_id/\{id\}} & Relations sortantes par ID \\
+        \code{/v0/relations/to\_by\_id/\{id\}} & Relations entrantes par ID \\
+        \code{/v0/relations/from\_by\_id/\{id1\}/to\_by\_id/\{id2\}} & Vérification d'un couple \\
+        \bottomrule
+    \end{tabular}
+    \caption{Endpoints API JDM utilisés par WIDO}
+    \label{tab:endpoints}
+\end{table}

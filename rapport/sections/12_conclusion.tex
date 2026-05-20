@@ -1,0 +1,18 @@
+\chapter{Conclusion}
+\label{chap:conclu}
+
+Ce projet a conduit à la conception et à l'implémentation complète du moteur sémantique \wido{}, capable d'interroger le graphe de connaissances \jdm{} via un langage de requêtes formel à variables.
+
+Les contributions principales sont :
+\begin{itemize}
+    \item Un \textbf{parseur} robuste gérant les opérateurs ET, OU, les filtres textuels et les erreurs syntaxiques ;
+    \item Un \textbf{planificateur} combinant heuristique structurelle et estimation de cardinalité pour optimiser l'ordre d'exécution ;
+    \item Un \textbf{moteur d'exécution} utilisant les IDs JDM pour des jointures exactes et efficaces ;
+    \item Une \textbf{pagination API} permettant de récupérer des listes complètes sans surcharger le service ;
+    \item Une \textbf{interface glassmorphique} affichant proprement les résultats, les scores, les preuves et les statistiques de diagnostic ;
+    \item Un \textbf{benchmark automatique} de 14 requêtes générant des métriques reproductibles.
+\end{itemize}
+
+Le moteur est pleinement fonctionnel et a été validé sur les requêtes officielles du sujet TER. Ses limites principales (densité de JDM, combinatoire des jointures) sont inhérentes à la nature du graphe source et non à l'architecture du moteur.
+
+\wido{} constitue une base solide pour des travaux futurs sur la recherche sémantique en langage naturel dans des graphes de connaissances collaboratifs.

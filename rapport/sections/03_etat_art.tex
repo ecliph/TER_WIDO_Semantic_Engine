@@ -1,0 +1,18 @@
+\chapter{État de l'art}
+\label{chap:etat_art}
+
+\section{Moteurs de recherche sémantique}
+
+Les moteurs de recherche sémantique sur des graphes de connaissances ont été largement étudiés dans le contexte du Web sémantique. SPARQL~\cite{sparql2013} est le standard pour interroger des graphes RDF (Resource Description Framework). Des moteurs comme Virtuoso ou GraphDB permettent d'exécuter des requêtes SPARQL sur des bases de connaissances volumineuses.
+
+\section{Spécificité de JDM}
+
+À la différence de DBpedia ou Wikidata, JDM est un graphe informel construit collaborativement. Il n'expose pas nativement de point SPARQL, d'où la nécessité d'une couche d'abstraction comme \wido{}.
+
+\section{Optimisation de requêtes}
+
+L'optimisation de l'ordre d'exécution des jointures est un problème classique en bases de données relationnelles (algorithme de Selinger~\cite{selinger1979}). Dans le contexte des graphes, les heuristiques de cardinalité permettent d'estimer le coût d'une jointure avant de l'exécuter. Notre approche combine une heuristique structurelle (coût syntaxique) et une estimation de cardinalité par sondage de l'API.
+
+\section{Comparaison par identifiant}
+
+Dans un graphe de connaissances, comparer deux nœuds par leur identifiant plutôt que par leur nom est une pratique recommandée pour éviter les ambiguïtés dues aux homonymes et aux variantes typographiques~\cite{noy2009}.

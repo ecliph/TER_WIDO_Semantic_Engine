@@ -1,0 +1,41 @@
+\chapter{Évaluation et benchmark}
+\label{chap:eval}
+
+\section{Protocole}
+
+Le benchmark automatique exécute 14 requêtes représentatives sur le serveur en cours d'exécution et mesure : durée, appels API, cache, pagination, joinStats, et résultats.
+
+\section{Requêtes testées}
+
+\begin{longtable}{cll}
+    \toprule
+    \# & Requête & Description \\
+    \midrule
+    1 & \texttt{(\$x r\_isa animal)} & Simple, ancrage \\
+    2 & \texttt{(\$x r\_isa animal) ET (\$x = ch\%)} & Filtre texte \\
+    3 & \texttt{(\$x r\_isa animal) ET (\$x r\_has\_part queue)} & Jointure ET \\
+    4 & \texttt{((\$x r\_isa mammifere) OU (\$x r\_isa oiseau)) ET (\$x = ch\%)} & OU imbriqué \\
+    5 & \texttt{(\$x r\_isa artiste) ET ((\$x = ba\%) OU (\$x = Ba\%))} & Requête officielle \\
+    6 & \texttt{(\$x r\_isa animal) ET ((\$x r\_has\_part aile) OU ...)} & ET + OU \\
+    7 & \texttt{(\$x r\_isa animal) ET (\$y r\_isa animal) ET (\$x r\_can\_eat \$y)} & 2 variables \\
+    8 & \texttt{(chat r\_isa \$x)} & Direction inverse \\
+    9 & \texttt{(chat r\_has\_part \$x)} & Exploration \\
+    10 & \texttt{(chat r\_has\_part \$y) ET (\$y r\_isa \$z)} & 3 variables \\
+    11 & \texttt{(\$x r\_isa animal) ET (\$x r\_has\_part \$y) ET (\$y = pa\%)} & 3 vars + filtre \\
+    12 & \texttt{(lion r\_can\_eat \$y) ET (\$y r\_isa animal)} & Ciblée \\
+    13 & \texttt{(\$x r\_isa)} & Erreur syntaxique \\
+    14 & \texttt{(\$x relation\_inconnue animal)} & Relation invalide \\
+    \bottomrule
+\end{longtable}
+
+\section{Analyse des résultats}
+
+Les résultats du benchmark sont générés automatiquement dans \code{benchmark\_results.md} après exécution de \code{node benchmark.js}. Voir ce fichier pour les métriques exactes (durées, appels API, joinStats).
+
+Les observations générales sont :
+\begin{itemize}
+    \item Les requêtes simples (1-2 variables) sont traitées en moins de 2s ;
+    \item Le cache réduit significativement les durées des requêtes répétées ;
+    \item La requête officielle à 2 variables (r\_can\_eat) peut retourner 0 résultat si la relation est peu renseignée dans JDM ;
+    \item La pagination est utilisée pour les grandes listes (ex: r\_isa animal $\geq$ 500 entrées).
+\end{itemize}

@@ -1,0 +1,22 @@
+\chapter{Limites et perspectives}
+\label{chap:limites}
+
+\section{Limites actuelles}
+
+\paragraph{Densité de JDM.} La qualité des résultats dépend directement de la densité du graphe JDM pour les relations utilisées. La relation \rel{r\_can\_eat} est peu renseignée, ce qui explique que la requête officielle à 2 variables peut retourner peu ou aucun résultat.
+
+\paragraph{Combinatoire des jointures.} Pour les requêtes à 2-3 variables, le nombre de candidats à tester peut exploser. Les limites de sécurité (\code{joinCandidateLimit=500}, \code{joinEarlyStop=1000}) contrôlent cet espace mais peuvent tronquer les résultats.
+
+\paragraph{Polysémie non gérée.} Un mot comme "chat" peut correspondre à plusieurs nœuds JDM (animal, messagerie...). Le moteur prend le nœud canonique sans désambiguïsation.
+
+\paragraph{Pagination bornée.} La pagination est limitée à 5000 relations par clause pour protéger l'API du LIRMM. Des relations plus volumineuses sont tronquées.
+
+\section{Perspectives d'amélioration}
+
+\begin{itemize}
+    \item \textbf{Désambiguïsation} : exploiter l'endpoint \code{/refinements/} pour gérer la polysémie ;
+    \item \textbf{Index local} : construire un index partiel des relations fréquentes pour réduire les appels API ;
+    \item \textbf{Jointures parallèles} : tester plusieurs candidats en parallèle avec \code{Promise.all} contrôlé ;
+    \item \textbf{Requêtes récursives} : explorer des chemins de longueur variable dans le graphe ;
+    \item \textbf{Langage naturel} : ajouter une couche de traduction langage naturel → requête WIDO.
+\end{itemize}

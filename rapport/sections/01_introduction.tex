@@ -1,0 +1,24 @@
+\chapter{Introduction}
+\label{chap:intro}
+
+Ce projet de Travail d'Étude et de Recherche (TER) s'inscrit dans le cadre du Master Informatique, spécialité ICO. Il porte sur la conception et l'implémentation d'un moteur de recherche sémantique nommé \wido{}, capable d'interroger le graphe de connaissances \jdm{} via un langage de requêtes formel à variables.
+
+\section{Problématique}
+
+Les graphes de connaissances comme \jdm{} contiennent des millions de relations entre concepts. L'enjeu est de permettre à un utilisateur non expert de formuler des requêtes complexes en combinant plusieurs relations, opérateurs logiques et contraintes textuelles, sans avoir à connaître la structure interne de la base.
+
+\section{Objectifs}
+
+Les objectifs de ce projet sont les suivants :
+\begin{enumerate}
+    \item Définir un langage de requêtes formel adapté à JDM ;
+    \item Implémenter un parseur syntaxique produisant un arbre de décision (AST) ;
+    \item Concevoir un planificateur d'exécution basé sur des heuristiques structurelles et de cardinalité ;
+    \item Réaliser un moteur d'exécution qui interroge l'API JDM v0 et croiser les résultats par jointures sur les identifiants des nœuds ;
+    \item Développer une interface web permettant la saisie de requêtes et la visualisation des résultats avec leurs preuves ;
+    \item Évaluer les performances du moteur via un benchmark automatique.
+\end{enumerate}
+
+\section{Plan du rapport}
+
+Le chapitre~\ref{chap:contexte} présente le contexte du projet et le graphe JeuxDeMots. Le chapitre~\ref{chap:archi} décrit l'architecture globale du moteur. Les chapitres~\ref{chap:parseur} à~\ref{chap:api} détaillent chaque composant. Le chapitre~\ref{chap:eval} présente les résultats du benchmark. Enfin, les chapitres~\ref{chap:limites} et~\ref{chap:conclu} discutent des limites et ouvrent des pistes d'amélioration.

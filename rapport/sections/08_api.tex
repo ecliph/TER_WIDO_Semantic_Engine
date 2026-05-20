@@ -1,0 +1,57 @@
+\chapter{Client API et cache}
+\label{chap:api}
+
+\section{Pagination de l'API JDM}
+
+L'API JDM retourne au plus $n$ résultats par appel. Pour récupérer des listes complètes, \wido{} implémente une boucle de pagination native avec les paramètres \code{limit} et \code{offset}.
+
+\begin{lstlisting}[caption=Boucle de pagination (extrait simplifié de jdmApi.js)]
+let offset = 0, page = 0;
+while (true) {
+    if (page >= maxPages) break;         // Limite de sécurité
+    if (results.length >= maxTotal) break;
+
+    const url = `${base}?types_ids=${relId}
+                 &limit=${limit}&offset=${offset}`;
+    const data = await apiCall(url);
+
+    results.push(...data.relations);
+    page++; offset += limit;
+
+    if (data.relations.length < limit) break; // Derniere page
+}
+\end{lstlisting}
+
+Les paramètres de sécurité sont : \code{limit=1000}, \code{maxPages=5}, \code{maxTotal=5000}.
+
+\section{Cache disque MD5}
+
+Le cache disque évite les appels redondants à l'API JDM. Chaque clé de cache est un hash MD5 de l'URL ou des paramètres de la requête. Les données sont stockées en JSON sur le disque.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ll}
+        \toprule
+        Type de cache & Clé \\
+        \midrule
+        Résolution de nœud & \code{node\_by\_name:\{name\}} \\
+        Relations paginées & \code{relsPaged:\{dir\}:\{node\}:\{rel\}:...} \\
+        Relations par ID & \code{relsPaged:\{dir\}:id:\{nodeId\}:\{rel\}:...} \\
+        Cardinalité estimée & \code{cardinality:\{dir\}:\{node\}:\{rel\}:...} \\
+        Vérification de couple & \code{check:\{id1\}:\{rel\}:\{id2\}} \\
+        \bottomrule
+    \end{tabular}
+    \caption{Structure des clés de cache WIDO}
+    \label{tab:cache}
+\end{table}
+
+\section{Gestion des erreurs API}
+
+\begin{itemize}
+    \item \textbf{HTTP 404} : nœud ou relation introuvable → résultat vide (cas légitime)
+    \item \textbf{HTTP 500} : erreur serveur JDM → retry 1× après 500ms
+    \item \textbf{Timeout ($>$15s)} : appel abandonné, warning remonté à l'interface
+    \item \textbf{Erreur réseau} : log et continuation avec les données disponibles
+\end{itemize}
+
+La résilience du moteur repose sur ces mécanismes : une clause qui échoue ne bloque pas les autres.

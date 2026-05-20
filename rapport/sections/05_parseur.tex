@@ -1,0 +1,56 @@
+\chapter{Parseur syntaxique}
+\label{chap:parseur}
+
+\section{Langage de requêtes WIDO}
+
+Le langage \wido{} permet d'exprimer des requêtes formelles à variables sur le graphe JDM. Sa grammaire (simplifiée) est la suivante :
+
+\begin{verbatim}
+requête  ::= expr
+expr     ::= terme (ET terme)*
+terme    ::= facteur (OU facteur)*
+facteur  ::= '(' clause ')'
+           | '(' expr ')'
+clause   ::= '(' sujet relation objet ')'
+           | '(' variable '=' filtre ')'
+sujet    ::= variable | constante
+objet    ::= variable | constante
+variable ::= '$' identifiant
+filtre   ::= [a-z%]+
+\end{verbatim}
+
+\section{Exemples de requêtes}
+
+\begin{lstlisting}[style=widoquery, caption=Exemples de requêtes WIDO]
+($x r_isa animal)
+($x r_isa animal) ET ($x = ch%)
+($x r_isa artiste) ET (($x = ba%) OU ($x = Ba%))
+($x r_isa animal) ET ($y r_isa animal) ET ($x r_can_eat $y)
+(chat r_has_part $y) ET ($y r_isa $z)
+\end{lstlisting}
+
+\section{Structure de l'AST}
+
+Le parseur produit un arbre de décision récursif. Chaque nœud interne représente un opérateur logique (ET/OU), chaque feuille est une clause atomique (relation ou filtre).
+
+\begin{lstlisting}[caption=AST produit pour \texttt{(\$x r\_isa animal) ET (\$x = ch\%)}]
+{
+  "type": "NOEUD_LOGIQUE",
+  "operateur": "ET",
+  "gauche": {
+    "type": "CLAUSE_RELATION",
+    "variable": "$x",
+    "relation": "r_isa",
+    "cible": "animal"
+  },
+  "droite": {
+    "type": "CLAUSE_FILTRE",
+    "variable": "$x",
+    "filtre": "ch%"
+  }
+}
+\end{lstlisting}
+
+\section{Gestion des erreurs syntaxiques}
+
+Lorsqu'une clause est incomplète (ex: \texttt{(\$x r\_isa)}), le parseur lève une exception qui est capturée par le serveur. Celui-ci retourne une réponse JSON propre avec \code{statut: "Erreur"} et un message explicatif, sans jamais retourner de HTTP 500 ni de champs \code{undefined}.

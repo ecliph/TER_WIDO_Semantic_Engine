@@ -1,0 +1,53 @@
+\chapter{Moteur d'exécution}
+\label{chap:moteur}
+
+\section{Principe d'exécution}
+
+Le moteur d'exécution parcourt le plan produit par le planificateur et maintient un \textbf{contexte} : une liste de tuples partiels représentant les liaisons variable $\rightarrow$ nœud JDM découvertes jusqu'à présent.
+
+\section{Trois cas de traitement d'une clause de relation}
+
+\subsection{Cas 1 : Ancrage initial (Constante $\rightarrow$ Variable)}
+
+La variable cible n'est pas encore ancrée. Le moteur interroge l'API JDM (\code{/from/} ou \code{/to/}) pour obtenir la liste des nœuds satisfaisant la clause, et crée de nouveaux tuples.
+
+\textit{Exemple :} \texttt{(\$x r\_isa animal)} $\rightarrow$ appel à \code{/v0/relations/to/animal?types\_ids=6}. \\
+Résultat : \texttt{[\{\$x: \{id: 39642, name: "chat"\}\}, \{\$x: \{id: ..., name: "chien"\}\}, ...]}
+
+\subsection{Cas 2 : Vérification (Variable ancrée $\rightarrow$ Constante)}
+
+La variable source est déjà ancrée. Le moteur récupère la liste valide depuis l'API, construit un \code{Set} d'IDs, et filtre le contexte en O(1).
+
+\textit{Exemple :} \texttt{(\$x r\_has\_part queue)} après ancrage de \var{x} $\rightarrow$ appel unique + filtrage local.
+
+\subsection{Cas 3 : Jointure (Variable $\rightarrow$ Variable)}
+
+Les deux variables sont des variables, au moins l'une étant déjà ancrée. Le moteur itère sur les candidats de la variable ancrée, effectue un appel API par candidat (via \code{from\_by\_id} ou \code{to\_by\_id}), et conserve les couples valides.
+
+\section{Comparaison par ID JDM}
+
+Toutes les intersections et jointures utilisent les \textbf{identifiants numériques} des nœuds JDM, et non leurs noms textuels. Cette stratégie garantit des comparaisons exactes en O(1) avec un \code{Set<id>}, et évite les ambiguïtés dues aux homonymes ou aux variantes typographiques.
+
+\begin{lstlisting}[caption=Comparaison par ID dans le moteur d'exécution]
+// Construction d'un Set d'IDs valides (en O(n))
+const validIds = new Set(apiResults.map(r => r.id));
+
+// Filtrage local en O(1) par ID
+return contexte.filter(tuple =>
+    tuple[$x] && validIds.has(tuple[$x].id)
+);
+\end{lstlisting}
+
+\section{Scores et preuves}
+
+Chaque tuple porte deux métadonnées :
+\begin{itemize}
+    \item \code{\_\_score} : somme des poids des relations traversées ;
+    \item \code{\_\_preuves} : liste des clauses qui justifient l'inclusion de ce tuple dans le résultat.
+\end{itemize}
+
+Les résultats finaux sont triés par score décroissant.
+
+\section{Traitement des opérateurs OU}
+
+Pour les branches OU, le moteur exécute chaque branche indépendamment et calcule l'union des résultats. Les doublons (même combinaison d'IDs) sont éliminés en conservant le tuple de score maximal.

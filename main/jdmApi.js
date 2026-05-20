@@ -1,15 +1,25 @@
 const axios = require('axios');
 
+const JDM_BASE = 'https://jdm-api.demo.lirmm.fr';
+
+/**
+ * Couche d'accès à l'API JeuxDeMots (JDM v0).
+ * Les IDs JDM sont utilisés pour éviter les ambiguïtés de noms et accélérer les intersections.
+ */
 class JdmApi {
     constructor(cacheManager, limits) {
         this.cache = cacheManager;
         this.limits = limits || {
             apiTimeoutMs: 15000,
-            maxInitialCandidates: 200
+            maxInitialCandidates: 1000
         };
         this.callCount = 0;
         this.errors = [];
     }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // Infrastructure
+    // ─────────────────────────────────────────────────────────────────────────
 
     async safeApiCall(url, retries = 2) {
         this.callCount++;
@@ -18,12 +28,10 @@ class JdmApi {
             return response.data;
         } catch (err) {
             if (retries > 0 && (!err.response || err.response.status >= 500)) {
-                // Une seule retry silencieuse pour les erreurs 500
                 await new Promise(r => setTimeout(r, 500));
                 return this.safeApiCall(url, retries - 1);
             }
             const errorMsg = err.response ? `HTTP ${err.response.status}` : err.message;
-            // Dédupliquer les erreurs (ne pas stocker deux fois la même URL)
             if (!this.errors.find(e => e.url === url)) {
                 this.errors.push({ url, error: errorMsg });
             }
@@ -32,16 +40,39 @@ class JdmApi {
         }
     }
 
+    resetDebugInfo() {
+        this.callCount = 0;
+        this.errors = [];
+    }
+
+    // Noms normalisés pour correspondre exactement à ce que node.js lit
+    getDebugInfo() {
+        return {
+            apiCalls: this.callCount,
+            errorCount: this.errors.length,
+            errors: this.errors
+        };
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // Résolution de nœuds
+    // ─────────────────────────────────────────────────────────────────────────
+
+    /**
+     * Convertit un nom de mot en nœud JDM { id, name }.
+     * Endpoint : GET /v0/node_by_name/{name}
+     */
     async resolveNodeByName(name) {
-        const cached = await this.cache.get(`node_by_name:${name}`);
+        const key = `node_by_name:${name.toLowerCase().trim()}`;
+        const cached = await this.cache.get(key);
         if (cached) return cached;
 
-        const url = `https://jdm-api.demo.lirmm.fr/v0/node_by_name/${encodeURIComponent(name.toLowerCase().trim())}`;
+        const url = `${JDM_BASE}/v0/node_by_name/${encodeURIComponent(name.toLowerCase().trim())}`;
         try {
             const data = await this.safeApiCall(url);
             if (data && data.id) {
                 const result = { id: data.id, name: data.name };
-                await this.cache.set(`node_by_name:${name}`, result);
+                await this.cache.set(key, result);
                 return result;
             }
             return null;
@@ -50,72 +81,246 @@ class JdmApi {
         }
     }
 
+    // ─────────────────────────────────────────────────────────────────────────
+    // Récupération de relations — VERSION SIMPLE (compatibilité interne)
+    // ─────────────────────────────────────────────────────────────────────────
+
+    /**
+     * Récupère les relations depuis/vers un nœud identifié par son NOM.
+     * Délègue à getRelationsPaged pour bénéficier de la pagination.
+     *
+     * direction = "from" : (nodeName relation $x)  →  /relations/from/{nodeName}
+     * direction = "to"   : ($x relation nodeName)  →  /relations/to/{nodeName}
+     */
     async getRelations(nodeName, relationId, direction = 'from', minWeight = 10) {
-        const cacheKey = `rels:${direction}:${nodeName}:${relationId}:${minWeight}`;
+        const result = await this.getRelationsPaged({
+            node: nodeName,
+            relationId,
+            direction,
+            minWeight,
+            useId: false
+        });
+        return { resultats: result.resultats, paginationStats: result.paginationStats };
+    }
+
+    /**
+     * Récupère les relations depuis/vers un nœud identifié par son ID.
+     * Plus fiable que par nom car contourne les ambiguïtés.
+     *
+     * direction = "from" : /relations/from_by_id/{nodeId}
+     * direction = "to"   : /relations/to_by_id/{nodeId}
+     */
+    async getRelationsById(nodeId, nodeName, relationId, direction = 'from', minWeight = 10) {
+        const result = await this.getRelationsPaged({
+            nodeId,
+            node: nodeName,
+            relationId,
+            direction,
+            minWeight,
+            useId: true
+        });
+        return { resultats: result.resultats, paginationStats: result.paginationStats };
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // Récupération de relations — VERSION PAGINÉE (cœur du système)
+    // ─────────────────────────────────────────────────────────────────────────
+
+    /**
+     * Récupère des relations en boucle (limit + offset) jusqu'à épuisement ou limite.
+     *
+     * Endpoints utilisés :
+     *   useId=false, direction="from" → /v0/relations/from/{node}
+     *   useId=false, direction="to"   → /v0/relations/to/{node}
+     *   useId=true,  direction="from" → /v0/relations/from_by_id/{nodeId}
+     *   useId=true,  direction="to"   → /v0/relations/to_by_id/{nodeId}
+     *
+     * Paramètres de pagination :
+     *   limit    : nombre de relations par page (max recommandé : 1000)
+     *   maxPages : nombre max de pages à récupérer (défaut : 5)
+     *   maxTotal : nombre max de résultats au total (défaut : 5000)
+     *
+     * Retourne un objet avec :
+     *   resultats, totalFetched, pagesFetched, usedPagination,
+     *   stoppedReason, reachedPaginationLimit, apiCalls, paginationStats
+     */
+    async getRelationsPaged({
+        node,
+        nodeId,
+        relationId,
+        direction = 'from',
+        useId = false,
+        limit = 1000,
+        maxPages = 5,
+        maxTotal = 5000,
+        minWeight = 10
+    }) {
+        // Clé de cache stable pour toute la session paginée
+        const cacheKey = useId
+            ? `relsPaged:${direction}:id:${nodeId}:${relationId}:mw${minWeight}:lim${limit}:mp${maxPages}:mt${maxTotal}`
+            : `relsPaged:${direction}:${node}:${relationId}:mw${minWeight}:lim${limit}:mp${maxPages}:mt${maxTotal}`;
+
         const cached = await this.cache.get(cacheKey);
         if (cached) return cached;
 
-        const url = `https://jdm-api.demo.lirmm.fr/v0/relations/${direction}/${encodeURIComponent(nodeName)}?types_ids=${relationId}&min_weight=${minWeight}`;
-        
-        try {
-            const rawData = await this.safeApiCall(url);
-            if (!rawData) return { resultats: [] };
+        // Construction de l'URL de base selon useId et direction
+        let basePath;
+        if (useId) {
+            basePath = direction === 'from'
+                ? `${JDM_BASE}/v0/relations/from_by_id/${nodeId}`
+                : `${JDM_BASE}/v0/relations/to_by_id/${nodeId}`;
+        } else {
+            const encoded = encodeURIComponent(node.toLowerCase().trim());
+            basePath = direction === 'from'
+                ? `${JDM_BASE}/v0/relations/from/${encoded}`
+                : `${JDM_BASE}/v0/relations/to/${encoded}`;
+        }
 
-            const nodesMap = {};
-            if (rawData.nodes) {
-                rawData.nodes.forEach(n => nodesMap[n.id] = n.name);
+        const allResults = [];
+        let offset = 0;
+        let page = 0;
+        let stoppedReason = 'last_page';
+        let apiCallsUsed = 0;
+
+        // ── Boucle de pagination ──────────────────────────────────────────────
+        while (true) {
+            if (page >= maxPages) { stoppedReason = 'max_pages'; break; }
+            if (allResults.length >= maxTotal) { stoppedReason = 'max_total'; break; }
+
+            const url = `${basePath}?types_ids=${relationId}&min_weight=${minWeight}&limit=${limit}&offset=${offset}`;
+
+            let rawData;
+            try {
+                rawData = await this.safeApiCall(url);
+                apiCallsUsed++;
+            } catch (e) {
+                stoppedReason = 'api_error';
+                break;
             }
 
-            const resultats = (rawData.relations || [])
-                .filter(rel => rel.w >= minWeight)
-                .map(rel => {
-                    const nodeId = direction === 'to' ? rel.node1 : rel.node2;
-                    return {
-                        id: nodeId,
-                        name: nodesMap[nodeId] || `ID: ${nodeId}`,
-                        poids: rel.w
-                    };
-                })
-                .sort((a, b) => b.poids - a.poids)
-                .slice(0, this.limits.maxInitialCandidates);
+            if (!rawData) break;
 
-            const output = { resultats };
-            await this.cache.set(cacheKey, output);
-            return output;
-        } catch (e) {
-            return { resultats: [], error: e.message };
+            // Construire une map id→name depuis les nœuds inclus dans la réponse
+            const nodesMap = {};
+            if (rawData.nodes) {
+                rawData.nodes.forEach(n => { nodesMap[n.id] = n.name; });
+            }
+
+            const rels = (rawData.relations || []).filter(rel => rel.w >= minWeight);
+
+            for (const rel of rels) {
+                if (allResults.length >= maxTotal) { stoppedReason = 'max_total'; break; }
+                // direction=to  → le résultat est le sujet  (node1)
+                // direction=from → le résultat est l'objet  (node2)
+                const nodeResId = direction === 'to' ? rel.node1 : rel.node2;
+                allResults.push({
+                    id: nodeResId,
+                    name: nodesMap[nodeResId] || `[ID:${nodeResId}]`,
+                    poids: rel.w
+                });
+            }
+
+            page++;
+            offset += limit;
+
+            // On arrête si la page est incomplète (plus de données à suivre)
+            if (rels.length < limit) {
+                stoppedReason = 'last_page';
+                break;
+            }
+            if (stoppedReason === 'max_total') break;
         }
+        // ─────────────────────────────────────────────────────────────────────
+
+        // Tri par poids décroissant
+        allResults.sort((a, b) => b.poids - a.poids);
+
+        const paginationStats = {
+            usedPagination: page > 1,
+            pagesFetched: page,
+            totalFetched: allResults.length,
+            stoppedReason,
+            reachedPaginationLimit: stoppedReason === 'max_pages' || stoppedReason === 'max_total',
+            apiCalls: apiCallsUsed
+        };
+
+        const output = {
+            resultats: allResults,
+            paginationStats
+        };
+
+        await this.cache.set(cacheKey, output);
+        return output;
     }
 
+    // ─────────────────────────────────────────────────────────────────────────
+    // Vérification d'une relation précise entre deux nœuds
+    // ─────────────────────────────────────────────────────────────────────────
+
+    /**
+     * Vérifie si la relation (idSource)-[relationId]->(idCible) existe.
+     * Endpoint : GET /v0/relations/from_by_id/{idSource}/to_by_id/{idCible}?types_ids={relationId}
+     * C'est le meilleur endpoint pour vérifier un couple précis par IDs.
+     */
     async checkRelation(idSource, relationId, idCible) {
-        const url = `https://jdm-api.demo.lirmm.fr/v0/relations/from/id/${idSource}?types_ids=${relationId}`;
-        const cacheKey = `check:${idSource}:${relationId}`;
-        
+        // Utiliser l'endpoint from_by_id/to_by_id pour une vérification précise
+        const url = `${JDM_BASE}/v0/relations/from_by_id/${idSource}/to_by_id/${idCible}?types_ids=${relationId}`;
+        const cacheKey = `check:${idSource}:${relationId}:${idCible}`;
+
         try {
             let data = await this.cache.get(cacheKey);
             if (!data) {
                 data = await this.safeApiCall(url);
                 if (data) await this.cache.set(cacheKey, data);
             }
-            
             if (!data || !data.relations) return false;
-            return data.relations.some(r => r.node2 === idCible);
+            return data.relations.length > 0;
         } catch (e) {
             return false;
         }
     }
 
-    resetDebugInfo() {
-        this.callCount = 0;
-        this.errors = [];
-    }
+    /**
+     * Estime la cardinalité d'une clause (nombre de résultats attendus).
+     * Utilisé par l'heuristique pour trier les clauses ET du moins au plus coûteux.
+     * Ne récupère qu'une seule page limitée pour être rapide.
+     *
+     * Retourne : { count: number|">=limit", cached: boolean }
+     */
+    async estimateCardinality(node, relationId, direction, minWeight = 10) {
+        const probeLimit = 500; // On sonde avec 500 : si on obtient 500, c'est "grand"
+        const cacheKey = `cardinality:${direction}:${node}:${relationId}:mw${minWeight}`;
 
-    getDebugInfo() {
-        return {
-            apiCalls: this.callCount,
-            errors: this.errors,
-            errorCount: this.errors.length
-        };
+        const cached = await this.cache.get(cacheKey);
+        if (cached) return { ...cached, fromCache: true };
+
+        try {
+            const encoded = encodeURIComponent(node.toLowerCase().trim());
+            const basePath = direction === 'from'
+                ? `${JDM_BASE}/v0/relations/from/${encoded}`
+                : `${JDM_BASE}/v0/relations/to/${encoded}`;
+
+            const url = `${basePath}?types_ids=${relationId}&min_weight=${minWeight}&limit=${probeLimit}&offset=0`;
+            const rawData = await this.safeApiCall(url);
+
+            if (!rawData) {
+                const result = { count: 0, isLarge: false };
+                await this.cache.set(cacheKey, result);
+                return result;
+            }
+
+            const rels = (rawData.relations || []).filter(r => r.w >= minWeight);
+            const isLarge = rels.length >= probeLimit;
+            const result = {
+                count: isLarge ? `>=${probeLimit}` : rels.length,
+                isLarge,
+                numericCount: isLarge ? probeLimit : rels.length
+            };
+            await this.cache.set(cacheKey, result);
+            return result;
+        } catch (e) {
+            return { count: '?', isLarge: false, numericCount: 0, error: e.message };
+        }
     }
 }
 
