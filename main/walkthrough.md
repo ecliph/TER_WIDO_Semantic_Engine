@@ -121,3 +121,22 @@ curl http://localhost:3000/cache/stats
 ---
 
 © 2026 — Mohamed TEDJINI & Maurice DJOBO
+
+### Séparation des limites et Métriques (Mission 7)
+
+Le moteur distingue désormais trois niveaux de limitation :
+1. **Limite de récupération API (Pagination)** : L'API JDM ne remonte qu'un nombre fini de pages (ex: 5 pages). Si cette limite est atteinte, un avertissement indique que des relations supplémentaires pourraient exister.
+2. **Limite d'exploration de jointure** : Pour éviter l'explosion combinatoire, les requêtes multi-variables (ex: 2 variables) testent un nombre borné de candidats (ex: 500).
+3. **Limite d'affichage final** : Même si le moteur traite des milliers de résultats, l'affichage final est coupé à 1000 pour ne pas surcharger le navigateur. L'avertissement *« Affichage limité »* ne s'affiche **que** si le résultat brut dépasse cette limite.
+
+**Note** : Il est courant qu'une requête affiche peu de résultats (ex: 5 résultats) même si l'API a été bornée à 5000 requêtes. Cela signifie simplement que les filtres ou les jointures subséquentes ont éliminé la majorité des éléments rapatriés.
+
+Le pipeline a été instrumenté pour mesurer précisément chaque étape de la résolution :
+- **Parsing** : Temps de construction de l'AST (`parseMs`).
+- **Cardinalité** : Temps d'estimation des tailles de relations via des appels API légers (`cardinalityMs`).
+- **Planification** : Temps d'exécution de l'heuristique (`planningMs`).
+- **Exécution** : Temps réel de récupération et croisement des données (`executionMs`).
+- **Appels API** : Comptage exact du nombre de requêtes sortantes vers JDM.
+- **Cache** : Nombre de hits et misses du cache local MD5.
+
+Ces métriques sont visibles dans le panneau `Performance` de l'interface graphique et sont intégrées au rapport Markdown généré par `benchmark.js`.

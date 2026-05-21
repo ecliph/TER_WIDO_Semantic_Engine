@@ -50,6 +50,7 @@ async function benchmarkRequete(item) {
         statut: 'N/A',
         nb_total: 0,
         durationMs: 0,
+        timings: {},
         apiCalls: 0,
         apiErrors: 0,
         cacheHits: 0,
@@ -59,6 +60,7 @@ async function benchmarkRequete(item) {
         usedPagination: false,
         warnings: [],
         joinStats: null,
+        resultLimitDebug: null,
         planDetails: null,
         success: false,
         errorMessage: null
@@ -81,6 +83,7 @@ async function benchmarkRequete(item) {
             : (data.statut === 'Succès' || data.statut === 'Succès partiel');
 
         if (data.debug) {
+            result.timings = data.debug.timings || {};
             result.apiCalls = data.debug.apiCalls || 0;
             result.apiErrors = data.debug.apiErrors || 0;
             if (data.debug.cacheStats) {
@@ -93,6 +96,7 @@ async function benchmarkRequete(item) {
                 result.usedPagination = data.debug.paginationStats.some(p => p.usedPagination);
             }
             result.joinStats = data.debug.joinStats || null;
+            result.resultLimitDebug = data.debug.resultLimitDebug || null;
         }
         result.planDetails = data.plan_details || null;
 
@@ -132,21 +136,29 @@ function genererMarkdown(resultats) {
     const date = new Date().toISOString().slice(0, 19).replace('T', ' ');
     let md = `# Benchmark WIDO — Résultats\n\n`;
     md += `_Généré le ${date}_\n\n`;
-    md += `## Tableau récapitulatif\n\n`;
-    md += `| # | Requête | Statut | Résultats | Temps (ms) | Appels API | Pagination | Remarque |\n`;
-    md += `|---|---------|--------|----------:|----------:|----------:|-----------|----------|\n`;
+    md += `| # | Requête | Statut | Rés | Total(ms) | Parse | Card | Plan | Exec | API | Pagination | Jointure / Limite |\n`;
+    md += `|---|---------|--------|----:|----------:|------:|-----:|-----:|-----:|----:|-----------|-------------------|\n`;
 
     for (const r of resultats) {
         const statut = r.statut;
-        const queryShort = r.query.length > 50 ? r.query.slice(0, 47) + '...' : r.query;
-        const pagStr = r.usedPagination ? `${r.pagesFetched}p/${r.totalFetched}` : 'Non';
-        const remarque = r.errorMessage
-            ? r.errorMessage.slice(0, 60)
-            : (r.joinStats
-                ? `Join: ${r.joinStats.couplesTrouves} couples, ${r.joinStats.candidatsTestes} testés`
-                : (r.warnings.length > 0 ? r.warnings[0].slice(0, 50) : '-'));
+        const queryShort = r.query.length > 40 ? r.query.slice(0, 37) + '...' : r.query;
+        const pagStr = r.usedPagination ? `${r.pagesFetched}p/${r.totalFetched}` : '-';
+        
+        const t = r.timings || {};
+        
+        let remarque = '-';
+        if (r.errorMessage) {
+            remarque = r.errorMessage.slice(0, 40);
+        } else if (r.joinStats) {
+            remarque = `Join: ${r.joinStats.couplesTrouves} trouvés`;
+            if (r.joinStats.wasLimited) remarque += ' (limité)';
+        } else if (r.resultLimitDebug && r.resultLimitDebug.wasDisplayLimited) {
+            remarque = `LimitDisplay: >${r.resultLimitDebug.maxResultsReturned}`;
+        } else if (r.warnings.length > 0) {
+            remarque = r.warnings[0].slice(0, 40);
+        }
 
-        md += `| ${r.id} | \`${queryShort}\` | ${statut} | ${r.nb_total} | ${r.durationMs} | ${r.apiCalls} | ${pagStr} | ${remarque} |\n`;
+        md += `| ${r.id} | \`${queryShort}\` | ${statut} | ${r.nb_total} | ${r.durationMs} | ${t.parseMs||0} | ${t.cardinalityMs||0} | ${t.planningMs||0} | ${t.executionMs||0} | ${r.apiCalls} | ${pagStr} | ${remarque} |\n`;
     }
 
     // Section détaillée des jointures

@@ -248,9 +248,18 @@ class MoteurExecution {
             }
         }
 
+        const totalBeforeDisplayLimit = resultats.length;
+        const wasDisplayLimited = totalBeforeDisplayLimit > this.limits.maxResultsReturned;
+
         const sorted = resultats
             .sort((a, b) => (b.__score || 0) - (a.__score || 0))
             .slice(0, this.limits.maxResultsReturned);
+
+        sorted._resultLimitDebug = {
+            totalBeforeDisplayLimit,
+            maxResultsReturned: this.limits.maxResultsReturned,
+            wasDisplayLimited
+        };
 
         // Ré-attacher les métadonnées qui survivent aux transformations de tableau
         if (this._lastJoinDebug) sorted._joinDebug = this._lastJoinDebug;

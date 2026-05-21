@@ -108,34 +108,95 @@ async function lancerRecherche() {
             }
         }
 
-        // Stats de jointure (requêtes à 2 variables)
-        if (data.debug && data.debug.joinStats) {
-            const j = data.debug.joinStats;
-            headerHtml += `
-                <div style="margin-top:8px; padding:8px 10px; border-radius:6px;
-                    background:rgba(14,165,233,0.08); font-size:0.80em; color:#7dd3fc">
-                    <b>📊 Jointure « ${escapeHtml(j.relation || '?')} »</b> &nbsp;—&nbsp;
-                    Candidats testés : ${j.candidatsTestes}/${j.candidatsDisponibles} &nbsp;|&nbsp;
-                    Couples trouvés : <b>${j.couplesTrouves}</b>
-                    ${j.wasLimited ? ' &nbsp;|&nbsp; <span style="color:#f59e0b">⚠️ Exploration limitée</span>' : ''}
-                    ${j.couplesTrouves === 0
-                        ? '<br><span style="color:#94a3b8">Aucun couple valide dans la portion explorée.</span>'
-                        : ''}
-                </div>`;
-        }
-
         // Stats de pagination
+        let paginationHtml = '';
         if (data.debug && data.debug.paginationStats && data.debug.paginationStats.length > 0) {
             const pages = data.debug.paginationStats;
             const usedPagination = pages.some(p => p.usedPagination);
             if (usedPagination) {
                 const totalPages = pages.reduce((s, p) => s + (p.pagesFetched || 0), 0);
                 const totalFetched = pages.reduce((s, p) => s + (p.totalFetched || 0), 0);
-                headerHtml += `<div style="font-size:0.78em; color:#94a3b8; margin-top:4px">
-                    📄 Pagination API : ${totalPages} page(s), ${totalFetched} relations récupérées</div>`;
+                const limitReached = pages.some(p => p.reachedPaginationLimit) ? 'oui' : 'non';
+                paginationHtml = `
+                    <div style="margin-top:12px; font-size:0.85em; color:#475569;">
+                        <b>📄 API / Pagination</b><br>
+                        Pages récupérées : ${totalPages}<br>
+                        Relations récupérées : ${totalFetched}<br>
+                        Limite pagination atteinte : ${limitReached}
+                    </div>`;
             }
         }
 
+        // Stats de jointure
+        let joinHtml = '';
+        if (data.debug && data.debug.joinStats) {
+            const j = data.debug.joinStats;
+            joinHtml = `
+                <div style="margin-top:12px; font-size:0.85em; color:#475569;">
+                    <b>📊 Jointure</b><br>
+                    Relation : ${escapeHtml(j.relation || '?')}<br>
+                    Variable ancrée : ${escapeHtml(j.anchorVariable || '?')}<br>
+                    Variable découverte : ${escapeHtml(j.discoveredVariable || '?')}<br>
+                    Candidats testés : ${j.candidatsTestes} / ${j.candidatsDisponibles}<br>
+                    Couples trouvés : ${j.couplesTrouves}<br>
+                    Exploration limitée : ${j.wasLimited ? 'oui' : 'non'}<br>
+                    Comparaison par ID : ${j.usedIdComparison ? 'oui' : 'non'}
+                </div>`;
+        }
+
+        // Plan d'exécution
+        let planHtml = '';
+        if (data.plan_details && data.plan_details.length > 0) {
+            planHtml = `
+                <div style="margin-top:12px; font-size:0.85em; color:#475569;">
+                    <b>🗺️ Plan d'exécution</b><br>
+                    <table style="width:100%; text-align:left; border-collapse:collapse; margin-top:4px;">
+                        <tr style="border-bottom:1px solid #cbd5e1;">
+                            <th style="padding:2px;">Rang</th>
+                            <th style="padding:2px;">Clause</th>
+                            <th style="padding:2px;">Complexité</th>
+                            <th style="padding:2px;">Cardinalité estimée</th>
+                            <th style="padding:2px;">Raison</th>
+                        </tr>`;
+            data.plan_details.slice(0, 5).forEach(step => {
+                planHtml += `
+                        <tr style="border-bottom:1px solid #f1f5f9;">
+                            <td style="padding:2px;">${step.rang}</td>
+                            <td style="padding:2px; font-family:monospace;">${escapeHtml(step.clause)}</td>
+                            <td style="padding:2px;">${step.structuralComplexity}</td>
+                            <td style="padding:2px;">${step.estimatedCardinality !== undefined && step.estimatedCardinality !== null ? step.estimatedCardinality : '?'}</td>
+                            <td style="padding:2px;">${escapeHtml(step.reason)}</td>
+                        </tr>`;
+            });
+            planHtml += `</table>`;
+            if (data.plan_details.length > 5) {
+                planHtml += `<div style="font-size:0.8em; color:#94a3b8; margin-top:2px;">+ ${data.plan_details.length - 5} autres étapes (voir console)</div>`;
+            }
+            planHtml += `</div>`;
+        }
+
+        // Performance
+        let perfHtml = '';
+        if (data.debug && data.debug.timings) {
+            const t = data.debug.timings;
+            const c = data.debug.cacheStats;
+            const cacheStr = c ? `Cache : ${c.hits} hits / ${c.misses} misses` : 'Cache : non disponible';
+            perfHtml = `
+                <div style="margin-top:12px; font-size:0.85em; color:#475569;">
+                    <b>📈 Performance</b><br>
+                    Temps total serveur : ${data.debug.durationMs} ms<br>
+                    Parsing : ${t.parseMs} ms<br>
+                    Cardinalité / heuristique : ${t.cardinalityMs} ms<br>
+                    Planification : ${t.planningMs} ms<br>
+                    Exécution moteur : ${t.executionMs} ms<br>
+                    Construction réponse : ${t.responseBuildMs} ms<br>
+                    Appels API : ${data.debug.apiCalls !== undefined ? data.debug.apiCalls : 'non disponible'}<br>
+                    Erreurs API : ${data.debug.apiErrors !== undefined ? data.debug.apiErrors : 'non disponible'}<br>
+                    ${cacheStr}
+                </div>`;
+        }
+
+        headerHtml += perfHtml + paginationHtml + joinHtml + planHtml;
         headerHtml += '</div>';
 
         // ── Affichage des résultats ─────────────────────────────────────────
