@@ -186,6 +186,9 @@ class Heuristiques {
             const v2IsVar = v2 && v2.startsWith('$');
 
             if (!v1IsVar || !v2IsVar) {
+                if (cardInfo && cardInfo.cardinalityMode === "exact_exhaustive") {
+                    return `Cardinalité complète récupérée par pagination exhaustive (${cardInfo.count}), clause plus petite exécutée en premier.`;
+                }
                 const cardStr = cardInfo ? `, cardinalité estimée : ${cardInfo.count}` : '';
                 return `Ancrage initial par constante${cardStr}`;
             }

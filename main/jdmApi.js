@@ -92,13 +92,14 @@ class JdmApi {
      * direction = "from" : (nodeName relation $x)  →  /relations/from/{nodeName}
      * direction = "to"   : ($x relation nodeName)  →  /relations/to/{nodeName}
      */
-    async getRelations(nodeName, relationId, direction = 'from', minWeight = 10) {
+    async getRelations(nodeName, relationId, direction = 'from', minWeight = 10, exhaustive = false) {
         const result = await this.getRelationsPaged({
             node: nodeName,
             relationId,
             direction,
             minWeight,
-            useId: false
+            useId: false,
+            exhaustive
         });
         return { resultats: result.resultats, paginationStats: result.paginationStats };
     }
@@ -110,14 +111,15 @@ class JdmApi {
      * direction = "from" : /relations/from_by_id/{nodeId}
      * direction = "to"   : /relations/to_by_id/{nodeId}
      */
-    async getRelationsById(nodeId, nodeName, relationId, direction = 'from', minWeight = 10) {
+    async getRelationsById(nodeId, nodeName, relationId, direction = 'from', minWeight = 10, exhaustive = false) {
         const result = await this.getRelationsPaged({
             nodeId,
             node: nodeName,
             relationId,
             direction,
             minWeight,
-            useId: true
+            useId: true,
+            exhaustive
         });
         return { resultats: result.resultats, paginationStats: result.paginationStats };
     }
@@ -153,12 +155,13 @@ class JdmApi {
         limit = 1000,
         maxPages = 5,
         maxTotal = 5000,
-        minWeight = 10
+        minWeight = 10,
+        exhaustive = false
     }) {
         // Clé de cache stable pour toute la session paginée
         const cacheKey = useId
-            ? `relsPaged:${direction}:id:${nodeId}:${relationId}:mw${minWeight}:lim${limit}:mp${maxPages}:mt${maxTotal}`
-            : `relsPaged:${direction}:${node}:${relationId}:mw${minWeight}:lim${limit}:mp${maxPages}:mt${maxTotal}`;
+            ? `relsPaged:${direction}:id:${nodeId}:${relationId}:mw${minWeight}:lim${limit}:mp${maxPages}:mt${maxTotal}:exh${exhaustive}`
+            : `relsPaged:${direction}:${node}:${relationId}:mw${minWeight}:lim${limit}:mp${maxPages}:mt${maxTotal}:exh${exhaustive}`;
 
         const cached = await this.cache.get(cacheKey);
         if (cached) return cached;
@@ -184,8 +187,14 @@ class JdmApi {
 
         // ── Boucle de pagination ──────────────────────────────────────────────
         while (true) {
-            if (page >= maxPages) { stoppedReason = 'max_pages'; break; }
-            if (allResults.length >= maxTotal) { stoppedReason = 'max_total'; break; }
+            if (!exhaustive && page >= maxPages) { stoppedReason = 'max_pages_security'; break; }
+            if (!exhaustive && allResults.length >= maxTotal) { stoppedReason = 'max_total_security'; break; }
+            
+            const maxApiCalls = this.limits.maxApiCallsPerQuery || 1000;
+            if (this.callCount >= maxApiCalls) { stoppedReason = 'api_calls_limit'; break; }
+            
+            // Protection anti-boucle infinie stricte (même en exhaustif)
+            if (page >= 500) { stoppedReason = 'max_pages_security'; break; }
 
             const url = `${basePath}?types_ids=${relationId}&min_weight=${minWeight}&limit=${limit}&offset=${offset}`;
 
@@ -209,7 +218,7 @@ class JdmApi {
             const rels = (rawData.relations || []).filter(rel => rel.w >= minWeight);
 
             for (const rel of rels) {
-                if (allResults.length >= maxTotal) { stoppedReason = 'max_total'; break; }
+                if (!exhaustive && allResults.length >= maxTotal) { stoppedReason = 'max_total_security'; break; }
                 // direction=to  → le résultat est le sujet  (node1)
                 // direction=from → le résultat est l'objet  (node2)
                 const nodeResId = direction === 'to' ? rel.node1 : rel.node2;
@@ -228,7 +237,7 @@ class JdmApi {
                 stoppedReason = 'last_page';
                 break;
             }
-            if (stoppedReason === 'max_total') break;
+            if (!exhaustive && stoppedReason === 'max_total_security') break;
         }
         // ─────────────────────────────────────────────────────────────────────
 
@@ -236,11 +245,14 @@ class JdmApi {
         allResults.sort((a, b) => b.poids - a.poids);
 
         const paginationStats = {
-            usedPagination: page > 1,
+            usedPagination: page > 1 || exhaustive,
             pagesFetched: page,
             totalFetched: allResults.length,
             stoppedReason,
-            reachedPaginationLimit: stoppedReason === 'max_pages' || stoppedReason === 'max_total',
+            reachedPaginationLimit: stoppedReason !== 'last_page' && stoppedReason !== 'api_error',
+            exhaustiveMode: exhaustive,
+            exhaustedApi: stoppedReason === 'last_page',
+            lastPageWasIncomplete: stoppedReason === 'last_page',
             apiCalls: apiCallsUsed
         };
 
@@ -287,9 +299,23 @@ class JdmApi {
      *
      * Retourne : { count: number|">=limit", cached: boolean }
      */
-    async estimateCardinality(node, relationId, direction, minWeight = 10) {
+    async estimateCardinality(node, relationId, direction, minWeight = 10, exhaustive = false) {
+        if (exhaustive) {
+            // Récupérer tout pour avoir la cardinalité exacte
+            const result = await this.getRelationsPaged({
+                node, relationId, direction, minWeight, exhaustive: true
+            });
+            return {
+                count: result.resultats.length,
+                isLarge: false,
+                numericCount: result.resultats.length,
+                cardinalityMode: "exact_exhaustive",
+                fromCache: false
+            };
+        }
+
         const probeLimit = 500; // On sonde avec 500 : si on obtient 500, c'est "grand"
-        const cacheKey = `cardinality:${direction}:${node}:${relationId}:mw${minWeight}`;
+        const cacheKey = `cardinality:${direction}:${node}:${relationId}:mw${minWeight}:exhfalse`;
 
         const cached = await this.cache.get(cacheKey);
         if (cached) return { ...cached, fromCache: true };
@@ -304,7 +330,7 @@ class JdmApi {
             const rawData = await this.safeApiCall(url);
 
             if (!rawData) {
-                const result = { count: 0, isLarge: false };
+                const result = { count: 0, isLarge: false, numericCount: 0, cardinalityMode: "bounded_estimation" };
                 await this.cache.set(cacheKey, result);
                 return result;
             }
@@ -314,7 +340,8 @@ class JdmApi {
             const result = {
                 count: isLarge ? `>=${probeLimit}` : rels.length,
                 isLarge,
-                numericCount: isLarge ? probeLimit : rels.length
+                numericCount: isLarge ? probeLimit : rels.length,
+                cardinalityMode: "bounded_estimation"
             };
             await this.cache.set(cacheKey, result);
             return result;

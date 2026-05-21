@@ -19,6 +19,10 @@
         <section class="search-section">
             <input type="text" id="query" placeholder="Ex: ($x r_isa artiste) ET ($x = ba%)" spellcheck="false" />
             <button onclick="lancerRecherche()">Analyser le graphe</button>
+            <div style="margin-top: 10px; display: flex; align-items: center; gap: 8px;">
+                <input type="checkbox" id="exhaustive" />
+                <label for="exhaustive" style="color: var(--text-dim); font-size: 0.9em; cursor: pointer;">Mode exhaustif (lent, récupère toutes les pages de l'API jusqu'à épuisement)</label>
+            </div>
         </section>
 
         <main class="dashboard">

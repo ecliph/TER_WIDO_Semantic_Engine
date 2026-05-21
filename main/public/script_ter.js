@@ -46,7 +46,8 @@ async function lancerRecherche() {
     }, 10000);
 
     try {
-        const response = await fetch(`http://localhost:3000/recherche?q=${encodeURIComponent(q)}`, {
+        const exhaustive = document.getElementById('exhaustive') && document.getElementById('exhaustive').checked;
+        const response = await fetch(`http://localhost:3000/recherche?q=${encodeURIComponent(q)}&exhaustive=${exhaustive}`, {
             signal: controller.signal
         });
         clearTimeout(abortTimer);
@@ -113,16 +114,24 @@ async function lancerRecherche() {
         if (data.debug && data.debug.paginationStats && data.debug.paginationStats.length > 0) {
             const pages = data.debug.paginationStats;
             const usedPagination = pages.some(p => p.usedPagination);
-            if (usedPagination) {
+            if (usedPagination || data.debug.exhaustiveMode) {
                 const totalPages = pages.reduce((s, p) => s + (p.pagesFetched || 0), 0);
                 const totalFetched = pages.reduce((s, p) => s + (p.totalFetched || 0), 0);
                 const limitReached = pages.some(p => p.reachedPaginationLimit) ? 'oui' : 'non';
+                const modeStr = data.debug.exhaustiveMode ? 'Exhaustif' : 'Normal';
+                const exhaustedApi = pages.some(p => p.exhaustedApi) ? 'oui' : 'non';
+                const lastPageInc = pages.some(p => p.lastPageWasIncomplete) ? 'oui' : 'non';
+                const reasons = Array.from(new Set(pages.map(p => p.stoppedReason))).join(', ');
+                
                 paginationHtml = `
                     <div style="margin-top:12px; font-size:0.85em; color:#475569;">
                         <b>📄 API / Pagination</b><br>
+                        Mode : ${modeStr}<br>
                         Pages récupérées : ${totalPages}<br>
                         Relations récupérées : ${totalFetched}<br>
-                        Limite pagination atteinte : ${limitReached}
+                        Dernière page incomplète : ${lastPageInc}<br>
+                        API épuisée : ${exhaustedApi}<br>
+                        Raison d'arrêt : ${reasons}
                     </div>`;
             }
         }

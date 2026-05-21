@@ -1,0 +1,19 @@
+\begin{thebibliography}{1}
+
+\bibitem{sparql2013}
+Steve Harris and Andy Seaborne.
+\newblock Sparql 1.1 query language.
+\newblock {\em W3C Recommendation}, 2013.
+
+\bibitem{noy2009}
+Natalya~F. Noy and Deborah~L. McGuinness.
+\newblock {\em Ontology Development 101: A Guide to Creating Your First
+  Ontology}.
+\newblock Stanford Knowledge Systems Laboratory, 2009.
+
+\bibitem{selinger1979}
+Patricia~G. Selinger et~al.
+\newblock Access path selection in a relational database management system.
+\newblock In {\em Proceedings of SIGMOD}, pages 23--34, 1979.
+
+\end{thebibliography}

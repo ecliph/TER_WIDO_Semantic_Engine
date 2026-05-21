@@ -1,0 +1,59 @@
+\babel@toc {nil}{}\relax 
+\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Problématique}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Objectifs}{3}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Plan du rapport}{3}{section.1.3}%
+\contentsline {chapter}{\numberline {2}Contexte et données}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}JeuxDeMots}{4}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Structure du graphe JDM}{4}{section.2.2}%
+\contentsline {section}{\numberline {2.3}API JDM v0}{4}{section.2.3}%
+\contentsline {chapter}{\numberline {3}État de l'art}{6}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Moteurs de recherche sémantique}{6}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Spécificité de JDM}{6}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Optimisation de requêtes}{6}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Comparaison par identifiant}{6}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Architecture du moteur WIDO}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Vue d'ensemble}{7}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Technologies utilisées}{8}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Structure des fichiers}{8}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Parseur syntaxique}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Langage de requêtes WIDO}{9}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Exemples de requêtes}{9}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Structure de l'AST}{9}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Gestion des erreurs syntaxiques}{10}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Heuristiques d'optimisation}{11}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Principe général}{11}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Heuristique structurelle}{11}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Heuristique de cardinalité}{11}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Mise à jour dynamique des variables ancrées}{12}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Plan d'exécution (exemple)}{12}{section.6.5}%
+\contentsline {chapter}{\numberline {7}Moteur d'exécution}{13}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Principe d'exécution}{13}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Trois cas de traitement d'une clause de relation}{13}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Cas 1 : Ancrage initial (Constante $\rightarrow $ Variable)}{13}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Cas 2 : Vérification (Variable ancrée $\rightarrow $ Constante)}{13}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Cas 3 : Jointure (Variable $\rightarrow $ Variable)}{13}{subsection.7.2.3}%
+\contentsline {section}{\numberline {7.3}Comparaison par ID JDM}{13}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Scores et preuves}{14}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Traitement des opérateurs OU}{14}{section.7.5}%
+\contentsline {chapter}{\numberline {8}Client API et cache}{15}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Pagination de l'API JDM}{15}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Cache disque MD5}{15}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Gestion des erreurs API}{16}{section.8.3}%
+\contentsline {chapter}{\numberline {9}Interface utilisateur}{17}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Design glassmorphique}{17}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Zone de saisie et résultats}{17}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Panneau de diagnostic}{17}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Gestion des erreurs}{17}{section.9.4}%
+\contentsline {chapter}{\numberline {10}Évaluation et benchmark}{18}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Protocole}{18}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Requêtes testées}{18}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Analyse des résultats}{18}{section.10.3}%
+\contentsline {chapter}{\numberline {11}Limites et perspectives}{20}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Limites actuelles}{20}{section.11.1}%
+\contentsline {paragraph}{Densité de JDM.}{20}{section.11.1}%
+\contentsline {paragraph}{Combinatoire des jointures.}{20}{section.11.1}%
+\contentsline {paragraph}{Polysémie non gérée.}{20}{section.11.1}%
+\contentsline {paragraph}{Pagination bornée.}{20}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Perspectives d'amélioration}{20}{section.11.2}%
+\contentsline {chapter}{\numberline {12}Conclusion}{21}{chapter.12}%

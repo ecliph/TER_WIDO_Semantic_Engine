@@ -34,8 +34,10 @@ const REQUETES = [
     { id: 10, q: '(chat r_has_part $y) ET ($y r_isa $z)',                                             desc: '3 variables — chaîne de relations', timeout: TIMEOUT_MS },
     { id: 11, q: '($x r_isa animal) ET ($x r_has_part $y) ET ($y = pa%)',                            desc: '3 variables avec filtre' },
     { id: 12, q: '(lion r_can_eat $y) ET ($y r_isa animal)',                                          desc: 'Requête ciblée — proies du lion' },
-    { id: 13, q: '($x r_isa)',                                                                        desc: 'Erreur syntaxique attendue',  expectError: true },
-    { id: 14, q: '($x relation_inconnue animal)',                                                     desc: 'Relation inconnue attendue',  expectError: true },
+    { id: 13, q: '(lion r_can_eat $y) ET ($y r_isa animal)', exhaustive: true,                        desc: 'Mode exhaustif — proies du lion', timeout: TIMEOUT_MS },
+    { id: 14, q: '($x r_isa animal) ET ($x r_has_part queue)', exhaustive: true,                      desc: 'Mode exhaustif — queue', timeout: TIMEOUT_MS },
+    { id: 15, q: '($x r_isa)',                                                                        desc: 'Erreur syntaxique attendue',  expectError: true },
+    { id: 16, q: '($x relation_inconnue animal)',                                                     desc: 'Relation inconnue attendue',  expectError: true },
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -68,7 +70,7 @@ async function benchmarkRequete(item) {
 
     try {
         const response = await axios.get(BASE_URL, {
-            params: { q: item.q },
+            params: { q: item.q, exhaustive: !!item.exhaustive },
             timeout: item.timeout || 35000
         });
         const data = response.data;

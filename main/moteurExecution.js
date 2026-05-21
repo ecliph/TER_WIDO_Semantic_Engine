@@ -27,9 +27,9 @@ class MoteurExecution {
     // Point d'entrée principal
     // ─────────────────────────────────────────────────────────────────────────
 
-    async executerClause(clause, contexte = []) {
+    async executerClause(clause, contexte = [], exhaustive = false) {
         if (clause.type === 'CLAUSE_RELATION') {
-            return await this.handleRelation(clause, contexte);
+            return await this.handleRelation(clause, contexte, exhaustive);
         }
         if (clause.type === 'CLAUSE_FILTRE') {
             return this.handleFilter(clause, contexte);
@@ -39,17 +39,17 @@ class MoteurExecution {
             const gauche = clause.gauche;
             const droite = clause.droite;
             const [baseG, baseD] = await Promise.all([
-                Array.isArray(gauche) ? this.executerPlan(gauche, contexte) : this.executerClause(gauche, contexte),
-                Array.isArray(droite) ? this.executerPlan(droite, contexte) : this.executerClause(droite, contexte)
+                Array.isArray(gauche) ? this.executerPlan(gauche, contexte, exhaustive) : this.executerClause(gauche, contexte, exhaustive),
+                Array.isArray(droite) ? this.executerPlan(droite, contexte, exhaustive) : this.executerClause(droite, contexte, exhaustive)
             ]);
             return this.calculerUnion(baseG, baseD);
         }
         // Nœud ET imbriqué (ne devrait plus arriver après le planificateur, mais par sécurité)
         if (clause.type === 'NOEUD_LOGIQUE' && clause.operateur === 'ET') {
             let res = contexte;
-            res = await this.executerClause(clause.gauche, res);
+            res = await this.executerClause(clause.gauche, res, exhaustive);
             if (res.length === 0) return [];
-            res = await this.executerClause(clause.droite, res);
+            res = await this.executerClause(clause.droite, res, exhaustive);
             return res;
         }
         return contexte;
@@ -59,7 +59,7 @@ class MoteurExecution {
     // Traitement des clauses de relation
     // ─────────────────────────────────────────────────────────────────────────
 
-    async handleRelation(clause, contexte) {
+    async handleRelation(clause, contexte, exhaustive = false) {
         const idRel = this.getRelId(clause.relation);
         const v1 = clause.variable;
         const v2 = clause.cible;
@@ -76,7 +76,7 @@ class MoteurExecution {
             // La variable est déjà ancrée → VÉRIFICATION par intersection locale
             // Stratégie : 1 seul appel API, construction d'un Set d'IDs valides, filtrage O(1)
             if (contexte.length > 0 && contexte[0][variable]) {
-                const data = await this.api.getRelations(anchorName, idRel, direction);
+                const data = await this.api.getRelations(anchorName, idRel, direction, 10, exhaustive);
                 if (data.paginationStats) this._paginationStats.push(data.paginationStats);
 
                 // Comparaison par ID JDM (pas par nom, pour éviter les ambiguïtés)
@@ -95,7 +95,7 @@ class MoteurExecution {
             }
 
             // La variable n'est pas encore ancrée → EXPLORATION initiale (paginée)
-            const data = await this.api.getRelations(anchorName, idRel, direction);
+            const data = await this.api.getRelations(anchorName, idRel, direction, 10, exhaustive);
             if (data.paginationStats) this._paginationStats.push(data.paginationStats);
 
             let nouveauxResults = (data.resultats || []).map(r => ({
@@ -156,11 +156,13 @@ class MoteurExecution {
                     tuple[ancrage].id,
                     tuple[ancrage].name,
                     idRel,
-                    direction
+                    direction,
+                    10,
+                    exhaustive
                 );
                 usedIdComparison = true;
             } else {
-                data = await this.api.getRelations(tuple[ancrage].name, idRel, direction);
+                data = await this.api.getRelations(tuple[ancrage].name, idRel, direction, 10, exhaustive);
             }
             if (data.paginationStats) this._paginationStats.push(data.paginationStats);
 
@@ -232,13 +234,13 @@ class MoteurExecution {
     // Exécution d'un plan complet
     // ─────────────────────────────────────────────────────────────────────────
 
-    async executerPlan(plan, contextInitial = []) {
+    async executerPlan(plan, contextInitial = [], exhaustive = false) {
         this._lastJoinDebug = null;
         this._paginationStats = [];
         let resultats = contextInitial;
 
         for (const step of plan) {
-            resultats = await this.executerClause(step, resultats);
+            resultats = await this.executerClause(step, resultats, exhaustive);
             // Arrêt précoce si une étape renvoie 0 résultats (sauf OU)
             if (resultats.length === 0 && step.type !== 'OU' && step.type !== 'NOEUD_LOGIQUE') {
                 const out = [];

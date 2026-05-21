@@ -39,6 +39,7 @@ const moteur = new MoteurExecution(api, LIMITS);
 // ─────────────────────────────────────────────────────────────────────────────
 app.get('/recherche', async (req, res) => {
     const q = req.query.q;
+    const exhaustive = req.query.exhaustive === 'true';
     const start = Date.now();
 
     if (!q || !q.trim()) {
@@ -88,7 +89,7 @@ app.get('/recherche', async (req, res) => {
         const t1 = Date.now();
         let cardinalityMap = null;
         try {
-            cardinalityMap = await estimerCardinalites(ast, api, moteur);
+            cardinalityMap = await estimerCardinalites(ast, api, moteur, exhaustive);
         } catch (cardErr) {
             // Non bloquant : si ça échoue, on continue avec l'heuristique structurelle
             console.warn('⚠️ Estimation cardinalité échouée (fallback structurel) :', cardErr.message);
@@ -111,7 +112,7 @@ app.get('/recherche', async (req, res) => {
         let resultats;
         let timedOut = false;
         try {
-            resultats = await Promise.race([moteur.executerPlan(plan), timeoutPromise]);
+            resultats = await Promise.race([moteur.executerPlan(plan, [], exhaustive), timeoutPromise]);
         } catch (timeoutErr) {
             if (timeoutErr.message === '__QUERY_TIMEOUT__') {
                 timedOut = true;
@@ -138,7 +139,7 @@ app.get('/recherche', async (req, res) => {
         const cleanResultats = Array.isArray(resultats) ? resultats : [];
         const resultLimitDebug = cleanResultats._resultLimitDebug || { wasDisplayLimited: false };
         if (resultLimitDebug.wasDisplayLimited) {
-            warnings.push(`Affichage limité aux ${resultLimitDebug.maxResultsReturned} meilleurs résultats (triés par score).`);
+            warnings.push(`Affichage limité aux ${resultLimitDebug.maxResultsReturned} meilleurs résultats, mais ${resultLimitDebug.totalCalculated || 'de nombreux'} ont été calculés.`);
         }
 
         const joinStats = resultats._joinDebug || null;
@@ -153,11 +154,16 @@ app.get('/recherche', async (req, res) => {
         if (paginationStats) {
             const usedPagination = paginationStats.some(p => p.usedPagination);
             const totalFetched = paginationStats.reduce((s, p) => s + (p.totalFetched || 0), 0);
-            if (usedPagination) {
-                // warnings.push(`Pagination API utilisée : ${totalFetched} relations récupérées au total.`);
-            }
+            const exhaustedApi = paginationStats.some(p => p.exhaustedApi);
             const reachedLimit = paginationStats.some(p => p.reachedPaginationLimit);
-            if (reachedLimit) {
+            
+            if (exhaustive) {
+                if (exhaustedApi) {
+                    warnings.push(`Mode exhaustif : toutes les données disponibles ont été récupérées (API épuisée).`);
+                } else if (reachedLimit || timedOut || apiInfo.errorCount > 0 || apiInfo.apiCalls >= LIMITS.maxApiCallsPerQuery) {
+                    warnings.push(`Mode exhaustif interrompu par les limites de sécurité du serveur.`);
+                }
+            } else if (reachedLimit) {
                 warnings.push(`Récupération API bornée : la pagination a atteint la limite de sécurité. Des relations supplémentaires peuvent exister dans JeuxDeMots.`);
             }
         }
@@ -177,6 +183,7 @@ app.get('/recherche', async (req, res) => {
             plan_details: planDetails,
             debug: {
                 durationMs: duration,
+                exhaustiveMode: exhaustive,
                 timings: {
                     parseMs,
                     cardinalityMs,
@@ -233,7 +240,7 @@ app.get('/recherche', async (req, res) => {
  * Retourne une Map { clauseKey → { count, isLarge, numericCount } }
  * Ne plante jamais : en cas d'erreur, retourne une map vide.
  */
-async function estimerCardinalites(ast, api, moteur) {
+async function estimerCardinalites(ast, api, moteur, exhaustive) {
     const clauses = extraireClausesSimples(ast);
     const map = new Map();
 
@@ -250,7 +257,7 @@ async function estimerCardinalites(ast, api, moteur) {
             let relId;
             try { relId = moteur.getRelId(clause.relation); } catch { continue; }
 
-            const estimation = await api.estimateCardinality(constante, relId, direction);
+            const estimation = await api.estimateCardinality(constante, relId, direction, 10, exhaustive);
             const key = Heuristiques._clauseKey(clause);
             map.set(key, estimation);
         } catch (_) {
