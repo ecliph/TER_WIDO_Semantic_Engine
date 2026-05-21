@@ -5,20 +5,31 @@
     "description": "Requête simple — variable à droite",
     "statut": "Succès",
     "nb_total": 1000,
-    "durationMs": 21,
+    "durationMs": 39,
+    "timings": {
+      "parseMs": 0,
+      "cardinalityMs": 1,
+      "planningMs": 0,
+      "executionMs": 16,
+      "responseBuildMs": 0
+    },
     "apiCalls": 0,
     "apiErrors": 0,
-    "cacheHits": 1107,
-    "cacheMisses": 67,
+    "cacheHits": 590,
+    "cacheMisses": 0,
     "pagesFetched": 5,
     "totalFetched": 5000,
     "usedPagination": true,
     "warnings": [
       "Affichage limité aux 1000 meilleurs résultats (triés par score).",
-      "Pagination API utilisée : 5000 relations récupérées au total.",
-      "Résultats limités : la pagination a atteint la limite de sécurité (1000 max). Des résultats supplémentaires peuvent exister."
+      "Récupération API bornée : la pagination a atteint la limite de sécurité. Des relations supplémentaires peuvent exister dans JeuxDeMots."
     ],
     "joinStats": null,
+    "resultLimitDebug": {
+      "totalBeforeDisplayLimit": 5000,
+      "maxResultsReturned": 1000,
+      "wasDisplayLimited": true
+    },
     "planDetails": null,
     "success": true,
     "errorMessage": null
@@ -29,19 +40,30 @@
     "description": "Filtre texte ch%",
     "statut": "Succès",
     "nb_total": 133,
-    "durationMs": 9,
+    "durationMs": 11,
+    "timings": {
+      "parseMs": 0,
+      "cardinalityMs": 0,
+      "planningMs": 0,
+      "executionMs": 6,
+      "responseBuildMs": 0
+    },
     "apiCalls": 0,
     "apiErrors": 0,
-    "cacheHits": 1109,
-    "cacheMisses": 67,
+    "cacheHits": 592,
+    "cacheMisses": 0,
     "pagesFetched": 5,
     "totalFetched": 5000,
     "usedPagination": true,
     "warnings": [
-      "Pagination API utilisée : 5000 relations récupérées au total.",
-      "Résultats limités : la pagination a atteint la limite de sécurité (1000 max). Des résultats supplémentaires peuvent exister."
+      "Récupération API bornée : la pagination a atteint la limite de sécurité. Des relations supplémentaires peuvent exister dans JeuxDeMots."
     ],
     "joinStats": null,
+    "resultLimitDebug": {
+      "totalBeforeDisplayLimit": 133,
+      "maxResultsReturned": 1000,
+      "wasDisplayLimited": false
+    },
     "planDetails": [
       {
         "rang": 1,
@@ -67,20 +89,31 @@
     "description": "Jointure ET avec propriété",
     "statut": "Succès",
     "nb_total": 1000,
-    "durationMs": 15,
+    "durationMs": 20,
+    "timings": {
+      "parseMs": 0,
+      "cardinalityMs": 0,
+      "planningMs": 0,
+      "executionMs": 14,
+      "responseBuildMs": 0
+    },
     "apiCalls": 0,
     "apiErrors": 0,
-    "cacheHits": 1113,
-    "cacheMisses": 67,
+    "cacheHits": 596,
+    "cacheMisses": 0,
     "pagesFetched": 10,
     "totalFetched": 10000,
     "usedPagination": true,
     "warnings": [
       "Affichage limité aux 1000 meilleurs résultats (triés par score).",
-      "Pagination API utilisée : 10000 relations récupérées au total.",
-      "Résultats limités : la pagination a atteint la limite de sécurité (1000 max). Des résultats supplémentaires peuvent exister."
+      "Récupération API bornée : la pagination a atteint la limite de sécurité. Des relations supplémentaires peuvent exister dans JeuxDeMots."
     ],
     "joinStats": null,
+    "resultLimitDebug": {
+      "totalBeforeDisplayLimit": 4064,
+      "maxResultsReturned": 1000,
+      "wasDisplayLimited": true
+    },
     "planDetails": [
       {
         "rang": 1,
@@ -106,19 +139,30 @@
     "description": "OU imbriqué + filtre",
     "statut": "Succès",
     "nb_total": 86,
-    "durationMs": 11,
+    "durationMs": 17,
+    "timings": {
+      "parseMs": 0,
+      "cardinalityMs": 1,
+      "planningMs": 0,
+      "executionMs": 13,
+      "responseBuildMs": 0
+    },
     "apiCalls": 0,
     "apiErrors": 0,
-    "cacheHits": 1117,
-    "cacheMisses": 67,
+    "cacheHits": 600,
+    "cacheMisses": 0,
     "pagesFetched": 6,
     "totalFetched": 5000,
     "usedPagination": true,
     "warnings": [
-      "Pagination API utilisée : 5000 relations récupérées au total.",
-      "Résultats limités : la pagination a atteint la limite de sécurité (1000 max). Des résultats supplémentaires peuvent exister."
+      "Récupération API bornée : la pagination a atteint la limite de sécurité. Des relations supplémentaires peuvent exister dans JeuxDeMots."
     ],
     "joinStats": null,
+    "resultLimitDebug": {
+      "totalBeforeDisplayLimit": 86,
+      "maxResultsReturned": 1000,
+      "wasDisplayLimited": false
+    },
     "planDetails": [
       {
         "rang": 1,
@@ -145,18 +189,29 @@
     "statut": "Succès",
     "nb_total": 37,
     "durationMs": 6,
+    "timings": {
+      "parseMs": 0,
+      "cardinalityMs": 0,
+      "planningMs": 0,
+      "executionMs": 4,
+      "responseBuildMs": 0
+    },
     "apiCalls": 0,
     "apiErrors": 0,
-    "cacheHits": 1119,
-    "cacheMisses": 67,
+    "cacheHits": 602,
+    "cacheMisses": 0,
     "pagesFetched": 5,
     "totalFetched": 5000,
     "usedPagination": true,
     "warnings": [
-      "Pagination API utilisée : 5000 relations récupérées au total.",
-      "Résultats limités : la pagination a atteint la limite de sécurité (1000 max). Des résultats supplémentaires peuvent exister."
+      "Récupération API bornée : la pagination a atteint la limite de sécurité. Des relations supplémentaires peuvent exister dans JeuxDeMots."
     ],
     "joinStats": null,
+    "resultLimitDebug": {
+      "totalBeforeDisplayLimit": 37,
+      "maxResultsReturned": 1000,
+      "wasDisplayLimited": false
+    },
     "planDetails": [
       {
         "rang": 1,
@@ -182,20 +237,31 @@
     "description": "ET avec OU dans propriété",
     "statut": "Succès",
     "nb_total": 1000,
-    "durationMs": 16,
+    "durationMs": 22,
+    "timings": {
+      "parseMs": 0,
+      "cardinalityMs": 0,
+      "planningMs": 0,
+      "executionMs": 16,
+      "responseBuildMs": 0
+    },
     "apiCalls": 0,
     "apiErrors": 0,
-    "cacheHits": 1125,
-    "cacheMisses": 67,
+    "cacheHits": 608,
+    "cacheMisses": 0,
     "pagesFetched": 15,
     "totalFetched": 15000,
     "usedPagination": true,
     "warnings": [
       "Affichage limité aux 1000 meilleurs résultats (triés par score).",
-      "Pagination API utilisée : 15000 relations récupérées au total.",
-      "Résultats limités : la pagination a atteint la limite de sécurité (1000 max). Des résultats supplémentaires peuvent exister."
+      "Récupération API bornée : la pagination a atteint la limite de sécurité. Des relations supplémentaires peuvent exister dans JeuxDeMots."
     ],
     "joinStats": null,
+    "resultLimitDebug": {
+      "totalBeforeDisplayLimit": 4109,
+      "maxResultsReturned": 1000,
+      "wasDisplayLimited": true
+    },
     "planDetails": [
       {
         "rang": 1,
@@ -221,17 +287,24 @@
     "description": "Requête 2 variables — officielle TER",
     "statut": "Succès",
     "nb_total": 0,
-    "durationMs": 57,
+    "durationMs": 62,
+    "timings": {
+      "parseMs": 0,
+      "cardinalityMs": 0,
+      "planningMs": 0,
+      "executionMs": 59,
+      "responseBuildMs": 0
+    },
     "apiCalls": 0,
     "apiErrors": 0,
-    "cacheHits": 1629,
-    "cacheMisses": 67,
+    "cacheHits": 1112,
+    "cacheMisses": 0,
     "pagesFetched": 510,
     "totalFetched": 18500,
     "usedPagination": true,
     "warnings": [
-      "Pagination API utilisée : 18500 relations récupérées au total.",
-      "Résultats limités : la pagination a atteint la limite de sécurité (1000 max). Des résultats supplémentaires peuvent exister."
+      "Exploration de jointure bornée : 500 candidats testés sur 10000 disponibles.",
+      "Récupération API bornée : la pagination a atteint la limite de sécurité. Des relations supplémentaires peuvent exister dans JeuxDeMots."
     ],
     "joinStats": {
       "relation": "r_can_eat",
@@ -244,6 +317,9 @@
       "reachedEarlyStop": false,
       "usedDirectExploration": true,
       "usedIdComparison": true
+    },
+    "resultLimitDebug": {
+      "wasDisplayLimited": false
     },
     "planDetails": [
       {
@@ -277,16 +353,28 @@
     "description": "Direction inverse — constante à gauche",
     "statut": "Succès",
     "nb_total": 350,
-    "durationMs": 3,
+    "durationMs": 2,
+    "timings": {
+      "parseMs": 0,
+      "cardinalityMs": 0,
+      "planningMs": 0,
+      "executionMs": 0,
+      "responseBuildMs": 0
+    },
     "apiCalls": 0,
     "apiErrors": 0,
-    "cacheHits": 1631,
-    "cacheMisses": 67,
+    "cacheHits": 1114,
+    "cacheMisses": 0,
     "pagesFetched": 1,
     "totalFetched": 350,
     "usedPagination": false,
     "warnings": [],
     "joinStats": null,
+    "resultLimitDebug": {
+      "totalBeforeDisplayLimit": 350,
+      "maxResultsReturned": 1000,
+      "wasDisplayLimited": false
+    },
     "planDetails": null,
     "success": true,
     "errorMessage": null
@@ -298,15 +386,27 @@
     "statut": "Succès",
     "nb_total": 303,
     "durationMs": 2,
+    "timings": {
+      "parseMs": 0,
+      "cardinalityMs": 0,
+      "planningMs": 0,
+      "executionMs": 0,
+      "responseBuildMs": 0
+    },
     "apiCalls": 0,
     "apiErrors": 0,
-    "cacheHits": 1633,
-    "cacheMisses": 67,
+    "cacheHits": 1116,
+    "cacheMisses": 0,
     "pagesFetched": 1,
     "totalFetched": 303,
     "usedPagination": false,
     "warnings": [],
     "joinStats": null,
+    "resultLimitDebug": {
+      "totalBeforeDisplayLimit": 303,
+      "maxResultsReturned": 1000,
+      "wasDisplayLimited": false
+    },
     "planDetails": null,
     "success": true,
     "errorMessage": null
@@ -317,17 +417,22 @@
     "description": "3 variables — chaîne de relations",
     "statut": "Succès",
     "nb_total": 1000,
-    "durationMs": 10,
+    "durationMs": 11,
+    "timings": {
+      "parseMs": 0,
+      "cardinalityMs": 0,
+      "planningMs": 0,
+      "executionMs": 5,
+      "responseBuildMs": 0
+    },
     "apiCalls": 0,
     "apiErrors": 0,
-    "cacheHits": 1668,
-    "cacheMisses": 67,
+    "cacheHits": 1151,
+    "cacheMisses": 0,
     "pagesFetched": 34,
     "totalFetched": 1314,
     "usedPagination": false,
-    "warnings": [
-      "Affichage limité aux 1000 meilleurs résultats (triés par score)."
-    ],
+    "warnings": [],
     "joinStats": {
       "relation": "r_isa",
       "anchorVariable": "$y",
@@ -339,6 +444,11 @@
       "reachedEarlyStop": true,
       "usedDirectExploration": true,
       "usedIdComparison": true
+    },
+    "resultLimitDebug": {
+      "totalBeforeDisplayLimit": 1000,
+      "maxResultsReturned": 1000,
+      "wasDisplayLimited": false
     },
     "planDetails": [
       {
@@ -365,17 +475,24 @@
     "description": "3 variables avec filtre",
     "statut": "Succès",
     "nb_total": 47,
-    "durationMs": 8,
+    "durationMs": 17,
+    "timings": {
+      "parseMs": 1,
+      "cardinalityMs": 0,
+      "planningMs": 0,
+      "executionMs": 14,
+      "responseBuildMs": 0
+    },
     "apiCalls": 0,
     "apiErrors": 0,
-    "cacheHits": 1685,
-    "cacheMisses": 67,
+    "cacheHits": 1168,
+    "cacheMisses": 0,
     "pagesFetched": 20,
     "totalFetched": 6057,
     "usedPagination": true,
     "warnings": [
-      "Pagination API utilisée : 6057 relations récupérées au total.",
-      "Résultats limités : la pagination a atteint la limite de sécurité (1000 max). Des résultats supplémentaires peuvent exister."
+      "Exploration de jointure bornée : 15 candidats testés sur 5000 disponibles.",
+      "Récupération API bornée : la pagination a atteint la limite de sécurité. Des relations supplémentaires peuvent exister dans JeuxDeMots."
     ],
     "joinStats": {
       "relation": "r_has_part",
@@ -388,6 +505,11 @@
       "reachedEarlyStop": true,
       "usedDirectExploration": true,
       "usedIdComparison": true
+    },
+    "resultLimitDebug": {
+      "totalBeforeDisplayLimit": 47,
+      "maxResultsReturned": 1000,
+      "wasDisplayLimited": false
     },
     "planDetails": [
       {
@@ -421,19 +543,30 @@
     "description": "Requête ciblée — proies du lion",
     "statut": "Succès",
     "nb_total": 4,
-    "durationMs": 3,
+    "durationMs": 5,
+    "timings": {
+      "parseMs": 0,
+      "cardinalityMs": 0,
+      "planningMs": 0,
+      "executionMs": 3,
+      "responseBuildMs": 0
+    },
     "apiCalls": 0,
     "apiErrors": 0,
-    "cacheHits": 1689,
-    "cacheMisses": 67,
+    "cacheHits": 1172,
+    "cacheMisses": 0,
     "pagesFetched": 6,
     "totalFetched": 5015,
     "usedPagination": true,
     "warnings": [
-      "Pagination API utilisée : 5015 relations récupérées au total.",
-      "Résultats limités : la pagination a atteint la limite de sécurité (1000 max). Des résultats supplémentaires peuvent exister."
+      "Récupération API bornée : la pagination a atteint la limite de sécurité. Des relations supplémentaires peuvent exister dans JeuxDeMots."
     ],
     "joinStats": null,
+    "resultLimitDebug": {
+      "totalBeforeDisplayLimit": 4,
+      "maxResultsReturned": 1000,
+      "wasDisplayLimited": false
+    },
     "planDetails": [
       {
         "rang": 1,
@@ -460,6 +593,13 @@
     "statut": "Erreur",
     "nb_total": 0,
     "durationMs": 1,
+    "timings": {
+      "parseMs": 0,
+      "cardinalityMs": 0,
+      "planningMs": 0,
+      "executionMs": 0,
+      "responseBuildMs": 0
+    },
     "apiCalls": 0,
     "apiErrors": 0,
     "cacheHits": 0,
@@ -471,6 +611,7 @@
       "Syntaxe invalide — la requête n'a pas pu être analysée."
     ],
     "joinStats": null,
+    "resultLimitDebug": null,
     "planDetails": null,
     "success": true,
     "errorMessage": null
@@ -482,6 +623,13 @@
     "statut": "Erreur",
     "nb_total": 0,
     "durationMs": 2,
+    "timings": {
+      "parseMs": 0,
+      "cardinalityMs": 0,
+      "planningMs": 0,
+      "executionMs": 0,
+      "responseBuildMs": 0
+    },
     "apiCalls": 0,
     "apiErrors": 0,
     "cacheHits": 0,
@@ -493,6 +641,7 @@
       "Erreur interne du moteur : Relation inconnue : \"relation_inconnue\". Vérifiez le dictionnaire des relations JDM."
     ],
     "joinStats": null,
+    "resultLimitDebug": null,
     "planDetails": null,
     "success": true,
     "errorMessage": null

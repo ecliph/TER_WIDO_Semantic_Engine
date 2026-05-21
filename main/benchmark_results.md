@@ -1,25 +1,23 @@
 # Benchmark WIDO — Résultats
 
-_Généré le 2026-05-20 23:16:37_
+_Généré le 2026-05-21 00:20:56_
 
-## Tableau récapitulatif
-
-| # | Requête | Statut | Résultats | Temps (ms) | Appels API | Pagination | Remarque |
-|---|---------|--------|----------:|----------:|----------:|-----------|----------|
-| 1 | `($x r_isa animal)` | Succès | 1000 | 21 | 0 | 5p/5000 | Affichage limité aux 1000 meilleurs résultats (tri |
-| 2 | `($x r_isa animal) ET ($x = ch%)` | Succès | 133 | 9 | 0 | 5p/5000 | Pagination API utilisée : 5000 relations récupérée |
-| 3 | `($x r_isa animal) ET ($x r_has_part queue)` | Succès | 1000 | 15 | 0 | 10p/10000 | Affichage limité aux 1000 meilleurs résultats (tri |
-| 4 | `(($x r_isa mammifere) OU ($x r_isa oiseau)) ET ...` | Succès | 86 | 11 | 0 | 6p/5000 | Pagination API utilisée : 5000 relations récupérée |
-| 5 | `($x r_isa artiste) ET (($x = ba%) OU ($x = Ba%))` | Succès | 37 | 6 | 0 | 5p/5000 | Pagination API utilisée : 5000 relations récupérée |
-| 6 | `($x r_isa animal) ET (($x r_has_part aile) OU (...` | Succès | 1000 | 16 | 0 | 15p/15000 | Affichage limité aux 1000 meilleurs résultats (tri |
-| 7 | `($x r_isa animal) ET ($y r_isa animal) ET ($x r...` | Succès | 0 | 57 | 0 | 510p/18500 | Join: 0 couples, 500 testés |
-| 8 | `(chat r_isa $x)` | Succès | 350 | 3 | 0 | Non | - |
-| 9 | `(chat r_has_part $x)` | Succès | 303 | 2 | 0 | Non | - |
-| 10 | `(chat r_has_part $y) ET ($y r_isa $z)` | Succès | 1000 | 10 | 0 | Non | Join: 1000 couples, 33 testés |
-| 11 | `($x r_isa animal) ET ($x r_has_part $y) ET ($y ...` | Succès | 47 | 8 | 0 | 20p/6057 | Join: 1000 couples, 15 testés |
-| 12 | `(lion r_can_eat $y) ET ($y r_isa animal)` | Succès | 4 | 3 | 0 | 6p/5015 | Pagination API utilisée : 5015 relations récupérée |
-| 13 | `($x r_isa)` | Erreur | 0 | 1 | 0 | Non | Syntaxe invalide — la requête n'a pas pu être anal |
-| 14 | `($x relation_inconnue animal)` | Erreur | 0 | 2 | 0 | Non | Erreur interne du moteur : Relation inconnue : "re |
+| # | Requête | Statut | Rés | Total(ms) | Parse | Card | Plan | Exec | API | Pagination | Jointure / Limite |
+|---|---------|--------|----:|----------:|------:|-----:|-----:|-----:|----:|-----------|-------------------|
+| 1 | `($x r_isa animal)` | Succès | 1000 | 39 | 0 | 1 | 0 | 16 | 0 | 5p/5000 | LimitDisplay: >1000 |
+| 2 | `($x r_isa animal) ET ($x = ch%)` | Succès | 133 | 11 | 0 | 0 | 0 | 6 | 0 | 5p/5000 | Récupération API bornée : la pagination  |
+| 3 | `($x r_isa animal) ET ($x r_has_part q...` | Succès | 1000 | 20 | 0 | 0 | 0 | 14 | 0 | 10p/10000 | LimitDisplay: >1000 |
+| 4 | `(($x r_isa mammifere) OU ($x r_isa oi...` | Succès | 86 | 17 | 0 | 1 | 0 | 13 | 0 | 6p/5000 | Récupération API bornée : la pagination  |
+| 5 | `($x r_isa artiste) ET (($x = ba%) OU ...` | Succès | 37 | 6 | 0 | 0 | 0 | 4 | 0 | 5p/5000 | Récupération API bornée : la pagination  |
+| 6 | `($x r_isa animal) ET (($x r_has_part ...` | Succès | 1000 | 22 | 0 | 0 | 0 | 16 | 0 | 15p/15000 | LimitDisplay: >1000 |
+| 7 | `($x r_isa animal) ET ($y r_isa animal...` | Succès | 0 | 62 | 0 | 0 | 0 | 59 | 0 | 510p/18500 | Join: 0 trouvés (limité) |
+| 8 | `(chat r_isa $x)` | Succès | 350 | 2 | 0 | 0 | 0 | 0 | 0 | - | - |
+| 9 | `(chat r_has_part $x)` | Succès | 303 | 2 | 0 | 0 | 0 | 0 | 0 | - | - |
+| 10 | `(chat r_has_part $y) ET ($y r_isa $z)` | Succès | 1000 | 11 | 0 | 0 | 0 | 5 | 0 | - | Join: 1000 trouvés |
+| 11 | `($x r_isa animal) ET ($x r_has_part $...` | Succès | 47 | 17 | 1 | 0 | 0 | 14 | 0 | 20p/6057 | Join: 1000 trouvés (limité) |
+| 12 | `(lion r_can_eat $y) ET ($y r_isa animal)` | Succès | 4 | 5 | 0 | 0 | 0 | 3 | 0 | 6p/5015 | Récupération API bornée : la pagination  |
+| 13 | `($x r_isa)` | Erreur | 0 | 1 | 0 | 0 | 0 | 0 | 0 | - | Syntaxe invalide — la requête n'a pas pu |
+| 14 | `($x relation_inconnue animal)` | Erreur | 0 | 2 | 0 | 0 | 0 | 0 | 0 | - | Erreur interne du moteur : Relation inco |
 
 ## Détail des jointures à deux variables
 
@@ -87,7 +85,7 @@ _Généré le 2026-05-20 23:16:37_
 ## Résumé
 
 - **Requêtes réussies** : 14/14
-- **Durée moyenne** : 12 ms
+- **Durée moyenne** : 16 ms
 - **Appels API totaux** : 0
 - **Pagination utilisée** : 9 requête(s)
 

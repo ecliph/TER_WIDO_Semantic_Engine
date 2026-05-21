@@ -60,9 +60,11 @@ app.get('/recherche', async (req, res) => {
     api.resetDebugInfo();
 
     let ast = null;
+    let parseMs = 0, cardinalityMs = 0, planningMs = 0, executionMs = 0, responseBuildMs = 0;
 
     try {
         // ── Étape 1 : Parsing ───────────────────────────────────────────────
+        const t0 = Date.now();
         try {
             ast = creerArbreDeDecision(q);
         } catch (parseErr) {
@@ -77,11 +79,13 @@ app.get('/recherche', async (req, res) => {
                 arbre: null,
                 plan_execution: null,
                 plan_details: null,
-                debug: { durationMs: Date.now() - start, apiCalls: 0, apiErrors: 0, timeoutReached: false }
+                debug: { durationMs: Date.now() - start, timings: { parseMs: Date.now() - t0, cardinalityMs: 0, planningMs: 0, executionMs: 0, responseBuildMs: 0 }, apiCalls: 0, apiErrors: 0, timeoutReached: false }
             });
         }
+        parseMs = Date.now() - t0;
 
         // ── Étape 2 : Estimation de cardinalité (optionnelle, pour heuristiques) ─
+        const t1 = Date.now();
         let cardinalityMap = null;
         try {
             cardinalityMap = await estimerCardinalites(ast, api, moteur);
@@ -89,12 +93,16 @@ app.get('/recherche', async (req, res) => {
             // Non bloquant : si ça échoue, on continue avec l'heuristique structurelle
             console.warn('⚠️ Estimation cardinalité échouée (fallback structurel) :', cardErr.message);
         }
+        cardinalityMs = Date.now() - t1;
 
         // ── Étape 3 : Planning avec heuristiques ───────────────────────────
+        const t2 = Date.now();
         const plan = Heuristiques.planifierExecution(ast, new Set(), cardinalityMap);
         const planDetails = plan._planDetails || null;
+        planningMs = Date.now() - t2;
 
         // ── Étape 4 : Exécution avec timeout global ─────────────────────────
+        const t3 = Date.now();
         const MAX_DURATION = LIMITS.maxQueryDurationMs;
         const timeoutPromise = new Promise((_, reject) =>
             setTimeout(() => reject(new Error('__QUERY_TIMEOUT__')), MAX_DURATION)
@@ -113,8 +121,10 @@ app.get('/recherche', async (req, res) => {
                 throw timeoutErr;
             }
         }
+        executionMs = Date.now() - t3;
 
         // ── Étape 5 : Construction de la réponse ─────────────────────────────
+        const t4 = Date.now();
         const duration = Date.now() - start;
         const apiInfo = api.getDebugInfo(); // { apiCalls, errorCount, errors }
 
@@ -126,12 +136,15 @@ app.get('/recherche', async (req, res) => {
         if (resultats._joinWarning) warnings.push(resultats._joinWarning);
 
         const cleanResultats = Array.isArray(resultats) ? resultats : [];
-        const isLimited = cleanResultats.length >= LIMITS.maxResultsReturned;
-        if (isLimited) {
-            warnings.push(`Affichage limité aux ${LIMITS.maxResultsReturned} meilleurs résultats (triés par score).`);
+        const resultLimitDebug = cleanResultats._resultLimitDebug || { wasDisplayLimited: false };
+        if (resultLimitDebug.wasDisplayLimited) {
+            warnings.push(`Affichage limité aux ${resultLimitDebug.maxResultsReturned} meilleurs résultats (triés par score).`);
         }
 
         const joinStats = resultats._joinDebug || null;
+        if (joinStats && joinStats.wasLimited) {
+            warnings.push(`Exploration de jointure bornée : ${joinStats.candidatsTestes} candidats testés sur ${joinStats.candidatsDisponibles} disponibles.`);
+        }
         const paginationStats = resultats._paginationStats && resultats._paginationStats.length > 0
             ? resultats._paginationStats
             : null;
@@ -141,15 +154,17 @@ app.get('/recherche', async (req, res) => {
             const usedPagination = paginationStats.some(p => p.usedPagination);
             const totalFetched = paginationStats.reduce((s, p) => s + (p.totalFetched || 0), 0);
             if (usedPagination) {
-                warnings.push(`Pagination API utilisée : ${totalFetched} relations récupérées au total.`);
+                // warnings.push(`Pagination API utilisée : ${totalFetched} relations récupérées au total.`);
             }
             const reachedLimit = paginationStats.some(p => p.reachedPaginationLimit);
             if (reachedLimit) {
-                warnings.push(`Résultats limités : la pagination a atteint la limite de sécurité (${LIMITS.maxResultsReturned} max). Des résultats supplémentaires peuvent exister.`);
+                warnings.push(`Récupération API bornée : la pagination a atteint la limite de sécurité. Des relations supplémentaires peuvent exister dans JeuxDeMots.`);
             }
         }
 
-        const hasErrors = apiInfo.errorCount > 0 || timedOut || (resultats._joinWarning && !resultats._joinWarning.startsWith('Exploration complète'));
+        const hasErrors = apiInfo.errorCount > 0 || timedOut;
+        
+        responseBuildMs = Date.now() - t4;
 
         res.json({
             statut: hasErrors ? 'Succès partiel' : 'Succès',
@@ -162,12 +177,20 @@ app.get('/recherche', async (req, res) => {
             plan_details: planDetails,
             debug: {
                 durationMs: duration,
+                timings: {
+                    parseMs,
+                    cardinalityMs,
+                    planningMs,
+                    executionMs,
+                    responseBuildMs
+                },
                 apiCalls: apiInfo.apiCalls,       // ← champ correct (corrigé)
                 apiErrors: apiInfo.errorCount,    // ← champ correct (corrigé)
                 timeoutReached: timedOut,
                 cacheStats: cache.getReport(),
                 paginationStats,
-                joinStats
+                joinStats,
+                resultLimitDebug
             }
         });
 
@@ -186,6 +209,13 @@ app.get('/recherche', async (req, res) => {
             plan_details: null,
             debug: {
                 durationMs: Date.now() - start,
+                timings: {
+                    parseMs,
+                    cardinalityMs,
+                    planningMs,
+                    executionMs,
+                    responseBuildMs
+                },
                 apiCalls: api.getDebugInfo().apiCalls,
                 apiErrors: api.getDebugInfo().errorCount,
                 timeoutReached: false
